@@ -1,0 +1,76 @@
+customer_id,name,email,current_street,current_city,current_state,current_zip,account_created_at
+CUST-526400,Riley Smith,riley.smith45@example.com,3757 Grand Ave,Sacramento,CA,95822,2025-02-22
+CUST-526402,Chris Jackson,chris.jackson64@example.com,588 Mission St,Los Angeles,CA,90012,2025-04-22
+CUST-526404,Jordan Moore,jordan.moore35@example.com,6973 Sunset Blvd,Chula Vista,CA,91910,2025-08-18
+CUST-526406,Alex Harris,alex.harris30@example.com,5674 Ocean Ave,Bakersfield,CA,93301,2025-03-21
+CUST-526408,Evelyn Brown,evelyn.brown21@example.com,1684 Broadway,Anaheim,CA,92801,2025-06-26
+CUST-526410,Taylor White,taylor.white68@example.com,2145 Park Blvd,Chula Vista,CA,91910,2025-07-13
+CUST-526413,Sam Johnson,sam.johnson94@example.com,4841 Mission St,Sacramento,CA,95822,2025-04-30
+CUST-526415,Oliver Rodriguez,oliver.rodriguez68@example.com,2764 Broadway,Riverside,CA,92501,2025-07-01
+CUST-526417,Kendall Thompson,kendall.thompson97@example.com,2903 First St,San Diego,CA,92101,2025-05-06
+CUST-526420,Skyler Perez,skyler.perez51@example.com,3852 Washington St,Los Angeles,CA,90012,2025-01-17
+CUST-526422,Emma Rodriguez,emma.rodriguez18@example.com,9392 Park Blvd,Sacramento,CA,95814,2025-06-11
+CUST-526424,Ethan Gonzalez,ethan.gonzalez92@example.com,2440 Ocean Ave,Stockton,CA,95202,2025-03-13
+CUST-526426,Rowan White,rowan.white84@example.com,9660 El Camino Real,Bakersfield,CA,93301,2025-07-05
+CUST-526428,Jamie Taylor,jamie.taylor73@example.com,871 Washington St,San Diego,CA,92101,2025-02-26
+CUST-526431,Oliver Gonzalez,oliver.gonzalez86@example.com,8769 Ocean Ave,Stockton,CA,95202,2025-10-11
+CUST-526433,Alex Perez,alex.perez24@example.com,4471 Cedar St,Chula Vista,CA,91910,2025-06-24
+CUST-526436,Rowan Taylor,rowan.taylor32@example.com,1843 Washington St,Santa Ana,CA,92701,2025-06-02
+CUST-526438,James Martin,james.martin35@example.com,6226 Cedar St,San Jose,CA,95110,2025-03-24
+CUST-526440,Alex Martin,alex.martin51@example.com,419 Mission St,Irvine,CA,92618,2025-07-05
+CUST-526442,Logan Davis,logan.davis17@example.com,9395 Mission St,Sacramento,CA,95822,2025-02-13
+CUST-526444,Sam Harris,sam.harris78@example.com,2203 Oak St,San Jose,CA,95110,2025-09-01
+CUST-526446,Avery Rodriguez,avery.rodriguez77@example.com,3570 Park Blvd,Bakersfield,CA,93301,2025-10-04
+CUST-526448,Reese Thompson,reese.thompson49@example.com,6218 Main St,Anaheim,CA,92801,2025-09-22
+CUST-526450,Cameron Davis,cameron.davis18@example.com,444 Pine St,Long Beach,CA,90802,2025-10-11
+CUST-526452,Skyler Smith,skyler.smith19@example.com,3850 Mission St,Los Angeles,CA,90012,2025-01-17
+CUST-526454,Sam Taylor,sam.taylor40@example.com,8053 Sunset Blvd,Fresno,CA,93701,2025-10-04
+CUST-526457,Mason Wilson,mason.wilson34@example.com,1688 Oak St,San Diego,CA,92109,2025-08-09
+CUST-526459,Ava Anderson,ava.anderson16@example.com,1093 El Camino Real,San Diego,CA,92109,2025-06-23
+CUST-526461,Pat Davis,pat.davis34@example.com,8886 Main St,Sacramento,CA,95814,2025-03-13
+CUST-526463,Kendall Anderson,kendall.anderson41@example.com,7360 Cedar St,San Diego,CA,92101,2025-10-09
+CUST-526466,Cameron Garcia,cameron.garcia62@example.com,7986 Sunset Blvd,Irvine,CA,92618,2025-07-25
+CUST-526468,Avery Gonzalez,avery.gonzalez10@example.com,4445 Park Blvd,Anaheim,CA,92801,2025-08-21
+CUST-526470,Ethan Jones,ethan.jones34@example.com,3666 Market St,Oakland,CA,94601,2025-10-24
+CUST-526472,Morgan White,morgan.white50@example.com,921 Pine St,Los Angeles,CA,90012,2025-09-02
+CUST-526474,Avery Johnson,avery.johnson75@example.com,3144 Mission St,San Diego,CA,92101,2025-02-04
+CUST-526476,Cameron Gonzalez,cameron.gonzalez25@example.com,4133 Pine St,Fremont,CA,94538,2025-01-21
+CUST-526478,Ava Perez,ava.perez84@example.com,8665 Broadway,Fremont,CA,94538,2025-05-14
+CUST-526480,Harper Davis,harper.davis43@example.com,2244 Oak St,Anaheim,CA,92801,2025-06-03
+CUST-526482,Sam Smith,sam.smith68@example.com,1738 Mission St,Fremont,CA,94538,2025-10-03
+CUST-526484,Rowan Jones,rowan.jones54@example.com,4102 Broadway,San Diego,CA,92101,2025-05-26
+CUST-526487,Alex Perez,alex.perez80@example.com,1797 Park Blvd,Oakland,CA,94601,2025-03-10
+CUST-526489,Pat White,pat.white80@example.com,4562 Ocean Ave,San Jose,CA,95110,2025-04-18
+CUST-526491,Quinn Perez,quinn.perez91@example.com,8380 Main St,Fresno,CA,93701,2025-05-09
+CUST-526493,Morgan Williams,morgan.williams91@example.com,4633 Market St,Bakersfield,CA,93301,2025-01-02
+CUST-526495,Jamie Lee,jamie.lee43@example.com,7339 First St,San Jose,CA,95123,2025-08-07
+CUST-526497,Riley Williams,riley.williams98@example.com,9038 Market St,San Jose,CA,95110,2025-07-09
+CUST-526499,Casey Wilson,casey.wilson26@example.com,5150 Broadway,Los Angeles,CA,90012,2025-01-21
+CUST-526501,Quinn Perez,quinn.perez41@example.com,5894 Cedar St,San Diego,CA,92109,2025-10-14
+CUST-526503,Ava Martin,ava.martin29@example.com,2762 Cedar St,Sacramento,CA,95822,2025-04-01
+CUST-526505,Jordan Garcia,jordan.garcia52@example.com,4165 Ocean Ave,Bakersfield,CA,93301,2025-03-23
+CUST-526507,Pat Gonzalez,pat.gonzalez14@example.com,3744 Sunset Blvd,Irvine,CA,92618,2025-08-24
+CUST-526509,Skyler Davis,skyler.davis13@example.com,6628 Broadway,Sacramento,CA,95814,2025-05-23
+CUST-526511,Kendall Lopez,kendall.lopez92@example.com,6648 Oak St,Santa Ana,CA,92701,2025-10-02
+CUST-526513,Jordan Brown,jordan.brown43@example.com,9612 Ocean Ave,San Jose,CA,95123,2025-01-20
+CUST-526516,Harper Wilson,harper.wilson87@example.com,1994 El Camino Real,Santa Ana,CA,92701,2025-10-23
+CUST-526519,Reese Lopez,reese.lopez65@example.com,5509 Pine St,San Diego,CA,92101,2025-06-10
+CUST-526521,Riley White,riley.white48@example.com,5167 Oak St,Santa Ana,CA,92701,2025-07-29
+CUST-526523,Peyton Moore,peyton.moore26@example.com,6988 Oak St,Sacramento,CA,95814,2025-07-14
+CUST-526525,Dakota Martin,dakota.martin82@example.com,6753 First St,Oakland,CA,94601,2025-01-01
+CUST-526527,Quinn Wilson,quinn.wilson84@example.com,7718 Main St,Long Beach,CA,90802,2025-08-15
+CUST-526529,James Thomas,james.thomas31@example.com,4749 First St,San Diego,CA,92101,2025-06-21
+CUST-526532,Reese Jones,reese.jones13@example.com,4111 Main St,Los Angeles,CA,90012,2025-02-07
+CUST-526534,Reese Thompson,reese.thompson99@example.com,8199 El Camino Real,Anaheim,CA,92801,2025-05-05
+CUST-526537,Skyler Garcia,skyler.garcia99@example.com,7711 Market St,Santa Ana,CA,92701,2025-10-13
+CUST-526539,Riley Anderson,riley.anderson27@example.com,8802 First St,Stockton,CA,95202,2025-06-12
+CUST-526541,Isabella Martin,isabella.martin74@example.com,9076 Main St,Bakersfield,CA,93301,2025-03-23
+CUST-526543,Mason Anderson,mason.anderson43@example.com,4643 Cedar St,Sacramento,CA,95822,2025-09-24
+CUST-526545,Cameron Rodriguez,cameron.rodriguez66@example.com,4781 Sunset Blvd,San Diego,CA,92101,2025-05-20
+CUST-526547,Chris Jones,chris.jones29@example.com,6375 Maple Ave,Sacramento,CA,95822,2025-03-20
+CUST-526549,Sam Wilson,sam.wilson62@example.com,8990 Main St,Long Beach,CA,90802,2025-08-01
+CUST-526552,Jordan Harris,jordan.harris83@example.com,7914 Market St,Anaheim,CA,92801,2025-06-30
+CUST-526554,Oliver Wilson,oliver.wilson78@example.com,9983 Park Blvd,Chula Vista,CA,91910,2025-04-23
+CUST-526556,Kendall Wilson,kendall.wilson72@example.com,6471 Broadway,Los Angeles,CA,90001,2025-07-27
+CUST-526558,Lucas Jones,lucas.jones89@example.com,541 Park Blvd,Chula Vista,CA,91910,2025-07-21
+CUST-526560,Jordan Williams,jordan.williams92@example.com,2323 Washington St,Bakersfield,CA,93301,2025-08-25

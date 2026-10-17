@@ -1,0 +1,367 @@
+event_id,shipment_id,event_type,event_timestamp,location,description
+SE-189001,SHIP-189001,label_created,2026-10-10 01:49:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189002,SHIP-189001,picked_up,2026-10-10 19:34:00,"Fresno, CA",Package picked up by carrier.
+SE-189003,SHIP-189001,arrived_at_facility,2026-10-11 13:14:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189004,SHIP-189001,delivery_exception,2026-10-12 02:18:00,"Sacramento, CA",Shipment delayed due to severe weather affecting transportation in the region.
+SE-189005,SHIP-189002,label_created,2026-10-06 22:16:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189006,SHIP-189002,picked_up,2026-10-07 14:03:00,"Ontario, CA",Package picked up by carrier.
+SE-189007,SHIP-189002,arrived_at_facility,2026-10-08 12:10:00,"Barstow, CA",Arrived at carrier regional sorting facility.
+SE-189008,SHIP-189002,operational_disruption,2026-10-08 22:09:00,"Barstow, CA",Shipment delayed due to a temporary carrier facility disruption.
+SE-189009,SHIP-189002,in_transit,2026-10-10 12:22:00,"Barstow, CA",Shipment scanned in transit following the documented delay.
+SE-189010,SHIP-189003,label_created,2026-10-09 19:31:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189011,SHIP-189003,picked_up,2026-10-10 14:27:00,"Fresno, CA",Package picked up by carrier.
+SE-189012,SHIP-189003,transportation_delay,2026-10-10 19:35:00,"Grapevine, CA",Shipment delayed due to a transportation disruption affecting the route: a road closure on the highway corridor.
+SE-189013,SHIP-189004,label_created,2026-10-06 03:58:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189014,SHIP-189004,picked_up,2026-10-06 12:14:00,"Oakland, CA",Package picked up by carrier.
+SE-189015,SHIP-189004,arrived_at_facility,2026-10-06 22:49:00,"Barstow, CA",Arrived at carrier regional sorting facility.
+SE-189016,SHIP-189004,departed_facility,2026-10-07 07:56:00,"Barstow, CA",Departed carrier regional sorting facility.
+SE-189017,SHIP-189004,transportation_delay,2026-10-07 18:54:00,"Modesto, CA",Shipment delayed due to a transportation disruption: a carrier vehicle breakdown en route.
+SE-189018,SHIP-189004,in_transit,2026-10-09 06:48:00,"Modesto, CA",Shipment scanned in transit following the documented delay.
+SE-189019,SHIP-189005,label_created,2026-10-12 01:48:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189020,SHIP-189005,picked_up,2026-10-12 16:37:00,"Ontario, CA",Package picked up by carrier.
+SE-189021,SHIP-189005,arrived_at_facility,2026-10-13 07:20:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189022,SHIP-189005,operational_disruption,2026-10-13 21:55:00,"San Jose, CA",Shipment delayed due to a regional sorting facility backlog.
+SE-189023,SHIP-189006,label_created,2026-10-07 06:01:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189024,SHIP-189006,picked_up,2026-10-07 15:33:00,"Fresno, CA",Package picked up by carrier.
+SE-189025,SHIP-189006,arrived_at_facility,2026-10-08 13:40:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189026,SHIP-189006,departed_facility,2026-10-08 22:43:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189027,SHIP-189006,delivery_exception,2026-10-09 08:40:00,"San Jose, CA",Shipment delayed due to heavy rain and flooding affecting roads along the route.
+SE-189028,SHIP-189006,in_transit,2026-10-10 10:00:00,"San Jose, CA",Shipment scanned in transit following the documented delay.
+SE-189029,SHIP-189007,label_created,2026-10-08 19:07:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189030,SHIP-189007,picked_up,2026-10-09 06:13:00,"Sacramento, CA",Package picked up by carrier.
+SE-189031,SHIP-189007,arrived_at_facility,2026-10-09 20:06:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189032,SHIP-189007,departed_facility,2026-10-10 04:15:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189033,SHIP-189007,arrived_at_facility,2026-10-10 22:23:00,"San Diego, CA",Arrived at local delivery station.
+SE-189034,SHIP-189007,operational_disruption,2026-10-11 07:25:00,"San Diego, CA",Shipment delayed due to a carrier scanning and dispatch system outage at the delivery station.
+SE-189035,SHIP-189008,label_created,2026-10-04 23:25:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189036,SHIP-189008,picked_up,2026-10-05 14:07:00,"Ontario, CA",Package picked up by carrier.
+SE-189037,SHIP-189008,arrived_at_facility,2026-10-06 02:12:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189038,SHIP-189008,departed_facility,2026-10-06 08:37:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189039,SHIP-189008,transportation_delay,2026-10-06 20:10:00,"Los Angeles, CA",Shipment delayed due to a transportation disruption: a bridge closure on the planned route.
+SE-189040,SHIP-189008,in_transit,2026-10-07 19:48:00,"Los Angeles, CA",Shipment scanned in transit following the documented delay.
+SE-189041,SHIP-189009,label_created,2026-10-06 00:17:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189042,SHIP-189009,picked_up,2026-10-06 10:56:00,"Ontario, CA",Package picked up by carrier.
+SE-189043,SHIP-189009,arrived_at_facility,2026-10-07 09:19:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189044,SHIP-189009,departed_facility,2026-10-07 12:41:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189045,SHIP-189009,arrived_at_facility,2026-10-08 05:33:00,"Long Beach, CA",Arrived at local delivery station.
+SE-189046,SHIP-189009,out_for_delivery,2026-10-09 08:46:00,"Long Beach, CA",Out for delivery.
+SE-189047,SHIP-189009,delivery_attempt_failed,2026-10-09 12:37:00,"Long Beach, CA",Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.
+SE-189048,SHIP-189010,label_created,2026-10-07 18:50:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189049,SHIP-189010,picked_up,2026-10-08 07:36:00,"Sacramento, CA",Package picked up by carrier.
+SE-189050,SHIP-189010,arrived_at_facility,2026-10-09 01:30:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189051,SHIP-189010,departed_facility,2026-10-09 06:04:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189052,SHIP-189010,arrived_at_facility,2026-10-10 02:11:00,"Bakersfield, CA",Arrived at local delivery station.
+SE-189053,SHIP-189010,out_for_delivery,2026-10-11 09:40:00,"Bakersfield, CA",Out for delivery.
+SE-189054,SHIP-189010,delivery_attempt_failed,2026-10-11 15:06:00,"Bakersfield, CA",Delivery attempt unsuccessful because the carrier could not access the delivery location.
+SE-189055,SHIP-189011,label_created,2026-10-09 19:17:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189056,SHIP-189011,picked_up,2026-10-10 09:11:00,"Fresno, CA",Package picked up by carrier.
+SE-189057,SHIP-189011,arrived_at_facility,2026-10-11 08:30:00,"Stockton, CA",Arrived at carrier regional sorting facility.
+SE-189058,SHIP-189011,departed_facility,2026-10-11 15:45:00,"Stockton, CA",Departed carrier regional sorting facility.
+SE-189059,SHIP-189011,arrived_at_facility,2026-10-12 12:31:00,"Sacramento, CA",Arrived at local delivery station.
+SE-189060,SHIP-189011,out_for_delivery,2026-10-13 09:32:00,"Sacramento, CA",Out for delivery.
+SE-189061,SHIP-189011,delivery_attempt_failed,2026-10-13 13:14:00,"Sacramento, CA",Delivery attempt unsuccessful because the business was closed.
+SE-189062,SHIP-189012,label_created,2026-10-11 04:41:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189063,SHIP-189012,picked_up,2026-10-11 16:17:00,"Fresno, CA",Package picked up by carrier.
+SE-189064,SHIP-189012,arrived_at_facility,2026-10-12 13:54:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189065,SHIP-189012,departed_facility,2026-10-12 18:54:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189066,SHIP-189012,arrived_at_facility,2026-10-13 14:38:00,"San Jose, CA",Arrived at local delivery station.
+SE-189067,SHIP-189012,out_for_delivery,2026-10-14 07:19:00,"San Jose, CA",Out for delivery.
+SE-189068,SHIP-189012,delivery_attempt_failed,2026-10-14 12:46:00,"San Jose, CA",Delivery attempt unsuccessful because the delivery entrance was inaccessible.
+SE-189069,SHIP-189013,label_created,2026-10-06 07:53:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189070,SHIP-189013,picked_up,2026-10-06 23:09:00,"Sacramento, CA",Package picked up by carrier.
+SE-189071,SHIP-189013,arrived_at_facility,2026-10-07 16:58:00,"Bakersfield, CA",Arrived at carrier regional sorting facility.
+SE-189072,SHIP-189013,departed_facility,2026-10-08 00:25:00,"Bakersfield, CA",Departed carrier regional sorting facility.
+SE-189073,SHIP-189013,arrived_at_facility,2026-10-08 17:38:00,"Stockton, CA",Arrived at local delivery station.
+SE-189074,SHIP-189013,out_for_delivery,2026-10-09 07:17:00,"Stockton, CA",Out for delivery.
+SE-189075,SHIP-189013,delivery_attempt_failed,2026-10-09 13:31:00,"Stockton, CA",Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.
+SE-189076,SHIP-189013,out_for_delivery,2026-10-10 08:45:00,"Stockton, CA",Out for delivery (second attempt).
+SE-189077,SHIP-189014,label_created,2026-10-07 20:33:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189078,SHIP-189014,picked_up,2026-10-08 15:35:00,"Fresno, CA",Package picked up by carrier.
+SE-189079,SHIP-189014,arrived_at_facility,2026-10-09 18:29:00,"Ontario, CA",Arrived at carrier regional sorting facility.
+SE-189080,SHIP-189014,departed_facility,2026-10-10 04:16:00,"Ontario, CA",Departed carrier regional sorting facility.
+SE-189081,SHIP-189014,arrived_at_facility,2026-10-10 17:52:00,"San Diego, CA",Arrived at local delivery station.
+SE-189082,SHIP-189014,out_for_delivery,2026-10-11 09:57:00,"San Diego, CA",Out for delivery.
+SE-189083,SHIP-189014,delivery_attempt_failed,2026-10-11 12:30:00,"San Diego, CA",Delivery attempt unsuccessful because a signature was required and no adult was available to sign.
+SE-189084,SHIP-189014,out_for_delivery,2026-10-12 07:55:00,"San Diego, CA",Out for delivery (second attempt).
+SE-189085,SHIP-189015,label_created,2026-10-05 07:54:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189086,SHIP-189015,picked_up,2026-10-06 02:51:00,"Oakland, CA",Package picked up by carrier.
+SE-189087,SHIP-189015,arrived_at_facility,2026-10-06 18:39:00,"Stockton, CA",Arrived at carrier regional sorting facility.
+SE-189088,SHIP-189015,departed_facility,2026-10-06 22:04:00,"Stockton, CA",Departed carrier regional sorting facility.
+SE-189089,SHIP-189015,arrived_at_facility,2026-10-07 14:49:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189090,SHIP-189015,out_for_delivery,2026-10-08 07:36:00,"Los Angeles, CA",Out for delivery.
+SE-189091,SHIP-189015,delivery_attempt_failed,2026-10-08 09:47:00,"Los Angeles, CA",Delivery attempt unsuccessful because the carrier could not access the delivery location.
+SE-189092,SHIP-189015,out_for_delivery,2026-10-09 09:29:00,"Los Angeles, CA",Out for delivery (second attempt).
+SE-189093,SHIP-189015,delivery_attempt_failed,2026-10-09 13:36:00,"Los Angeles, CA",Delivery attempt unsuccessful because the delivery entrance was inaccessible.
+SE-189094,SHIP-189016,label_created,2026-10-09 16:46:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189095,SHIP-189016,picked_up,2026-10-10 08:05:00,"Oakland, CA",Package picked up by carrier.
+SE-189096,SHIP-189016,arrived_at_facility,2026-10-10 21:13:00,"Ontario, CA",Arrived at carrier regional sorting facility.
+SE-189097,SHIP-189016,departed_facility,2026-10-11 00:25:00,"Ontario, CA",Departed carrier regional sorting facility.
+SE-189098,SHIP-189016,arrived_at_facility,2026-10-11 09:33:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189099,SHIP-189016,out_for_delivery,2026-10-12 08:06:00,"Los Angeles, CA",Out for delivery.
+SE-189100,SHIP-189016,delivery_attempt_failed,2026-10-12 11:05:00,"Los Angeles, CA",Delivery attempt unsuccessful because the business was closed.
+SE-189101,SHIP-189016,out_for_delivery,2026-10-13 07:40:00,"Los Angeles, CA",Out for delivery (second attempt).
+SE-189102,SHIP-189016,delivery_attempt_failed,2026-10-13 12:43:00,"Los Angeles, CA",Delivery attempt unsuccessful because the carrier could not access the delivery location.
+SE-189103,SHIP-189017,label_created,2026-08-23 10:11:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189104,SHIP-189017,picked_up,2026-08-23 20:50:00,"Fresno, CA",Package picked up by carrier.
+SE-189105,SHIP-189017,arrived_at_facility,2026-08-24 17:31:00,"Oakland, CA",Arrived at carrier regional sorting facility.
+SE-189106,SHIP-189017,departed_facility,2026-08-25 00:35:00,"Oakland, CA",Departed carrier regional sorting facility.
+SE-189107,SHIP-189017,arrived_at_facility,2026-08-25 21:25:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189108,SHIP-189017,out_for_delivery,2026-08-26 07:13:00,"Los Angeles, CA",Out for delivery.
+SE-189109,SHIP-189017,delivered,2026-08-26 12:32:00,"Los Angeles, CA",Delivered; package left at the front door.
+SE-189110,SHIP-189018,label_created,2026-08-30 21:52:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189111,SHIP-189018,picked_up,2026-08-31 18:04:00,"Oakland, CA",Package picked up by carrier.
+SE-189112,SHIP-189018,arrived_at_facility,2026-09-01 15:20:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189113,SHIP-189018,departed_facility,2026-09-01 22:07:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189114,SHIP-189018,arrived_at_facility,2026-09-02 17:57:00,"San Jose, CA",Arrived at local delivery station.
+SE-189115,SHIP-189018,out_for_delivery,2026-09-03 07:43:00,"San Jose, CA",Out for delivery.
+SE-189116,SHIP-189018,delivered,2026-09-03 14:38:00,"San Jose, CA",Delivered; package left at the front door.
+SE-189117,SHIP-189019,label_created,2026-09-07 14:24:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189118,SHIP-189019,picked_up,2026-09-08 06:44:00,"Oakland, CA",Package picked up by carrier.
+SE-189119,SHIP-189019,arrived_at_facility,2026-09-09 04:33:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189120,SHIP-189019,departed_facility,2026-09-09 13:29:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189121,SHIP-189019,arrived_at_facility,2026-09-10 10:21:00,"San Diego, CA",Arrived at local delivery station.
+SE-189122,SHIP-189019,out_for_delivery,2026-09-11 08:50:00,"San Diego, CA",Out for delivery.
+SE-189123,SHIP-189019,delivered,2026-09-11 15:02:00,"San Diego, CA",Delivered; package left at the front door.
+SE-189124,SHIP-189020,label_created,2026-09-13 07:04:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189125,SHIP-189020,picked_up,2026-09-14 00:35:00,"Sacramento, CA",Package picked up by carrier.
+SE-189126,SHIP-189020,arrived_at_facility,2026-09-15 03:34:00,"Oakland, CA",Arrived at carrier regional sorting facility.
+SE-189127,SHIP-189020,departed_facility,2026-09-15 09:15:00,"Oakland, CA",Departed carrier regional sorting facility.
+SE-189128,SHIP-189020,arrived_at_facility,2026-09-16 03:44:00,"Stockton, CA",Arrived at local delivery station.
+SE-189129,SHIP-189020,out_for_delivery,2026-09-17 08:48:00,"Stockton, CA",Out for delivery.
+SE-189130,SHIP-189020,delivered,2026-09-17 15:12:00,"Stockton, CA",Delivered; package handed to a resident.
+SE-189131,SHIP-189021,label_created,2026-09-18 06:58:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189132,SHIP-189021,picked_up,2026-09-19 00:56:00,"Oakland, CA",Package picked up by carrier.
+SE-189133,SHIP-189021,arrived_at_facility,2026-09-19 23:14:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189134,SHIP-189021,departed_facility,2026-09-20 07:12:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189135,SHIP-189021,arrived_at_facility,2026-09-21 01:39:00,"San Francisco, CA",Arrived at local delivery station.
+SE-189136,SHIP-189021,out_for_delivery,2026-09-22 09:50:00,"San Francisco, CA",Out for delivery.
+SE-189137,SHIP-189021,delivered,2026-09-22 18:07:00,"San Francisco, CA",Delivered; package handed to a resident.
+SE-189138,SHIP-189022,label_created,2026-09-24 03:17:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189139,SHIP-189022,picked_up,2026-09-24 15:05:00,"Ontario, CA",Package picked up by carrier.
+SE-189140,SHIP-189022,arrived_at_facility,2026-09-25 08:28:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189141,SHIP-189022,departed_facility,2026-09-25 12:22:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189142,SHIP-189022,arrived_at_facility,2026-09-26 08:37:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189143,SHIP-189022,out_for_delivery,2026-09-27 07:24:00,"Los Angeles, CA",Out for delivery.
+SE-189144,SHIP-189022,delivered,2026-09-27 14:12:00,"Los Angeles, CA",Delivered; package left in the building mailroom.
+SE-189145,SHIP-189023,label_created,2026-09-29 02:47:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189146,SHIP-189023,picked_up,2026-09-29 22:43:00,"Ontario, CA",Package picked up by carrier.
+SE-189147,SHIP-189023,arrived_at_facility,2026-09-30 21:28:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189148,SHIP-189023,departed_facility,2026-10-01 04:44:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189149,SHIP-189023,arrived_at_facility,2026-10-01 16:34:00,"San Diego, CA",Arrived at local delivery station.
+SE-189150,SHIP-189023,out_for_delivery,2026-10-02 09:23:00,"San Diego, CA",Out for delivery.
+SE-189151,SHIP-189023,delivered,2026-10-02 13:15:00,"San Diego, CA",Delivered; package left in the building mailroom.
+SE-189152,SHIP-189024,label_created,2026-10-02 05:07:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189153,SHIP-189024,picked_up,2026-10-03 01:14:00,"Oakland, CA",Package picked up by carrier.
+SE-189154,SHIP-189024,arrived_at_facility,2026-10-03 22:21:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189155,SHIP-189024,departed_facility,2026-10-04 06:41:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189156,SHIP-189024,arrived_at_facility,2026-10-05 00:01:00,"Stockton, CA",Arrived at local delivery station.
+SE-189157,SHIP-189024,out_for_delivery,2026-10-06 09:02:00,"Stockton, CA",Out for delivery.
+SE-189158,SHIP-189024,delivered,2026-10-06 17:35:00,"Stockton, CA",Shipment delivered.
+SE-189159,SHIP-189025,label_created,2026-09-30 23:58:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189160,SHIP-189025,picked_up,2026-10-01 08:30:00,"Sacramento, CA",Package picked up by carrier.
+SE-189161,SHIP-189025,arrived_at_facility,2026-10-02 02:12:00,"Barstow, CA",Arrived at carrier regional sorting facility.
+SE-189162,SHIP-189026,label_created,2026-09-28 04:03:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189163,SHIP-189026,picked_up,2026-09-28 14:18:00,"Ontario, CA",Package picked up by carrier.
+SE-189164,SHIP-189026,arrived_at_facility,2026-09-29 19:16:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189165,SHIP-189026,departed_facility,2026-09-30 02:25:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189166,SHIP-189027,label_created,2026-09-25 22:25:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189167,SHIP-189027,picked_up,2026-09-26 16:46:00,"Ontario, CA",Package picked up by carrier.
+SE-189168,SHIP-189028,label_created,2026-09-20 12:59:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189169,SHIP-189028,picked_up,2026-09-21 09:08:00,"Oakland, CA",Package picked up by carrier.
+SE-189170,SHIP-189028,arrived_at_facility,2026-09-22 01:10:00,"Ontario, CA",Arrived at carrier regional sorting facility.
+SE-189171,SHIP-189028,departed_facility,2026-09-22 07:34:00,"Ontario, CA",Departed carrier regional sorting facility.
+SE-189172,SHIP-189028,arrived_at_facility,2026-09-23 04:48:00,"Sacramento, CA",Arrived at local delivery station.
+SE-189173,SHIP-189029,label_created,2026-09-17 01:28:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189174,SHIP-189029,picked_up,2026-09-17 18:28:00,"Fresno, CA",Package picked up by carrier.
+SE-189175,SHIP-189029,arrived_at_facility,2026-09-18 16:46:00,"Stockton, CA",Arrived at carrier regional sorting facility.
+SE-189176,SHIP-189030,label_created,2026-09-13 10:31:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189177,SHIP-189030,picked_up,2026-09-13 16:58:00,"Fresno, CA",Package picked up by carrier.
+SE-189178,SHIP-189030,arrived_at_facility,2026-09-14 14:02:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189179,SHIP-189030,departed_facility,2026-09-14 17:18:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189180,SHIP-189031,label_created,2026-09-07 11:36:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189181,SHIP-189031,picked_up,2026-09-07 17:47:00,"Ontario, CA",Package picked up by carrier.
+SE-189182,SHIP-189031,arrived_at_facility,2026-09-08 22:23:00,"Oakland, CA",Arrived at carrier regional sorting facility.
+SE-189183,SHIP-189031,departed_facility,2026-09-09 05:21:00,"Oakland, CA",Departed carrier regional sorting facility.
+SE-189184,SHIP-189031,in_transit,2026-09-09 10:57:00,"Oakland, CA",Package scanned in transit to the next facility.
+SE-189185,SHIP-189032,label_created,2026-08-31 22:52:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189186,SHIP-189032,picked_up,2026-09-01 13:08:00,"Fresno, CA",Package picked up by carrier.
+SE-189187,SHIP-189033,label_created,2026-08-08 18:29:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189188,SHIP-189033,picked_up,2026-08-09 12:27:00,"Fresno, CA",Package picked up by carrier.
+SE-189189,SHIP-189033,arrived_at_facility,2026-08-10 09:19:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189190,SHIP-189033,departed_facility,2026-08-10 13:35:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189191,SHIP-189033,arrived_at_facility,2026-08-11 21:10:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189192,SHIP-189033,out_for_delivery,2026-08-12 08:40:00,"Los Angeles, CA",Out for delivery.
+SE-189193,SHIP-189033,delivery_attempt_failed,2026-08-12 13:20:00,"Los Angeles, CA",Delivery attempt unsuccessful because the business was closed.
+SE-189194,SHIP-189033,delivered,2026-08-12 17:45:00,"Los Angeles, CA",Shipment delivered successfully following a later delivery attempt.
+SE-189195,SHIP-189034,label_created,2026-08-16 12:08:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189196,SHIP-189034,picked_up,2026-08-16 20:13:00,"Oakland, CA",Package picked up by carrier.
+SE-189197,SHIP-189034,arrived_at_facility,2026-08-17 11:46:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189198,SHIP-189034,departed_facility,2026-08-17 20:01:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189199,SHIP-189034,arrived_at_facility,2026-08-19 06:30:00,"Long Beach, CA",Arrived at local delivery station.
+SE-189200,SHIP-189034,out_for_delivery,2026-08-19 08:15:00,"Long Beach, CA",Out for delivery.
+SE-189201,SHIP-189034,delivery_attempt_failed,2026-08-19 10:40:00,"Long Beach, CA",Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.
+SE-189202,SHIP-189034,out_for_delivery,2026-08-19 14:05:00,"Long Beach, CA",Out for delivery (second attempt).
+SE-189203,SHIP-189034,delivered,2026-08-19 16:30:00,"Long Beach, CA",Delivered; package left at the front door.
+SE-189204,SHIP-189035,label_created,2026-08-25 00:19:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189205,SHIP-189035,picked_up,2026-08-25 07:16:00,"Oakland, CA",Package picked up by carrier.
+SE-189206,SHIP-189035,arrived_at_facility,2026-08-25 18:08:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189207,SHIP-189035,departed_facility,2026-08-26 03:40:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189208,SHIP-189035,arrived_at_facility,2026-08-27 20:30:00,"Fresno, CA",Arrived at local delivery station.
+SE-189209,SHIP-189035,out_for_delivery,2026-08-28 08:05:00,"Fresno, CA",Out for delivery.
+SE-189210,SHIP-189035,delivery_attempt_failed,2026-08-28 11:20:00,"Fresno, CA",Delivery attempt unsuccessful because the carrier could not access the delivery location.
+SE-189211,SHIP-189035,out_for_delivery,2026-08-29 07:55:00,"Fresno, CA",Out for delivery (second attempt).
+SE-189212,SHIP-189035,delivered,2026-08-29 09:50:00,"Fresno, CA",Delivered; package handed to a resident.
+SE-189213,SHIP-189036,label_created,2026-09-01 20:17:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189214,SHIP-189036,picked_up,2026-09-02 11:09:00,"Ontario, CA",Package picked up by carrier.
+SE-189215,SHIP-189036,arrived_at_facility,2026-09-03 09:07:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189216,SHIP-189036,departed_facility,2026-09-03 16:35:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189217,SHIP-189036,out_for_delivery,2026-09-05 08:30:00,"Fresno, CA",Out for delivery.
+SE-189218,SHIP-189036,delivered,2026-09-05 14:10:00,"Fresno, CA",Delivered; package left in the building mailroom.
+SE-189219,SHIP-189036,arrived_at_facility,2026-09-05 06:45:00,"Fresno, CA",Arrived at local delivery station.
+SE-189220,SHIP-189037,label_created,2026-09-10 20:50:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189221,SHIP-189037,picked_up,2026-09-11 09:26:00,"Ontario, CA",Package picked up by carrier.
+SE-189222,SHIP-189037,arrived_at_facility,2026-09-12 05:06:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189223,SHIP-189037,departed_facility,2026-09-12 09:08:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189224,SHIP-189037,arrived_at_facility,2026-09-13 19:45:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189225,SHIP-189037,out_for_delivery,2026-09-14 07:40:00,"Los Angeles, CA",Out for delivery.
+SE-189226,SHIP-189037,delivered,2026-09-14 11:30:00,"Los Angeles, CA",Delivered; package handed to a resident.
+SE-189227,SHIP-189037,delivery_attempt_failed,2026-09-14 09:55:00,"Los Angeles, CA",Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.
+SE-189228,SHIP-189038,label_created,2026-09-17 21:27:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189229,SHIP-189038,picked_up,2026-09-18 09:44:00,"Sacramento, CA",Package picked up by carrier.
+SE-189230,SHIP-189038,arrived_at_facility,2026-09-19 07:53:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189231,SHIP-189038,departed_facility,2026-09-19 15:06:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189232,SHIP-189038,arrived_at_facility,2026-09-21 06:20:00,"San Diego, CA",Arrived at local delivery station.
+SE-189233,SHIP-189038,out_for_delivery,2026-09-21 07:50:00,"San Diego, CA",Out for delivery.
+SE-189234,SHIP-189038,delivery_attempt_failed,2026-09-21 12:30:00,"San Diego, CA",Delivery attempt unsuccessful because the delivery entrance was inaccessible.
+SE-189235,SHIP-189038,arrived_at_facility,2026-09-21 15:10:00,"San Diego, CA",Returned to local delivery station after unsuccessful attempt.
+SE-189236,SHIP-189038,out_for_delivery,2026-09-21 16:40:00,"San Diego, CA",Out for delivery (second attempt).
+SE-189237,SHIP-189038,delivered,2026-09-21 18:20:00,"San Diego, CA",Delivered; package left at the front door.
+SE-189238,SHIP-189039,label_created,2026-09-27 06:59:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189239,SHIP-189039,picked_up,2026-09-28 00:49:00,"Ontario, CA",Package picked up by carrier.
+SE-189240,SHIP-189039,arrived_at_facility,2026-09-28 11:02:00,"Bakersfield, CA",Arrived at carrier regional sorting facility.
+SE-189241,SHIP-189039,departed_facility,2026-09-28 16:43:00,"Bakersfield, CA",Departed carrier regional sorting facility.
+SE-189242,SHIP-189039,arrived_at_facility,2026-09-29 22:00:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189243,SHIP-189039,out_for_delivery,2026-09-30 07:30:00,"Los Angeles, CA",Out for delivery.
+SE-189244,SHIP-189039,delivery_attempt_failed,2026-09-30 08:55:00,"Los Angeles, CA",Delivery attempt unsuccessful because the business was closed.
+SE-189245,SHIP-189039,delivered,2026-09-30 12:10:00,"Los Angeles, CA",Delivered; package left in the building mailroom.
+SE-189246,SHIP-189040,label_created,2026-10-04 08:34:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189247,SHIP-189040,picked_up,2026-10-04 15:19:00,"Sacramento, CA",Package picked up by carrier.
+SE-189248,SHIP-189040,arrived_at_facility,2026-10-05 04:32:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189249,SHIP-189040,departed_facility,2026-10-05 07:48:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189250,SHIP-189040,arrived_at_facility,2026-10-07 10:20:00,"Bakersfield, CA",Arrived at local delivery station.
+SE-189251,SHIP-189040,out_for_delivery,2026-10-07 11:00:00,"Bakersfield, CA",Out for delivery.
+SE-189252,SHIP-189040,delivery_attempt_failed,2026-10-07 15:40:00,"Bakersfield, CA",Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.
+SE-189253,SHIP-189040,delivered,2026-10-07 19:05:00,"Bakersfield, CA",Delivered; package handed to a resident.
+SE-189254,SHIP-189041,label_created,2026-10-12 08:47:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189255,SHIP-189041,picked_up,2026-10-12 17:17:00,"Fresno, CA",Package picked up by carrier.
+SE-189256,SHIP-189041,arrived_at_facility,2026-10-13 16:32:00,"Bakersfield, CA",Arrived at carrier regional sorting facility.
+SE-189257,SHIP-189041,departed_facility,2026-10-13 19:42:00,"Bakersfield, CA",Departed carrier regional sorting facility.
+SE-189258,SHIP-189042,label_created,2026-09-22 02:20:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189259,SHIP-189042,picked_up,2026-09-22 11:39:00,"Ontario, CA",Package picked up by carrier.
+SE-189260,SHIP-189042,arrived_at_facility,2026-09-23 01:23:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189261,SHIP-189042,departed_facility,2026-09-23 08:52:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189262,SHIP-189042,arrived_at_facility,2026-09-24 04:07:00,"San Jose, CA",Arrived at local delivery station.
+SE-189263,SHIP-189042,out_for_delivery,2026-09-25 08:18:00,"San Jose, CA",Out for delivery.
+SE-189264,SHIP-189042,delivered,2026-09-25 15:16:00,"San Jose, CA",Delivered; package handed to a resident.
+SE-189265,SHIP-189043,label_created,2026-10-01 08:09:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189266,SHIP-189043,picked_up,2026-10-01 14:10:00,"Sacramento, CA",Package picked up by carrier.
+SE-189267,SHIP-189043,arrived_at_facility,2026-10-02 04:29:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189268,SHIP-189043,departed_facility,2026-10-02 13:36:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189269,SHIP-189043,arrived_at_facility,2026-10-03 10:42:00,"Fresno, CA",Arrived at local delivery station.
+SE-189270,SHIP-189043,out_for_delivery,2026-10-04 07:18:00,"Fresno, CA",Out for delivery.
+SE-189271,SHIP-189043,delivered,2026-10-04 15:17:00,"Fresno, CA",Delivered; package left at the front door.
+SE-189272,SHIP-189044,label_created,2026-10-10 22:10:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189273,SHIP-189044,picked_up,2026-10-11 12:19:00,"Ontario, CA",Package picked up by carrier.
+SE-189274,SHIP-189044,arrived_at_facility,2026-10-12 12:55:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189275,SHIP-189044,departed_facility,2026-10-12 20:14:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189276,SHIP-189044,arrived_at_facility,2026-10-13 16:10:00,"San Francisco, CA",Arrived at local delivery station.
+SE-189277,SHIP-189044,out_for_delivery,2026-10-14 09:32:00,"San Francisco, CA",Out for delivery.
+SE-189278,SHIP-189045,label_created,2026-10-10 14:31:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189279,SHIP-189045,picked_up,2026-10-11 08:05:00,"Fresno, CA",Package picked up by carrier.
+SE-189280,SHIP-189045,arrived_at_facility,2026-10-11 20:52:00,"Ontario, CA",Arrived at carrier regional sorting facility.
+SE-189281,SHIP-189045,departed_facility,2026-10-12 02:45:00,"Ontario, CA",Departed carrier regional sorting facility.
+SE-189282,SHIP-189045,arrived_at_facility,2026-10-12 17:52:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189283,SHIP-189045,out_for_delivery,2026-10-13 07:37:00,"Los Angeles, CA",Out for delivery.
+SE-189284,SHIP-189046,label_created,2026-09-25 00:46:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189285,SHIP-189046,picked_up,2026-09-25 17:19:00,"Ontario, CA",Package picked up by carrier.
+SE-189286,SHIP-189046,arrived_at_facility,2026-09-26 04:17:00,"Oakland, CA",Arrived at carrier regional sorting facility.
+SE-189287,SHIP-189046,departed_facility,2026-09-26 08:47:00,"Oakland, CA",Departed carrier regional sorting facility.
+SE-189288,SHIP-189046,arrived_at_facility,2026-09-26 21:53:00,"Bakersfield, CA",Arrived at local delivery station.
+SE-189289,SHIP-189046,out_for_delivery,2026-09-27 09:29:00,"Bakersfield, CA",Out for delivery.
+SE-189290,SHIP-189046,delivered,2026-09-27 16:58:00,"Bakersfield, CA",Delivered; package left in the building mailroom.
+SE-189291,SHIP-189047,label_created,2026-09-30 08:05:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189292,SHIP-189047,picked_up,2026-10-01 01:17:00,"Sacramento, CA",Package picked up by carrier.
+SE-189293,SHIP-189047,arrived_at_facility,2026-10-01 12:25:00,"Fresno, CA",Arrived at carrier regional sorting facility.
+SE-189294,SHIP-189047,departed_facility,2026-10-01 18:56:00,"Fresno, CA",Departed carrier regional sorting facility.
+SE-189295,SHIP-189047,arrived_at_facility,2026-10-02 12:03:00,"Oakland, CA",Arrived at local delivery station.
+SE-189296,SHIP-189047,out_for_delivery,2026-10-03 08:13:00,"Oakland, CA",Out for delivery.
+SE-189297,SHIP-189047,delivered,2026-10-03 12:17:00,"Oakland, CA",Delivered; package left at the front door.
+SE-189298,SHIP-189048,label_created,2026-09-11 02:03:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189299,SHIP-189048,picked_up,2026-09-11 08:07:00,"Sacramento, CA",Package picked up by carrier.
+SE-189300,SHIP-189048,arrived_at_facility,2026-09-11 20:32:00,"Oakland, CA",Arrived at carrier regional sorting facility.
+SE-189301,SHIP-189048,departed_facility,2026-09-12 00:41:00,"Oakland, CA",Departed carrier regional sorting facility.
+SE-189302,SHIP-189048,arrived_at_facility,2026-09-12 15:26:00,"San Francisco, CA",Arrived at local delivery station.
+SE-189303,SHIP-189048,out_for_delivery,2026-09-13 07:00:00,"San Francisco, CA",Out for delivery.
+SE-189304,SHIP-189048,delivered,2026-09-13 14:35:00,"San Francisco, CA",Delivered; package handed to a resident.
+SE-189305,SHIP-189049,label_created,2026-09-02 06:46:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189306,SHIP-189049,picked_up,2026-09-02 20:31:00,"Fresno, CA",Package picked up by carrier.
+SE-189307,SHIP-189049,arrived_at_facility,2026-09-03 17:56:00,"Ontario, CA",Arrived at carrier regional sorting facility.
+SE-189308,SHIP-189049,departed_facility,2026-09-04 00:53:00,"Ontario, CA",Departed carrier regional sorting facility.
+SE-189309,SHIP-189049,arrived_at_facility,2026-09-04 20:53:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189310,SHIP-189049,out_for_delivery,2026-09-05 07:35:00,"Los Angeles, CA",Out for delivery.
+SE-189311,SHIP-189049,delivered,2026-09-05 10:39:00,"Los Angeles, CA",Delivered; package left at the front door.
+SE-189312,SHIP-189050,label_created,2026-09-12 00:58:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189313,SHIP-189050,picked_up,2026-09-12 19:25:00,"Sacramento, CA",Package picked up by carrier.
+SE-189314,SHIP-189050,arrived_at_facility,2026-09-13 11:06:00,"Los Angeles, CA",Arrived at carrier regional sorting facility.
+SE-189315,SHIP-189050,departed_facility,2026-09-13 14:23:00,"Los Angeles, CA",Departed carrier regional sorting facility.
+SE-189316,SHIP-189050,arrived_at_facility,2026-09-14 06:18:00,"San Diego, CA",Arrived at local delivery station.
+SE-189317,SHIP-189050,out_for_delivery,2026-09-15 08:23:00,"San Diego, CA",Out for delivery.
+SE-189318,SHIP-189050,delivered,2026-09-15 16:02:00,"San Diego, CA",Delivered; package left at the front door.
+SE-189319,SHIP-189051,label_created,2026-09-27 02:35:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189320,SHIP-189051,picked_up,2026-09-27 12:24:00,"Fresno, CA",Package picked up by carrier.
+SE-189321,SHIP-189051,arrived_at_facility,2026-09-28 16:18:00,"Barstow, CA",Arrived at carrier regional sorting facility.
+SE-189322,SHIP-189051,departed_facility,2026-09-28 19:47:00,"Barstow, CA",Departed carrier regional sorting facility.
+SE-189323,SHIP-189051,arrived_at_facility,2026-09-29 12:27:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189324,SHIP-189051,out_for_delivery,2026-09-30 09:17:00,"Los Angeles, CA",Out for delivery.
+SE-189325,SHIP-189051,delivered,2026-09-30 18:13:00,"Los Angeles, CA",Delivered; package left at the front door.
+SE-189326,SHIP-189052,label_created,2026-10-08 19:38:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189327,SHIP-189052,picked_up,2026-10-09 03:58:00,"Oakland, CA",Package picked up by carrier.
+SE-189328,SHIP-189052,arrived_at_facility,2026-10-09 21:14:00,"Bakersfield, CA",Arrived at carrier regional sorting facility.
+SE-189329,SHIP-189052,departed_facility,2026-10-10 05:26:00,"Bakersfield, CA",Departed carrier regional sorting facility.
+SE-189330,SHIP-189052,arrived_at_facility,2026-10-10 16:59:00,"Los Angeles, CA",Arrived at local delivery station.
+SE-189331,SHIP-189052,out_for_delivery,2026-10-11 07:28:00,"Los Angeles, CA",Out for delivery.
+SE-189332,SHIP-189053,label_created,2026-09-03 12:57:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189333,SHIP-189053,picked_up,2026-09-04 06:38:00,"Oakland, CA",Package picked up by carrier.
+SE-189334,SHIP-189053,arrived_at_facility,2026-09-05 07:15:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189335,SHIP-189053,departed_facility,2026-09-05 14:37:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189336,SHIP-189053,arrived_at_facility,2026-09-06 01:31:00,"Oakland, CA",Arrived at local delivery station.
+SE-189337,SHIP-189053,out_for_delivery,2026-09-07 07:14:00,"Oakland, CA",Out for delivery.
+SE-189338,SHIP-189053,delivered,2026-09-07 14:45:00,"Oakland, CA",Delivered; package left at the front door.
+SE-189339,SHIP-189054,label_created,2026-10-12 01:14:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189340,SHIP-189054,picked_up,2026-10-12 16:41:00,"Ontario, CA",Package picked up by carrier.
+SE-189341,SHIP-189054,arrived_at_facility,2026-10-13 05:40:00,"Sacramento, CA",Arrived at carrier regional sorting facility.
+SE-189342,SHIP-189054,departed_facility,2026-10-13 11:17:00,"Sacramento, CA",Departed carrier regional sorting facility.
+SE-189343,SHIP-189054,arrived_at_facility,2026-10-13 19:25:00,"Stockton, CA",Arrived at local delivery station.
+SE-189344,SHIP-189054,out_for_delivery,2026-10-14 08:25:00,"Stockton, CA",Out for delivery.
+SE-189345,SHIP-189055,label_created,2026-09-14 14:03:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189346,SHIP-189055,picked_up,2026-09-14 23:50:00,"Sacramento, CA",Package picked up by carrier.
+SE-189347,SHIP-189055,arrived_at_facility,2026-09-15 12:39:00,"San Jose, CA",Arrived at carrier regional sorting facility.
+SE-189348,SHIP-189055,departed_facility,2026-09-15 19:15:00,"San Jose, CA",Departed carrier regional sorting facility.
+SE-189349,SHIP-189055,arrived_at_facility,2026-09-16 14:14:00,"Oakland, CA",Arrived at local delivery station.
+SE-189350,SHIP-189055,out_for_delivery,2026-09-17 07:47:00,"Oakland, CA",Out for delivery.
+SE-189351,SHIP-189055,delivered,2026-09-17 16:35:00,"Oakland, CA",Delivered; package handed to a resident.
+SE-189352,SHIP-189056,label_created,2026-08-18 11:00:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189353,SHIP-189057,label_created,2026-08-15 20:12:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189354,SHIP-189058,label_created,2026-08-25 14:15:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189355,SHIP-189059,label_created,2026-09-28 13:11:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189356,SHIP-189060,label_created,2026-09-08 18:09:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189357,SHIP-189061,label_created,2026-08-25 18:22:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189358,SHIP-189062,label_created,2026-08-31 11:14:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189359,SHIP-189063,label_created,2026-08-30 16:41:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189360,SHIP-189064,label_created,2026-10-04 19:08:00,"Fresno, CA",Shipping label created; awaiting carrier pickup.
+SE-189361,SHIP-189065,label_created,2026-08-23 13:42:00,"Sacramento, CA",Shipping label created; awaiting carrier pickup.
+SE-189362,SHIP-189066,label_created,2026-08-18 12:35:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189363,SHIP-189067,label_created,2026-10-04 18:26:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189364,SHIP-189068,label_created,2026-09-14 13:48:00,"Ontario, CA",Shipping label created; awaiting carrier pickup.
+SE-189365,SHIP-189069,label_created,2026-08-31 19:41:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.
+SE-189366,SHIP-189070,label_created,2026-08-15 18:57:00,"Oakland, CA",Shipping label created; awaiting carrier pickup.

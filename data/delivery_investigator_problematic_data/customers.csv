@@ -1,0 +1,56 @@
+customer_id,name,email,current_street,current_city,current_state,current_zip,account_created_at
+CUST-189001,Mei Ashworth,mei.ashworth@example.com,3583 Vine St,Riverside,CA,92501,2023-09-21
+CUST-189002,Isaac Abara,isaac.abara@example.com,5439 Harbor Dr,Fresno,CA,93727,2024-12-31
+CUST-189003,Tomas Hollis,tomas.hollis@example.com,7492 Maple Ave,Los Angeles,CA,90025,2023-11-18
+CUST-189004,Wesley Mireles,wesley.mireles@example.com,8988 Mission Blvd,Long Beach,CA,90802,2024-06-20
+CUST-189005,Pablo Mbeki,pablo.mbeki@example.com,6125 Palm Ave,Fresno,CA,93727,2023-09-08
+CUST-189006,Anika Ferrer,anika.ferrer@example.com,1117 Bay St,Stockton,CA,95219,2024-03-09
+CUST-189007,Yara Petrov,yara.petrov@example.com,276 Bay St,San Diego,CA,92115,2024-12-07
+CUST-189008,June Thornton,june.thornton@example.com,4692 Valley View Dr,San Diego,CA,92115,2023-09-05
+CUST-189009,Darius Kowalski,darius.kowalski@example.com,500 Sutter St,San Jose,CA,95116,2025-10-22
+CUST-189010,Silas Sorensen,silas.sorensen@example.com,9550 Pine St,Sacramento,CA,95831,2023-10-23
+CUST-189011,Kenji Greer,kenji.greer@example.com,3106 Willow Way,San Jose,CA,95125,2023-03-24
+CUST-189012,Nadia Salazar,nadia.salazar@example.com,3904 Hillcrest Rd,Long Beach,CA,90802,2023-02-16
+CUST-189013,Naomi Nguyen,naomi.nguyen@example.com,6737 Maple Ave,San Jose,CA,95112,2025-01-30
+CUST-189014,Grace Kimura,grace.kimura@example.com,3079 Vine St,San Diego,CA,92109,2024-05-22
+CUST-189015,Elena Ellison,elena.ellison@example.com,3510 Center St,San Francisco,CA,94108,2023-02-05
+CUST-189016,Priya Holloway,priya.holloway@example.com,1182 Ocean Ave,Los Angeles,CA,90034,2024-12-10
+CUST-189017,Rafael Yamamoto,rafael.yamamoto@example.com,7592 Palm Ave,Riverside,CA,92507,2023-11-05
+CUST-189018,Colin Brandt,colin.brandt@example.com,1765 Sutter St,Sacramento,CA,95826,2023-06-23
+CUST-189019,Vera Prescott,vera.prescott@example.com,3786 Center St,San Jose,CA,95125,2025-05-26
+CUST-189020,Caleb Akhtar,caleb.akhtar@example.com,8576 Willow Way,San Francisco,CA,94117,2025-10-24
+CUST-189021,Julian Varga,julian.varga@example.com,6520 Lakeview Dr,San Diego,CA,92109,2023-11-22
+CUST-189022,Dana Navarro,dana.navarro@example.com,2284 Cedar Ln,San Diego,CA,92101,2024-10-06
+CUST-189023,Felix Hartley,felix.hartley@example.com,8638 Valley View Dr,Bakersfield,CA,93312,2024-07-22
+CUST-189024,Celeste Evers,celeste.evers@example.com,1943 Bay St,San Diego,CA,92101,2023-02-11
+CUST-189025,Dylan Reyes,dylan.reyes@example.com,4087 Hillcrest Rd,Stockton,CA,95210,2025-03-11
+CUST-189026,Reed Whitfield,reed.whitfield@example.com,5742 Maple Ave,Los Angeles,CA,90042,2024-04-27
+CUST-189027,Bianca Okonkwo,bianca.okonkwo@example.com,299 Maple Ave,Los Angeles,CA,90042,2024-04-21
+CUST-189028,Noor Zhou,noor.zhou@example.com,1315 Market St,Stockton,CA,95210,2023-03-15
+CUST-189029,Andre Stroud,andre.stroud@example.com,6638 Center St,Sacramento,CA,95831,2024-01-25
+CUST-189030,Hugo Natarajan,hugo.natarajan@example.com,4715 Pacific Hwy,Bakersfield,CA,93309,2024-02-16
+CUST-189031,Hannah Castillo,hannah.castillo@example.com,1937 Sunset Blvd,Sacramento,CA,95826,2023-09-08
+CUST-189032,Ingrid Lindqvist,ingrid.lindqvist@example.com,1598 Pacific Hwy,Oakland,CA,94607,2025-09-28
+CUST-189033,Ruben Vance,ruben.vance@example.com,8187 Maple Ave,Long Beach,CA,90802,2024-11-14
+CUST-189034,Lucia Osei,lucia.osei@example.com,6215 Grand Ave,San Francisco,CA,94122,2023-08-21
+CUST-189035,Lena Kline,lena.kline@example.com,5457 Grand Ave,San Diego,CA,92109,2023-01-20
+CUST-189036,Paige Haddad,paige.haddad@example.com,2017 River Rd,Los Angeles,CA,90042,2023-11-27
+CUST-189037,Jamal Ruiz,jamal.ruiz@example.com,1859 Sutter St,San Jose,CA,95125,2023-06-24
+CUST-189038,Malik Delgado,malik.delgado@example.com,2326 Grand Ave,Bakersfield,CA,93309,2025-07-24
+CUST-189039,Mateo Rinaldi,mateo.rinaldi@example.com,9847 Palm Ave,Bakersfield,CA,93301,2023-03-06
+CUST-189040,Victor Bellamy,victor.bellamy@example.com,4861 Valley View Dr,San Francisco,CA,94117,2025-08-07
+CUST-189041,Tessa Calloway,tessa.calloway@example.com,9871 Oak St,San Diego,CA,92115,2023-12-20
+CUST-189042,Owen Barros,owen.barros@example.com,7650 Sunset Blvd,Riverside,CA,92507,2023-09-05
+CUST-189043,Gabriel Fairbanks,gabriel.fairbanks@example.com,438 Hillcrest Rd,Los Angeles,CA,90015,2024-11-15
+CUST-189044,Tanya Sandoval,tanya.sandoval@example.com,988 Sutter St,Irvine,CA,92620,2023-05-23
+CUST-189045,David Chen,david.chen@example.com,1231 Oak St,Los Angeles,CA,90042,2024-03-10
+CUST-189046,Divya Dunmore,divya.dunmore@example.com,9620 Valley View Dr,Irvine,CA,92612,2023-09-25
+CUST-189047,Arjun Sutherland,arjun.sutherland@example.com,7621 Hillcrest Rd,Riverside,CA,92507,2024-06-01
+CUST-189048,Maya Iyer,maya.iyer@example.com,9542 Elm St,San Jose,CA,95112,2023-06-24
+CUST-189049,Marcus Rostova,marcus.rostova@example.com,3785 Vine St,Irvine,CA,92620,2024-04-15
+CUST-189050,Leon Okafor,leon.okafor@example.com,9158 Harbor Dr,San Francisco,CA,94122,2024-08-31
+CUST-189051,Carmen Pruitt,carmen.pruitt@example.com,7299 Cedar Ln,Los Angeles,CA,90025,2024-12-07
+CUST-189052,Sofia Bhatt,sofia.bhatt@example.com,3543 Center St,Sacramento,CA,95826,2023-08-07
+CUST-189053,Rosa Maddox,rosa.maddox@example.com,3364 Pine St,Los Angeles,CA,90025,2024-12-28
+CUST-189054,Theo Tanaka,theo.tanaka@example.com,672 Sunset Blvd,Irvine,CA,92620,2024-03-21
+CUST-189055,Alicia Lacroix,alicia.lacroix@example.com,1867 Center St,Oakland,CA,94618,2023-01-05

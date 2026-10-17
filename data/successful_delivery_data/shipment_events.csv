@@ -1,0 +1,651 @@
+event_id,shipment_id,event_type,event_timestamp,location,description
+SE-526607,SHIP-526606,picked_up,2026-06-26 00:13:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526608,SHIP-526606,arrived_at_facility,2026-06-26 18:13:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526609,SHIP-526606,in_transit,2026-06-27 11:13:00,"En Route to Stockton, CA",Shipment in transit to destination hub.
+SE-526610,SHIP-526606,out_for_delivery,2026-06-28 00:11:00,"Stockton, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526611,SHIP-526606,delivered,2026-06-28 02:57:00,"8769 Ocean Ave, Stockton, CA 95202",Package delivered successfully to recipient address.
+SE-526616,SHIP-526615,picked_up,2026-05-01 13:06:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526617,SHIP-526615,arrived_at_facility,2026-05-02 06:06:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526618,SHIP-526615,in_transit,2026-05-02 22:06:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-526619,SHIP-526615,out_for_delivery,2026-05-05 14:33:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526620,SHIP-526615,delivered,2026-05-05 18:58:00,"2145 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-526625,SHIP-526624,picked_up,2026-04-14 15:04:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526626,SHIP-526624,arrived_at_facility,2026-04-15 08:04:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526627,SHIP-526624,in_transit,2026-04-16 05:04:00,"En Route to Stockton, CA",Shipment in transit to destination hub.
+SE-526628,SHIP-526624,out_for_delivery,2026-04-16 11:34:00,"Stockton, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526629,SHIP-526624,delivered,2026-04-16 17:19:00,"2440 Ocean Ave, Stockton, CA 95202",Package delivered successfully. Customer signature obtained.
+SE-526634,SHIP-526633,picked_up,2026-07-28 05:36:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526635,SHIP-526633,arrived_at_facility,2026-07-28 15:36:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526636,SHIP-526633,in_transit,2026-07-29 06:36:00,"En Route to Irvine, CA",Shipment in transit to destination hub.
+SE-526637,SHIP-526633,out_for_delivery,2026-08-01 07:33:00,"Irvine, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526638,SHIP-526633,delivered,2026-08-01 09:55:00,"7986 Sunset Blvd, Irvine, CA 92618",Package delivered successfully. Left at front door/porch.
+SE-526643,SHIP-526642,picked_up,2026-03-04 20:37:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526644,SHIP-526642,arrived_at_facility,2026-03-05 13:37:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526645,SHIP-526642,in_transit,2026-03-06 01:37:00,"En Route to Oakland, CA",Shipment in transit to destination hub.
+SE-526646,SHIP-526642,out_for_delivery,2026-03-05 21:39:00,"Oakland, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526647,SHIP-526642,delivered,2026-03-06 02:55:00,"1797 Park Blvd, Oakland, CA 94601",Package delivered successfully. Left at front door/porch.
+SE-526652,SHIP-526651,picked_up,2026-06-28 10:16:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526653,SHIP-526651,arrived_at_facility,2026-06-28 22:16:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526654,SHIP-526651,in_transit,2026-06-29 13:16:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-526655,SHIP-526651,out_for_delivery,2026-06-29 11:26:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526656,SHIP-526651,delivered,2026-06-29 17:04:00,"588 Mission St, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-526661,SHIP-526660,picked_up,2026-04-19 07:14:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526662,SHIP-526660,arrived_at_facility,2026-04-19 16:14:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526663,SHIP-526660,in_transit,2026-04-20 09:14:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-526664,SHIP-526660,out_for_delivery,2026-04-23 06:37:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526665,SHIP-526660,delivered,2026-04-23 11:16:00,"5167 Oak St, Santa Ana, CA 92701",Package delivered successfully. Left at front door/porch.
+SE-526670,SHIP-526669,picked_up,2026-07-27 04:50:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526671,SHIP-526669,arrived_at_facility,2026-07-27 14:50:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526672,SHIP-526669,in_transit,2026-07-28 14:50:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-526673,SHIP-526669,out_for_delivery,2026-07-30 06:37:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526674,SHIP-526669,delivered,2026-07-30 12:15:00,"3852 Washington St, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-526679,SHIP-526678,picked_up,2026-07-04 22:56:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526680,SHIP-526678,arrived_at_facility,2026-07-05 09:56:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526681,SHIP-526678,in_transit,2026-07-06 06:56:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-526682,SHIP-526678,out_for_delivery,2026-07-08 20:56:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526683,SHIP-526678,delivered,2026-07-09 01:26:00,"9392 Park Blvd, Sacramento, CA 95814",Package delivered successfully. Left at front door/porch.
+SE-526688,SHIP-526687,picked_up,2026-03-14 22:43:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526689,SHIP-526687,arrived_at_facility,2026-03-15 11:43:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526690,SHIP-526687,in_transit,2026-03-16 09:43:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526691,SHIP-526687,out_for_delivery,2026-03-18 03:08:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526692,SHIP-526687,delivered,2026-03-18 05:31:00,"871 Washington St, San Diego, CA 92101",Package delivered successfully. Customer signature obtained.
+SE-526697,SHIP-526696,picked_up,2026-06-22 00:24:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526698,SHIP-526696,arrived_at_facility,2026-06-22 14:24:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526699,SHIP-526696,in_transit,2026-06-23 06:24:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526700,SHIP-526696,out_for_delivery,2026-06-26 02:02:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526701,SHIP-526696,delivered,2026-06-26 07:42:00,"3144 Mission St, San Diego, CA 92101",Package delivered successfully to recipient address.
+SE-526706,SHIP-526705,picked_up,2026-04-05 11:37:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526707,SHIP-526705,arrived_at_facility,2026-04-06 05:37:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526708,SHIP-526705,in_transit,2026-04-07 01:37:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526709,SHIP-526705,out_for_delivery,2026-04-08 10:42:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526710,SHIP-526705,delivered,2026-04-08 16:12:00,"4749 First St, San Diego, CA 92101",Package delivered successfully to recipient address.
+SE-526715,SHIP-526714,picked_up,2026-07-30 09:44:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526716,SHIP-526714,arrived_at_facility,2026-07-30 17:44:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526717,SHIP-526714,in_transit,2026-07-31 14:44:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-526718,SHIP-526714,out_for_delivery,2026-08-03 09:16:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526719,SHIP-526714,delivered,2026-08-03 12:30:00,"3850 Mission St, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-526724,SHIP-526723,picked_up,2026-04-10 14:58:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526725,SHIP-526723,arrived_at_facility,2026-04-11 01:58:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526726,SHIP-526723,in_transit,2026-04-11 10:58:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526727,SHIP-526723,out_for_delivery,2026-04-13 12:28:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526728,SHIP-526723,delivered,2026-04-13 17:00:00,"4749 First St, San Diego, CA 92101",Package delivered successfully. Customer signature obtained.
+SE-526733,SHIP-526732,picked_up,2026-05-22 19:41:00,"Sacramento, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526734,SHIP-526732,arrived_at_facility,2026-05-23 09:41:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526735,SHIP-526732,in_transit,2026-05-23 22:41:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526736,SHIP-526732,out_for_delivery,2026-05-26 21:46:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526737,SHIP-526732,delivered,2026-05-27 00:24:00,"5894 Cedar St, San Diego, CA 92109",Package delivered successfully to recipient address.
+SE-526742,SHIP-526741,picked_up,2026-07-02 09:07:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526743,SHIP-526741,arrived_at_facility,2026-07-02 22:07:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526744,SHIP-526741,in_transit,2026-07-03 15:07:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-526745,SHIP-526741,out_for_delivery,2026-07-03 12:06:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526746,SHIP-526741,delivered,2026-07-03 15:54:00,"7339 First St, San Jose, CA 95123",Package delivered successfully. Left at front door/porch.
+SE-526751,SHIP-526750,picked_up,2026-03-30 02:32:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526752,SHIP-526750,arrived_at_facility,2026-03-30 12:32:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526753,SHIP-526750,in_transit,2026-03-31 01:32:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-526754,SHIP-526750,out_for_delivery,2026-04-02 04:24:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526755,SHIP-526750,delivered,2026-04-02 09:04:00,"9038 Market St, San Jose, CA 95110",Package delivered successfully. Customer signature obtained.
+SE-526760,SHIP-526759,picked_up,2026-04-29 16:57:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526761,SHIP-526759,arrived_at_facility,2026-04-30 01:57:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526762,SHIP-526759,in_transit,2026-05-01 00:57:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-526763,SHIP-526759,out_for_delivery,2026-05-02 16:51:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526764,SHIP-526759,delivered,2026-05-02 19:40:00,"2244 Oak St, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
+SE-526769,SHIP-526768,picked_up,2026-04-26 15:39:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526770,SHIP-526768,arrived_at_facility,2026-04-27 08:39:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526771,SHIP-526768,in_transit,2026-04-28 05:39:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-526772,SHIP-526768,out_for_delivery,2026-04-29 19:50:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526773,SHIP-526768,delivered,2026-04-29 23:26:00,"9983 Park Blvd, Chula Vista, CA 91910",Package delivered successfully. Left at front door/porch.
+SE-526778,SHIP-526777,picked_up,2026-06-07 15:14:00,"Fresno, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526779,SHIP-526777,arrived_at_facility,2026-06-08 06:14:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526780,SHIP-526777,in_transit,2026-06-08 14:14:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-526781,SHIP-526777,out_for_delivery,2026-06-09 20:23:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526782,SHIP-526777,delivered,2026-06-09 22:54:00,"9660 El Camino Real, Bakersfield, CA 93301",Package delivered successfully. Left at front door/porch.
+SE-526787,SHIP-526786,picked_up,2026-03-06 11:44:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526788,SHIP-526786,arrived_at_facility,2026-03-07 05:44:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526789,SHIP-526786,in_transit,2026-03-07 20:44:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-526790,SHIP-526786,out_for_delivery,2026-03-08 09:55:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526791,SHIP-526786,delivered,2026-03-08 14:06:00,"4445 Park Blvd, Anaheim, CA 92801",Package delivered successfully to recipient address.
+SE-526796,SHIP-526795,picked_up,2026-04-10 05:16:00,"Ontario, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526797,SHIP-526795,arrived_at_facility,2026-04-10 18:16:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526798,SHIP-526795,in_transit,2026-04-11 16:16:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-526799,SHIP-526795,out_for_delivery,2026-04-14 10:07:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526800,SHIP-526795,delivered,2026-04-14 12:22:00,"6218 Main St, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
+SE-526805,SHIP-526804,picked_up,2026-07-07 12:23:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526806,SHIP-526804,arrived_at_facility,2026-07-08 00:23:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526807,SHIP-526804,in_transit,2026-07-08 21:23:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-526808,SHIP-526804,out_for_delivery,2026-07-10 18:22:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526809,SHIP-526804,delivered,2026-07-10 20:52:00,"4562 Ocean Ave, San Jose, CA 95110",Package delivered successfully. Customer signature obtained.
+SE-526814,SHIP-526813,picked_up,2026-04-23 02:43:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526815,SHIP-526813,arrived_at_facility,2026-04-23 18:43:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526816,SHIP-526813,in_transit,2026-04-24 15:43:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-526817,SHIP-526813,out_for_delivery,2026-04-27 05:10:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526818,SHIP-526813,delivered,2026-04-27 07:38:00,"1994 El Camino Real, Santa Ana, CA 92701",Package delivered successfully to recipient address.
+SE-526823,SHIP-526822,picked_up,2026-05-02 21:26:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526824,SHIP-526822,arrived_at_facility,2026-05-03 13:26:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526825,SHIP-526822,in_transit,2026-05-04 05:26:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526826,SHIP-526822,out_for_delivery,2026-05-04 02:04:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526827,SHIP-526822,delivered,2026-05-04 04:25:00,"4102 Broadway, San Diego, CA 92101",Package delivered successfully to recipient address.
+SE-526832,SHIP-526831,picked_up,2026-07-31 16:29:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526833,SHIP-526831,arrived_at_facility,2026-08-01 07:29:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526834,SHIP-526831,in_transit,2026-08-01 17:29:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526835,SHIP-526831,out_for_delivery,2026-08-03 22:46:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526836,SHIP-526831,delivered,2026-08-04 01:05:00,"3144 Mission St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-526841,SHIP-526840,picked_up,2026-07-10 09:18:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526842,SHIP-526840,arrived_at_facility,2026-07-10 21:18:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526843,SHIP-526840,in_transit,2026-07-11 06:18:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-526844,SHIP-526840,out_for_delivery,2026-07-13 09:09:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526845,SHIP-526840,delivered,2026-07-13 11:32:00,"2203 Oak St, San Jose, CA 95110",Package delivered successfully to recipient address.
+SE-526850,SHIP-526849,picked_up,2026-03-28 15:55:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526851,SHIP-526849,arrived_at_facility,2026-03-29 02:55:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526852,SHIP-526849,in_transit,2026-03-29 23:55:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-526853,SHIP-526849,out_for_delivery,2026-04-01 13:00:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526854,SHIP-526849,delivered,2026-04-01 18:50:00,"1738 Mission St, Fremont, CA 94538",Package delivered successfully. Left at front door/porch.
+SE-526859,SHIP-526858,picked_up,2026-04-17 06:54:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526860,SHIP-526858,arrived_at_facility,2026-04-17 14:54:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526861,SHIP-526858,in_transit,2026-04-18 00:54:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-526862,SHIP-526858,out_for_delivery,2026-04-19 09:00:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526863,SHIP-526858,delivered,2026-04-19 11:43:00,"9612 Ocean Ave, San Jose, CA 95123",Package delivered successfully to recipient address.
+SE-526868,SHIP-526867,picked_up,2026-03-23 08:26:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526869,SHIP-526867,arrived_at_facility,2026-03-23 19:26:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526870,SHIP-526867,in_transit,2026-03-24 07:26:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-526871,SHIP-526867,out_for_delivery,2026-03-26 11:52:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526872,SHIP-526867,delivered,2026-03-26 17:06:00,"9076 Main St, Bakersfield, CA 93301",Package delivered successfully. Left at front door/porch.
+SE-526877,SHIP-526876,picked_up,2026-05-26 15:30:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526878,SHIP-526876,arrived_at_facility,2026-05-27 09:30:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526879,SHIP-526876,in_transit,2026-05-27 23:30:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526880,SHIP-526876,out_for_delivery,2026-05-27 16:40:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526881,SHIP-526876,delivered,2026-05-27 21:28:00,"4749 First St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-526886,SHIP-526885,picked_up,2026-06-09 22:16:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526887,SHIP-526885,arrived_at_facility,2026-06-10 04:16:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526888,SHIP-526885,in_transit,2026-06-10 22:16:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526889,SHIP-526885,out_for_delivery,2026-06-13 03:23:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526890,SHIP-526885,delivered,2026-06-13 05:54:00,"4749 First St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-526895,SHIP-526894,picked_up,2026-06-24 07:28:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526896,SHIP-526894,arrived_at_facility,2026-06-24 19:28:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526897,SHIP-526894,in_transit,2026-06-25 19:28:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-526898,SHIP-526894,out_for_delivery,2026-06-25 10:59:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526899,SHIP-526894,delivered,2026-06-25 15:10:00,"9660 El Camino Real, Bakersfield, CA 93301",Package delivered successfully to recipient address.
+SE-526904,SHIP-526903,picked_up,2026-04-21 22:06:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526905,SHIP-526903,arrived_at_facility,2026-04-22 15:06:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526906,SHIP-526903,in_transit,2026-04-23 04:06:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-526907,SHIP-526903,out_for_delivery,2026-04-23 20:05:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526908,SHIP-526903,delivered,2026-04-24 01:17:00,"5150 Broadway, Los Angeles, CA 90012",Package delivered successfully to recipient address.
+SE-526913,SHIP-526912,picked_up,2026-05-06 11:25:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526914,SHIP-526912,arrived_at_facility,2026-05-06 19:25:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526915,SHIP-526912,in_transit,2026-05-07 11:25:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-526916,SHIP-526912,out_for_delivery,2026-05-08 17:23:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526917,SHIP-526912,delivered,2026-05-08 20:03:00,"6648 Oak St, Santa Ana, CA 92701",Package delivered successfully. Left at front door/porch.
+SE-526922,SHIP-526921,picked_up,2026-06-22 22:13:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526923,SHIP-526921,arrived_at_facility,2026-06-23 05:13:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526924,SHIP-526921,in_transit,2026-06-24 00:13:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526925,SHIP-526921,out_for_delivery,2026-06-25 22:26:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526926,SHIP-526921,delivered,2026-06-26 01:37:00,"5894 Cedar St, San Diego, CA 92109",Package delivered successfully. Customer signature obtained.
+SE-526931,SHIP-526930,picked_up,2026-02-27 17:52:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526932,SHIP-526930,arrived_at_facility,2026-02-28 03:52:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526933,SHIP-526930,in_transit,2026-02-28 18:52:00,"En Route to Oakland, CA",Shipment in transit to destination hub.
+SE-526934,SHIP-526930,out_for_delivery,2026-03-03 16:24:00,"Oakland, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526935,SHIP-526930,delivered,2026-03-03 20:41:00,"1797 Park Blvd, Oakland, CA 94601",Package delivered successfully to recipient address.
+SE-526940,SHIP-526939,picked_up,2026-04-04 01:15:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-526941,SHIP-526939,arrived_at_facility,2026-04-04 08:15:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526942,SHIP-526939,in_transit,2026-04-05 08:15:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-526943,SHIP-526939,out_for_delivery,2026-04-05 05:04:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526944,SHIP-526939,delivered,2026-04-05 07:38:00,"4841 Mission St, Sacramento, CA 95822",Package delivered successfully to recipient address.
+SE-526949,SHIP-526948,picked_up,2026-02-13 05:58:00,"Ontario, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-526950,SHIP-526948,arrived_at_facility,2026-02-13 23:58:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-526951,SHIP-526948,in_transit,2026-02-14 11:58:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-526952,SHIP-526948,out_for_delivery,2026-02-17 10:30:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526953,SHIP-526948,delivered,2026-02-17 13:09:00,"4749 First St, San Diego, CA 92101",Package delivered successfully to recipient address.
+SE-526958,SHIP-526957,picked_up,2026-04-18 08:14:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526959,SHIP-526957,arrived_at_facility,2026-04-18 16:14:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-526960,SHIP-526957,in_transit,2026-04-19 15:14:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-526961,SHIP-526957,out_for_delivery,2026-04-22 08:02:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526962,SHIP-526957,delivered,2026-04-22 13:35:00,"1684 Broadway, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
+SE-526967,SHIP-526966,picked_up,2026-04-11 08:02:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526968,SHIP-526966,arrived_at_facility,2026-04-12 02:02:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526969,SHIP-526966,in_transit,2026-04-12 11:02:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-526970,SHIP-526966,out_for_delivery,2026-04-15 09:52:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526971,SHIP-526966,delivered,2026-04-15 12:42:00,"4643 Cedar St, Sacramento, CA 95822",Package delivered successfully. Customer signature obtained.
+SE-526976,SHIP-526975,picked_up,2026-05-06 06:36:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526977,SHIP-526975,arrived_at_facility,2026-05-06 20:36:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526978,SHIP-526975,in_transit,2026-05-07 15:36:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-526979,SHIP-526975,out_for_delivery,2026-05-07 07:14:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526980,SHIP-526975,delivered,2026-05-07 12:44:00,"6628 Broadway, Sacramento, CA 95814",Package delivered successfully. Left at front door/porch.
+SE-526985,SHIP-526984,picked_up,2026-04-06 00:00:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-526986,SHIP-526984,arrived_at_facility,2026-04-06 11:00:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-526987,SHIP-526984,in_transit,2026-04-07 06:00:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-526988,SHIP-526984,out_for_delivery,2026-04-07 05:58:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526989,SHIP-526984,delivered,2026-04-07 08:43:00,"4133 Pine St, Fremont, CA 94538",Package delivered successfully to recipient address.
+SE-526994,SHIP-526993,picked_up,2026-04-17 04:49:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-526995,SHIP-526993,arrived_at_facility,2026-04-17 16:49:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-526996,SHIP-526993,in_transit,2026-04-18 15:49:00,"En Route to Long Beach, CA",Shipment in transit to destination hub.
+SE-526997,SHIP-526993,out_for_delivery,2026-04-18 01:32:00,"Long Beach, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-526998,SHIP-526993,delivered,2026-04-18 07:08:00,"8990 Main St, Long Beach, CA 90802",Package delivered successfully to recipient address.
+SE-527003,SHIP-527002,picked_up,2026-02-19 23:45:00,"Fresno, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527004,SHIP-527002,arrived_at_facility,2026-02-20 09:45:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527005,SHIP-527002,in_transit,2026-02-20 19:45:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527006,SHIP-527002,out_for_delivery,2026-02-23 02:20:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527007,SHIP-527002,delivered,2026-02-23 06:42:00,"541 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-527012,SHIP-527011,picked_up,2026-04-12 22:45:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527013,SHIP-527011,arrived_at_facility,2026-04-13 04:45:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527014,SHIP-527011,in_transit,2026-04-14 03:45:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527015,SHIP-527011,out_for_delivery,2026-04-17 00:56:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527016,SHIP-527011,delivered,2026-04-17 05:25:00,"7914 Market St, Anaheim, CA 92801",Package delivered successfully to recipient address.
+SE-527021,SHIP-527020,picked_up,2026-04-05 17:39:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527022,SHIP-527020,arrived_at_facility,2026-04-06 06:39:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527023,SHIP-527020,in_transit,2026-04-06 17:39:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-527024,SHIP-527020,out_for_delivery,2026-04-06 17:16:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527025,SHIP-527020,delivered,2026-04-06 21:54:00,"4111 Main St, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-527030,SHIP-527029,picked_up,2026-03-09 22:18:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527031,SHIP-527029,arrived_at_facility,2026-03-10 07:18:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527032,SHIP-527029,in_transit,2026-03-10 21:18:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527033,SHIP-527029,out_for_delivery,2026-03-14 00:34:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527034,SHIP-527029,delivered,2026-03-14 04:47:00,"4445 Park Blvd, Anaheim, CA 92801",Package delivered successfully. Customer signature obtained.
+SE-527039,SHIP-527038,picked_up,2026-04-15 02:38:00,"Ontario, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527040,SHIP-527038,arrived_at_facility,2026-04-15 15:38:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527041,SHIP-527038,in_transit,2026-04-16 07:38:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527042,SHIP-527038,out_for_delivery,2026-04-16 05:52:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527043,SHIP-527038,delivered,2026-04-16 08:10:00,"4841 Mission St, Sacramento, CA 95822",Package delivered successfully to recipient address.
+SE-527048,SHIP-527047,picked_up,2026-05-13 13:49:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527049,SHIP-527047,arrived_at_facility,2026-05-14 04:49:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527050,SHIP-527047,in_transit,2026-05-14 22:49:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527051,SHIP-527047,out_for_delivery,2026-05-15 15:13:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527052,SHIP-527047,delivered,2026-05-15 18:48:00,"9660 El Camino Real, Bakersfield, CA 93301",Package delivered successfully to recipient address.
+SE-527057,SHIP-527056,picked_up,2026-07-02 23:53:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527058,SHIP-527056,arrived_at_facility,2026-07-03 07:53:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527059,SHIP-527056,in_transit,2026-07-04 07:53:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-527060,SHIP-527056,out_for_delivery,2026-07-04 01:04:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527061,SHIP-527056,delivered,2026-07-04 06:23:00,"1738 Mission St, Fremont, CA 94538",Package delivered successfully to recipient address.
+SE-527066,SHIP-527065,picked_up,2026-02-10 07:07:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527067,SHIP-527065,arrived_at_facility,2026-02-10 18:07:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527068,SHIP-527065,in_transit,2026-02-11 07:07:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527069,SHIP-527065,out_for_delivery,2026-02-14 07:47:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527070,SHIP-527065,delivered,2026-02-14 13:31:00,"4445 Park Blvd, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
+SE-527075,SHIP-527074,picked_up,2026-06-21 06:51:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527076,SHIP-527074,arrived_at_facility,2026-06-21 17:51:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527077,SHIP-527074,in_transit,2026-06-22 05:51:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527078,SHIP-527074,out_for_delivery,2026-06-25 08:31:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527079,SHIP-527074,delivered,2026-06-25 12:43:00,"4633 Market St, Bakersfield, CA 93301",Package delivered successfully. Customer signature obtained.
+SE-527084,SHIP-527083,picked_up,2026-02-22 05:32:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527085,SHIP-527083,arrived_at_facility,2026-02-22 18:32:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527086,SHIP-527083,in_transit,2026-02-23 05:32:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-527087,SHIP-527083,out_for_delivery,2026-02-26 07:07:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527088,SHIP-527083,delivered,2026-02-26 10:17:00,"8665 Broadway, Fremont, CA 94538",Package delivered successfully. Customer signature obtained.
+SE-527093,SHIP-527092,picked_up,2026-03-14 08:27:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527094,SHIP-527092,arrived_at_facility,2026-03-14 18:27:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527095,SHIP-527092,in_transit,2026-03-15 05:27:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527096,SHIP-527092,out_for_delivery,2026-03-17 05:59:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527097,SHIP-527092,delivered,2026-03-17 10:27:00,"7914 Market St, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
+SE-527102,SHIP-527101,picked_up,2026-07-16 08:44:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527103,SHIP-527101,arrived_at_facility,2026-07-16 22:44:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527104,SHIP-527101,in_transit,2026-07-17 16:44:00,"En Route to Oakland, CA",Shipment in transit to destination hub.
+SE-527105,SHIP-527101,out_for_delivery,2026-07-20 14:36:00,"Oakland, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527106,SHIP-527101,delivered,2026-07-20 17:11:00,"6753 First St, Oakland, CA 94601",Package delivered successfully. Customer signature obtained.
+SE-527111,SHIP-527110,picked_up,2026-03-21 02:16:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527112,SHIP-527110,arrived_at_facility,2026-03-21 14:16:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527113,SHIP-527110,in_transit,2026-03-22 14:16:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527114,SHIP-527110,out_for_delivery,2026-03-25 02:09:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527115,SHIP-527110,delivered,2026-03-25 06:26:00,"9660 El Camino Real, Bakersfield, CA 93301",Package delivered successfully to recipient address.
+SE-527120,SHIP-527119,picked_up,2026-05-07 12:21:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527121,SHIP-527119,arrived_at_facility,2026-05-07 18:21:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527122,SHIP-527119,in_transit,2026-05-08 18:21:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527123,SHIP-527119,out_for_delivery,2026-05-08 14:42:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527124,SHIP-527119,delivered,2026-05-08 18:28:00,"2244 Oak St, Anaheim, CA 92801",Package delivered successfully to recipient address.
+SE-527129,SHIP-527128,picked_up,2026-03-12 11:59:00,"Sacramento, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527130,SHIP-527128,arrived_at_facility,2026-03-12 17:59:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527131,SHIP-527128,in_transit,2026-03-13 07:59:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527132,SHIP-527128,out_for_delivery,2026-03-13 15:03:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527133,SHIP-527128,delivered,2026-03-13 17:15:00,"6375 Maple Ave, Sacramento, CA 95822",Package delivered successfully to recipient address.
+SE-527138,SHIP-527137,picked_up,2026-05-01 14:02:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527139,SHIP-527137,arrived_at_facility,2026-05-02 04:02:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527140,SHIP-527137,in_transit,2026-05-03 00:02:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-527141,SHIP-527137,out_for_delivery,2026-05-04 12:49:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527142,SHIP-527137,delivered,2026-05-04 16:13:00,"1994 El Camino Real, Santa Ana, CA 92701",Package delivered successfully. Customer signature obtained.
+SE-527147,SHIP-527146,picked_up,2026-02-07 10:05:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527148,SHIP-527146,arrived_at_facility,2026-02-08 02:05:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527149,SHIP-527146,in_transit,2026-02-08 11:05:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527150,SHIP-527146,out_for_delivery,2026-02-08 12:31:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527151,SHIP-527146,delivered,2026-02-08 15:43:00,"3757 Grand Ave, Sacramento, CA 95822",Package delivered successfully. Customer signature obtained.
+SE-527156,SHIP-527155,picked_up,2026-05-25 04:40:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527157,SHIP-527155,arrived_at_facility,2026-05-25 19:40:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527158,SHIP-527155,in_transit,2026-05-26 08:40:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527159,SHIP-527155,out_for_delivery,2026-05-28 01:30:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527160,SHIP-527155,delivered,2026-05-28 07:15:00,"6628 Broadway, Sacramento, CA 95814",Package delivered successfully. Left at front door/porch.
+SE-527165,SHIP-527164,picked_up,2026-02-14 03:48:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527166,SHIP-527164,arrived_at_facility,2026-02-14 11:48:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527167,SHIP-527164,in_transit,2026-02-15 07:48:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-527168,SHIP-527164,out_for_delivery,2026-02-18 06:55:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527169,SHIP-527164,delivered,2026-02-18 10:21:00,"7711 Market St, Santa Ana, CA 92701",Package delivered successfully to recipient address.
+SE-527174,SHIP-527173,picked_up,2026-04-27 09:42:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527175,SHIP-527173,arrived_at_facility,2026-04-27 18:42:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527176,SHIP-527173,in_transit,2026-04-28 05:42:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527177,SHIP-527173,out_for_delivery,2026-04-28 08:16:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527178,SHIP-527173,delivered,2026-04-28 13:41:00,"1688 Oak St, San Diego, CA 92109",Package delivered successfully. Left at front door/porch.
+SE-527183,SHIP-527182,picked_up,2026-05-14 08:50:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527184,SHIP-527182,arrived_at_facility,2026-05-14 17:50:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527185,SHIP-527182,in_transit,2026-05-15 05:50:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527186,SHIP-527182,out_for_delivery,2026-05-15 13:19:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527187,SHIP-527182,delivered,2026-05-15 15:45:00,"1688 Oak St, San Diego, CA 92109",Package delivered successfully. Left at front door/porch.
+SE-527192,SHIP-527191,picked_up,2026-07-01 14:49:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527193,SHIP-527191,arrived_at_facility,2026-07-02 04:49:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527194,SHIP-527191,in_transit,2026-07-02 13:49:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527195,SHIP-527191,out_for_delivery,2026-07-05 16:33:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527196,SHIP-527191,delivered,2026-07-05 18:47:00,"7914 Market St, Anaheim, CA 92801",Package delivered successfully. Customer signature obtained.
+SE-527201,SHIP-527200,picked_up,2026-02-03 12:36:00,"Sacramento, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527202,SHIP-527200,arrived_at_facility,2026-02-03 22:36:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527203,SHIP-527200,in_transit,2026-02-04 15:36:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527204,SHIP-527200,out_for_delivery,2026-02-04 16:40:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527205,SHIP-527200,delivered,2026-02-04 19:22:00,"4841 Mission St, Sacramento, CA 95822",Package delivered successfully. Left at front door/porch.
+SE-527210,SHIP-527209,picked_up,2026-03-19 10:35:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527211,SHIP-527209,arrived_at_facility,2026-03-20 02:35:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527212,SHIP-527209,in_transit,2026-03-20 11:35:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527213,SHIP-527209,out_for_delivery,2026-03-20 15:54:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527214,SHIP-527209,delivered,2026-03-20 18:29:00,"5509 Pine St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-527219,SHIP-527218,picked_up,2026-05-09 12:59:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527220,SHIP-527218,arrived_at_facility,2026-05-10 04:59:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527221,SHIP-527218,in_transit,2026-05-10 13:59:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527222,SHIP-527218,out_for_delivery,2026-05-12 16:05:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527223,SHIP-527218,delivered,2026-05-12 19:35:00,"2762 Cedar St, Sacramento, CA 95822",Package delivered successfully. Customer signature obtained.
+SE-527228,SHIP-527227,picked_up,2026-03-27 08:04:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527229,SHIP-527227,arrived_at_facility,2026-03-27 23:04:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527230,SHIP-527227,in_transit,2026-03-28 19:04:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527231,SHIP-527227,out_for_delivery,2026-03-30 10:42:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527232,SHIP-527227,delivered,2026-03-30 14:53:00,"6973 Sunset Blvd, Chula Vista, CA 91910",Package delivered successfully. Customer signature obtained.
+SE-527237,SHIP-527236,picked_up,2026-05-28 13:03:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527238,SHIP-527236,arrived_at_facility,2026-05-28 23:03:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527239,SHIP-527236,in_transit,2026-05-29 21:03:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527240,SHIP-527236,out_for_delivery,2026-05-29 10:36:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527241,SHIP-527236,delivered,2026-05-29 15:03:00,"3144 Mission St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-527246,SHIP-527245,picked_up,2026-03-06 18:02:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527247,SHIP-527245,arrived_at_facility,2026-03-07 02:02:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527248,SHIP-527245,in_transit,2026-03-07 22:02:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527249,SHIP-527245,out_for_delivery,2026-03-08 21:17:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527250,SHIP-527245,delivered,2026-03-09 00:35:00,"871 Washington St, San Diego, CA 92101",Package delivered successfully. Customer signature obtained.
+SE-527255,SHIP-527254,picked_up,2026-04-20 06:31:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527256,SHIP-527254,arrived_at_facility,2026-04-20 21:31:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527257,SHIP-527254,in_transit,2026-04-21 17:31:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527258,SHIP-527254,out_for_delivery,2026-04-21 07:14:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527259,SHIP-527254,delivered,2026-04-21 11:52:00,"3144 Mission St, San Diego, CA 92101",Package delivered successfully. Customer signature obtained.
+SE-527264,SHIP-527263,picked_up,2026-05-23 09:49:00,"Sacramento, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527265,SHIP-527263,arrived_at_facility,2026-05-23 17:49:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527266,SHIP-527263,in_transit,2026-05-24 01:49:00,"En Route to Fresno, CA",Shipment in transit to destination hub.
+SE-527267,SHIP-527263,out_for_delivery,2026-05-25 11:00:00,"Fresno, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527268,SHIP-527263,delivered,2026-05-25 16:23:00,"8380 Main St, Fresno, CA 93701",Package delivered successfully. Customer signature obtained.
+SE-527273,SHIP-527272,picked_up,2026-04-17 12:00:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527274,SHIP-527272,arrived_at_facility,2026-04-18 05:00:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527275,SHIP-527272,in_transit,2026-04-18 15:00:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-527276,SHIP-527272,out_for_delivery,2026-04-18 17:58:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527277,SHIP-527272,delivered,2026-04-18 20:23:00,"5167 Oak St, Santa Ana, CA 92701",Package delivered successfully to recipient address.
+SE-527282,SHIP-527281,picked_up,2026-03-16 17:07:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527283,SHIP-527281,arrived_at_facility,2026-03-17 09:07:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527284,SHIP-527281,in_transit,2026-03-18 09:07:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527285,SHIP-527281,out_for_delivery,2026-03-20 19:24:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527286,SHIP-527281,delivered,2026-03-20 22:56:00,"9038 Market St, San Jose, CA 95110",Package delivered successfully. Left at front door/porch.
+SE-527291,SHIP-527290,picked_up,2026-06-04 21:10:00,"Ontario, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527292,SHIP-527290,arrived_at_facility,2026-06-05 07:10:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527293,SHIP-527290,in_transit,2026-06-05 16:10:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527294,SHIP-527290,out_for_delivery,2026-06-08 23:03:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527295,SHIP-527290,delivered,2026-06-09 01:14:00,"5674 Ocean Ave, Bakersfield, CA 93301",Package delivered successfully to recipient address.
+SE-527300,SHIP-527299,picked_up,2026-07-16 23:12:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527301,SHIP-527299,arrived_at_facility,2026-07-17 11:12:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527302,SHIP-527299,in_transit,2026-07-18 07:12:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527303,SHIP-527299,out_for_delivery,2026-07-19 02:26:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527304,SHIP-527299,delivered,2026-07-19 04:49:00,"4633 Market St, Bakersfield, CA 93301",Package delivered successfully to recipient address.
+SE-527309,SHIP-527308,picked_up,2026-04-14 11:42:00,"Sacramento, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527310,SHIP-527308,arrived_at_facility,2026-04-15 02:42:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527311,SHIP-527308,in_transit,2026-04-15 15:42:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527312,SHIP-527308,out_for_delivery,2026-04-17 15:22:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527313,SHIP-527308,delivered,2026-04-17 20:11:00,"1688 Oak St, San Diego, CA 92109",Package delivered successfully. Customer signature obtained.
+SE-527318,SHIP-527317,picked_up,2026-07-23 22:08:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527319,SHIP-527317,arrived_at_facility,2026-07-24 06:08:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527320,SHIP-527317,in_transit,2026-07-25 00:08:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527321,SHIP-527317,out_for_delivery,2026-07-27 20:27:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527322,SHIP-527317,delivered,2026-07-28 02:16:00,"9392 Park Blvd, Sacramento, CA 95814",Package delivered successfully to recipient address.
+SE-527327,SHIP-527326,picked_up,2026-05-04 09:46:00,"Oakland, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527328,SHIP-527326,arrived_at_facility,2026-05-04 22:46:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527329,SHIP-527326,in_transit,2026-05-05 21:46:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527330,SHIP-527326,out_for_delivery,2026-05-07 10:49:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527331,SHIP-527326,delivered,2026-05-07 13:35:00,"4841 Mission St, Sacramento, CA 95822",Package delivered successfully. Customer signature obtained.
+SE-527336,SHIP-527335,picked_up,2026-04-11 12:36:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527337,SHIP-527335,arrived_at_facility,2026-04-12 03:36:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527338,SHIP-527335,in_transit,2026-04-13 00:36:00,"En Route to Stockton, CA",Shipment in transit to destination hub.
+SE-527339,SHIP-527335,out_for_delivery,2026-04-14 17:32:00,"Stockton, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527340,SHIP-527335,delivered,2026-04-14 21:21:00,"8769 Ocean Ave, Stockton, CA 95202",Package delivered successfully. Customer signature obtained.
+SE-527345,SHIP-527344,picked_up,2026-03-26 04:35:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527346,SHIP-527344,arrived_at_facility,2026-03-26 22:35:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527347,SHIP-527344,in_transit,2026-03-27 18:35:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527348,SHIP-527344,out_for_delivery,2026-03-29 07:31:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527349,SHIP-527344,delivered,2026-03-29 12:50:00,"6226 Cedar St, San Jose, CA 95110",Package delivered successfully. Customer signature obtained.
+SE-527354,SHIP-527353,picked_up,2026-07-13 11:45:00,"Ontario, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527355,SHIP-527353,arrived_at_facility,2026-07-13 20:45:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527356,SHIP-527353,in_transit,2026-07-14 19:45:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527357,SHIP-527353,out_for_delivery,2026-07-15 13:07:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527358,SHIP-527353,delivered,2026-07-15 17:37:00,"541 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-527363,SHIP-527362,picked_up,2026-04-29 02:56:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527364,SHIP-527362,arrived_at_facility,2026-04-29 12:56:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527365,SHIP-527362,in_transit,2026-04-29 22:56:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-527366,SHIP-527362,out_for_delivery,2026-05-02 02:25:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527367,SHIP-527362,delivered,2026-05-02 06:51:00,"8665 Broadway, Fremont, CA 94538",Package delivered successfully to recipient address.
+SE-527372,SHIP-527371,picked_up,2026-05-08 05:23:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527373,SHIP-527371,arrived_at_facility,2026-05-08 17:23:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527374,SHIP-527371,in_transit,2026-05-09 05:23:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527375,SHIP-527371,out_for_delivery,2026-05-11 08:16:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527376,SHIP-527371,delivered,2026-05-11 13:30:00,"9392 Park Blvd, Sacramento, CA 95814",Package delivered successfully. Customer signature obtained.
+SE-527381,SHIP-527380,picked_up,2026-06-13 21:18:00,"Fresno, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527382,SHIP-527380,arrived_at_facility,2026-06-14 10:18:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527383,SHIP-527380,in_transit,2026-06-15 00:18:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527384,SHIP-527380,out_for_delivery,2026-06-18 01:45:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527385,SHIP-527380,delivered,2026-06-18 04:01:00,"7360 Cedar St, San Diego, CA 92101",Package delivered successfully to recipient address.
+SE-527390,SHIP-527389,picked_up,2026-03-05 07:24:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527391,SHIP-527389,arrived_at_facility,2026-03-05 17:24:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527392,SHIP-527389,in_transit,2026-03-06 02:24:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527393,SHIP-527389,out_for_delivery,2026-03-07 11:08:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527394,SHIP-527389,delivered,2026-03-07 14:49:00,"6226 Cedar St, San Jose, CA 95110",Package delivered successfully. Customer signature obtained.
+SE-527399,SHIP-527398,picked_up,2026-03-02 06:45:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527400,SHIP-527398,arrived_at_facility,2026-03-02 12:45:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527401,SHIP-527398,in_transit,2026-03-03 08:45:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527402,SHIP-527398,out_for_delivery,2026-03-05 04:57:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527403,SHIP-527398,delivered,2026-03-05 09:47:00,"4165 Ocean Ave, Bakersfield, CA 93301",Package delivered successfully. Customer signature obtained.
+SE-527408,SHIP-527407,picked_up,2026-05-19 08:19:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527409,SHIP-527407,arrived_at_facility,2026-05-19 20:19:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527410,SHIP-527407,in_transit,2026-05-20 07:19:00,"En Route to Stockton, CA",Shipment in transit to destination hub.
+SE-527411,SHIP-527407,out_for_delivery,2026-05-20 05:35:00,"Stockton, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527412,SHIP-527407,delivered,2026-05-20 11:24:00,"8802 First St, Stockton, CA 95202",Package delivered successfully to recipient address.
+SE-527417,SHIP-527416,picked_up,2026-04-22 16:29:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527418,SHIP-527416,arrived_at_facility,2026-04-23 07:29:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527419,SHIP-527416,in_transit,2026-04-23 17:29:00,"En Route to Riverside, CA",Shipment in transit to destination hub.
+SE-527420,SHIP-527416,out_for_delivery,2026-04-23 15:35:00,"Riverside, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527421,SHIP-527416,delivered,2026-04-23 21:14:00,"2764 Broadway, Riverside, CA 92501",Package delivered successfully. Left at front door/porch.
+SE-527426,SHIP-527425,picked_up,2026-05-04 20:46:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527427,SHIP-527425,arrived_at_facility,2026-05-05 13:46:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527428,SHIP-527425,in_transit,2026-05-06 10:46:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527429,SHIP-527425,out_for_delivery,2026-05-06 00:07:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527430,SHIP-527425,delivered,2026-05-06 03:37:00,"9076 Main St, Bakersfield, CA 93301",Package delivered successfully. Customer signature obtained.
+SE-527435,SHIP-527434,picked_up,2026-05-19 03:36:00,"Fresno, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527436,SHIP-527434,arrived_at_facility,2026-05-19 13:36:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527437,SHIP-527434,in_transit,2026-05-20 06:36:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527438,SHIP-527434,out_for_delivery,2026-05-20 04:09:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527439,SHIP-527434,delivered,2026-05-20 07:48:00,"4445 Park Blvd, Anaheim, CA 92801",Package delivered successfully to recipient address.
+SE-527444,SHIP-527443,picked_up,2026-07-03 12:19:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527445,SHIP-527443,arrived_at_facility,2026-07-03 20:19:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527446,SHIP-527443,in_transit,2026-07-04 12:19:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527447,SHIP-527443,out_for_delivery,2026-07-07 15:10:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527448,SHIP-527443,delivered,2026-07-07 17:22:00,"5894 Cedar St, San Diego, CA 92109",Package delivered successfully to recipient address.
+SE-527453,SHIP-527452,picked_up,2026-07-18 17:15:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527454,SHIP-527452,arrived_at_facility,2026-07-19 03:15:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527455,SHIP-527452,in_transit,2026-07-19 18:15:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527456,SHIP-527452,out_for_delivery,2026-07-21 19:21:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527457,SHIP-527452,delivered,2026-07-21 21:43:00,"7360 Cedar St, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-527462,SHIP-527461,picked_up,2026-06-30 21:03:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527463,SHIP-527461,arrived_at_facility,2026-07-01 14:03:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527464,SHIP-527461,in_transit,2026-07-02 05:03:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527465,SHIP-527461,out_for_delivery,2026-07-03 19:33:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527466,SHIP-527461,delivered,2026-07-04 00:08:00,"6226 Cedar St, San Jose, CA 95110",Package delivered successfully. Customer signature obtained.
+SE-527471,SHIP-527470,picked_up,2026-02-14 15:22:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527472,SHIP-527470,arrived_at_facility,2026-02-15 01:22:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527473,SHIP-527470,in_transit,2026-02-15 11:22:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527474,SHIP-527470,out_for_delivery,2026-02-15 19:45:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527475,SHIP-527470,delivered,2026-02-15 21:59:00,"9076 Main St, Bakersfield, CA 93301",Package delivered successfully. Left at front door/porch.
+SE-527480,SHIP-527479,picked_up,2026-07-17 12:19:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527481,SHIP-527479,arrived_at_facility,2026-07-17 20:19:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527482,SHIP-527479,in_transit,2026-07-18 05:19:00,"En Route to Fresno, CA",Shipment in transit to destination hub.
+SE-527483,SHIP-527479,out_for_delivery,2026-07-20 13:19:00,"Fresno, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527484,SHIP-527479,delivered,2026-07-20 16:47:00,"8053 Sunset Blvd, Fresno, CA 93701",Package delivered successfully. Customer signature obtained.
+SE-527489,SHIP-527488,picked_up,2026-05-18 06:35:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527490,SHIP-527488,arrived_at_facility,2026-05-18 17:35:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527491,SHIP-527488,in_transit,2026-05-19 08:35:00,"En Route to Santa Ana, CA",Shipment in transit to destination hub.
+SE-527492,SHIP-527488,out_for_delivery,2026-05-21 07:09:00,"Santa Ana, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527493,SHIP-527488,delivered,2026-05-21 09:36:00,"7711 Market St, Santa Ana, CA 92701",Package delivered successfully. Left at front door/porch.
+SE-527498,SHIP-527497,picked_up,2026-06-02 06:36:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527499,SHIP-527497,arrived_at_facility,2026-06-02 23:36:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527500,SHIP-527497,in_transit,2026-06-03 18:36:00,"En Route to Riverside, CA",Shipment in transit to destination hub.
+SE-527501,SHIP-527497,out_for_delivery,2026-06-05 08:51:00,"Riverside, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527502,SHIP-527497,delivered,2026-06-05 12:37:00,"2764 Broadway, Riverside, CA 92501",Package delivered successfully. Left at front door/porch.
+SE-527507,SHIP-527506,picked_up,2026-06-08 05:49:00,"Ontario, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527508,SHIP-527506,arrived_at_facility,2026-06-08 13:49:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527509,SHIP-527506,in_transit,2026-06-09 00:49:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-527510,SHIP-527506,out_for_delivery,2026-06-10 08:20:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527511,SHIP-527506,delivered,2026-06-10 12:34:00,"3850 Mission St, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-527516,SHIP-527515,picked_up,2026-08-01 08:32:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527517,SHIP-527515,arrived_at_facility,2026-08-02 01:32:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527518,SHIP-527515,in_transit,2026-08-02 09:32:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527519,SHIP-527515,out_for_delivery,2026-08-04 05:57:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527520,SHIP-527515,delivered,2026-08-04 11:43:00,"5894 Cedar St, San Diego, CA 92109",Package delivered successfully. Left at front door/porch.
+SE-527525,SHIP-527524,picked_up,2026-03-20 13:28:00,"Ontario, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527526,SHIP-527524,arrived_at_facility,2026-03-21 07:28:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527527,SHIP-527524,in_transit,2026-03-21 18:28:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527528,SHIP-527524,out_for_delivery,2026-03-21 15:31:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527529,SHIP-527524,delivered,2026-03-21 17:44:00,"1684 Broadway, Anaheim, CA 92801",Package delivered successfully. Customer signature obtained.
+SE-527534,SHIP-527533,picked_up,2026-05-25 17:09:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527535,SHIP-527533,arrived_at_facility,2026-05-26 05:09:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527536,SHIP-527533,in_transit,2026-05-26 18:09:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527537,SHIP-527533,out_for_delivery,2026-05-26 18:34:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527538,SHIP-527533,delivered,2026-05-26 21:19:00,"4165 Ocean Ave, Bakersfield, CA 93301",Package delivered successfully. Left at front door/porch.
+SE-527543,SHIP-527542,picked_up,2026-04-29 14:47:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527544,SHIP-527542,arrived_at_facility,2026-04-30 05:47:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527545,SHIP-527542,in_transit,2026-05-01 04:47:00,"En Route to Stockton, CA",Shipment in transit to destination hub.
+SE-527546,SHIP-527542,out_for_delivery,2026-04-30 13:59:00,"Stockton, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527547,SHIP-527542,delivered,2026-04-30 17:12:00,"2440 Ocean Ave, Stockton, CA 95202",Package delivered successfully. Left at front door/porch.
+SE-527552,SHIP-527551,picked_up,2026-02-01 22:07:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527553,SHIP-527551,arrived_at_facility,2026-02-02 10:07:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527554,SHIP-527551,in_transit,2026-02-03 05:07:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-527555,SHIP-527551,out_for_delivery,2026-02-05 21:52:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527556,SHIP-527551,delivered,2026-02-06 01:30:00,"5150 Broadway, Los Angeles, CA 90012",Package delivered successfully. Customer signature obtained.
+SE-527561,SHIP-527560,picked_up,2026-04-10 01:36:00,"Fresno, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527562,SHIP-527560,arrived_at_facility,2026-04-10 10:36:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527563,SHIP-527560,in_transit,2026-04-11 09:36:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527564,SHIP-527560,out_for_delivery,2026-04-14 04:17:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527565,SHIP-527560,delivered,2026-04-14 08:32:00,"2145 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-527570,SHIP-527569,picked_up,2026-02-10 13:55:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527571,SHIP-527569,arrived_at_facility,2026-02-11 07:55:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527572,SHIP-527569,in_transit,2026-02-11 17:55:00,"En Route to Irvine, CA",Shipment in transit to destination hub.
+SE-527573,SHIP-527569,out_for_delivery,2026-02-13 19:19:00,"Irvine, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527574,SHIP-527569,delivered,2026-02-13 21:53:00,"3744 Sunset Blvd, Irvine, CA 92618",Package delivered successfully to recipient address.
+SE-527579,SHIP-527578,picked_up,2026-05-14 15:08:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527580,SHIP-527578,arrived_at_facility,2026-05-15 04:08:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527581,SHIP-527578,in_transit,2026-05-16 03:08:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527582,SHIP-527578,out_for_delivery,2026-05-17 18:28:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527583,SHIP-527578,delivered,2026-05-17 20:49:00,"9983 Park Blvd, Chula Vista, CA 91910",Package delivered successfully. Left at front door/porch.
+SE-527588,SHIP-527587,picked_up,2026-05-16 04:02:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527589,SHIP-527587,arrived_at_facility,2026-05-16 12:02:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527590,SHIP-527587,in_transit,2026-05-17 05:02:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-527591,SHIP-527587,out_for_delivery,2026-05-17 06:46:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527592,SHIP-527587,delivered,2026-05-17 12:16:00,"4133 Pine St, Fremont, CA 94538",Package delivered successfully to recipient address.
+SE-527597,SHIP-527596,picked_up,2026-05-19 18:54:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527598,SHIP-527596,arrived_at_facility,2026-05-20 00:54:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527599,SHIP-527596,in_transit,2026-05-20 15:54:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527600,SHIP-527596,out_for_delivery,2026-05-22 00:27:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527601,SHIP-527596,delivered,2026-05-22 03:06:00,"3144 Mission St, San Diego, CA 92101",Package delivered successfully. Customer signature obtained.
+SE-527606,SHIP-527605,picked_up,2026-05-05 08:17:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527607,SHIP-527605,arrived_at_facility,2026-05-06 01:17:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527608,SHIP-527605,in_transit,2026-05-06 11:17:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527609,SHIP-527605,out_for_delivery,2026-05-08 11:59:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527610,SHIP-527605,delivered,2026-05-08 16:10:00,"4841 Mission St, Sacramento, CA 95822",Package delivered successfully. Left at front door/porch.
+SE-527615,SHIP-527614,picked_up,2026-02-14 02:06:00,"Sacramento, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527616,SHIP-527614,arrived_at_facility,2026-02-14 18:06:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527617,SHIP-527614,in_transit,2026-02-15 10:06:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527618,SHIP-527614,out_for_delivery,2026-02-17 04:17:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527619,SHIP-527614,delivered,2026-02-17 09:51:00,"4165 Ocean Ave, Bakersfield, CA 93301",Package delivered successfully. Customer signature obtained.
+SE-527624,SHIP-527623,picked_up,2026-05-30 10:48:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527625,SHIP-527623,arrived_at_facility,2026-05-31 03:48:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527626,SHIP-527623,in_transit,2026-05-31 20:48:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527627,SHIP-527623,out_for_delivery,2026-06-02 12:10:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527628,SHIP-527623,delivered,2026-06-02 15:29:00,"7339 First St, San Jose, CA 95123",Package delivered successfully to recipient address.
+SE-527633,SHIP-527632,picked_up,2026-04-03 17:37:00,"Fresno, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527634,SHIP-527632,arrived_at_facility,2026-04-04 09:37:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527635,SHIP-527632,in_transit,2026-04-05 08:37:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527636,SHIP-527632,out_for_delivery,2026-04-05 20:29:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527637,SHIP-527632,delivered,2026-04-06 01:11:00,"4643 Cedar St, Sacramento, CA 95822",Package delivered successfully to recipient address.
+SE-527642,SHIP-527641,picked_up,2026-03-17 12:37:00,"Ontario, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527643,SHIP-527641,arrived_at_facility,2026-03-18 01:37:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527644,SHIP-527641,in_transit,2026-03-18 10:37:00,"En Route to Fremont, CA",Shipment in transit to destination hub.
+SE-527645,SHIP-527641,out_for_delivery,2026-03-21 18:04:00,"Fremont, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527646,SHIP-527641,delivered,2026-03-21 20:44:00,"1738 Mission St, Fremont, CA 94538",Package delivered successfully to recipient address.
+SE-527651,SHIP-527650,picked_up,2026-06-09 21:45:00,"Oakland, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527652,SHIP-527650,arrived_at_facility,2026-06-10 03:45:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527653,SHIP-527650,in_transit,2026-06-10 11:45:00,"En Route to Los Angeles, CA",Shipment in transit to destination hub.
+SE-527654,SHIP-527650,out_for_delivery,2026-06-11 20:58:00,"Los Angeles, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527655,SHIP-527650,delivered,2026-06-12 02:25:00,"3850 Mission St, Los Angeles, CA 90012",Package delivered successfully. Left at front door/porch.
+SE-527660,SHIP-527659,picked_up,2026-03-17 15:15:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527661,SHIP-527659,arrived_at_facility,2026-03-17 21:15:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527662,SHIP-527659,in_transit,2026-03-18 12:15:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527663,SHIP-527659,out_for_delivery,2026-03-19 14:26:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527664,SHIP-527659,delivered,2026-03-19 17:58:00,"1688 Oak St, San Diego, CA 92109",Package delivered successfully. Left at front door/porch.
+SE-527669,SHIP-527668,picked_up,2026-03-06 17:43:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527670,SHIP-527668,arrived_at_facility,2026-03-06 23:43:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527671,SHIP-527668,in_transit,2026-03-07 14:43:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527672,SHIP-527668,out_for_delivery,2026-03-08 22:50:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527673,SHIP-527668,delivered,2026-03-09 02:08:00,"4102 Broadway, San Diego, CA 92101",Package delivered successfully. Left at front door/porch.
+SE-527678,SHIP-527677,picked_up,2026-02-07 11:59:00,"Ontario, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527679,SHIP-527677,arrived_at_facility,2026-02-07 20:59:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527680,SHIP-527677,in_transit,2026-02-08 04:59:00,"En Route to San Diego, CA",Shipment in transit to destination hub.
+SE-527681,SHIP-527677,out_for_delivery,2026-02-11 14:32:00,"San Diego, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527682,SHIP-527677,delivered,2026-02-11 19:08:00,"1093 El Camino Real, San Diego, CA 92109",Package delivered successfully to recipient address.
+SE-527687,SHIP-527686,picked_up,2026-07-21 06:10:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527688,SHIP-527686,arrived_at_facility,2026-07-21 12:10:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527689,SHIP-527686,in_transit,2026-07-22 11:10:00,"En Route to Bakersfield, CA",Shipment in transit to destination hub.
+SE-527690,SHIP-527686,out_for_delivery,2026-07-25 06:40:00,"Bakersfield, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527691,SHIP-527686,delivered,2026-07-25 10:20:00,"9660 El Camino Real, Bakersfield, CA 93301",Package delivered successfully. Left at front door/porch.
+SE-527696,SHIP-527695,picked_up,2026-04-03 07:38:00,"Oakland, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527697,SHIP-527695,arrived_at_facility,2026-04-03 18:38:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527698,SHIP-527695,in_transit,2026-04-04 15:38:00,"En Route to Fresno, CA",Shipment in transit to destination hub.
+SE-527699,SHIP-527695,out_for_delivery,2026-04-06 14:05:00,"Fresno, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527700,SHIP-527695,delivered,2026-04-06 16:21:00,"8380 Main St, Fresno, CA 93701",Package delivered successfully. Customer signature obtained.
+SE-527705,SHIP-527704,picked_up,2026-02-03 22:03:00,"Oakland, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527706,SHIP-527704,arrived_at_facility,2026-02-04 15:03:00,"Oakland Sorting Hub, CA",Package received at regional sorting facility.
+SE-527707,SHIP-527704,in_transit,2026-02-05 00:03:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527708,SHIP-527704,out_for_delivery,2026-02-04 22:31:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527709,SHIP-527704,delivered,2026-02-05 01:47:00,"2145 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-527714,SHIP-527713,picked_up,2026-07-03 13:40:00,"Sacramento, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527715,SHIP-527713,arrived_at_facility,2026-07-04 00:40:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527716,SHIP-527713,in_transit,2026-07-05 00:40:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527717,SHIP-527713,out_for_delivery,2026-07-05 18:58:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527718,SHIP-527713,delivered,2026-07-05 21:35:00,"9612 Ocean Ave, San Jose, CA 95123",Package delivered successfully. Customer signature obtained.
+SE-527723,SHIP-527722,picked_up,2026-06-05 02:13:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527724,SHIP-527722,arrived_at_facility,2026-06-05 11:13:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527725,SHIP-527722,in_transit,2026-06-05 21:13:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527726,SHIP-527722,out_for_delivery,2026-06-09 02:27:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527727,SHIP-527722,delivered,2026-06-09 08:05:00,"4445 Park Blvd, Anaheim, CA 92801",Package delivered successfully. Customer signature obtained.
+SE-527732,SHIP-527731,picked_up,2026-05-26 20:31:00,"Ontario, CA",Shipment picked up by PacRoute Carriers from warehouse facility.
+SE-527733,SHIP-527731,arrived_at_facility,2026-05-27 09:31:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527734,SHIP-527731,in_transit,2026-05-28 03:31:00,"En Route to Chula Vista, CA",Shipment in transit to destination hub.
+SE-527735,SHIP-527731,out_for_delivery,2026-05-29 00:00:00,"Chula Vista, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527736,SHIP-527731,delivered,2026-05-29 04:13:00,"541 Park Blvd, Chula Vista, CA 91910",Package delivered successfully to recipient address.
+SE-527741,SHIP-527740,picked_up,2026-05-29 02:05:00,"Fresno, CA",Shipment picked up by GoldenPath Logistics from warehouse facility.
+SE-527742,SHIP-527740,arrived_at_facility,2026-05-29 17:05:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527743,SHIP-527740,in_transit,2026-05-30 07:05:00,"En Route to Sacramento, CA",Shipment in transit to destination hub.
+SE-527744,SHIP-527740,out_for_delivery,2026-06-02 01:04:00,"Sacramento, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527745,SHIP-527740,delivered,2026-06-02 04:21:00,"8886 Main St, Sacramento, CA 95814",Package delivered successfully. Left at front door/porch.
+SE-527750,SHIP-527749,picked_up,2026-03-29 04:39:00,"Ontario, CA",Shipment picked up by Sierra Parcel Network from warehouse facility.
+SE-527751,SHIP-527749,arrived_at_facility,2026-03-29 12:39:00,"Ontario Sorting Hub, CA",Package received at regional sorting facility.
+SE-527752,SHIP-527749,in_transit,2026-03-30 00:39:00,"En Route to Irvine, CA",Shipment in transit to destination hub.
+SE-527753,SHIP-527749,out_for_delivery,2026-03-31 09:42:00,"Irvine, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527754,SHIP-527749,delivered,2026-03-31 12:16:00,"3744 Sunset Blvd, Irvine, CA 92618",Package delivered successfully to recipient address.
+SE-527759,SHIP-527758,picked_up,2026-06-11 09:19:00,"Sacramento, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527760,SHIP-527758,arrived_at_facility,2026-06-12 02:19:00,"Sacramento Sorting Hub, CA",Package received at regional sorting facility.
+SE-527761,SHIP-527758,in_transit,2026-06-12 19:19:00,"En Route to San Jose, CA",Shipment in transit to destination hub.
+SE-527762,SHIP-527758,out_for_delivery,2026-06-13 08:40:00,"San Jose, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527763,SHIP-527758,delivered,2026-06-13 12:58:00,"4562 Ocean Ave, San Jose, CA 95110",Package delivered successfully to recipient address.
+SE-527768,SHIP-527767,picked_up,2026-06-10 15:46:00,"Fresno, CA",Shipment picked up by WestLine Express from warehouse facility.
+SE-527769,SHIP-527767,arrived_at_facility,2026-06-10 23:46:00,"Fresno Sorting Hub, CA",Package received at regional sorting facility.
+SE-527770,SHIP-527767,in_transit,2026-06-11 08:46:00,"En Route to Anaheim, CA",Shipment in transit to destination hub.
+SE-527771,SHIP-527767,out_for_delivery,2026-06-13 18:39:00,"Anaheim, CA",Package loaded onto delivery vehicle and out for delivery.
+SE-527772,SHIP-527767,delivered,2026-06-13 23:02:00,"6218 Main St, Anaheim, CA 92801",Package delivered successfully. Left at front door/porch.
