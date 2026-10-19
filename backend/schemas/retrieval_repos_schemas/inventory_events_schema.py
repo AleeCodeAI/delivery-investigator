@@ -21,6 +21,6 @@ class InventoryEventSchema(BaseModel):
     event_timestamp: datetime = Field(
         description="Date and time when the inventory event occurred."
     )
-    related_order_id: str = Field(
+    related_order_id: str | None= Field(
         description="Identifier of the order associated with the event, or None if the event is not related to an order."
     )
