@@ -31,7 +31,7 @@ def fulfillment_evidence_tool(sku: str) -> FulfillmentEvidenceToolSchema:
         inventory_events: list[InventoryEventSchema] = get_inventory_events(
             sku=sku
         )
-        inventory: InventorySchema | None = get_inventory(sku=sku)
+        inventory: list[InventorySchema] | None = get_inventory(sku=sku)
 
         return FulfillmentEvidenceToolSchema(
                 inventory_events=inventory_events,
@@ -43,3 +43,9 @@ def fulfillment_evidence_tool(sku: str) -> FulfillmentEvidenceToolSchema:
             f"Error occurred while retrieving fulfillment evidence "
             f"for SKU {sku}: {exc}"
         ) from exc
+
+
+if __name__ == "__main__":
+    result = fulfillment_evidence_tool(sku="SKU-ELEC-1001")
+    print(result.inventory_events)
+    print(result.inventory)
