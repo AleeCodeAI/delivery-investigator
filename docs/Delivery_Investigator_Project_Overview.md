@@ -77,7 +77,7 @@ LLM Investigation Agent
                  |
                  +---- Tool 2: Fulfilment Evidence Tool
                  |         reads: inventory_events
-                 |         context (optional): inventory, warehouses
+                 |         context: inventory
                  |
                  v
           Evidence-based finding
@@ -138,10 +138,10 @@ The design includes **two conditional evidence tools**. Their final function sch
 
 | | Tool 1 — Address History | Tool 2 — Fulfilment Evidence |
 |---|---|---|
-| **Data it retrieves** | `customer_address_history` | `inventory_events` (primary); `inventory` and `warehouses` (optional context) |
-| **Scoped to** | The customer on the investigated order | The investigated order's SKU, warehouse, `related_order_id`, and a time window |
+| **Data it retrieves** | `customer_address_history` | `inventory_events` (primary); `inventory` as supporting context |
+| **Scoped to** | The customer on the investigated order | The investigated order's SKU |
 | **Trigger** | Destination differs from the current address | Label exists but no carrier pickup, and the reason is not in the shipment trail |
-| **Not available upfront** | Address history | Inventory events and inventory/warehouse context |
+| **Not available upfront** | Address history | `inventory_events` and supporting `inventory` context |
 
 ### Tool 1 — Retrieve Customer Address History
 
@@ -163,25 +163,20 @@ The design includes **two conditional evidence tools**. Their final function sch
 
 ### Tool 2 — Retrieve Fulfilment Evidence
 
-**Purpose:** Retrieve relevant `inventory_events` and, where useful, contextual inventory or warehouse information for the investigated order's SKU and a sensible time window.
+**Purpose:** Retrieve the relevant `inventory_events` for the investigated order's SKU. The agent already has the order's SKU from the upfront data and uses it to fetch the fulfilment evidence.
 
 **Data accessed:**
 
-- `inventory_events` — **primary evidence**, filtered to the order's SKU, fulfilling warehouse, and a time window around the order and shipment creation, using `related_order_id` to connect events to the order.
-- `inventory` — optional contextual snapshot for the same SKU/warehouse. It is current-state only and cannot prove historical stock.
-- `warehouses` — optional lookup of the warehouse name/location, included only when it helps interpretation. No separate warehouse tool is needed.
+- `inventory_events` — **the primary source** for this tool, filtered to the order's SKU. This is the main data source for Tool 2.
+- `inventory` — supporting data that may be returned alongside `inventory_events` as extra, beneficial context. It is current-state only and cannot prove historical stock. Returning `None` for `inventory` is acceptable when no supporting snapshot is available.
 
-None of this data is supplied upfront. The upfront data only shows that the order is `processing` and the shipment has a label but no pickup.
+For Tool 2 to produce valid output for the agent, `inventory_events` must be returned. `inventory` is optional supporting evidence and may be `None` without invalidating the tool result.
 
-**When to use it:** The upfront records show a pre-pickup stall—for example, a shipping label exists but no carrier pickup event is recorded—and the shipment trail does not explain the reason.
+**When to use it:** The upfront records show a pre-pickup stall and the shipment trail does not explain the reason.
 
-**What it helps establish:** Whether a recorded internal fulfilment event may explain why the order did not progress to carrier pickup. For example, a `quality_hold` event may indicate that a reserved item was placed on hold pending quality inspection.
+**What it helps establish:** Whether a recorded internal fulfilment event may explain why the order did not progress to carrier pickup.
 
-**Expected behaviour:** Constrain the lookup to relevant SKU, warehouse, order, and time-window evidence. Use event history and chronology for historical reasoning.
-
-**Important limitation:** A current inventory snapshot alone does not prove what stock was available at a historical point in time.
-
-**Do not call it** merely because a shipment is delayed if the tracking events already document a carrier delay. Do not add a separate warehouse tool just to retrieve a small static lookup.
+**Expected behaviour:** Fetch the relevant `inventory_events` for the SKU, and include `inventory` only as supplemental context when available.
 
 ### Tool-use decision rule
 
@@ -305,7 +300,7 @@ shipment_events(
 
 Events help establish the last known progress, recorded delays or failed attempts, and whether apparently conflicting statuses can be reconciled chronologically. `event_type` and `description` should be semantically consistent. Chronology must be read from `event_timestamp`, not from `event_id` order.
 
-### 5.6 `inventory_events` — *Tool 2 (primary evidence)*
+### 5.6 `inventory_events` — *Tool 2 (primary data source)*
 
 **Purpose:** Historical inventory movements that may explain a fulfilment stall.
 
@@ -313,7 +308,6 @@ Events help establish the last known progress, recorded delays or failed attempt
 inventory_events(
     event_id,
     sku,
-    warehouse_id,
     event_type,
     quantity_change,
     event_timestamp,
@@ -323,38 +317,22 @@ inventory_events(
 
 These events are especially relevant when an order has not progressed to carrier pickup. A synthetic `quality_hold` event may be used consistently to mean that a reserved item was placed on hold pending quality inspection. It should not be presented as a universal real-world carrier event code. **This table is not supplied upfront.**
 
-### 5.7 `inventory` — *Tool 2 (optional context)*
+### 5.7 `inventory` — *Tool 2 (supplementary context)*
 
-**Purpose:** Current stock and reservation snapshot by SKU and warehouse.
+**Purpose:** Current stock and reservation snapshot by SKU.
 
 ```text
 inventory(
     inventory_id,
     sku,
-    warehouse_id,
     stock_quantity,
     reserved_quantity
 )
 ```
 
-This table provides current inventory context only. Current quantities alone cannot establish historical stock availability. **Not supplied upfront.**
+This table provides additional context only. It is always supplied alongside `inventory_events` as useful supporting data, but current quantities alone cannot establish historical stock availability. **Not supplied upfront.**
 
-### 5.8 `warehouses` — *Tool 2 (optional context)*
-
-**Purpose:** Static lookup from warehouse ID to warehouse name and location.
-
-```text
-warehouses(
-    warehouse_id,
-    name,
-    city,
-    state
-)
-```
-
-Warehouse context can help interpret fulfilment evidence. A separate tool is not needed solely to retrieve this small static lookup. **Not supplied upfront.**
-
-### 5.9 Evaluation tables (outside the agent's data)
+### 5.8 Evaluation tables (outside the agent's data)
 
 For testing, two additional tables are kept **separate from the operational schema**. They are not part of the agent's data access beyond the first item below:
 
@@ -369,9 +347,8 @@ The supplied schema defines these relationships:
 - `customers.customer_id` → `orders.customer_id`
 - `orders.order_id` → `shipments.order_id` (the supplied design examples model one shipment per order)
 - `shipments.shipment_id` → `shipment_events.shipment_id`
-- `orders.fulfilled_from_warehouse_id` → `warehouses.warehouse_id`
-- `inventory` and `inventory_events` are interpreted using `sku` plus `warehouse_id`.
 - `inventory_events.related_order_id` can link an inventory event to an order.
+- `inventory` and `inventory_events` are interpreted using `sku` when relevant.
 
 ### How the data supports an investigation
 
@@ -383,8 +360,7 @@ The supplied schema defines these relationships:
 | What happened during the shipment journey? | `shipment_events` | Upfront |
 | Was the destination previously recorded, and when was it valid? | `customer_address_history` | Tool 1 |
 | Is there a recorded internal event that explains a pre-pickup stall? | `inventory_events` | Tool 2 |
-| What is the current stock/reservation context? | `inventory` | Tool 2 (optional context) |
-| Which warehouse is associated with the fulfilment evidence? | `warehouses` | Tool 2 (optional context) |
+| What is the current stock/reservation context? | `inventory` | Tool 2 (supplementary context) |
 
 Dates and timestamps should use a consistent convention. A blank or `NULL` value means that no value is recorded—for example, `delivered_at` may be empty for a shipment that has not been delivered. Synthetic address-validity periods should be coherent; gaps or overlaps should only be used when a scenario intentionally tests them.
 
@@ -416,7 +392,7 @@ A compact report should include:
 - “Carrier records show the parcel was left at the door. The records do not establish that the intended recipient received it.”
 - “No recent tracking event is recorded after the last scan. Delivery is not established, and the records do not explain the gap.”
 - “The order destination matches a historical address whose effective period ended before the order date. The records support use of a previously recorded address but do not establish why it was selected.”
-- “A `quality_hold` event is recorded for the order's SKU at the relevant warehouse before the expected pickup. This is consistent with the fulfilment stall.”
+- “A `quality_hold` event is recorded for the order's SKU before the expected pickup. This is consistent with the fulfilment stall.”
 
 Possibilities must not be presented as facts. For example, theft may be a possible explanation for non-receipt after a recorded doorstep delivery, but the tracking record alone does not prove theft.
 
@@ -447,7 +423,7 @@ Possibilities must not be presented as facts. For example, theft may be a possib
 - Use the existing eight-table database schema.
 - Supply `orders`, `customers`, `shipments`, and `shipment_events` for the investigated order up front.
 - Make `customer_address_history` available only through Tool 1.
-- Make `inventory_events` available only through Tool 2, with `inventory` and `warehouses` as optional context within that tool.
+- Make `inventory_events` the primary data source for Tool 2, with `inventory` provided as supplementary supporting context alongside it.
 - Use tools only when additional evidence could materially improve the investigation.
 - Keep two conditional tools: customer address history and fulfilment evidence.
 - Include genuine delivered-but-not-received cases.
@@ -458,7 +434,7 @@ Possibilities must not be presented as facts. For example, theft may be a possib
 
 ### Not yet settled
 
-- Final tool/function schemas and exact return payloads, including whether Tool 2 returns `inventory` and `warehouses` context at all.
+- Final tool/function schemas and exact return payloads, including the exact shape of the supplementary `inventory` context returned with `inventory_events`.
 - Agent framework, system prompt, and implementation details.
 - Company policy rules that a separate recommendation component might apply.
 - Exact confidence thresholds and evaluation metrics.
