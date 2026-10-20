@@ -5,7 +5,7 @@ from database.models import Inventory
 from schemas import InventorySchema
 
 
-def get_inventory(sku: str) -> list[InventorySchema]:
+def get_inventory(sku: str) -> list[InventorySchema] | None:
     """
     Retrieve inventory records for a specific SKU across warehouses.
 
@@ -26,9 +26,7 @@ def get_inventory(sku: str) -> list[InventorySchema]:
         inventory_rows = session.scalars(statement).all()
 
         if not inventory_rows:
-            raise LookupError(
-                f"No inventory records found for SKU: {sku}"
-            )
+            return None
 
         return [
             InventorySchema(
