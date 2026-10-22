@@ -9,6 +9,7 @@ from .retrieval_repos_schemas.inventory_schema import InventorySchema
 from .retrieval_repos_schemas.inventory_events_schema import InventoryEventSchema
 from .retrieval_repos_schemas.warehouse_schema import WarehouseSchema
 
-"================================ TOOL SCHEMAS ================================"
+"================================ OTHER SCHEMAS ================================"
 from .upfront_data_schema import UpfrontDataSchema
 from .fulfillment_evidence_tool_schema import FulfillmentEvidenceToolSchema
+from .investigation_agent_schema import AgentResult
