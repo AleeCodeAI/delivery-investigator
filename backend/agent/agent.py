@@ -39,9 +39,9 @@ class InvestigationAgent(Logger):
         self.settings = get_settings()
         self.prompt = PromptManager().get_agent_system_prompt()
         self.provider = OpenAIProvider(
-                base_url=self.settings.openrouter.base_url,
-                api_key=self.settings.openrouter.api_key,
-            )
+            base_url=self.settings.openrouter.base_url,
+            api_key=self.settings.openrouter.api_key,
+        )
         self.model = OpenAIChatModel(
             provider=self.provider,
             model_name=self.settings.openrouter.default_model
@@ -178,14 +178,14 @@ if __name__ == "__main__":
     import asyncio
 
     upfrontdata: UpfrontDataSchema = get_upfront_data(
-            customer_id="CUST-189035",
-            order_id="ORD-189070"
+            customer_id="CUST-189053",
+            order_id="ORD-189053"
         )
     agent = InvestigationAgent()
     result = asyncio.run(
             agent.run(
                 upfront_data=upfrontdata,
-                investigation_prompt="Investigate the lack of progress on order ORD-189070 after its shipping label was created. Report what the records establish about the cause."
+                investigation_prompt="Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
             )
         )
     print(result)
