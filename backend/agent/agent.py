@@ -9,6 +9,7 @@ from configs.settings import get_settings
 from utils.color import Logger
 from prompts.prompt_manager import PromptManager
 from schemas import AgentResult, UpfrontDataSchema
+from database.repos import insert_agent_result
 
 from .customer_address_history_tool import customer_address_history_tool
 from .fulfillment_evidence_tool import fulfillment_evidence_tool
@@ -134,7 +135,12 @@ class InvestigationAgent(Logger):
             self.log(f"Agent execution failed: {e}")
             raise
 
-    async def run(self, upfront_data: UpfrontDataSchema, investigation_prompt: str) -> AgentResult:
+    async def run(
+                self, 
+                upfront_data: UpfrontDataSchema, 
+                investigation_prompt: str,
+                session_id: str
+            ) -> AgentResult:
         """
         Run the investigation for the provided upfront data.
         Never raises: on any failure or usage limit hit, a fallback
@@ -142,6 +148,7 @@ class InvestigationAgent(Logger):
         Args:
             upfront_data: Customer, order, shipment, and shipment event data.
             investigation_prompt: The prompt for the investigation.
+            session_id: A unique identifier for the investigation session.
         Returns:
             The agent's structured result, or a fallback result on failure.
         """
@@ -155,6 +162,11 @@ class InvestigationAgent(Logger):
             result = await self._agent(user_input)
             output: AgentResult = result.output
 
+            insert_agent_result(
+                execution_id=session_id,
+                agent_result=output.model_dump(mode="json")
+            )
+
             self.log(
                 f"Investigation finished: success={output.investigation_success}; "
                 f"confidence={output.confidence}"
@@ -166,26 +178,47 @@ class InvestigationAgent(Logger):
             self.log(f"Agent failed or hit usage limits: {e}")
             self.log("Returning fallback response.")
 
-            return AgentResult(
+            fallback = AgentResult(
                 investigation_report=f"The agent failed to complete the investigation with error: {e}",
                 evidences=[],
                 investigation_success=False,
                 confidence=0.0
             )
 
+            return fallback, e
+
 if __name__ == "__main__":
     from app.get_upfront_data import get_upfront_data
     import asyncio
+    from uuid import uuid4
+    from database.repos import insert_starting_execution, insert_upfront_data
 
+    session_id = str(uuid4())
+    customer_id = "CUST-189053"
+    order_id = "ORD-189053"
+    investigation_prompt = "Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+
+    insert_starting_execution(
+        execution_id=session_id,
+        customer_id=customer_id,
+        order_id=order_id,
+        investigation_prompt=investigation_prompt
+    )
     upfrontdata: UpfrontDataSchema = get_upfront_data(
-            customer_id="CUST-189053",
-            order_id="ORD-189053"
+            customer_id=customer_id,
+            order_id=order_id
         )
+    insert_upfront_data(
+        execution_id=session_id,
+        upfront_data=upfrontdata.model_dump(mode="json")
+    )
+    
     agent = InvestigationAgent()
     result = asyncio.run(
             agent.run(
                 upfront_data=upfrontdata,
-                investigation_prompt="Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+                investigation_prompt=investigation_prompt,
+                session_id=session_id
             )
         )
     print(result)
