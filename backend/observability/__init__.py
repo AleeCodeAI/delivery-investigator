@@ -1,1 +1,2 @@
 from .agent_obs import AgentObservability
+from .recommender_obs import RecommenderObservability
