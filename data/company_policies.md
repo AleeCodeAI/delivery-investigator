@@ -1,0 +1,19 @@
+- Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.
+- While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.
+- Never give or imply a delivery date unless the carrier record contains one.
+- Tell the customer only what the records show. If the cause is not established, say so plainly.
+- If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.
+- If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.
+- Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen.
+- When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.
+- Treat `none` as a delivery confirmation as unverified delivery, and go to a carrier inquiry first.
+- An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.
+- If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.
+- If a parcel with an address problem has not yet been delivered, ask the carrier to hold, correct or redirect it where possible.
+- If a destination is unrecognized, always send the case for human review before any other step.
+- If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.
+- If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.
+- If conflicting tracking statuses were resolved by chronology, just tell the customer the correct current status. If unresolved, open a carrier inquiry.
+- Escalate to a senior operator when any of these apply: the order value is $250 or more and compensation is being considered; the shipment is more than 7 days past its ship date; two or more delivery attempts have failed; a delivered event conflicts with a later event and is unresolved; a pre-pickup stall passes 3 business days with an explanation or 5 without.
+- Do not recommend a refund, replacement or reshipment when the finding is inconclusive. Recommend human review and name the one piece of information that would help most.
+- If no rule fits the case, recommend human review and state what is known and what is not.
