@@ -5,11 +5,14 @@ from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
 from pydantic import BaseModel
 
+from langfuse.decorators import langfuse_context, observe
+
 from configs.settings import get_settings
 from utils.color import Logger
 from prompts.prompt_manager import PromptManager
 from schemas import AgentResult, UpfrontDataSchema
 from database.repos import insert_agent_result
+from observability import AgentObservability
 
 from .customer_address_history_tool import customer_address_history_tool
 from .fulfillment_evidence_tool import fulfillment_evidence_tool
@@ -54,6 +57,7 @@ class InvestigationAgent(Logger):
             system_prompt=self.prompt.prompt,
             retries=self.settings.agent.max_retries,
         )
+        self.obs = AgentObservability()
 
         self.log(f"Agent initialized successfully with model: {self.settings.openrouter.default_model}")
 
@@ -75,6 +79,7 @@ class InvestigationAgent(Logger):
             for key, value in data.model_dump().items()
         )
 
+    @observe(as_type="span", name="user_input")
     def _user_input(self, upfront_data: UpfrontDataSchema, investigation_prompt: str) -> str:
         """
         Format upfront data into a structured user input for the agent.
@@ -105,6 +110,7 @@ class InvestigationAgent(Logger):
             f"{shipment_events}"
         )
 
+    @observe(as_type="generation", name="agent_generation")
     async def _agent(self, user_input: str):
         """
         Run the underlying pydantic-ai agent with the formatted input.
@@ -124,17 +130,29 @@ class InvestigationAgent(Logger):
             )
 
             usage = result.usage
+
+            input_cost, output_cost, total_cost = self.obs.log_generation(
+                usage=usage,
+                output=result.output,
+                prompt=self.prompt
+
+            )
+
             self.log(
                 f"Agent run completed: requests={usage.requests}, "
                 f"total_tokens={usage.total_tokens}"
+                f" | input_cost=${input_cost:.6f}, "
+                f"output_cost=${output_cost:.6f}, total_cost=${total_cost:.6f}"
             )
 
             return result
 
         except Exception as e:
+            langfuse_context.update_current_observation(level="ERROR", status_message=str(e))
             self.log(f"Agent execution failed: {e}")
             raise
 
+    @observe()
     async def run(
                 self, 
                 upfront_data: UpfrontDataSchema, 
@@ -157,10 +175,20 @@ class InvestigationAgent(Logger):
                 f"Starting agent execution for "
                 f"the customer: {upfront_data.customer.name}; Order ID: {upfront_data.order.order_id}"
             )
+            self.obs.init_agent_trace(
+                session_id=session_id,
+                customer_id=upfront_data.customer.customer_id,
+                order_id=upfront_data.order.order_id,
+                investigation_prompt=investigation_prompt,
+                max_iterations=self.settings.agent.max_iterations
+                
+            )
 
             user_input = self._user_input(upfront_data, investigation_prompt)
             result = await self._agent(user_input)
             output: AgentResult = result.output
+
+            self.obs.process_result(result=output)
 
             insert_agent_result(
                 execution_id=session_id,
@@ -178,6 +206,7 @@ class InvestigationAgent(Logger):
             self.log(f"Agent failed or hit usage limits: {e}")
             self.log("Returning fallback response.")
 
+            self.obs.process_result(error=e)
             fallback = AgentResult(
                 investigation_report=f"The agent failed to complete the investigation with error: {e}",
                 evidences=[],

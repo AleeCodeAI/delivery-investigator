@@ -1,11 +1,12 @@
 import logging
+from langfuse.decorators import observe
 
 from database.repos import get_customer_address_history
 from schemas import CustomerAddressHistorySchema
 
 logger = logging.getLogger(__name__)
 
-
+@observe(as_type="tool", name="customer_address_history_tool")
 def customer_address_history_tool(customer_id: str) -> list[CustomerAddressHistorySchema]:
     """
     Retrieve the address history associated with a customer.

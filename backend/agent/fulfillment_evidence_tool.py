@@ -1,11 +1,12 @@
 import logging
+from langfuse.decorators import observe
 
 from database.repos import get_inventory_events, get_inventory
 from schemas import InventoryEventSchema, InventorySchema, FulfillmentEvidenceToolSchema
 
 logger = logging.getLogger(__name__)
 
-
+@observe(as_type="tool", name="fulfillment_evidence_tool")
 def fulfillment_evidence_tool(sku: str) -> FulfillmentEvidenceToolSchema:
     """
     Retrieve historical inventory events and current inventory data
