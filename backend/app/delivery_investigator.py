@@ -181,9 +181,14 @@ if __name__ == "__main__":
         order_id="ORD-189053",
         investigation_prompt="Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
     )
-    result = asyncio.run(
-        investigator.run(input_data=input_data)
-    )
-    print(result.agent_result)
-    print("---------------------")
-    print(result.recommender_result)
+
+    try:
+        result = asyncio.run(
+            investigator.run(input_data=input_data)
+        )
+        print(result.agent_result)
+        print("---------------------")
+        print(result.recommender_result)
+
+    except Exception as e:
+        logging.error(f"Investigation failed: {type(e).__name__}: {str(e)}")
