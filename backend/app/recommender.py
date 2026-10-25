@@ -96,7 +96,7 @@ class Recommender(Logger):
             {"role": "user", "content": user_prompt},
         ]
 
-    @observe(name="synthesizer_generation", as_type="generation")
+    @observe(name="recommender_generation", as_type="generation")
     def _call_llm(self, messages: list[dict]) -> RecommenderResult:
         """
         Call the LLM providers in order and return the first successful result.
@@ -196,11 +196,7 @@ class Recommender(Logger):
             self.log(f"Recommender failed with error: {e}")
             self.obs.process_failure(error=e)
 
-            return RecommenderResult(
-                recommendation="recommender failed",
-                evidences=[],
-                confidence=0.0,
-            )
+            return None
 
 
 if __name__ == "__main__":
