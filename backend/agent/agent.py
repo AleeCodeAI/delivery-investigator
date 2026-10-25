@@ -207,14 +207,8 @@ class InvestigationAgent(Logger):
             self.log("Returning fallback response.")
 
             self.obs.process_result(error=e)
-            fallback = AgentResult(
-                investigation_report=f"The agent failed to complete the investigation with error: {e}",
-                evidences=[],
-                investigation_success=False,
-                confidence=0.0
-            )
-
-            return fallback, e
+            
+            return None
 
 if __name__ == "__main__":
     from app.get_upfront_data import get_upfront_data

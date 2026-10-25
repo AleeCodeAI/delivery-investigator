@@ -1,3 +1,4 @@
+import logging
 from database.repos import (
         get_customer,
         get_order,
@@ -13,7 +14,7 @@ from schemas import (
     )
 
 
-def get_upfront_data(customer_id: str,order_id: str) -> UpfrontDataSchema:
+def get_upfront_data(customer_id: str, order_id: str) -> UpfrontDataSchema | None:
     """
     Retrieve the primary data required for a delivery investigation.
 
@@ -27,11 +28,8 @@ def get_upfront_data(customer_id: str,order_id: str) -> UpfrontDataSchema:
 
     Returns:
         An UpfrontDataSchema containing the customer, order, optional
-        shipment, and optional shipment events.
-
-    Raises:
-        RuntimeError: If retrieving or assembling the upfront data fails.
-            The original exception is preserved as the cause.
+        shipment, and optional shipment events. Returns None if retrieving
+        or assembling the data fails; the error is logged.
     """
     try:
         customer: CustomerSchema = get_customer(customer_id=customer_id)
@@ -40,10 +38,10 @@ def get_upfront_data(customer_id: str,order_id: str) -> UpfrontDataSchema:
             order_id=order_id
         )
 
-        shipment_events = None
+        shipment_events: list[ShipmentEventSchema] | None = None
 
         if shipment:
-            shipment_events: list[ShipmentEventSchema] = get_shipment_events(
+            shipment_events = get_shipment_events(
                 shipment_id=shipment.shipment_id
             )
 
@@ -54,13 +52,16 @@ def get_upfront_data(customer_id: str,order_id: str) -> UpfrontDataSchema:
             shipment_events=shipment_events,
         )
 
-    except Exception as exc:
-        raise RuntimeError(
-            f"Failed to retrieve upfront data for customer "
-            f"{customer_id!r} and order {order_id!r}. "
-            f"Original error: {exc}"
-        ) from exc
+    except Exception as e:
+        logging.info(
+            f"Failed to get upfront data \n"
+            f"[Customer: {customer_id}] \n"
+            f"[Order: {order_id}] \n"
+            f"[Error: {str(e)}]"
+        )
 
+        return None
+    
 if __name__ == "__main__":
     upfrontdata: UpfrontDataSchema = get_upfront_data(
         customer_id="CUST-189012",
