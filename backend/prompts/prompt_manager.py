@@ -50,6 +50,15 @@ class PromptManager:
             label=label
         )
 
+    def get_agent_evals_system_prompt(self, label: str = "latest"):
+        """
+        Retrieve the agent evals system prompt from langfuse
+        """
+        return self._langfuse.get_prompt(
+            name="AGENT_EVALS_SYSTEM_PROMPT",
+            label=label
+        )
+
 
 if __name__ == "__main__":
     prompt_manager = PromptManager()
