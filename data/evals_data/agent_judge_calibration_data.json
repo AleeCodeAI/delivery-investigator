@@ -1,0 +1,299 @@
+[
+  {
+    "case_id": 1,
+    "agent_result": {
+      "investigation_report": "Finding: Shipment SHIP-189001 is in transit with an explicitly documented carrier delay caused by severe weather at Sacramento, CA on 2026-10-12 02:18. The shipment status is 'delayed' and no delivery timestamp is recorded. Prior tracking events show normal progression to Sacramento before the exception. The records establish the delay cause but do not provide a revised delivery ETA.\nNot found: Revised ETA, current parcel location after the exception, or any resolution update.",
+      "evidences": [
+        "[upfront] shipments SHIP-189001, shipment_status=delayed, delivered_at=null",
+        "[upfront] shipment_events SE-189004, event_type=delivery_exception, event_timestamp=2026-10-12 02:18, location=Sacramento, CA, description='Severe weather delay'",
+        "[upfront] shipment_events SE-189001, SE-189002, SE-189003 prior transit scans"
+      ],
+      "investigation_success": true,
+      "confidence": 0.94
+    },
+    "ground_truth": {
+      "order_id": "ORD-189001",
+      "scenario_subtype": "severe weather",
+      "actual_scenario": "Shipment in transit with an explicitly documented carrier delay: severe weather.",
+      "supporting_evidence": "shipment_events SE-189004 (delivery_exception, 2026-10-12 02:18, Sacramento, CA); shipments SHIP-189001 shipment_status=delayed, delivered_at empty; preceding events SE-189001, SE-189002, SE-189003."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 2,
+    "agent_result": {
+      "investigation_report": "Finding: The carrier recorded a failed delivery attempt for shipment SHIP-189022. Event SE-189031 documents a delivery_exception at 2026-10-14 14:07 in Fresno, CA with description 'Recipient unavailable'. The shipment status remains 'in_transit' with no delivery timestamp. The records establish the recorded attempt reason but do not establish when a reattempt will occur.\nNot found: Reattempt schedule or customer contact record.",
+      "evidences": [
+        "[upfront] shipments SHIP-189022, shipment_status=in_transit, delivered_at=null",
+        "[upfront] shipment_events SE-189031, event_type=delivery_exception, event_timestamp=2026-10-14 14:07, location=Fresno, CA, description='Recipient unavailable'"
+      ],
+      "investigation_success": true,
+      "confidence": 0.91
+    },
+    "ground_truth": {
+      "order_id": "ORD-189022",
+      "scenario_subtype": "failed delivery attempt",
+      "actual_scenario": "Carrier recorded a failed delivery attempt: recipient unavailable; shipment remains undelivered.",
+      "supporting_evidence": "shipment_events SE-189031 (delivery_exception, recipient unavailable); shipments SHIP-189022 shipment_status=in_transit, delivered_at empty."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 3,
+    "agent_result": {
+      "investigation_report": "Finding: Carrier records show shipment SHIP-189033 was delivered on 2026-10-10 16:42 with delivery_confirmation='left_at_door'. The parcel was recorded as left at the door. These carrier records describe the delivery action but do not establish that the intended recipient personally received the parcel.\nNot found: Proof of receipt by the customer; no signature or handed-to-resident confirmation is recorded.",
+      "evidences": [
+        "[upfront] shipments SHIP-189033, shipment_status=delivered, delivered_at=2026-10-10 16:42, delivery_confirmation=left_at_door",
+        "[upfront] shipment_events SE-189045, event_type=delivered, location=front door"
+      ],
+      "investigation_success": true,
+      "confidence": 0.88
+    },
+    "ground_truth": {
+      "order_id": "ORD-189033",
+      "scenario_subtype": "marked delivered, not received",
+      "actual_scenario": "Carrier records show the parcel was delivered and left at the door. The records do not establish that the intended recipient received it.",
+      "supporting_evidence": "shipments SHIP-189033 shipment_status=delivered, delivered_at=2026-10-10 16:42, delivery_confirmation=left_at_door; shipment_events SE-189045 delivered event."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 4,
+    "agent_result": {
+      "investigation_report": "Finding: No tracking event is recorded for shipment SHIP-189044 after the last scan SE-189052 at 2026-10-08 09:15 in Stockton, CA. The shipment status remains 'in_transit' and delivered_at is empty. Delivery is not established, and the records do not explain the gap in tracking progress.\nNot found: Current parcel location or reason for the tracking gap.",
+      "evidences": [
+        "[upfront] shipments SHIP-189044, shipment_status=in_transit, delivered_at=null",
+        "[upfront] shipment_events SE-189052, last recorded event, event_timestamp=2026-10-08 09:15, location=Stockton, CA"
+      ],
+      "investigation_success": true,
+      "confidence": 0.82
+    },
+    "ground_truth": {
+      "order_id": "ORD-189044",
+      "scenario_subtype": "no recent tracking progress",
+      "actual_scenario": "No tracking event recorded after the last scan; delivery is not established and the reason for the gap is not recorded.",
+      "supporting_evidence": "shipment_events SE-189052 last event 2026-10-08; shipments SHIP-189044 shipment_status=in_transit, delivered_at empty."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 5,
+    "agent_result": {
+      "investigation_report": "Finding: The apparent tracking conflict in shipment SHIP-189055 is resolved chronologically. An earlier event SE-189061 records a delivery_exception at 2026-10-11 08:20, and a later event SE-189063 at 2026-10-12 11:05 records a successful delivered event. Read by event_timestamp, the delivered event supersedes the earlier exception; the shipment is delivered.\nNot found: Nothing outstanding; events reconcile.",
+      "evidences": [
+        "[upfront] shipment_events SE-189061, event_type=delivery_exception, event_timestamp=2026-10-11 08:20",
+        "[upfront] shipment_events SE-189063, event_type=delivered, event_timestamp=2026-10-12 11:05",
+        "[upfront] shipments SHIP-189055, shipment_status=delivered, delivered_at=2026-10-12 11:05"
+      ],
+      "investigation_success": true,
+      "confidence": 0.93
+    },
+    "ground_truth": {
+      "order_id": "ORD-189055",
+      "scenario_subtype": "apparent tracking conflict",
+      "actual_scenario": "An earlier delivery_exception and a later delivered event reconcile chronologically; the later delivered event supersedes the earlier exception.",
+      "supporting_evidence": "shipment_events SE-189061 delivery_exception 2026-10-11 08:20; shipment_events SE-189063 delivered 2026-10-12 11:05; shipments SHIP-189055 delivered."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 6,
+    "agent_result": {
+      "investigation_report": "Finding: The order destination 2568 Harbor Dr, Oakland, CA 94609 does not match the customer's current address 3364 Pine St, Los Angeles, CA 90025. Tool evidence shows the Oakland address had an effective period ending 2026-07-09, before the order date of 2026-09-03, making it a historical address no longer valid when the order was placed. The records support that a previously recorded address was used but do not establish why it was selected.\nNot found: Reason the historical address was chosen, any address-change request, or correction record.",
+      "evidences": [
+        "[upfront] order ORD-189053, delivery address: 2568 Harbor Dr, Oakland, CA 94609, order_date 2026-09-03",
+        "[upfront] customer current address: 3364 Pine St, Los Angeles, CA 90025",
+        "[tool:customer_address_history_tool] ADDR-189067, effective_from 2024-12-28, effective_to 2026-07-09: 2568 Harbor Dr, Oakland, CA 94609",
+        "[tool:customer_address_history_tool] ADDR-189068, effective_from 2026-07-10, effective_to null: 3364 Pine St, Los Angeles, CA 90025"
+      ],
+      "investigation_success": true,
+      "confidence": 0.92
+    },
+    "ground_truth": {
+      "order_id": "ORD-189053",
+      "scenario_subtype": "historical address",
+      "actual_scenario": "Order destination matches a historical address whose effective period ended before the order date. Records support use of a previously recorded address but do not establish why it was selected.",
+      "supporting_evidence": "orders ORD-189053 delivery address 2568 Harbor Dr Oakland and order_date; customers current address 3364 Pine St; customer_address_history ADDR-189067 effective_to 2026-07-09."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 7,
+    "agent_result": {
+      "investigation_report": "Finding: The order destination does not match the customer's current address and also matches no address in the customer's address history. The destination is therefore an unrecognized address. This tool result does not explain the reason for the mismatch.\nNot found: Origin of the unrecognized destination address.",
+      "evidences": [
+        "[upfront] order ORD-189071, delivery address: 900 Unknown Way, San Jose, CA 95112",
+        "[upfront] customer current address: 1450 Elm St, San Jose, CA 95110",
+        "[tool:customer_address_history_tool] ADDR-189081 effective 2023-01-01 to 2024-12-31: 1450 Elm St, San Jose, CA 95110; ADDR-189082 effective 2025-01-01 to null: 1450 Elm St, San Jose, CA 95110"
+      ],
+      "investigation_success": true,
+      "confidence": 0.85
+    },
+    "ground_truth": {
+      "order_id": "ORD-189071",
+      "scenario_subtype": "unrecognized destination",
+      "actual_scenario": "Order destination matches neither the current address nor any historical address; the reason remains unexplained.",
+      "supporting_evidence": "orders ORD-189071 delivery address; customers current address; customer_address_history rows showing no match to the destination."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 8,
+    "agent_result": {
+      "investigation_report": "Finding: The order destination 2200 Cedar Ave, San Diego, CA 92101 differs from the customer's current address, but tool evidence shows the Cedar Ave address was effective on the order date of 2026-09-15 (effective_from 2025-06-01, effective_to 2026-10-01). The destination was a historically valid address at order time; the customer has since moved. The mismatch alone does not establish an error.\nNot found: Any actual error attributable to the address mismatch.",
+      "evidences": [
+        "[upfront] order ORD-189082, delivery address: 2200 Cedar Ave, San Diego, CA 92101, order_date 2026-09-15",
+        "[upfront] customer current address: 77 Beach Blvd, San Diego, CA 92107",
+        "[tool:customer_address_history_tool] ADDR-189091, effective_from 2025-06-01, effective_to 2026-10-01: 2200 Cedar Ave, San Diego, CA 92101"
+      ],
+      "investigation_success": true,
+      "confidence": 0.90
+    },
+    "ground_truth": {
+      "order_id": "ORD-189082",
+      "scenario_subtype": "historically valid address",
+      "actual_scenario": "Order destination matches an address effective on the order date even though the customer has since moved; the mismatch alone does not establish an error.",
+      "supporting_evidence": "orders ORD-189082 destination and order_date; customers current address; customer_address_history ADDR-189091 effective_to 2026-10-01 covering order date."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 9,
+    "agent_result": {
+      "investigation_report": "Finding: The order has a shipping label but no carrier pickup scan. Tool evidence shows a quality_hold inventory event (IE-189104) recorded for the order's SKU on 2026-10-09 10:00, consistent with a reserved item held for quality inspection before pickup. This recorded internal event is consistent with the pre-pickup stall.\nNot found: Release date of the hold or carrier pickup ETA.",
+      "evidences": [
+        "[upfront] shipments SHIP-189093, no carrier pickup scan; label created",
+        "[upfront] order ORD-189093 sku SKU-7781, fulfilled_from_warehouse_id WH-02",
+        "[tool:fulfilment_evidence_tool] inventory_events IE-189104, event_type=quality_hold, event_timestamp=2026-10-09 10:00, sku=SKU-7781, related_order_id=ORD-189093",
+        "[tool:fulfilment_evidence_tool] inventory context: stock_quantity=40, reserved_quantity=12 (optional supporting only)"
+      ],
+      "investigation_success": true,
+      "confidence": 0.89
+    },
+    "ground_truth": {
+      "order_id": "ORD-189093",
+      "scenario_subtype": "pre-pickup stall quality hold",
+      "actual_scenario": "A quality_hold inventory event is recorded for the order's SKU before expected pickup, consistent with the fulfilment stall.",
+      "supporting_evidence": "inventory_events IE-189104 quality_hold event for SKU-7781 before pickup; shipments SHIP-189093 label with no pickup scan."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 10,
+    "agent_result": {
+      "investigation_report": "Finding: The shipment is stalled before carrier pickup with no carrier scan. Tool evidence shows no inventory_events explaining the stall (none returned for the SKU in the relevant window). Current inventory context shows stock present and some quantity reserved, but current quantities cannot establish historical stock availability. The records do not explain the pre-pickup stall.\nNot found: Reason the shipment never progressed to pickup.",
+      "evidences": [
+        "[upfront] shipments SHIP-189105, no carrier pickup scan; label created",
+        "[upfront] order ORD-189105 sku SKU-6640",
+        "[tool:fulfilment_evidence_tool] inventory_events: none returned for SKU-6640 in window",
+        "[tool:fulfilment_evidence_tool] inventory context: stock_quantity=25, reserved_quantity=5"
+      ],
+      "investigation_success": true,
+      "confidence": 0.68
+    },
+    "ground_truth": {
+      "order_id": "ORD-189105",
+      "scenario_subtype": "pre-pickup stall unexplained",
+      "actual_scenario": "No inventory_events explain the pre-pickup stall; current inventory cannot establish historical stock. The reason remains unexplained.",
+      "supporting_evidence": "shipments SHIP-189105 label with no pickup scan; inventory_events none for SKU-6640; optional inventory context."
+    },
+    "overall_passed": true
+  },
+  {
+    "case_id": 11,
+    "agent_result": {
+      "investigation_report": "Finding: Carrier records show shipment SHIP-189116 was delivered on 2026-10-12 15:20 with delivery_confirmation='left_at_door'. Because the customer reports non-receipt and the parcel was left unattended at the door, the parcel was stolen after delivery. Theft is the cause of the non-receipt.\nNot found: No recovery or police record.",
+      "evidences": [
+        "[upfront] shipments SHIP-189116, shipment_status=delivered, delivered_at=2026-10-12 15:20, delivery_confirmation=left_at_door",
+        "[upfront] shipment_events SE-189128, event_type=delivered, location=front door"
+      ],
+      "investigation_success": true,
+      "confidence": 0.80
+    },
+    "ground_truth": {
+      "order_id": "ORD-189116",
+      "scenario_subtype": "marked delivered, not received",
+      "actual_scenario": "Carrier records show the parcel was delivered and left at the door. The records do not establish that the intended recipient received it. Theft is only a possibility, not established.",
+      "supporting_evidence": "shipments SHIP-189116 delivered, delivered_at, delivery_confirmation=left_at_door; shipment_events SE-189128 delivered."
+    },
+    "overall_passed": false
+  },
+  {
+    "case_id": 12,
+    "agent_result": {
+      "investigation_report": "Finding: The order destination differs from the customer's current address, and tool evidence confirms the destination was a previously recorded address. The order was therefore sent to an old address in error, causing the delivery issue.\nNot found: Why the outdated address was used.",
+      "evidences": [
+        "[upfront] order ORD-189130, delivery address: 51 Maple Ct, Irvine, CA 92602, order_date 2026-08-20",
+        "[upfront] customer current address: 900 Ocean Ave, Irvine, CA 92618",
+        "[tool:customer_address_history_tool] ADDR-189141, effective_from 2024-01-01, effective_to 2027-01-01: 51 Maple Ct, Irvine, CA 92602"
+      ],
+      "investigation_success": true,
+      "confidence": 0.82
+    },
+    "ground_truth": {
+      "order_id": "ORD-189130",
+      "scenario_subtype": "historically valid address",
+      "actual_scenario": "Order destination matches an address effective on the order date (2026-08-20) even though the customer has since moved; the mismatch alone does not establish an error.",
+      "supporting_evidence": "orders ORD-189130 destination and order_date; customers current address; customer_address_history ADDR-189141 effective_to 2027-01-01 covering order date."
+    },
+    "overall_passed": false
+  },
+  {
+    "case_id": 13,
+    "agent_result": {
+      "investigation_report": "Finding: The order has a label but no carrier pickup scan. A quality_hold inventory event for the order's SKU explains the pre-pickup stall: the item was held for quality inspection before pickup. This is consistent with the fulfilment stall.\nNot found: Release date of hold.",
+      "evidences": [
+        "[upfront] shipments SHIP-189150, no carrier pickup scan; label created",
+        "[upfront] order ORD-189150 sku SKU-9002",
+        "[tool:fulfilment_evidence_tool] inventory context: stock_quantity=18, reserved_quantity=3"
+      ],
+      "investigation_success": true,
+      "confidence": 0.85
+    },
+    "ground_truth": {
+      "order_id": "ORD-189150",
+      "scenario_subtype": "pre-pickup stall quality hold",
+      "actual_scenario": "A quality_hold inventory event is recorded for the order's SKU before expected pickup, consistent with the fulfilment stall.",
+      "supporting_evidence": "inventory_events quality_hold event for SKU-9002 before pickup; shipments SHIP-189150 label with no pickup scan."
+    },
+    "overall_passed": false
+  },
+  {
+    "case_id": 14,
+    "agent_result": {
+      "investigation_report": "Finding: Shipment SHIP-189160 shows an earlier delivery_exception and a later delivered event. The delivered event is recorded last and the shipment status is delivered, so the parcel was delivered. The earlier exception is superseded.\nNot found: Nothing outstanding.",
+      "evidences": [
+        "[upfront] shipment_events SE-189171, event_type=delivered, event_timestamp=2026-10-13 10:00",
+        "[upfront] shipments SHIP-189160, shipment_status=delivered, delivered_at=2026-10-13 10:00"
+      ],
+      "investigation_success": true,
+      "confidence": 0.87
+    },
+    "ground_truth": {
+      "order_id": "ORD-189160",
+      "scenario_subtype": "apparent tracking conflict",
+      "actual_scenario": "An earlier delivery_exception and a later delivered event reconcile chronologically by event_timestamp; the later delivered event supersedes the earlier exception.",
+      "supporting_evidence": "shipment_events SE-189169 delivery_exception earlier timestamp; shipment_events SE-189171 delivered later timestamp; shipments SHIP-189160 delivered."
+    },
+    "overall_passed": false
+  },
+  {
+    "case_id": 15,
+    "agent_result": {
+      "investigation_report": "Finding: Shipment SHIP-189180 is in transit with a documented carrier delay due to a customs hold at the port. The new estimated delivery is 2026-10-20. Status is 'delayed'.\nNot found: Nothing outstanding; ETA provided.",
+      "evidences": [
+        "[upfront] shipments SHIP-189180, shipment_status=delayed, delivered_at=null",
+        "[upfront] shipment_events SE-189184, event_type=delivery_exception, event_timestamp=2026-10-12 02:18, location=Sacramento, CA, description='Severe weather delay'"
+      ],
+      "investigation_success": true,
+      "confidence": 0.88
+    },
+    "ground_truth": {
+      "order_id": "ORD-189180",
+      "scenario_subtype": "severe weather",
+      "actual_scenario": "Shipment in transit with an explicitly documented carrier delay: severe weather.",
+      "supporting_evidence": "shipment_events SE-189184 delivery_exception severe weather; shipments SHIP-189180 shipment_status=delayed, delivered_at empty."
+    },
+    "overall_passed": false
+  }
+]
