@@ -1,4 +1,3 @@
-import asyncio
 import json
 import time
 from pathlib import Path
@@ -7,19 +6,16 @@ from uuid import uuid4
 from langfuse.decorators import observe
 from openai import OpenAI
 
-from agent.agent import InvestigationAgent
-from app.get_upfront_data import get_upfront_data
 from configs.settings import get_settings
-from database.repos import insert_starting_execution, insert_upfront_data
 from prompts.prompt_manager import PromptManager
 from evals.evals_obs.agent_evals_obs import AgentEvaluatorObservability
 from .report_generator import generate_report
-from schemas import AgentEvalsResult, AgentResult
+from schemas import AgentEvalsResult
 from utils.color import Logger
 
 
 class AgentEvaluator(Logger):
-    """Runs the investigation agent on every eval case and grades it with an LLM judge."""
+    """Grades the saved investigation agent outputs against the ground truth with an LLM judge."""
 
     name: str = "AgentEvaluator"
     color: str = Logger.CYAN
@@ -29,7 +25,6 @@ class AgentEvaluator(Logger):
 
     def __init__(self):
         self.settings = get_settings()
-        self.agent = InvestigationAgent()
         self.prompt = PromptManager().get_agent_evals_system_prompt()
         self.obs = AgentEvaluatorObservability()
 
@@ -53,7 +48,7 @@ class AgentEvaluator(Logger):
             return json.load(f)
 
     def _load_cases(self) -> list[dict]:
-        """Joins each input case with its ground truth on order_id."""
+        """Joins each saved agent result with its ground truth on order_id."""
         ground_truth = {gt["order_id"]: gt for gt in self._load_json(self.ground_truth_path)}
         cases = [
             {**case, **ground_truth[case["order_id"]]}
@@ -62,42 +57,16 @@ class AgentEvaluator(Logger):
         self.log(f"Loaded {len(cases)} cases.")
         return cases
 
-    # ---------------------------- agent ---------------------------- #
-    async def _run_agent(self, case: dict) -> tuple[str, AgentResult]:
-        session_id = str(uuid4())
-
-        insert_starting_execution(
-            execution_id=session_id,
-            customer_id=case["customer_id"],
-            order_id=case["order_id"],
-            investigation_prompt=case["problem_description"],
-        )
-        upfront_data = get_upfront_data(
-            customer_id=case["customer_id"],
-            order_id=case["order_id"],
-        )
-        insert_upfront_data(
-            execution_id=session_id,
-            upfront_data=upfront_data.model_dump(mode="json"),
-        )
-
-        agent_result = await self.agent.run(
-            upfront_data=upfront_data,
-            investigation_prompt=case["problem_description"],
-            session_id=session_id,
-        )
-        return session_id, agent_result
-
     # ---------------------------- judge ---------------------------- #
     @staticmethod
-    def _user_input(agent_result: AgentResult, case: dict) -> str:
+    def _user_input(agent_result: dict, ground_truth: dict) -> str:
         return (
             f"AGENT RESULT\n\n"
-            f"Investigation Report:\n{agent_result.investigation_report}\n\n"
-            f"Evidences:\n{agent_result.evidences}\n\n"
+            f"Investigation Report:\n{agent_result['investigation_report']}\n\n"
+            f"Evidences:\n{agent_result['evidences']}\n\n"
             f"GROUND TRUTH\n\n"
-            f"Actual Scenario:\n{case['actual_scenario']}\n\n"
-            f"Supporting Evidence:\n{case['supporting_evidence']}\n"
+            f"Actual Scenario:\n{ground_truth['actual_scenario']}\n\n"
+            f"Supporting Evidence:\n{ground_truth['supporting_evidence']}\n"
         )
 
     def _make_messages(self, user_input: str) -> list[dict]:
@@ -140,18 +109,15 @@ class AgentEvaluator(Logger):
 
     # ------------------------- single case ------------------------- #
     @observe(name="Agent_Evaluation_Case")
-    async def _evaluate_single_case(self, case: dict, run_id: str) -> dict:
-        case_id = case["input_id"]
-        self.log(f"EVALUATING CASE: {case_id} ({case['order_id']})")
+    def _evaluate_single_case(self, case: dict, run_id: str) -> dict:
+        case_id = case["order_id"]
+        self.log(f"EVALUATING CASE: {case_id}")
         self.obs.init_eval_trace(run_id=run_id, case=case)
 
         try:
-            session_id, agent_result = await self._run_agent(case)
-            self.obs.log_execution_id(session_id)
-
-            messages = self._make_messages(self._user_input(agent_result, case))
-            # to_thread keeps the context, so the judge generation nests under this trace
-            result = await asyncio.to_thread(self._call_llm, messages)
+            user_input = self._user_input(case["agent_result"], case)
+            messages = self._make_messages(user_input)
+            result = self._call_llm(messages)
             self.obs.process_result(result)
 
             self.log(f"Score: {result.overall_score}, Passed: {result.overall_passed}")
@@ -184,7 +150,7 @@ class AgentEvaluator(Logger):
     def _save_execution(self, records: list[dict]):
         self.execution_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.execution_path, "w", encoding="utf-8") as f:
-            json.dump(records, f, indent=4, ensure_ascii=False, default=str)
+            json.dump(records, f, indent=4, ensure_ascii=False)
         self.log(f"Execution results saved to {self.execution_path}")
 
     def _save_report(self, report: str):
@@ -194,7 +160,7 @@ class AgentEvaluator(Logger):
         self.log(f"Report saved to {self.report_path}")
 
     # ----------------------------- main ----------------------------- #
-    async def evaluate(self, limit: int | None = None) -> list[dict]:
+    def evaluate(self, limit: int | None = None) -> list[dict]:
         """Evaluates every case. `limit` caps the number of cases (for smoke tests)."""
         run_id = str(uuid4())
         cases = self._load_cases()[:limit]
@@ -202,10 +168,10 @@ class AgentEvaluator(Logger):
 
         try:
             for i, case in enumerate(cases, start=1):
-                records.append(await self._evaluate_single_case(case, run_id))
+                records.append(self._evaluate_single_case(case, run_id))
 
                 if i < len(cases):
-                    await asyncio.sleep(self.CASE_DELAY_SECONDS)  # usage limit buffer
+                    time.sleep(self.CASE_DELAY_SECONDS)  # usage limit buffer
         finally:
             self._save_execution(records)  # saved even if the run is interrupted
             self.obs.flush()
@@ -227,4 +193,4 @@ class AgentEvaluator(Logger):
 
 
 if __name__ == "__main__":
-    asyncio.run(AgentEvaluator().evaluate())
+    AgentEvaluator().evaluate()

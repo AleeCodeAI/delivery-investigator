@@ -23,16 +23,11 @@ class AgentEvaluatorObservability:
             name="Agent_Evaluation_Case",
             tags=["evaluator", "groq", "delivery-investigator"],
             input={
-                "input_id": case["input_id"],
                 "order_id": case["order_id"],
-                "problem_description": case["problem_description"],
+                "investigation_prompt": case["investigation_prompt"],
             },
             metadata={"scenario_subtype": case["scenario_subtype"]},
         )
-
-    def log_execution_id(self, execution_id: str):
-        """Links this eval trace to the agent execution it judged."""
-        langfuse_context.update_current_trace(metadata={"execution_id": execution_id})
 
     def log_generation(self, messages: list, output: AgentEvalsResult, usage, model: str, prompt):
         """Logs the judge generation payload and token usage."""
