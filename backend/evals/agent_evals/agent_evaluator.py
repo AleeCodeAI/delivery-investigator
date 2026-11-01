@@ -1,7 +1,6 @@
 import asyncio
 import json
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
 
@@ -14,7 +13,7 @@ from configs.settings import get_settings
 from database.repos import insert_starting_execution, insert_upfront_data
 from prompts.prompt_manager import PromptManager
 from evals.evals_obs.agent_evals_obs import AgentEvaluatorObservability
-from .report_generator import CRITERIA, generate_report
+from .report_generator import generate_report
 from schemas import AgentEvalsResult, AgentResult
 from utils.color import Logger
 
@@ -142,16 +141,9 @@ class AgentEvaluator(Logger):
     # ------------------------- single case ------------------------- #
     @observe(name="Agent_Evaluation_Case")
     async def _evaluate_single_case(self, case: dict, run_id: str) -> dict:
-        self.log(f"EVALUATING CASE: {case['input_id']} ({case['order_id']})")
+        case_id = case["input_id"]
+        self.log(f"EVALUATING CASE: {case_id} ({case['order_id']})")
         self.obs.init_eval_trace(run_id=run_id, case=case)
-
-        record = {
-            "run_id": run_id,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "input_id": case["input_id"],
-            "order_id": case["order_id"],
-            "scenario_subtype": case["scenario_subtype"],
-        }
 
         try:
             session_id, agent_result = await self._run_agent(case)
@@ -165,31 +157,27 @@ class AgentEvaluator(Logger):
             self.log(f"Score: {result.overall_score}, Passed: {result.overall_passed}")
 
             return {
-                **record,
-                "execution_id": session_id,
-                "status": "ok",
-                "error": None,
-                "investigation_report": agent_result.investigation_report,
-                "evidences": str(agent_result.evidences),
-                **{criterion: getattr(result, criterion) for criterion in CRITERIA},
-                "judge_reasoning": result.judge_reasoning,
+                "case_id": case_id,
+                "cause_correct": result.cause_correct,
+                "evidence_identification_correct": result.evidence_identification_correct,
+                "evidence_consistency_correct": result.evidence_consistency_correct,
                 "overall_score": result.overall_score,
                 "overall_passed": result.overall_passed,
+                "judge_reasoning": result.judge_reasoning,
             }
 
         except Exception as e:
             self.obs.process_failure(e)
-            self.log(f"Error evaluating case {case['input_id']}: {e}")
+            self.log(f"Error evaluating case {case_id}: {e}")
 
             return {
-                **record,
-                "execution_id": None,
-                "status": "error",
-                "error": str(e),
-                **{criterion: None for criterion in CRITERIA},
-                "judge_reasoning": None,
+                "case_id": case_id,
+                "cause_correct": None,
+                "evidence_identification_correct": None,
+                "evidence_consistency_correct": None,
                 "overall_score": 0,
                 "overall_passed": False,
+                "judge_reasoning": f"ERROR: {e}",
             }
 
     # ---------------------------- saving ---------------------------- #

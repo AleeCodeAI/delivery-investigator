@@ -22,12 +22,14 @@ def generate_report(
     if total == 0:
         return "# Agent Evaluation Report\n\nNo cases were evaluated.\n"
 
+    # An errored case has no criterion verdicts (None) and counts as failed.
+    judged = [r for r in records if r["cause_correct"] is not None]
+    errors = total - len(judged)
+
     passed = sum(r["overall_passed"] for r in records)
     failed = total - passed
-    errors = sum(r["status"] == "error" for r in records)
     pass_rate = passed / total * 100
     required = math.ceil(total * agent_pass_rate / 100)
-    agent_passed = pass_rate >= agent_pass_rate
     scores = [r["overall_score"] for r in records]
     avg_score = sum(scores) / total
 
@@ -40,7 +42,7 @@ def generate_report(
         "",
         "## Overall Result",
         "",
-        f"**{'PASS' if agent_passed else 'FAIL'}**: {passed}/{total} investigations passed "
+        f"**{'PASS' if pass_rate >= agent_pass_rate else 'FAIL'}**: {passed}/{total} investigations passed "
         f"({pass_rate:.2f}%). Required: at least {required}/{total} ({agent_pass_rate:.0f}%).",
         "",
         "| Metric | Value |",
@@ -61,7 +63,6 @@ def generate_report(
     for score, count in sorted(Counter(scores).items(), reverse=True):
         lines.append(f"| {score} | {count} |")
 
-    judged = [r for r in records if r["status"] == "ok"]
     if judged:
         lines += [
             "",
@@ -78,28 +79,29 @@ def generate_report(
         "",
         "## Individual Results",
         "",
-        "| Input ID | Order ID | Scenario | Score | Result |",
-        "|---|---|---|---:|---|",
+        "| Case ID | Score | Result |",
+        "|---|---:|---|",
     ]
     for r in records:
-        result = "PASS" if r["overall_passed"] else ("ERROR" if r["status"] == "error" else "FAIL")
-        lines.append(
-            f"| {r['input_id']} | {r['order_id']} | {r['scenario_subtype']} | {r['overall_score']} | {result} |"
-        )
+        if r["overall_passed"]:
+            result = "PASS"
+        elif r["cause_correct"] is None:
+            result = "ERROR"
+        else:
+            result = "FAIL"
+        lines.append(f"| {r['case_id']} | {r['overall_score']} | {result} |")
 
     failures = [r for r in records if not r["overall_passed"]]
     if failures:
         lines += ["", "## Failed Investigations", ""]
         for r in failures:
-            lines.append(f"### {r['input_id']} ({r['order_id']}): score {r['overall_score']}")
+            lines.append(f"### {r['case_id']}: score {r['overall_score']}")
             lines.append("")
-            if r["status"] == "error":
-                lines.append(f"**Error:** {r['error']}")
-            else:
+            if r["cause_correct"] is not None:
                 failed_criteria = [k for k in CRITERIA if not r[k]]
                 lines.append(f"**Failed criteria:** {', '.join(failed_criteria) or 'none'}")
                 lines.append("")
-                lines.append(f"> {' '.join(r['judge_reasoning'].splitlines())}")
+            lines.append(f"> {' '.join(r['judge_reasoning'].splitlines())}")
             lines.append("")
 
     return "\n".join(lines) + "\n"
