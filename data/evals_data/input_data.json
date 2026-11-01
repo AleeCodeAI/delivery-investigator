@@ -1,0 +1,422 @@
+[
+  {
+    "input_id": "INPUT-189001",
+    "order_id": "ORD-189001",
+    "customer_id": "CUST-189012",
+    "problem_description": "Investigate the delay affecting order ORD-189001. Determine what the tracking records establish about its current status and the documented reason for the delay."
+  },
+  {
+    "input_id": "INPUT-189002",
+    "order_id": "ORD-189002",
+    "customer_id": "CUST-189038",
+    "problem_description": "Order ORD-189002 has not arrived when expected. Review the shipment records and report what is established about the delay."
+  },
+  {
+    "input_id": "INPUT-189003",
+    "order_id": "ORD-189003",
+    "customer_id": "CUST-189001",
+    "problem_description": "A customer is asking why order ORD-189003 is running late. Investigate the available delivery records and report what they show."
+  },
+  {
+    "input_id": "INPUT-189004",
+    "order_id": "ORD-189004",
+    "customer_id": "CUST-189022",
+    "problem_description": "Investigate order ORD-189004, which is behind schedule. State the shipment's current status and what the records establish about the cause."
+  },
+  {
+    "input_id": "INPUT-189005",
+    "order_id": "ORD-189005",
+    "customer_id": "CUST-189002",
+    "problem_description": "Investigate the delay affecting order ORD-189005. Determine what the tracking records establish about its current status and the documented reason for the delay."
+  },
+  {
+    "input_id": "INPUT-189006",
+    "order_id": "ORD-189006",
+    "customer_id": "CUST-189012",
+    "problem_description": "Order ORD-189006 has not arrived when expected. Review the shipment records and report what is established about the delay."
+  },
+  {
+    "input_id": "INPUT-189007",
+    "order_id": "ORD-189007",
+    "customer_id": "CUST-189007",
+    "problem_description": "A customer is asking why order ORD-189007 is running late. Investigate the available delivery records and report what they show."
+  },
+  {
+    "input_id": "INPUT-189008",
+    "order_id": "ORD-189008",
+    "customer_id": "CUST-189025",
+    "problem_description": "Investigate order ORD-189008, which is behind schedule. State the shipment's current status and what the records establish about the cause."
+  },
+  {
+    "input_id": "INPUT-189009",
+    "order_id": "ORD-189009",
+    "customer_id": "CUST-189033",
+    "problem_description": "Investigate the unsuccessful delivery attempt for order ORD-189009. Identify the recorded reason and what it means for the current shipment status."
+  },
+  {
+    "input_id": "INPUT-189010",
+    "order_id": "ORD-189010",
+    "customer_id": "CUST-189023",
+    "problem_description": "The carrier reports a problem delivering order ORD-189010. Establish what the shipment records show about the attempt and where the shipment stands."
+  },
+  {
+    "input_id": "INPUT-189011",
+    "order_id": "ORD-189011",
+    "customer_id": "CUST-189029",
+    "problem_description": "Order ORD-189011 was not delivered as planned. Review the delivery records and report what is documented."
+  },
+  {
+    "input_id": "INPUT-189012",
+    "order_id": "ORD-189012",
+    "customer_id": "CUST-189013",
+    "problem_description": "Investigate why delivery of order ORD-189012 did not complete. Report the recorded reason and the shipment's current state."
+  },
+  {
+    "input_id": "INPUT-189013",
+    "order_id": "ORD-189013",
+    "customer_id": "CUST-189025",
+    "problem_description": "Investigate the unsuccessful delivery attempt for order ORD-189013. Identify the recorded reason and what it means for the current shipment status."
+  },
+  {
+    "input_id": "INPUT-189014",
+    "order_id": "ORD-189014",
+    "customer_id": "CUST-189008",
+    "problem_description": "The carrier reports a problem delivering order ORD-189014. Establish what the shipment records show about the attempt and where the shipment stands."
+  },
+  {
+    "input_id": "INPUT-189015",
+    "order_id": "ORD-189015",
+    "customer_id": "CUST-189003",
+    "problem_description": "Order ORD-189015 was not delivered as planned. Review the delivery records and report what is documented."
+  },
+  {
+    "input_id": "INPUT-189016",
+    "order_id": "ORD-189016",
+    "customer_id": "CUST-189003",
+    "problem_description": "Investigate why delivery of order ORD-189016 did not complete. Report the recorded reason and the shipment's current state."
+  },
+  {
+    "input_id": "INPUT-189017",
+    "order_id": "ORD-189017",
+    "customer_id": "CUST-189026",
+    "problem_description": "The customer reports that order ORD-189017 has not arrived even though it shows as delivered. Investigate the available delivery records and report what the evidence establishes."
+  },
+  {
+    "input_id": "INPUT-189018",
+    "order_id": "ORD-189018",
+    "customer_id": "CUST-189037",
+    "problem_description": "Investigate the non-receipt report for order ORD-189018. Compare the order and delivery records and state what is established and what remains unknown."
+  },
+  {
+    "input_id": "INPUT-189019",
+    "order_id": "ORD-189019",
+    "customer_id": "CUST-189024",
+    "problem_description": "A customer says they never received order ORD-189019. Review the shipment and delivery records and report what they do and do not establish."
+  },
+  {
+    "input_id": "INPUT-189020",
+    "order_id": "ORD-189020",
+    "customer_id": "CUST-189006",
+    "problem_description": "Order ORD-189020 is marked delivered but the customer says the item did not arrive. Report what the records show."
+  },
+  {
+    "input_id": "INPUT-189021",
+    "order_id": "ORD-189021",
+    "customer_id": "CUST-189020",
+    "problem_description": "The customer reports that order ORD-189021 has not arrived even though it shows as delivered. Investigate the available delivery records and report what the evidence establishes."
+  },
+  {
+    "input_id": "INPUT-189022",
+    "order_id": "ORD-189022",
+    "customer_id": "CUST-189036",
+    "problem_description": "Investigate the non-receipt report for order ORD-189022. Compare the order and delivery records and state what is established and what remains unknown."
+  },
+  {
+    "input_id": "INPUT-189023",
+    "order_id": "ORD-189023",
+    "customer_id": "CUST-189014",
+    "problem_description": "A customer says they never received order ORD-189023. Review the shipment and delivery records and report what they do and do not establish."
+  },
+  {
+    "input_id": "INPUT-189024",
+    "order_id": "ORD-189024",
+    "customer_id": "CUST-189028",
+    "problem_description": "Order ORD-189024 is marked delivered but the customer says the item did not arrive. Report what the records show."
+  },
+  {
+    "input_id": "INPUT-189025",
+    "order_id": "ORD-189025",
+    "customer_id": "CUST-189019",
+    "problem_description": "Investigate order ORD-189025. The tracking record has not progressed recently. Establish the last known status and whether the records explain the gap."
+  },
+  {
+    "input_id": "INPUT-189026",
+    "order_id": "ORD-189026",
+    "customer_id": "CUST-189003",
+    "problem_description": "Order ORD-189026 has shown no tracking updates for some time. Report the last recorded status and what the records establish."
+  },
+  {
+    "input_id": "INPUT-189027",
+    "order_id": "ORD-189027",
+    "customer_id": "CUST-189009",
+    "problem_description": "Tracking for order ORD-189027 appears stuck. Determine what the records show about the last known progress and whether a reason is documented."
+  },
+  {
+    "input_id": "INPUT-189028",
+    "order_id": "ORD-189028",
+    "customer_id": "CUST-189010",
+    "problem_description": "A customer is asking where order ORD-189028 is, as tracking has not changed in a while. Report what the records establish."
+  },
+  {
+    "input_id": "INPUT-189029",
+    "order_id": "ORD-189029",
+    "customer_id": "CUST-189010",
+    "problem_description": "Investigate order ORD-189029. The tracking record has not progressed recently. Establish the last known status and whether the records explain the gap."
+  },
+  {
+    "input_id": "INPUT-189030",
+    "order_id": "ORD-189030",
+    "customer_id": "CUST-189009",
+    "problem_description": "Order ORD-189030 has shown no tracking updates for some time. Report the last recorded status and what the records establish."
+  },
+  {
+    "input_id": "INPUT-189031",
+    "order_id": "ORD-189031",
+    "customer_id": "CUST-189031",
+    "problem_description": "Tracking for order ORD-189031 appears stuck. Determine what the records show about the last known progress and whether a reason is documented."
+  },
+  {
+    "input_id": "INPUT-189032",
+    "order_id": "ORD-189032",
+    "customer_id": "CUST-189001",
+    "problem_description": "A customer is asking where order ORD-189032 is, as tracking has not changed in a while. Report what the records establish."
+  },
+  {
+    "input_id": "INPUT-189033",
+    "order_id": "ORD-189033",
+    "customer_id": "CUST-189036",
+    "problem_description": "Investigate the tracking history for order ORD-189033. Determine whether the sequence of events contains a meaningful conflict."
+  },
+  {
+    "input_id": "INPUT-189034",
+    "order_id": "ORD-189034",
+    "customer_id": "CUST-189004",
+    "problem_description": "The tracking history for order ORD-189034 looks inconsistent to the support team. Review the events and report what the records establish about the delivery outcome."
+  },
+  {
+    "input_id": "INPUT-189035",
+    "order_id": "ORD-189035",
+    "customer_id": "CUST-189005",
+    "problem_description": "Order ORD-189035 shows both a failed attempt and a delivery. Investigate and report what the sequence of events actually establishes."
+  },
+  {
+    "input_id": "INPUT-189036",
+    "order_id": "ORD-189036",
+    "customer_id": "CUST-189005",
+    "problem_description": "Review the tracking events for order ORD-189036 and determine whether the records contradict each other."
+  },
+  {
+    "input_id": "INPUT-189037",
+    "order_id": "ORD-189037",
+    "customer_id": "CUST-189003",
+    "problem_description": "Investigate the tracking history for order ORD-189037. Determine whether the sequence of events contains a meaningful conflict."
+  },
+  {
+    "input_id": "INPUT-189038",
+    "order_id": "ORD-189038",
+    "customer_id": "CUST-189008",
+    "problem_description": "The tracking history for order ORD-189038 looks inconsistent to the support team. Review the events and report what the records establish about the delivery outcome."
+  },
+  {
+    "input_id": "INPUT-189039",
+    "order_id": "ORD-189039",
+    "customer_id": "CUST-189027",
+    "problem_description": "Order ORD-189039 shows both a failed attempt and a delivery. Investigate and report what the sequence of events actually establishes."
+  },
+  {
+    "input_id": "INPUT-189040",
+    "order_id": "ORD-189040",
+    "customer_id": "CUST-189023",
+    "problem_description": "Review the tracking events for order ORD-189040 and determine whether the records contradict each other."
+  },
+  {
+    "input_id": "INPUT-189041",
+    "order_id": "ORD-189041",
+    "customer_id": "CUST-189041",
+    "problem_description": "Investigate order ORD-189041. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189042",
+    "order_id": "ORD-189042",
+    "customer_id": "CUST-189042",
+    "problem_description": "The delivery address recorded on order ORD-189042 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189043",
+    "order_id": "ORD-189043",
+    "customer_id": "CUST-189043",
+    "problem_description": "Support flagged order ORD-189043 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch."
+  },
+  {
+    "input_id": "INPUT-189044",
+    "order_id": "ORD-189044",
+    "customer_id": "CUST-189044",
+    "problem_description": "Order ORD-189044 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish."
+  },
+  {
+    "input_id": "INPUT-189045",
+    "order_id": "ORD-189045",
+    "customer_id": "CUST-189045",
+    "problem_description": "Investigate order ORD-189045. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189046",
+    "order_id": "ORD-189046",
+    "customer_id": "CUST-189046",
+    "problem_description": "The delivery address recorded on order ORD-189046 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189047",
+    "order_id": "ORD-189047",
+    "customer_id": "CUST-189047",
+    "problem_description": "Support flagged order ORD-189047 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch."
+  },
+  {
+    "input_id": "INPUT-189048",
+    "order_id": "ORD-189048",
+    "customer_id": "CUST-189048",
+    "problem_description": "Order ORD-189048 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish."
+  },
+  {
+    "input_id": "INPUT-189049",
+    "order_id": "ORD-189049",
+    "customer_id": "CUST-189049",
+    "problem_description": "Investigate order ORD-189049. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189050",
+    "order_id": "ORD-189050",
+    "customer_id": "CUST-189050",
+    "problem_description": "The delivery address recorded on order ORD-189050 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189051",
+    "order_id": "ORD-189051",
+    "customer_id": "CUST-189051",
+    "problem_description": "Support flagged order ORD-189051 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch."
+  },
+  {
+    "input_id": "INPUT-189052",
+    "order_id": "ORD-189052",
+    "customer_id": "CUST-189052",
+    "problem_description": "Order ORD-189052 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish."
+  },
+  {
+    "input_id": "INPUT-189053",
+    "order_id": "ORD-189053",
+    "customer_id": "CUST-189053",
+    "problem_description": "Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189054",
+    "order_id": "ORD-189054",
+    "customer_id": "CUST-189054",
+    "problem_description": "The delivery address recorded on order ORD-189054 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy."
+  },
+  {
+    "input_id": "INPUT-189055",
+    "order_id": "ORD-189055",
+    "customer_id": "CUST-189055",
+    "problem_description": "Support flagged order ORD-189055 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch."
+  },
+  {
+    "input_id": "INPUT-189056",
+    "order_id": "ORD-189056",
+    "customer_id": "CUST-189015",
+    "problem_description": "Investigate why order ORD-189056 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented."
+  },
+  {
+    "input_id": "INPUT-189057",
+    "order_id": "ORD-189057",
+    "customer_id": "CUST-189013",
+    "problem_description": "Order ORD-189057 is still processing and the carrier has not collected it. Establish what the records show about why."
+  },
+  {
+    "input_id": "INPUT-189058",
+    "order_id": "ORD-189058",
+    "customer_id": "CUST-189001",
+    "problem_description": "Investigate the lack of progress on order ORD-189058 after its shipping label was created. Report what the records establish about the cause."
+  },
+  {
+    "input_id": "INPUT-189059",
+    "order_id": "ORD-189059",
+    "customer_id": "CUST-189005",
+    "problem_description": "Order ORD-189059 has a shipping label but has not been picked up. Determine whether the records document the reason."
+  },
+  {
+    "input_id": "INPUT-189060",
+    "order_id": "ORD-189060",
+    "customer_id": "CUST-189027",
+    "problem_description": "Investigate why order ORD-189060 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented."
+  },
+  {
+    "input_id": "INPUT-189061",
+    "order_id": "ORD-189061",
+    "customer_id": "CUST-189024",
+    "problem_description": "Order ORD-189061 is still processing and the carrier has not collected it. Establish what the records show about why."
+  },
+  {
+    "input_id": "INPUT-189062",
+    "order_id": "ORD-189062",
+    "customer_id": "CUST-189021",
+    "problem_description": "Investigate the lack of progress on order ORD-189062 after its shipping label was created. Report what the records establish about the cause."
+  },
+  {
+    "input_id": "INPUT-189063",
+    "order_id": "ORD-189063",
+    "customer_id": "CUST-189039",
+    "problem_description": "Order ORD-189063 has a shipping label but has not been picked up. Determine whether the records document the reason."
+  },
+  {
+    "input_id": "INPUT-189064",
+    "order_id": "ORD-189064",
+    "customer_id": "CUST-189033",
+    "problem_description": "Investigate why order ORD-189064 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented."
+  },
+  {
+    "input_id": "INPUT-189065",
+    "order_id": "ORD-189065",
+    "customer_id": "CUST-189019",
+    "problem_description": "Order ORD-189065 is still processing and the carrier has not collected it. Establish what the records show about why."
+  },
+  {
+    "input_id": "INPUT-189066",
+    "order_id": "ORD-189066",
+    "customer_id": "CUST-189009",
+    "problem_description": "Investigate the lack of progress on order ORD-189066 after its shipping label was created. Report what the records establish about the cause."
+  },
+  {
+    "input_id": "INPUT-189067",
+    "order_id": "ORD-189067",
+    "customer_id": "CUST-189032",
+    "problem_description": "Order ORD-189067 has a shipping label but has not been picked up. Determine whether the records document the reason."
+  },
+  {
+    "input_id": "INPUT-189068",
+    "order_id": "ORD-189068",
+    "customer_id": "CUST-189032",
+    "problem_description": "Investigate why order ORD-189068 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented."
+  },
+  {
+    "input_id": "INPUT-189069",
+    "order_id": "ORD-189069",
+    "customer_id": "CUST-189037",
+    "problem_description": "Order ORD-189069 is still processing and the carrier has not collected it. Establish what the records show about why."
+  },
+  {
+    "input_id": "INPUT-189070",
+    "order_id": "ORD-189070",
+    "customer_id": "CUST-189035",
+    "problem_description": "Investigate the lack of progress on order ORD-189070 after its shipping label was created. Report what the records establish about the cause."
+  }
+]
