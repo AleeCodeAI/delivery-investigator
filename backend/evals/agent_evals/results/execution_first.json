@@ -1,0 +1,632 @@
+[
+    {
+        "case_id": "ORD-189001",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that severe weather caused a carrier delay, matching the ground‑truth scenario. Evidence identification: The agent listed the delayed shipment status, the delivery‑exception event SE‑189004, and the three preceding events SE‑189001‑003, which are exactly the essential records required. Evidence consistency: All key claims in the report (delayed status, severe‑weather exception at 2026‑10‑12, lack of later updates or delivery) are directly supported by the identified evidences."
+    },
+    {
+        "case_id": "ORD-189002",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states the delay was caused by a temporary carrier facility disruption, matching the ground‑truth scenario. Evidence identification: the agent listed the key disruption event (SE‑189008) and the preceding events (SE‑189005‑007) plus a later in‑transit scan (SE‑189009), covering the essential facts; the missing explicit shipment‑status record is semantically covered by the in‑transit scan. Evidence consistency: the report’s statements about the disruption, the timeline, and the parcel remaining in transit are all directly supported by the listed evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189003",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly identifies road‑closure carrier delay matching the actual scenario. Evidence identification: agent listed the delay event SE-189012 and the preceding pickup/label events, covering the essential records; the missing shipment status record is not essential. Evidence consistency: the report’s statements about pickup time, delay time, location and cause are all directly supported by the three evidences provided."
+    },
+    {
+        "case_id": "ORD-189004",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly identifies a carrier vehicle breakdown as the delay, matching the ground‑truth scenario. Evidence identification: the agent provided the key delay event (SE‑189017), the shipment status in_transit, and the surrounding events (SE‑189014‑016, SE‑189018); the only missing ground‑truth item is SE‑189013, which is not essential for establishing the cause, so the essential evidence is considered identified. Evidence consistency: each major claim in the report (in‑transit status, breakdown on 2026‑10‑07, latest scan on 2026‑10‑09) is directly supported by the listed evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189005",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly identifies a regional sorting facility backlog as the delay, matching the ground‑truth scenario. Evidence identification: the agent listed SE‑189019, SE‑189020, SE‑189021, SE‑189022 and the delayed shipment record, covering all essential supporting evidence. Evidence consistency: the report’s claims about the backlog event, lack of later updates, and delayed status are all directly supported by the provided evidences."
+    },
+    {
+        "case_id": "ORD-189006",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the heavy rain and flooding delay, matching the ground‑truth scenario. Evidence identification: The agent listed the delivery_exception event (SE‑189027) and all preceding shipment events (SE‑189023‑026), which are the essential records; the missing shipment status record is non‑essential. Evidence consistency: The report claims no events after the delay, yet the agent’s own evidence list includes SE‑189028 (an in‑transit scan after the delay), contradicting the report’s statement."
+    },
+    {
+        "case_id": "ORD-189007",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the carrier scanning/dispatch system outage as the delay, matching the actual scenario. Evidence identification: The agent listed the operational disruption event (SE-189034) and all preceding shipment events, covering the essential records; the missing shipment status record is not essential. Evidence consistency: The report’s statements about the arrival, outage, and lack of further events are directly supported by the listed evidences."
+    },
+    {
+        "case_id": "ORD-189008",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states the shipment is in transit and the delay is due to a bridge closure, matching the ground‑truth scenario. Evidence identification: the agent supplied the shipment status, the delay event SE‑189039, and surrounding events (SE‑189036‑38, SE‑189040); the omitted SE‑189035 is not essential for establishing the documented delay, so essential evidence is present. Evidence consistency: the report’s claims about the in‑transit status, bridge‑closure delay, and last known scan are all directly supported by the listed evidences with no contradictions."
+    },
+    {
+        "case_id": "ORD-189009",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly describes a delivery attempt failure due to recipient unavailable, matching the actual scenario. Evidence identification: the agent supplied the critical event SE-189047 and the shipment status record showing delivery_attempted, which are the essential pieces; missing preceding events is not required. Evidence consistency: the report’s claims about the failed attempt, reason, timestamp, and current status are directly supported by the provided evidences with no contradictions."
+    },
+    {
+        "case_id": "ORD-189010",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the carrier attempted delivery and failed because it could not access the location, matching the ground‑truth scenario. Evidence identification: The agent listed all relevant shipment events (SE‑189048 to SE‑189054), which capture the delivery attempt and failure; the missing shipment status record is not essential for establishing the scenario. Evidence consistency: All factual claims in the report (timeline, failed attempt reason, lack of successful delivery) are directly supported by the listed events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189011",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states the delivery attempt failed because the business was closed, matching the ground‑truth scenario. Evidence identification: The agent listed all shipment events SE‑189055‑SE‑189061, covering the essential facts; the missing shipment status record is not essential. Evidence consistency: The timeline and failure reason described in the report are directly supported by the listed events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189012",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery failed because the entrance was inaccessible, matching the actual scenario. Evidence identification: The agent listed the failed delivery event (SE-189068) but omitted the essential shipment record (SHIP-189012 with status=delivery_attempted), so not all essential evidence was identified. Evidence consistency: The claims about the failed attempt, the reason, and the lack of further activity are all supported by the two events the agent provided, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189013",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states a delivery attempt failed because the recipient was unavailable, matching the ground‑truth scenario. Evidence identification: the agent listed SE-189075, SE-189076 and the current out_for_delivery status, which are the essential records; missing preceding events is acceptable. Evidence consistency: the report’s claims about the failed attempt, the second out‑for‑delivery attempt and the absence of a successful delivery are all supported by the identified evidences."
+    },
+    {
+        "case_id": "ORD-189014",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery failed because an adult signature was unavailable, matching the ground‑truth scenario. Evidence identification: The agent listed the key events SE‑189083 and SE‑189084 and the shipment record with out_for_delivery status, which are the essential pieces; missing earlier events does not affect correctness. Evidence consistency: All factual statements in the report (arrival, first out‑for‑delivery, failed attempt due to signature, second out‑for‑delivery, and current status) are directly supported by the provided evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189015",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the carrier could not access the delivery location and the shipment remained undelivered, matching the ground‑truth scenario. Evidence identification: the agent listed the three key shipment events (SE‑189091, SE‑189092, SE‑189093) that demonstrate the failed attempts, which are the essential records; missing the shipment status record and earlier events does not affect correctness. Evidence consistency: the report’s statements about two unsuccessful attempts and lack of a successful delivery are directly supported by the listed events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189016",
+        "cause_correct": false,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 40,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: the report adds a second failure reason (carrier could not access location) that is not present in the ground‑truth scenario, which only cites a business‑closed failure, so the cause is incorrect. Evidence identification: the agent supplied the key failed‑attempt record SE‑189100 and the shipment status, which are sufficient to establish the actual scenario; missing SE‑189101 and preceding events does not affect essential evidence, so identification is correct. Evidence consistency: all factual statements in the report (business‑closed attempt, access‑issue attempt, and current delivery_attempted status) are directly backed by the three evidences the agent listed, so the report is consistent with its evidence."
+    },
+    {
+        "case_id": "ORD-189017",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: Report correctly describes delivery left at door with no proof of receipt, matching genuine non‑receipt scenario. Evidence identification: Agent listed the delivered status and event SE‑189109 (and SE‑189108), which are the key records needed; missing the order record is not essential. Evidence consistency: The delivery timestamp and left‑at‑door confirmation in the evidences support the report’s claims, and no receipt evidence is present, so the report is consistent."
+    },
+    {
+        "case_id": "ORD-189018",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states the package was marked delivered left at the front door and notes the customer did not receive it, matching the genuine non‑receipt scenario. Evidence identification: The agent listed all shipment events including the delivered event, which are the essential records; missing the separate shipment summary and order address record does not affect essential evidence. Evidence consistency: The report’s claims about delivery time, location, and lack of receipt confirmation are directly supported by the delivered event evidence and the absence of other records."
+    },
+    {
+        "case_id": "ORD-189019",
+        "cause_correct": false,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: Report notes delivery left at the door but does not assert that the customer did not receive the item, so it fails to identify the genuine non‑receipt cause. Evidence identification: Agent listed all shipment events but omitted the shipment summary (SHIP-189019) and the order record (ORD-189019), which are essential for confirming delivery status and correct address. Evidence consistency: The report’s claims (delivery left at front door, no evidence of retrieval or theft) are directly supported by the provided shipment events, so the report is consistent with its evidences."
+    },
+    {
+        "case_id": "ORD-189020",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly states that carrier records show delivery to a resident while the customer claims non‑receipt, matching the genuine non‑receipt scenario. Evidence identification: the agent listed the shipment events but omitted the shipment status record (SHIP‑189020) and the order record confirming the delivery address, which are essential to establish the scenario. Evidence consistency: all factual statements in the report (pickup, transit, out‑for‑delivery, delivery time, and lack of exception information) are directly supported by the listed events, so the report is consistent with its evidence."
+    },
+    {
+        "case_id": "ORD-189021",
+        "cause_correct": false,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 40,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report lists the delivery record and lack of further evidence but does not state that the customer genuinely did not receive the item, which is the ground‑truth cause, so cause_correct is false. Evidence identification: The agent supplied the delivered event (SE‑189137) and the matching address, the essential records needed to establish the scenario, so evidence_identification_correct is true. Evidence consistency: The report’s claims about delivery time, handed_to_resident, address match, and absence of additional records are all directly supported by the identified evidences, so evidence_consistency_correct is true."
+    },
+    {
+        "case_id": "ORD-189022",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states the parcel was delivered and left in the mailroom and notes no proof the customer received it, matching the genuine non‑receipt scenario. Evidence identification: the agent listed the order record, the delivered shipment event (showing left‑at‑mailroom) and the preceding shipment events, covering the essential evidence needed. Evidence consistency: the report’s claims about delivery time, location and lack of receipt are directly supported by the identified evidences."
+    },
+    {
+        "case_id": "ORD-189023",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: Report correctly identifies delivery was left in the mailroom and notes no proof the customer received it, matching the genuine non‑receipt scenario. Evidence identification: The three evidences cover the delivered shipment event, delivery confirmation, and address match, which are the essential items from the ground truth. Evidence consistency: All factual statements in the report (delivery time, confirmation, lack of receipt evidence) are directly supported by the listed evidences and there are no contradictions."
+    },
+    {
+        "case_id": "ORD-189024",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly describes that the carrier records show a delivery with no confirmation detail, matching the genuine non‑receipt scenario. Evidence identification: the agent listed all shipment events and the order address, but omitted the explicit record of delivery_confirmation=none, which is essential to the ground‑truth scenario. Evidence consistency: the report’s statements about the delivered event, timestamp, and lack of confirmation are consistent with the provided evidences, as the evidences show the delivery event and no confirmation details."
+    },
+    {
+        "case_id": "ORD-189025",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event was arrival at the Barstow facility and that no further tracking information exists, matching the ground‑truth scenario of no recorded progress. Evidence identification: The agent listed the three shipment events (SE‑189159, SE‑189160, SE‑189161) which are the core records needed to establish the last known status; the missing shipment status record is not essential for the scenario. Evidence consistency: All factual claims in the report (last event time, location, and absence of later events) are directly supported by the three provided events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189026",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the last event was the departure from the regional facility and that no further information or reason is available, matching the ground‑truth scenario. Evidence identification: the agent provided the four shipment events (SE‑189162‑165) that constitute the essential records needed to establish the scenario; the omitted shipment status record is not essential. Evidence consistency: the report’s claim about the last event and the absence of later updates is directly supported by the listed events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189027",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the last event was a carrier pickup on 2026-09-26 and that no further tracking events or reason are recorded, matching the ground‑truth scenario. Evidence identification: the agent listed the two shipment‑event records but omitted the shipment status record (SHIP-189027) showing the order remains in‑transit with no delivery date, which is essential to establish the scenario, so this is false. Evidence consistency: the report’s claims about the latest pickup event and the absence of subsequent events are directly supported by the two provided event records and the lack of any other evidence, so this is true."
+    },
+    {
+        "case_id": "ORD-189028",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event is the arrival at Sacramento and no further events, matching the ground‑truth description of no recorded progress. Evidence identification: The agent listed all five shipment events (SE‑189168 to SE‑189172) which are the essential records; missing the shipment status record is non‑essential. Evidence consistency: The report’s claims about the latest event and the absence of later events are directly supported by the listed shipment events."
+    },
+    {
+        "case_id": "ORD-189029",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states the last event was arrival at facility and no further updates, matching the ground‑truth description of no recorded progress after that point. Evidence identification: The agent listed the three shipment events (SE‑189173, SE‑189174, SE‑189175) which are the essential records; the missing shipment status record is supplementary, so identification is adequate. Evidence consistency: All factual statements in the report (timestamps, event types, lack of later events) are directly supported by the three listed events."
+    },
+    {
+        "case_id": "ORD-189030",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the last event was the departure from the Sacramento regional sorting facility and that no further tracking information exists, matching the ground‑truth scenario. Evidence identification: the agent provided the four shipment‑event records (SE‑189176‑179) which are the essential items needed to establish the scenario; the omitted shipment‑status record is not required to determine the cause. Evidence consistency: the report’s claim about the last event and the absence of later events is directly supported by the listed evidences, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189031",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event is an in‑transit scan on 2026‑09‑09 and that no further events or reason are recorded, matching the actual scenario. Evidence identification: The agent listed all five shipment‑event records (SE‑189180 to SE‑189184) but omitted the shipment record (SHIP‑189031) that shows the status remains in_transit and no delivery date, which is part of the ground‑truth essential evidence. Evidence consistency: All factual claims in the report (latest in‑transit event, absence of later events, lack of recorded reason) are directly supported by the listed shipment‑event evidences."
+    },
+    {
+        "case_id": "ORD-189032",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly describes that only a carrier pickup event is recorded and no further tracking exists, matching the ground‑truth scenario. Evidence identification: the agent provided the two shipment‑event records but omitted the shipment status record (in_transit with empty delivered_at) that is part of the essential supporting evidence, so this is false. Evidence consistency: the report’s claims about the latest event and the absence of later updates are directly supported by the two events the agent listed, with no contradictions, so this is true."
+    },
+    {
+        "case_id": "ORD-189033",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly describes the apparent same‑day retry conflict resolved by ordering timestamps, matching the ground‑truth scenario. Evidence identification: the agent provided all eight shipment event records, which constitute the essential evidence; the missing shipment summary record is not required for establishing the scenario. Evidence consistency: the report’s statements about labeling, pickup, facility processing, a single failed delivery attempt, and final delivery are all directly supported by the listed events."
+    },
+    {
+        "case_id": "ORD-189034",
+        "cause_correct": false,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 40,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report attributes the issue to recipient unavailability, whereas the ground truth describes an apparent same‑day dispatch conflict resolved by ordering timestamps, so the cause is incorrect. Evidence identification: The agent listed all required shipment event records (SE‑189195‑203); the missing shipment status record is supplementary, not essential for establishing delivery, so identification is acceptable. Evidence consistency: All factual claims in the report (pickup, failed first attempt, successful second attempt at 16:30 left‑at‑door) are directly supported by the listed events, and no contradictions appear."
+    },
+    {
+        "case_id": "ORD-189035",
+        "cause_correct": false,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 40,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report cites an access‑issue cause, but the ground truth attributes the problem to an apparent conflict resolved by ordering timestamps, so the cause is incorrect. Evidence identification: The agent provided the core shipment events (SE‑189209‑212) that establish the out‑for‑delivery, failed attempt, retry and delivery, matching the essential evidence; missing other events does not affect correctness. Evidence consistency: The timeline and delivery details described in the report are directly supported by the listed events, so the report is consistent with its evidence."
+    },
+    {
+        "case_id": "ORD-189036",
+        "cause_correct": false,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report says there is no contradictory timestamps, but the ground truth states there was an apparent conflict due to a late‑synced facility scan, so the cause is misidentified. Evidence identification: The agent listed all shipment events but omitted the shipment record (SHIP-189036) that confirms delivery status, which is essential to the scenario. Evidence consistency: The claim of a consistent chronological sequence is directly supported by the listed events, so the report is consistent with its own evidence."
+    },
+    {
+        "case_id": "ORD-189037",
+        "cause_correct": false,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 40,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: the report says there is no conflict, but the ground truth describes an apparent conflict caused by a late‑synced failed attempt, so the cause is misidentified. Evidence identification: the agent listed the three key shipment events (out_for_delivery, delivery_attempt_failed, delivered) that are essential to establish the timeline and conflict; missing other ancillary records does not affect correctness. Evidence consistency: the report’s claim of a logical sequence and no contradictory events is fully supported by the three listed events, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189038",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly describes the failed first attempt, return to station, and successful second delivery, matching the actual scenario of an apparent conflict resolved by ordering events. Evidence identification: The agent listed the four shipment events that directly show the failed attempt, return, redispatch, and final delivery, which are sufficient to establish the scenario; the omitted earlier events and the shipment status record are not essential for the core explanation. Evidence consistency: All factual statements in the report (timestamps, reasons, final delivery status) are directly supported by the four identified shipment events, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189039",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: Report correctly describes the early failed attempt due to closed business and later successful delivery, matching the ground‑truth scenario of an apparent conflict resolved by timestamps. Evidence identification: Agent listed the three key shipment events (out for delivery, failed attempt, delivery) which are the essential records; missing other events does not affect correctness. Evidence consistency: All factual statements in the report (out‑for‑delivery, failure reason, delivery time and location) are directly supported by the three identified events, and the note about missing explanation is consistent with the absence of such evidence."
+    },
+    {
+        "case_id": "ORD-189040",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly describes the afternoon failure and evening success and notes that ordering timestamps resolves the apparent conflict, matching the actual scenario. Evidence identification: The agent listed all eight shipment event records that constitute the core evidence; the missing shipment status record is supplementary, so essential evidence is present. Evidence consistency: The report’s statements about timestamps, failed attempt at 15:40 and delivery at 19:05, and lack of contradictions are directly supported by the listed events."
+    },
+    {
+        "case_id": "ORD-189041",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the order address matched the valid address record at the order date and the discrepancy is due to a later move, matching the ground‑truth scenario. Evidence identification: the agent listed the order record and both relevant address‑history records, which are the essential items needed to establish the scenario; missing the shipment record is not essential. Evidence consistency: the report’s claims about address validity, timing, and lack of delivery error are directly supported by the three evidences provided, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189042",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address does not match the customer's current or historical addresses, matching the ground‑truth scenario. Evidence identification: The agent listed the order record, current address, both historical address records, and the shipment record, covering all essential evidence. Evidence consistency: The report’s claim of a mismatch is directly supported by the listed order and address records, and no contradictions appear; the lack‑of‑record statements are consistent with the absence of such evidence."
+    },
+    {
+        "case_id": "ORD-189043",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly states that the order address matched the historical address valid on the order date and the mismatch is due to a later move, matching the ground‑truth scenario. Evidence identification: the agent listed the order record, the customer’s current address, and both relevant address‑history entries, which are the essential items; the missing shipment record is not required to establish the cause. Evidence consistency: the report’s statements about the address match and the post‑order move are directly supported by the provided order and address‑history records, and no contradictory evidence is present."
+    },
+    {
+        "case_id": "ORD-189044",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 60,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: the report correctly identifies that the order used a historical address that ended before the order date, matching the ground‑truth scenario. Evidence identification: the agent failed to include the order record containing the order date (and an irrelevant address record), which is essential for establishing the timing of the historical address, so not all required evidence was identified. Evidence consistency: the report’s claim that the historical period ended before the order date is not supported by any listed evidence because the order date is missing, making the reasoning unsupported."
+    },
+    {
+        "case_id": "ORD-189045",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the order used a prior address that expired before the order date, matching the ground‑truth cause. Evidence identification: the agent listed the order record, customer current address, both address‑history entries and the shipment record, covering all essential evidence. Evidence consistency: each key claim in the report (delivery address, current address, effective dates, lack of address‑change records) is directly supported by the listed evidences."
+    },
+    {
+        "case_id": "ORD-189046",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the order used the historic address (ADDR-189052) which had expired before the order date, matching the ground‑truth scenario. Evidence identification: The agent listed the order record, the customer’s current address, both address‑history entries and shipment events, covering all essential items from the ground truth. Evidence consistency: All factual statements in the report (order date, delivery address, address‑history periods, current address) are directly supported by the identified evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189047",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the order used the address valid at order time and the mismatch is due to a later address change, matching the actual scenario. Evidence identification: The agent supplied the order record, the relevant address‑history entry (ADDR‑189055) and the later address entry (ADDR‑189056) plus the current customer record, covering the essential facts; missing ADDR‑189054 is non‑essential. Evidence consistency: All key statements in the report (date, address validity period, later change) are directly supported by the provided evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189048",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address matched the valid address (ADDR-189057) on the order date and that the later address change explains the difference, matching the ground‑truth scenario. Evidence identification: The agent listed the order record, the customer’s current address, and both address‑history entries, which are the essential items; the missing shipment record is not required to establish the address issue. Evidence consistency: The report’s claim that the address was valid on 2026‑09‑10 is directly supported by the order address and the address‑history entry with the appropriate effective dates, and no unsupported assertions are made."
+    },
+    {
+        "case_id": "ORD-189049",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the order was sent to an outdated address, matching the ground‑truth explanation. Evidence identification: the agent supplied the order record and all three address‑history entries, which are the essential pieces needed to establish the scenario; the omitted customer and shipment records are not required. Evidence consistency: the report’s claims about the order date, the validity period of the old address, and the current address are directly supported by the provided evidences, and the note about missing logs is consistent with their absence."
+    },
+    {
+        "case_id": "ORD-189050",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address matched the address history valid on the order date, matching the ground‑truth scenario. Evidence identification: The agent listed the order record, both address‑history entries and the shipment delivery record, which are the essential items required. Evidence consistency: Each key claim in the report (address match, later move, delivery confirmation) is directly supported by the provided evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189051",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the order address (90042) does not match the customer’s current address or any history record (90025), matching the ground‑truth scenario. Evidence identification: the agent supplied the order record, the current address record, and the address‑history record, covering the essential facts; the missing shipment record is not essential. Evidence consistency: the report’s claim of a mismatch and lack of any address‑change evidence is directly supported by the three provided records, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189052",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the delivery address matches neither the current address nor any address in the customer’s history, which aligns with the ground‑truth scenario. Evidence identification: the agent provided the order record, the customer’s current address, and both address‑history records—these are the essential pieces needed to establish the mismatch; the missing shipment record is not essential. Evidence consistency: the report’s claims about the order address, current address, history entries, and the absence of a matching address are all directly supported by the evidences the agent listed."
+    },
+    {
+        "case_id": "ORD-189053",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly states that the order used an address that had expired, matching the ground‑truth cause. Evidence identification: the agent listed the order record and both address‑history records (the essential items), missing only a separate customer record which is not essential. Evidence consistency: the report’s statements about the outdated address, dates and the current address are directly supported by the listed evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189054",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that the delivery address does not match either the current address or any historical address, which matches the actual scenario. Evidence identification: the agent supplied the order record, the customer’s current address record, and the address‑history record, covering all essential evidence; the missing shipment record is not required for the cause. Evidence consistency: the report’s claim of a mismatch is directly supported by the provided order address and the address‑history/current address evidence, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189055",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address does not match any address on file, matching the ground‑truth scenario. Evidence identification: The agent supplied the current address, both address‑history records, and the order delivery address, which are the essential items needed to establish the mismatch; missing the shipment record is not essential. Evidence consistency: All factual statements in the report (mismatch, current address, lack of matching history) are directly supported by the listed evidences and there are no contradictions."
+    },
+    {
+        "case_id": "ORD-189056",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the shipment never progressed to pickup and cites the quality_hold as the internal issue, matching the ground‑truth scenario. Evidence identification: The agent listed the key shipment event (label_created) and both inventory events (reservation and quality_hold), which are sufficient to establish the scenario; missing order and shipment status records are non‑essential. Evidence consistency: All factual claims in the report (no pickup event, presence of quality_hold, reservation) are directly supported by the three evidences provided."
+    },
+    {
+        "case_id": "ORD-189057",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 60,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: the report correctly describes the allocation_failed and backorder_flagged events and the resulting lack of carrier pickup, matching the actual scenario. Evidence identification: the agent omitted essential records such as the order status=processing and an explicit indication that no pickup event occurred, providing only related but incomplete evidence. Evidence consistency: the report’s claims that the order stays in processing and that there is no carrier pickup are not directly supported by the listed evidences, which lack order‑status and explicit no‑pickup evidence."
+    },
+    {
+        "case_id": "ORD-189058",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly identifies that the shipment never left label creation and attributes the stall to the inventory count_discrepancy, matching the ground‑truth scenario. Evidence identification: the agent supplied the label_created shipment event and both inventory events (reservation and count_discrepancy), which are the essential records needed to establish the scenario; the omitted order and shipment status records are not essential. Evidence consistency: all factual statements in the report (label_created, reservation, count_discrepancy, and lack of pickup) are directly supported by the listed evidences, and the inferred causal link is a reasonable interpretation of those facts."
+    },
+    {
+        "case_id": "ORD-189059",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly identifies the allocation shortfall as the reason the carrier did not pick up, matching the ground‑truth scenario. Evidence identification: the agent listed the shipment event showing label creation and both inventory events (reservation and shortfall), which are the essential records needed; missing order and shipment status records are non‑essential. Evidence consistency: the claim that the carrier failed to pick up is not backed by any of the listed evidences (no pick‑up record is provided), so an important factual statement lacks support."
+    },
+    {
+        "case_id": "ORD-189060",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that a shipping label was created, no carrier pickup event occurred, and a count discrepancy in inventory likely prevented pickup, matching the actual scenario. Evidence identification: The agent provided the label_created shipment event and both inventory events (reservation and count discrepancy), which are the essential records; missing order and shipment status records are non‑essential. Evidence consistency: The report’s claims about label creation, absence of pickup, and inventory discrepancy are directly supported by the listed evidences, and the reasoning follows logically."
+    },
+    {
+        "case_id": "ORD-189061",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report identifies the quality hold as the internal condition preventing carrier pickup, matching the ground‑truth cause. Evidence identification: The agent provided the shipment event SE-189357 and both inventory events IE-189122 and IE-189123, which are the essential records needed to establish the scenario. Evidence consistency: The report’s statements about reservation, quality hold timing, and lack of a pickup event are directly supported by the three evidences supplied."
+    },
+    {
+        "case_id": "ORD-189062",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly attributes lack of pickup to allocation_failed and backorder_flagged, matching ground truth. Evidence identification: agent listed the label_created shipment event and both inventory events, covering the essential records; missing order/shipment status records are non‑essential. Evidence consistency: all key statements (label created, no pickup, allocation_failed, backorder_flagged) are directly supported by the three evidences, and no contradictions appear."
+    },
+    {
+        "case_id": "ORD-189063",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report attributes the stall to an internal inventory count discrepancy, matching the ground‑truth scenario of a count_discrepancy causing no pickup. Evidence identification: The agent listed the label_created shipment event and both inventory events (reservation and count_discrepancy), covering the essential records required; missing order and shipment status records are non‑essential. Evidence consistency: All factual statements in the report (label_created only, absence of pickup, presence of count_discrepancy) are directly supported by the listed evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189064",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that a label was created, no pickup occurred, and the reservation was released, matching the ground‑truth scenario. Evidence identification: The agent listed the label‑created shipment event SE-189360 and both inventory events IE-189128 and IE-189129, which are the essential records; missing order and shipment status records are non‑essential. Evidence consistency: All factual statements in the report (label creation, lack of pickup, reservation release) are directly supported by the identified evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189065",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that a quality hold placed on the order caused the carrier not to pick up the shipment, matching the ground‑truth scenario. Evidence identification: The agent listed the key inventory events (reservation and quality_hold) and the shipment event with label_created, which are the essential records needed to establish the scenario; missing order/shipment status records are non‑essential. Evidence consistency: The report’s statements about reservation, quality_hold, and the carrier not collecting are all directly reflected in the provided evidences (reservation and quality_hold events, and the label_created event implying no pickup), so the reasoning is supported."
+    },
+    {
+        "case_id": "ORD-189066",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly states that only a label_created event exists and the reservation was released, matching the actual scenario of no pickup. Evidence identification: the agent listed the shipment event SE-189362 and both inventory events IE-189133 and IE-189134, which are the essential records needed. Evidence consistency: the report’s statements about no progress beyond label_created and the reservation release are directly supported by the listed evidences, and the inference of no carrier pickup follows from the absence of a pickup event."
+    },
+    {
+        "case_id": "ORD-189067",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: report correctly states label created, no pickup, and quality_hold as the reason, matching the ground truth. Evidence identification: agent listed SE-189363 and IE-189137 (essential) plus IE-189136; essential evidence is present, so correct. Evidence consistency: report's claims about the label, missing pickup, and quality_hold are directly supported by the identified evidences with no contradictions."
+    },
+    {
+        "case_id": "ORD-189068",
+        "cause_correct": true,
+        "evidence_identification_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 60,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report correctly states that the order had a label created, no carrier pickup, and that the reservation was released, matching the ground‑truth scenario. Evidence identification: The agent listed the order record, the label_created shipment event, and both inventory events, but omitted the explicit evidence that no pickup event occurred, which is part of the essential supporting evidence. Evidence consistency: The report’s claim that there is no carrier pickup event is not backed by any of the listed evidences (the agent did not provide a record showing the absence of a pickup), so the important claim is unsupported."
+    },
+    {
+        "case_id": "ORD-189069",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly attributes the non‑collection to an allocation shortfall, matching the ground‑truth scenario. Evidence identification: the agent supplied the key shipment event showing label creation and both inventory events, including the allocation shortfall, which are the essential records; missing order and shipment status records are non‑essential. Evidence consistency: the report claims the shipment was not collected, but the provided evidences only show a label_created event and allocation shortfall, without any explicit evidence of a missing pickup event, so the claim is not directly supported by the identified evidence."
+    },
+    {
+        "case_id": "ORD-189070",
+        "cause_correct": true,
+        "evidence_identification_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: the report correctly identifies the allocation shortfall as the reason the shipment never left the label‑created stage, matching the ground‑truth scenario. Evidence identification: the agent supplied the crucial shipment event SE-189366 and the two inventory events IE-189143 and IE-189144, which are the essential records needed to establish the situation; missing order and shipment status records are non‑essential. Evidence consistency: the report’s claims about the label creation, absence of carrier pickup, and the inventory shortfall are directly supported by the listed evidences, with no contradictions."
+    }
+]
