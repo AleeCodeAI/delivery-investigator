@@ -20,7 +20,7 @@ class AgentEvaluator(Logger):
     name: str = "AgentEvaluator"
     color: str = Logger.CYAN
 
-    CASE_DELAY_SECONDS = 10   # wait between cases (usage limit)
+    CASE_DELAY_SECONDS = 5   # wait between cases (usage limit)
     AGENT_PASS_RATE = 90.0    # % of cases that must pass
 
     def __init__(self):
