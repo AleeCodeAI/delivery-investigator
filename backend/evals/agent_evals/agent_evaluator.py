@@ -29,8 +29,8 @@ class AgentEvaluator(Logger):
         self.obs = AgentEvaluatorObservability()
 
         self.client = OpenAI(
-            api_key=self.settings.openrouter.api_key,
-            base_url=self.settings.openrouter.base_url,
+            api_key=self.settings.groq.api_key,
+            base_url=self.settings.groq.base_url,
         )
 
         data_dir = Path(__file__).parents[3] / "data" / "evals_data"
