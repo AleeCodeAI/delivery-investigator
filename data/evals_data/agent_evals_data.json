@@ -4,14 +4,13 @@
         "customer_id": "CUST-189012",
         "investigation_prompt": "Investigate the delay affecting order ORD-189001. Determine what the tracking records establish about its current status and the documented reason for the delay.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records show that the shipment for order ORD-189001 is currently in a delayed status, with the latest event logged on 2026-10-12 02:18:00 indicating a delivery exception due to severe weather affecting transportation in the Sacramento, CA region. No subsequent events record movement past that point, and there is no delivery confirmation. Not found: The records do not show any later transit updates, arrival at the destination facility, delivery attempt, or successful delivery; the specific cause of the delay beyond the noted severe weather is not detailed further.",
+            "investigation_report": "Finding: The tracking trail shows the package was picked up on 2026-10-10, arrived at the Sacramento regional facility on 2026-10-11, and then a delivery_exception was recorded on 2026-10-12 02:18 citing severe weather as the cause of a delay; the shipment status remains 'delayed' with no delivery confirmation, indicating the parcel has not been delivered as of the latest event.\nNot found: No tracking events after the delivery_exception, so the current location, expected onward movement, or updated estimated delivery time are not documented. No additional carrier communication beyond the severe‑weather exception is available.",
             "evidences": [
-                "[upfront] shipment status, delayed: shipment status recorded as delayed",
-                "[upfront] shipment event SE-189004, 2026-10-12T02:18:00: 'Shipment delayed due to severe weather affecting transportation in the region.'",
-                "[upfront] shipment event SE-189003, 2026-10-11T13:14:00: 'Arrived at carrier regional sorting facility in Sacramento, CA.'",
-                "[upfront] shipment event SE-189002, 2026-10-10T19:34:00: 'Package picked up by carrier in Fresno, CA.'",
-                "[upfront] shipment event SE-189001, 2026-10-10T01:49:00: 'Shipping label created; awaiting carrier pickup.'",
-                "[upfront] order delivery address matches current customer address: 3904 Hillcrest Rd, Long Beach, CA 90802"
+                "[upfront] shipment event SE-189001, 2026-10-10 01:49:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189002, 2026-10-10 19:34:00: Package picked up by carrier in Fresno, CA.",
+                "[upfront] shipment event SE-189003, 2026-10-11 13:14:00: Arrived at carrier regional sorting facility in Sacramento, CA.",
+                "[upfront] shipment event SE-189004, 2026-10-12 02:18:00: Delivery exception – shipment delayed due to severe weather affecting transportation in the region.",
+                "[upfront] shipment status, current value: delayed."
             ],
             "investigation_success": true,
             "confidence": 0.92
@@ -22,7 +21,7 @@
         "customer_id": "CUST-189038",
         "investigation_prompt": "Order ORD-189002 has not arrived when expected. Review the shipment records and report what is established about the delay.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for Order ORD-189002 experienced a documented delay due to a temporary carrier facility disruption at the Barstow, CA sorting facility on 2026-10-08, and as of the last recorded event on 2026-10-10 the parcel remains in transit with no delivery confirmation. Not found: No records indicating subsequent movement, delivery attempt, or completion of delivery; the ultimate cause of continued delay beyond the reported disruption is not established.",
+            "investigation_report": "Finding: The shipment for order ORD-189002 experienced a documented delay due to a temporary carrier facility disruption at the Barstow, CA regional sorting facility on 2026-10-08, after which it resumed transit on 2026-10-10 and remains in transit with no delivery confirmation recorded. Not found: No shipment events after 2026-10-10, no record of delivery attempt, delivery confirmation, or further status updates that would explain why the parcel has not arrived as of the current date.",
             "evidences": [
                 "[upfront] shipment event SE-189005, 2026-10-06T22:16:00: Shipping label created; awaiting carrier pickup.",
                 "[upfront] shipment event SE-189006, 2026-10-07T14:03:00: Package picked up by carrier.",
@@ -31,7 +30,7 @@
                 "[upfront] shipment event SE-189009, 2026-10-10T12:22:00: Shipment scanned in transit following the documented delay."
             ],
             "investigation_success": true,
-            "confidence": 0.75
+            "confidence": 0.77
         }
     },
     {
@@ -39,14 +38,14 @@
         "customer_id": "CUST-189001",
         "investigation_prompt": "A customer is asking why order ORD-189003 is running late. Investigate the available delivery records and report what they show.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189003 was picked up on 2026-10-10 and subsequently recorded a transportation delay on 2026-10-10 at 19:35 in Grapevine, CA, citing a road closure on the highway corridor as the reason for the delay, which explains why the order is running late. Not found: No further shipment events indicating progress beyond the delay, no delivery confirmation, and no information on the current location or estimated delivery time.",
+            "investigation_report": "Finding: The shipment for order ORD-189003 was picked up by WestCoast Express on 2026-10-10 and a transportation delay was recorded the same day due to a road closure, leading to a delayed shipment status; no subsequent events show further movement toward the delivery address, so the order remains late. Not found: There are no tracking events indicating onward transit, arrival at the destination, delivery attempt, or updated delivery estimates, and no additional information explaining the current delay beyond the recorded road closure.",
             "evidences": [
-                "[upfront] shipment event SE-189010, 2026-10-09T19:31:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189011, 2026-10-10T14:27:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189012, 2026-10-10T19:35:00: Shipment delayed due to a transportation disruption affecting the route: a road closure on the highway corridor."
+                "[upfront] shipment event SE-189010, 2026-10-09 19:31:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189011, 2026-10-10 14:27:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189012, 2026-10-10 19:35:00: Shipment delayed due to a transportation disruption affecting the route: a road closure on the highway corridor."
             ],
             "investigation_success": true,
-            "confidence": 0.93
+            "confidence": 0.75
         }
     },
     {
@@ -54,17 +53,14 @@
         "customer_id": "CUST-189022",
         "investigation_prompt": "Investigate order ORD-189004, which is behind schedule. State the shipment's current status and what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189004 is currently in transit, as indicated by the latest shipment event (SE-189018) on 2026-10-09. The records establish a transportation delay caused by a carrier vehicle breakdown on 2026-10-07, which accounts for the shipment being behind schedule. Not found: No subsequent tracking events after 2026-10-09, and no delivery confirmation; thus the exact current location beyond the last scan is not recorded.",
+            "investigation_report": "Finding: The shipment for order ORD-189004 is currently in_transit, with the most recent tracking event on 2026-10-09 confirming it remains en route. The records include a documented transportation_delay event on 2026-10-07 indicating a carrier vehicle breakdown, which is a possible cause for the order being behind schedule.\nNot found: No tracking events after 2026-10-09 that indicate further progress, out‑for‑delivery status, delivery attempt, or delivery confirmation. The expected delivery date is not recorded, and there is no evidence of any additional delays beyond the vehicle breakdown.",
             "evidences": [
-                "[upfront] shipment event SE-189014, 2026-10-06T12:14:00: Package picked up by carrier in Oakland, CA",
-                "[upfront] shipment event SE-189015, 2026-10-06T22:49:00: Arrived at carrier regional sorting facility in Barstow, CA",
-                "[upfront] shipment event SE-189016, 2026-10-07T07:56:00: Departed carrier regional sorting facility in Barstow, CA",
-                "[upfront] shipment event SE-189017, 2026-10-07T18:54:00: Shipment delayed due to a transportation disruption: a carrier vehicle breakdown en route (Modesto, CA)",
-                "[upfront] shipment event SE-189018, 2026-10-09T06:48:00: Shipment scanned in transit following the documented delay (Modesto, CA)",
-                "[upfront] shipment record, status: in_transit"
+                "[upfront] shipment record SHIP-189004: status in_transit",
+                "[upfront] shipment event SE-189017, 2026-10-07T18:54:00, Modesto, CA: Shipment delayed due to a transportation disruption: a carrier vehicle breakdown en route.",
+                "[upfront] shipment event SE-189018, 2026-10-09T06:48:00, Modesto, CA: Shipment scanned in transit following the documented delay."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.92
         }
     },
     {
@@ -72,13 +68,12 @@
         "customer_id": "CUST-189002",
         "investigation_prompt": "Investigate the delay affecting order ORD-189005. Determine what the tracking records establish about its current status and the documented reason for the delay.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records indicate that the most recent shipment event for order ORD-189005 is an operational disruption logged on 2026-10-13T21:55:00 at the San Jose, CA regional sorting facility, which establishes that the parcel is currently in a delayed state. The documented reason for the delay is a backlog at that sorting facility, as explicitly described in the event.\nNot found: No tracking events after the 2026-10-13 disruption, no out‑for‑delivery or delivery confirmation, and no updated shipment status beyond the generic \"delayed\" label. Consequently, the parcel's present location and any revised estimated delivery time are not recorded in the available data.",
+            "investigation_report": "Finding: The tracking records show that the parcel was picked up on 2026-10-12, arrived at the San Jose regional sorting facility on 2026-10-13, and was subsequently marked as delayed due to a backlog at that facility; the latest status is \"delayed\" with no further movement recorded. Not found: No subsequent tracking events after the operational disruption, no delivery confirmation, and no additional reason for the delay beyond the recorded backlog.",
             "evidences": [
-                "[upfront] shipment event SE-189019, 2026-10-12T01:48:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189020, 2026-10-12T16:37:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189021, 2026-10-13T07:20:00: Arrived at carrier regional sorting facility in San Jose, CA.",
-                "[upfront] shipment event SE-189022, 2026-10-13T21:55:00: Shipment delayed due to a regional sorting facility backlog.",
-                "[upfront] shipment record, status \"delayed\" with no delivery confirmation."
+                "[upfront] shipment event SE-189020, 2026-10-12 16:37:00: Package picked up by carrier at Ontario, CA.",
+                "[upfront] shipment event SE-189021, 2026-10-13 07:20:00: Arrived at carrier regional sorting facility in San Jose, CA.",
+                "[upfront] shipment event SE-189022, 2026-10-13 21:55:00: Shipment delayed due to a regional sorting facility backlog, San Jose, CA.",
+                "[upfront] shipment record SHIP-189005: Shipment status listed as \"delayed\"."
             ],
             "investigation_success": true,
             "confidence": 0.92
@@ -89,17 +84,17 @@
         "customer_id": "CUST-189012",
         "investigation_prompt": "Order ORD-189006 has not arrived when expected. Review the shipment records and report what is established about the delay.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment experienced a delay after departing the San Jose facility, documented on 2026-10-09 with a delivery_exception citing heavy rain and flooding affecting roads along the route; no subsequent delivery events are recorded, so the parcel remains in transit and has not arrived as of the latest update. Not found: No records indicate when or if the parcel left the delay condition, no delivery confirmation, and no arrival at the destination address; thus the exact current location and expected delivery time are unknown.",
+            "investigation_report": "Finding: The shipment was delayed on 2026-10-09 due to heavy rain and flooding along the route (event SE-189027), after which it resumed transit with a scan on 2026-10-10 (event SE-189028). No subsequent tracking events or delivery confirmation are recorded, so the parcel has not yet arrived at the delivery address. \nNot found: No records of further movement beyond 2026-10-10, no estimated delivery date, and no evidence of additional exceptions or successful delivery.",
             "evidences": [
-                "[upfront] shipment event SE-189023, 2026-10-07T06:01:00: label_created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189024, 2026-10-07T15:33:00: picked_up by carrier in Fresno, CA.",
-                "[upfront] shipment event SE-189025, 2026-10-08T13:40:00: arrived_at_facility in San Jose, CA.",
-                "[upfront] shipment event SE-189026, 2026-10-08T22:43:00: departed_facility from San Jose, CA.",
-                "[upfront] shipment event SE-189027, 2026-10-09T08:40:00: delivery_exception; shipment delayed due to heavy rain and flooding affecting roads along the route.",
-                "[upfront] shipment event SE-189028, 2026-10-10T10:00:00: in_transit scanned in San Jose, CA after the documented delay."
+                "[upfront] shipment event SE-189023, 2026-10-07 06:01:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189024, 2026-10-07 15:33:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189025, 2026-10-08 13:40:00: Arrived at carrier regional sorting facility in San Jose, CA.",
+                "[upfront] shipment event SE-189026, 2026-10-08 22:43:00: Departed carrier regional sorting facility in San Jose, CA.",
+                "[upfront] shipment event SE-189027, 2026-10-09 08:40:00: Shipment delayed due to heavy rain and flooding affecting roads along the route.",
+                "[upfront] shipment event SE-189028, 2026-10-10 10:00:00: Shipment scanned in transit following the documented delay."
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.74
         }
     },
     {
@@ -107,17 +102,17 @@
         "customer_id": "CUST-189007",
         "investigation_prompt": "A customer is asking why order ORD-189007 is running late. Investigate the available delivery records and report what they show.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records show the parcel was delayed after arriving at the local delivery station in San Diego on 2026-10-10; an operational disruption event dated 2026-10-11 07:25 recorded a carrier scanning and dispatch system outage, which is consistent with the shipment status being marked delayed and explains why the order has not yet been delivered. Not found: No subsequent shipment events indicating pickup for final delivery, no delivery confirmation, and no information on when or if the outage was resolved.",
+            "investigation_report": "Finding: The latest shipment event (2026-10-11 07:25) records an operational disruption—specifically a carrier scanning and dispatch system outage at the San Diego delivery station—which explains why the order is currently delayed. Not found: There are no subsequent shipment events indicating that the parcel resumed movement, nor any delivery confirmation or estimated delivery time.\n",
             "evidences": [
-                "[upfront] shipment event SE-189029, 2026-10-08T19:07:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189030, 2026-10-09T06:13:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189031, 2026-10-09T20:06:00: Arrived at carrier regional sorting facility in San Jose, CA.",
-                "[upfront] shipment event SE-189032, 2026-10-10T04:15:00: Departed carrier regional sorting facility in San Jose, CA.",
-                "[upfront] shipment event SE-189033, 2026-10-10T22:23:00: Arrived at local delivery station in San Diego, CA.",
-                "[upfront] shipment event SE-189034, 2026-10-11T07:25:00: Shipment delayed due to a carrier scanning and dispatch system outage at the delivery station."
+                "[upfront] shipment event SE-189029, 2026-10-08 19:07:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189030, 2026-10-09 06:13:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189031, 2026-10-09 20:06:00: Arrived at carrier regional sorting facility in San Jose, CA.",
+                "[upfront] shipment event SE-189032, 2026-10-10 04:15:00: Departed carrier regional sorting facility in San Jose, CA.",
+                "[upfront] shipment event SE-189033, 2026-10-10 22:23:00: Arrived at local delivery station in San Diego, CA.",
+                "[upfront] shipment event SE-189034, 2026-10-11 07:25:00: Shipment delayed due to a carrier scanning and dispatch system outage at the delivery station."
             ],
             "investigation_success": true,
-            "confidence": 0.92
+            "confidence": 0.78
         }
     },
     {
@@ -125,14 +120,15 @@
         "customer_id": "CUST-189025",
         "investigation_prompt": "Investigate order ORD-189008, which is behind schedule. State the shipment's current status and what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189008 is currently recorded as in_transit, with the last known scan on 2026-10-07 19:48:00 in Los Angeles, CA. The tracking trail documents a transportation_delay on 2026-10-06 caused by a bridge closure, which is the explicit reason for the schedule slip. Not found: No subsequent shipment events after 2026-10-07, no delivery confirmation, and no information on the parcel’s location after Los Angeles; the records do not indicate whether the delay has been resolved or if further issues have occurred.",
+            "investigation_report": "Finding: The shipment for order ORD-189008 is currently in transit, as indicated by the latest tracking event on 2026-10-07 19:48 showing an in‑transit scan in Los Angeles. The records document a transportation delay on 2026-10-06 20:10 caused by a bridge closure, which is the only explicit cause for the schedule deviation.\nNot found: No tracking events after 2026‑10‑07 indicating further movement, facility arrival, or delivery; no delivery confirmation; no additional delay reasons beyond the bridge closure; no evidence of the parcel’s location beyond the last Los Angeles scan.",
             "evidences": [
-                "[upfront] shipment status, in_transit: shipment currently listed as in_transit.",
-                "[upfront] shipment event SE-189036, 2026-10-05T14:07:00: 'Package picked up by carrier' in Ontario, CA.",
-                "[upfront] shipment event SE-189037, 2026-10-06T02:12:00: 'Arrived at carrier regional sorting facility' in Los Angeles, CA.",
-                "[upfront] shipment event SE-189038, 2026-10-06T08:37:00: 'Departed carrier regional sorting facility' in Los Angeles, CA.",
-                "[upfront] shipment event SE-189039, 2026-10-06T20:10:00: 'Shipment delayed due to a transportation disruption: a bridge closure on the planned route' in Los Angeles, CA.",
-                "[upfront] shipment event SE-189040, 2026-10-07T19:48:00: 'Shipment scanned in transit' in Los Angeles, CA."
+                "[upfront] shipment SHIP-189008, status: in_transit",
+                "[upfront] shipment event SE-189035, 2026-10-04 23:25:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189036, 2026-10-05 14:07:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189037, 2026-10-06 02:12:00: Arrived at carrier regional sorting facility in Los Angeles, CA.",
+                "[upfront] shipment event SE-189038, 2026-10-06 08:37:00: Departed carrier regional sorting facility in Los Angeles, CA.",
+                "[upfront] shipment event SE-189039, 2026-10-06 20:10:00: Shipment delayed due to a transportation disruption: a bridge closure on the planned route.",
+                "[upfront] shipment event SE-189040, 2026-10-07 19:48:00: Shipment scanned in transit following the documented delay, location Los Angeles, CA."
             ],
             "investigation_success": true,
             "confidence": 0.92
@@ -143,13 +139,14 @@
         "customer_id": "CUST-189033",
         "investigation_prompt": "Investigate the unsuccessful delivery attempt for order ORD-189009. Identify the recorded reason and what it means for the current shipment status.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189009 had a recorded delivery attempt failure on 2026-10-09 at 12:37:00 with the reason that the recipient was unavailable at the delivery address. The current shipment status is therefore 'delivery_attempted', indicating the parcel has not been delivered and may require a further delivery attempt or customer action. Not found: The records do not show a subsequent successful delivery, a reschedule, or any follow‑up actions such as a second attempt or return to sender.",
+            "investigation_report": "Finding: The shipment record includes a delivery_attempt_failed event (2026-10-09 12:37) with the description that the recipient was unavailable at the delivery address. Consequently, the current shipment status is \"delivery_attempted,\" indicating the carrier has not completed delivery and further action (e.g., re‑delivery attempt) may be pending.\nNot found: No additional events show a subsequent successful delivery, nor any carrier notes explaining a reschedule, hold, or final disposition. Delivery confirmation details are absent.",
             "evidences": [
-                "[upfront] shipment event SE-189047, 2026-10-09T12:37:00: Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.",
-                "[upfront] shipment record, status field: delivery_attempted"
+                "[upfront] shipment status, delivery_attempted: indicates a delivery attempt has occurred but was not successful",
+                "[upfront] shipment event SE-189047, 2026-10-09T12:37:00: \"Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.\"",
+                "[upfront] shipment event SE-189046, 2026-10-09T08:46:00: \"Out for delivery\" confirming the parcel was scheduled for delivery on that date"
             ],
             "investigation_success": true,
-            "confidence": 0.95
+            "confidence": 0.92
         }
     },
     {
@@ -157,18 +154,18 @@
         "customer_id": "CUST-189023",
         "investigation_prompt": "The carrier reports a problem delivering order ORD-189010. Establish what the shipment records show about the attempt and where the shipment stands.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189010 was picked up, processed through regional facilities, arrived at the local Bakersfield delivery station, went out for delivery on 2026-10-11, and a delivery attempt failed at 15:06 on the same day because the carrier could not access the delivery location. The current shipment status is delivery_attempted, and no delivery confirmation is recorded.\nNot found: No records indicate a successful delivery, a subsequent retry, or the final disposition of the parcel after the failed attempt. No evidence explains why the carrier could not access the location.",
+            "investigation_report": "Finding: The shipment for order ORD-189010 was picked up, processed through carrier facilities, and went out for delivery on 2026-10-11. A delivery attempt was recorded as unsuccessful at 15:06 on 2026-10-11 because the carrier could not access the delivery location, and the shipment status remains \"delivery_attempted\" with no delivery confirmation. Not found: No records of a subsequent delivery attempt, successful delivery, return shipment, or additional carrier notes explaining why access was denied.",
             "evidences": [
-                "[upfront] shipment event SE-189048, 2026-10-07T18:50:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189049, 2026-10-08T07:36:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189050, 2026-10-09T01:30:00: Arrived at carrier regional sorting facility in Los Angeles, CA.",
-                "[upfront] shipment event SE-189051, 2026-10-09T06:04:00: Departed carrier regional sorting facility.",
-                "[upfront] shipment event SE-189052, 2026-10-10T02:11:00: Arrived at local delivery station in Bakersfield, CA.",
-                "[upfront] shipment event SE-189053, 2026-10-11T09:40:00: Out for delivery.",
-                "[upfront] shipment event SE-189054, 2026-10-11T15:06:00: Delivery attempt unsuccessful because the carrier could not access the delivery location."
+                "[upfront] shipment event SE-189048, 2026-10-07 18:50:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189049, 2026-10-08 07:36:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189050, 2026-10-09 01:30:00: Arrived at carrier regional sorting facility in Los Angeles, CA.",
+                "[upfront] shipment event SE-189051, 2026-10-09 06:04:00: Departed carrier regional sorting facility.",
+                "[upfront] shipment event SE-189052, 2026-10-10 02:11:00: Arrived at local delivery station in Bakersfield, CA.",
+                "[upfront] shipment event SE-189053, 2026-10-11 09:40:00: Out for delivery from Bakersfield, CA.",
+                "[upfront] shipment event SE-189054, 2026-10-11 15:06:00: Delivery attempt unsuccessful because the carrier could not access the delivery location."
             ],
             "investigation_success": true,
-            "confidence": 0.92
+            "confidence": 0.9
         }
     },
     {
@@ -176,18 +173,18 @@
         "customer_id": "CUST-189029",
         "investigation_prompt": "Order ORD-189011 was not delivered as planned. Review the delivery records and report what is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for Order ORD-189011 was picked up and progressed through carrier facilities, but on 2026-10-13 a delivery attempt was recorded as unsuccessful because the business was closed; no subsequent delivery or confirmation is documented. Not found: Any records of a later successful delivery, a rescheduled attempt, or additional carrier notes explaining why delivery was not completed after the failed attempt.",
+            "investigation_report": "Finding: The carrier WestLine Express attempted delivery of Order ORD-189011 on 2026-10-13 at 13:14 in Sacramento, CA, but the attempt was unsuccessful because the business was closed; no subsequent delivery event is recorded. Not found: There is no record of a successful delivery, a second delivery attempt, a delivery confirmation, or any further status update after the failed attempt.",
             "evidences": [
-                "[upfront] shipment event SE-189055, 2026-10-09T19:17:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189056, 2026-10-10T09:11:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189057, 2026-10-11T08:30:00: Arrived at carrier regional sorting facility in Stockton, CA.",
-                "[upfront] shipment event SE-189058, 2026-10-11T15:45:00: Departed carrier regional sorting facility in Stockton, CA.",
-                "[upfront] shipment event SE-189059, 2026-10-12T12:31:00: Arrived at local delivery station in Sacramento, CA.",
-                "[upfront] shipment event SE-189060, 2026-10-13T09:32:00: Out for delivery from Sacramento, CA.",
-                "[upfront] shipment event SE-189061, 2026-10-13T13:14:00: Delivery attempt unsuccessful because the business was closed."
+                "[upfront] shipment event SE-189055, 2026-10-09 19:17:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189056, 2026-10-10 09:11:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189057, 2026-10-11 08:30:00: Arrived at carrier regional sorting facility in Stockton, CA.",
+                "[upfront] shipment event SE-189058, 2026-10-11 15:45:00: Departed carrier regional sorting facility in Stockton, CA.",
+                "[upfront] shipment event SE-189059, 2026-10-12 12:31:00: Arrived at local delivery station in Sacramento, CA.",
+                "[upfront] shipment event SE-189060, 2026-10-13 09:32:00: Out for delivery from Sacramento station.",
+                "[upfront] shipment event SE-189061, 2026-10-13 13:14:00: Delivery attempt unsuccessful because the business was closed."
             ],
             "investigation_success": true,
-            "confidence": 0.92
+            "confidence": 0.93
         }
     },
     {
@@ -195,13 +192,13 @@
         "customer_id": "CUST-189013",
         "investigation_prompt": "Investigate why delivery of order ORD-189012 did not complete. Report the recorded reason and the shipment's current state.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment was attempted for delivery on 2026-10-14 but was not completed; the recorded reason is that the delivery entrance was inaccessible. The shipment’s current state is \"delivery_attempted\" with no delivery confirmation.\nNot found: No evidence of a subsequent successful delivery, return, or further carrier activity after the failed attempt; the ultimate disposition of the parcel is not recorded.",
+            "investigation_report": "Finding: The delivery of order ORD-189012 did not complete because the carrier recorded a failed delivery attempt on 2026-10-14 at 12:46:00, citing that the delivery entrance was inaccessible. The shipment's current state is recorded as \"delivery_attempted\" indicating the package remains undelivered pending further action.\nNot found: No subsequent shipment events (e.g., reattempt, held at facility, successful delivery) are present, and there is no record of customer notification or alternative resolution.",
             "evidences": [
-                "[upfront] shipment event SE-189067, 2026-10-14T07:19:00: Out for delivery.",
-                "[upfront] shipment event SE-189068, 2026-10-14T12:46:00: Delivery attempt unsuccessful because the delivery entrance was inaccessible."
+                "[upfront] shipment event SE-189068, 2026-10-14T12:46:00: Delivery attempt unsuccessful because the delivery entrance was inaccessible.",
+                "[upfront] shipment status, current: delivery_attempted"
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.95
         }
     },
     {
@@ -209,15 +206,14 @@
         "customer_id": "CUST-189025",
         "investigation_prompt": "Investigate the unsuccessful delivery attempt for order ORD-189013. Identify the recorded reason and what it means for the current shipment status.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment record includes a delivery_attempt_failed event on 2026-10-09 at 13:31 stating the recipient was unavailable at the delivery address; the shipment remains in an out_for_delivery state for a second attempt on 2026-10-10. Not found: No evidence of a successful delivery, no further status updates beyond the second out_for_delivery event, and no carrier-provided reason for any subsequent outcome.",
+            "investigation_report": "Finding: The shipment record includes a delivery_attempt_failed event (SE-189075, 2026-10-09 13:31:00) stating the reason was that the recipient was unavailable at the delivery address. The subsequent out_for_delivery event (SE-189076, 2026-10-10 08:45:00) and the shipment status field both indicate the parcel is currently out for delivery on a second attempt and has not yet been delivered. Not found: No event confirming a successful delivery or a later failure reason; the tracking trail ends after the second out‑for‑delivery event, so the final outcome of the second attempt is unknown.",
             "evidences": [
                 "[upfront] shipment event SE-189075, 2026-10-09T13:31:00: Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.",
-                "[upfront] shipment event SE-189074, 2026-10-09T07:17:00: Out for delivery.",
                 "[upfront] shipment event SE-189076, 2026-10-10T08:45:00: Out for delivery (second attempt).",
-                "[upfront] shipment status field, current value: out_for_delivery."
+                "[upfront] shipment record, current status: out_for_delivery."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.92
         }
     },
     {
@@ -225,16 +221,15 @@
         "customer_id": "CUST-189008",
         "investigation_prompt": "The carrier reports a problem delivering order ORD-189014. Establish what the shipment records show about the attempt and where the shipment stands.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records show that after arriving at the local San Diego delivery station on 2026-10-10, the parcel was first taken out for delivery on 2026-10-11, but the delivery attempt failed because a required adult signature was not available. The carrier then placed the parcel back in the system and re‑issued an out‑for‑delivery status on 2026-10-12 for a second attempt. Not found: No record of a successful delivery, no delivered‑at timestamp, and no further events beyond the second out‑for‑delivery status.",
+            "investigation_report": "Finding: The carrier tracking records indicate a delivery attempt on 2026-10-11 at 12:30 in San Diego that failed because a signature was required and no adult was available to sign. After this failed attempt, the package was placed out for delivery again on 2026-10-12 at 07:55, and the shipment status remains \"out_for_delivery\" with no delivery confirmation recorded. Not found: No record of a successful delivery, no subsequent delivery attempts after the 2026-10-12 out‑for‑delivery event, and no delivery confirmation details.",
             "evidences": [
-                "[upfront] shipment event SE-189081, 2026-10-10T17:52:00: Arrived at local delivery station in San Diego, CA.",
-                "[upfront] shipment event SE-189082, 2026-10-11T09:57:00: Out for delivery in San Diego, CA.",
                 "[upfront] shipment event SE-189083, 2026-10-11T12:30:00: Delivery attempt unsuccessful because a signature was required and no adult was available to sign.",
-                "[upfront] shipment event SE-189084, 2026-10-12T07:55:00: Out for delivery (second attempt) in San Diego, CA.",
-                "[upfront] shipment record, Shipment Status: out_for_delivery (current)."
+                "[upfront] shipment event SE-189082, 2026-10-11T09:57:00: Out for delivery (first attempt).",
+                "[upfront] shipment event SE-189084, 2026-10-12T07:55:00: Out for delivery (second attempt).",
+                "[upfront] shipment record, status: out_for_delivery – indicates the parcel has not been marked delivered."
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.94
         }
     },
     {
@@ -242,15 +237,21 @@
         "customer_id": "CUST-189003",
         "investigation_prompt": "Order ORD-189015 was not delivered as planned. Review the delivery records and report what is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment recorded two delivery attempts on 2026-10-08 and 2026-10-09, both marked as unsuccessful because the carrier could not access the delivery location; no subsequent event indicates a successful delivery. Not found: The records do not show a completed delivery, a reason beyond the carrier’s stated inability to access the location, or any later delivery attempt or resolution.",
+            "investigation_report": "Finding: The shipment records document that the parcel was picked up, processed through carrier facilities, and placed out for delivery on 2026-10-08 and again on 2026-10-09. Both delivery attempts failed, each citing that the carrier could not access the delivery location or entrance. No delivery confirmation was recorded and the shipment status remains \"delivery_attempted,\" indicating the order was not delivered as planned.\nNot found: No evidence of any successful delivery, no further delivery attempts after 2026-10-09, and no additional information explaining why the location was inaccessible (e.g., customer communication, alternate address, or subsequent rescheduling).",
             "evidences": [
-                "[upfront] shipment event SE-189090, 2026-10-08T07:36:00: Out for delivery.",
-                "[upfront] shipment event SE-189091, 2026-10-08T09:47:00: Delivery attempt unsuccessful because the carrier could not access the delivery location.",
-                "[upfront] shipment event SE-189092, 2026-10-09T09:29:00: Out for delivery (second attempt).",
-                "[upfront] shipment event SE-189093, 2026-10-09T13:36:00: Delivery attempt unsuccessful because the delivery entrance was inaccessible."
+                "[upfront] shipment event SE-189085, 2026-10-05 07:54:00: label_created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189086, 2026-10-06 02:51:00: picked_up by carrier.",
+                "[upfront] shipment event SE-189087, 2026-10-06 18:39:00: arrived_at_facility at Stockton, CA.",
+                "[upfront] shipment event SE-189088, 2026-10-06 22:04:00: departed_facility from Stockton, CA.",
+                "[upfront] shipment event SE-189089, 2026-10-07 14:49:00: arrived_at_facility at Los Angeles, CA.",
+                "[upfront] shipment event SE-189090, 2026-10-08 07:36:00: out_for_delivery from Los Angeles, CA.",
+                "[upfront] shipment event SE-189091, 2026-10-08 09:47:00: delivery_attempt_failed; reason: carrier could not access the delivery location.",
+                "[upfront] shipment event SE-189092, 2026-10-09 09:29:00: out_for_delivery (second attempt) from Los Angeles, CA.",
+                "[upfront] shipment event SE-189093, 2026-10-09 13:36:00: delivery_attempt_failed; reason: delivery entrance was inaccessible.",
+                "[upfront] shipment SHIP-189015: status delivery_attempted, no delivery confirmation recorded."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.93
         }
     },
     {
@@ -258,14 +259,16 @@
         "customer_id": "CUST-189003",
         "investigation_prompt": "Investigate why delivery of order ORD-189016 did not complete. Report the recorded reason and the shipment's current state.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189016 has not completed delivery; the recorded reasons are that the first delivery attempt on 2026-10-12 failed because the business was closed, and the second attempt on 2026-10-13 failed because the carrier could not access the delivery location. The shipment’s current status remains \"delivery_attempted\" with no successful delivery recorded.\nNot found: No evidence of a subsequent successful delivery, no further carrier updates after 2026-10-13, and no confirmation of parcel receipt by the customer.",
+            "investigation_report": "Finding: The shipment for order ORD-189016 has not been completed because two delivery attempts were recorded as failed – the first on 2026-10-12 because the business was closed, and the second on 2026-10-13 because the carrier could not access the delivery location. The carrier’s current shipment status is \"delivery_attempted\" indicating the parcel remains undelivered. \nNot found: No record of a successful delivery, no subsequent delivery attempts after 2026-10-13, and no information on whether the parcel was held, returned, or rescheduled.",
             "evidences": [
-                "[upfront] shipment event SE-189100, 2026-10-12 11:05:00: Delivery attempt unsuccessful because the business was closed.",
-                "[upfront] shipment event SE-189102, 2026-10-13 12:43:00: Delivery attempt unsuccessful because the carrier could not access the delivery location.",
-                "[upfront] shipment status, current value: delivery_attempted."
+                "[upfront] shipment status, delivery_attempted: shipment currently recorded as delivery_attempted",
+                "[upfront] shipment event SE-189100, 2026-10-12T11:05:00: delivery_attempt_failed – reason: business was closed",
+                "[upfront] shipment event SE-189102, 2026-10-13T12:43:00: delivery_attempt_failed – reason: carrier could not access the delivery location",
+                "[upfront] shipment event SE-189099, 2026-10-12T08:06:00: out_for_delivery – first delivery attempt",
+                "[upfront] shipment event SE-189101, 2026-10-13T07:40:00: out_for_delivery – second delivery attempt"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.92
         }
     },
     {
@@ -273,11 +276,15 @@
         "customer_id": "CUST-189026",
         "investigation_prompt": "The customer reports that order ORD-189017 has not arrived even though it shows as delivered. Investigate the available delivery records and report what the evidence establishes.",
         "agent_result": {
-            "investigation_report": "Finding: The carrier’s tracking records show the package was delivered on 2026-08-26 12:32:00 in Los Angeles, CA, with the delivery confirmation noted as \"left_at_door\". Not found: The records do not contain any evidence confirming that the customer actually received the parcel, nor any indication of a delivery exception, mis‑delivery, or theft.\n",
+            "investigation_report": "Finding: The carrier’s tracking events show the package was picked up, processed through facilities, out for delivery, and recorded as delivered on 2026-08-26 12:32:00 with the confirmation method \"left_at_door\" at the destination address 5742 Maple Ave, Los Angeles, CA 90042. Not found: No record indicating a failed delivery attempt, address discrepancy, or subsequent incident; there is no evidence confirming that the customer actually received the parcel or that the package was misplaced after delivery.",
             "evidences": [
-                "[upfront] shipment event SE-189108, 2026-08-26T07:13:00: Out for delivery recorded in Los Angeles, CA.",
-                "[upfront] shipment event SE-189109, 2026-08-26T12:32:00: Delivered; package left at the front door, Los Angeles, CA.",
-                "[upfront] shipment status delivered, Delivered At 2026-08-26 12:32:00, Delivery Confirmation left_at_door."
+                "[upfront] shipment event SE-189109, 2026-08-26 12:32:00: Delivered; package left at the front door.",
+                "[upfront] shipment event SE-189108, 2026-08-26 07:13:00: Out for delivery.",
+                "[upfront] shipment event SE-189107, 2026-08-25 21:25:00: Arrived at local delivery station.",
+                "[upfront] shipment event SE-189106, 2026-08-25 00:35:00: Departed carrier regional sorting facility.",
+                "[upfront] shipment event SE-189105, 2026-08-24 17:31:00: Arrived at carrier regional sorting facility.",
+                "[upfront] shipment event SE-189104, 2026-08-23 20:50:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189103, 2026-08-23 10:11:00: Shipping label created; awaiting carrier pickup."
             ],
             "investigation_success": true,
             "confidence": 0.85
@@ -288,18 +295,14 @@
         "customer_id": "CUST-189037",
         "investigation_prompt": "Investigate the non-receipt report for order ORD-189018. Compare the order and delivery records and state what is established and what remains unknown.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189018 is recorded as delivered on 2026-09-03 14:38:00, with carrier confirmation that the package was left at the front door of the address 1859 Sutter St, San Jose, CA 95125. Not found: The records do not contain any information confirming that the customer or a designated recipient actually received the parcel, nor any evidence explaining why the customer reports non‑receipt. No additional delivery‑related notes, incident reports, or follow‑up actions are present.",
+            "investigation_report": "Finding: The carrier’s tracking records show that the parcel for order ORD-189018 was delivered on 2026-09-03 at 14:38 and was left at the front door of the address 1859 Sutter St, San Jose, CA 95125, which matches the customer’s current address. Not found: The records do not provide any evidence that the customer actually received the package, nor do they indicate a misdelivery, theft, or other loss; no delivery confirmation beyond \"left at door\" (e.g., signature, photo, or follow‑up communication) is available.",
             "evidences": [
-                "[upfront] shipment event SE-189110, 2026-08-30T21:52:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189111, 2026-08-31T18:04:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189112, 2026-09-01T15:20:00: Arrived at carrier regional sorting facility in Fresno, CA.",
-                "[upfront] shipment event SE-189113, 2026-09-01T22:07:00: Departed carrier regional sorting facility.",
-                "[upfront] shipment event SE-189114, 2026-09-02T17:57:00: Arrived at local delivery station in San Jose, CA.",
-                "[upfront] shipment event SE-189115, 2026-09-03T07:43:00: Out for delivery.",
-                "[upfront] shipment event SE-189116, 2026-09-03T14:38:00: Delivered; package left at the front door."
+                "[upfront] order ORD-189018, delivery address: 1859 Sutter St, San Jose, CA 95125 matches current customer address.",
+                "[upfront] shipment SHIP-189018, status: delivered; Delivered At: 2026-09-03 14:38:00.",
+                "[upfront] shipment event SE-189116, 2026-09-03 14:38:00, Description: Delivered; package left at the front door."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.72
         }
     },
     {
@@ -307,15 +310,16 @@
         "customer_id": "CUST-189024",
         "investigation_prompt": "A customer says they never received order ORD-189019. Review the shipment and delivery records and report what they do and do not establish.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment records show a complete delivery lifecycle ending with a carrier event on 2026-09-11 15:02:00 indicating the package was left at the front door at the correct delivery address (1943 Bay St, San Diego, CA 92101). Not found: The records do not include any evidence confirming that the customer actually retrieved the parcel, nor any information about a possible misdelivery, theft, or other loss after the carrier left it at the door.",
+            "investigation_report": "Finding: Carrier records show that the package for order ORD-189019 was picked up, processed through facilities, and recorded as delivered with the status 'left_at_door' at the customer's address (1943 Bay St, San Diego, CA 92101) on 2026-09-11 at 15:02. The delivery address on the order matches the customer's current address, so the carrier's delivery event aligns with the intended destination. Not found: No evidence confirming that the customer actually received the parcel, nor any record of a missed delivery, theft, misdelivery, or return. No internal fulfillment anomalies or address mismatches are documented.",
             "evidences": [
+                "[upfront] order ORD-189019, delivery address: 1943 Bay St, San Diego, CA 92101 matches customer current address.",
                 "[upfront] shipment event SE-189117, 2026-09-07 14:24:00: Shipping label created; awaiting carrier pickup.",
                 "[upfront] shipment event SE-189118, 2026-09-08 06:44:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189119, 2026-09-09 04:33:00: Arrived at carrier regional sorting facility in Sacramento, CA.",
-                "[upfront] shipment event SE-189120, 2026-09-09 13:29:00: Departed carrier regional sorting facility.",
-                "[upfront] shipment event SE-189121, 2026-09-10 10:21:00: Arrived at local delivery station in San Diego, CA.",
-                "[upfront] shipment event SE-189122, 2026-09-11 08:50:00: Out for delivery.",
-                "[upfront] shipment event SE-189123, 2026-09-11 15:02:00: Delivered; package left at the front door."
+                "[upfront] shipment event SE-189119, 2026-09-09 04:33:00: Arrived at carrier regional sorting facility (Sacramento, CA).",
+                "[upfront] shipment event SE-189120, 2026-09-09 13:29:00: Departed carrier regional sorting facility (Sacramento, CA).",
+                "[upfront] shipment event SE-189121, 2026-09-10 10:21:00: Arrived at local delivery station (San Diego, CA).",
+                "[upfront] shipment event SE-189122, 2026-09-11 08:50:00: Out for delivery (San Diego, CA).",
+                "[upfront] shipment event SE-189123, 2026-09-11 15:02:00: Delivered; package left at the front door (San Diego, CA)."
             ],
             "investigation_success": true,
             "confidence": 0.9
@@ -326,18 +330,16 @@
         "customer_id": "CUST-189006",
         "investigation_prompt": "Order ORD-189020 is marked delivered but the customer says the item did not arrive. Report what the records show.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records show that the parcel was picked up, processed through carrier facilities, went out for delivery on 2026-09-17, and was recorded as delivered at 15:12 on the same day in Stockton, CA with delivery confirmation 'handed_to_resident'. Not found: The records do not contain any information confirming that the resident who received the package was the intended recipient, nor any evidence of a delivery exception, misdelivery, theft, or other issue that would explain the customer's claim that the item did not arrive.",
+            "investigation_report": "Finding: The carrier’s tracking records show that the package for Order ORD-189020 was delivered on 2026-09-17 at 15:12, with the delivery confirmation recorded as \"handed_to_resident\" at the address 1117 Bay St, Stockton, CA 95219, which matches the customer’s current address. No other shipment events indicate a failed delivery attempt, return, or deviation from the expected route.\nNot found: There is no evidence in the provided records identifying the individual who received the package, no signature or proof of receipt by the named customer, and no documentation of a delivery dispute, theft, or misdelivery. Consequently, the records cannot confirm whether the intended recipient actually received the parcel.",
             "evidences": [
-                "[upfront] shipment event SE-189124, 2026-09-13T07:04:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189125, 2026-09-14T00:35:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189126, 2026-09-15T03:34:00: Arrived at carrier regional sorting facility in Oakland, CA.",
-                "[upfront] shipment event SE-189127, 2026-09-15T09:15:00: Departed carrier regional sorting facility in Oakland, CA.",
-                "[upfront] shipment event SE-189128, 2026-09-16T03:44:00: Arrived at local delivery station in Stockton, CA.",
-                "[upfront] shipment event SE-189129, 2026-09-17T08:48:00: Out for delivery from Stockton, CA.",
-                "[upfront] shipment event SE-189130, 2026-09-17T15:12:00: Delivered; package handed to a resident in Stockton, CA."
+                "[upfront] order delivery address, 1117 Bay St, Stockton, CA 95219: matches customer current address",
+                "[upfront] shipment status delivered, Delivered At 2026-09-17 15:12:00, Delivery Confirmation handed_to_resident",
+                "[upfront] shipment event SE-189130, 2026-09-17 15:12:00: \"Delivered; package handed to a resident.\"",
+                "[upfront] shipment event SE-189129, 2026-09-17 08:48:00: \"Out for delivery.\"",
+                "[upfront] shipment event SE-189128, 2026-09-16 03:44:00: \"Arrived at local delivery station in Stockton, CA.\""
             ],
             "investigation_success": true,
-            "confidence": 0.65
+            "confidence": 0.78
         }
     },
     {
@@ -345,14 +347,18 @@
         "customer_id": "CUST-189020",
         "investigation_prompt": "The customer reports that order ORD-189021 has not arrived even though it shows as delivered. Investigate the available delivery records and report what the evidence establishes.",
         "agent_result": {
-            "investigation_report": "Finding: The carrier’s tracking records show the parcel was delivered on 2026-09-22 at 18:07 in San Francisco and the delivery confirmation notes it was \"handed_to_resident\". The delivery address on the order matches the customer’s current address. Not found: There is no record beyond the carrier’s delivery event that confirms who received the package, nor any evidence of a delivery exception, mis‑delivery, or subsequent follow‑up that could explain the customer’s claim of non‑receipt.",
+            "investigation_report": "Finding: The carrier’s tracking records show the parcel was handed to a resident at the delivery address on 2026-09-22 18:07:00, and the order status is marked delivered. Not found: No evidence indicating who the resident was, whether the intended recipient received the parcel, or any delivery issue such as misdelivery, theft, or resident unavailability; the records do not contain any further detail beyond the delivery confirmation.",
             "evidences": [
-                "[upfront] shipment event SE-189136, 2026-09-22T09:50:00: Out for delivery in San Francisco, CA",
-                "[upfront] shipment event SE-189137, 2026-09-22T18:07:00: Delivered; package handed to a resident in San Francisco, CA",
-                "[upfront] order delivery address, 8576 Willow Way, San Francisco, CA 94117 matches customer current address"
+                "[upfront] shipment event SE-189137, 2026-09-22T18:07:00: Delivered; package handed to a resident.",
+                "[upfront] shipment event SE-189136, 2026-09-22T09:50:00: Out for delivery.",
+                "[upfront] shipment event SE-189135, 2026-09-21T01:39:00: Arrived at local delivery station.",
+                "[upfront] shipment event SE-189134, 2026-09-20T07:12:00: Departed carrier regional sorting facility.",
+                "[upfront] shipment event SE-189133, 2026-09-19T23:14:00: Arrived at carrier regional sorting facility.",
+                "[upfront] shipment event SE-189132, 2026-09-19T00:56:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189131, 2026-09-18T06:58:00: Shipping label created; awaiting carrier pickup."
             ],
             "investigation_success": true,
-            "confidence": 0.68
+            "confidence": 0.75
         }
     },
     {
@@ -360,11 +366,12 @@
         "customer_id": "CUST-189036",
         "investigation_prompt": "Investigate the non-receipt report for order ORD-189022. Compare the order and delivery records and state what is established and what remains unknown.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records show the parcel was delivered on 2026-09-27 at 14:12 and left in the building mailroom, matching the order’s delivery address. Not found: The records do not show who retrieved the parcel from the mailroom or confirm that the customer received it; no additional evidence (e.g., recipient signature, internal delivery notes) is available to verify receipt.",
+            "investigation_report": "Finding: Carrier records show that the parcel for order ORD-189022 was delivered on 2026-09-27 14:12:00 and left in the building mailroom at the customer's address (2017 River Rd, Los Angeles, CA 90042). The order and shipment statuses are both marked delivered. Not found: There is no evidence confirming that the customer actually retrieved the package from the mailroom, nor any record of a failed attempt, misdelivery, or subsequent issue; such evidence is missing.",
             "evidences": [
-                "[upfront] order record ORD-189022, 2026-09-23: delivery address 2017 River Rd, Los Angeles, CA 90042 matches customer current address.",
-                "[upfront] shipment event SE-189144, 2026-09-27T14:12:00: Delivered; package left in the building mailroom.",
-                "[upfront] shipment events SE-189138‑SE-189143, timestamps 2026-09-24 to 2026-09-27: show normal carrier progression to delivery."
+                "[upfront] order ORD-189022, 2026-09-23 10:53:00: delivery address 2017 River Rd, Los Angeles, CA 90042; order status delivered.",
+                "[upfront] shipment SHIP-189022, 2026-09-27 14:12:00: shipment status delivered; delivery confirmation left_at_mailroom.",
+                "[upfront] shipment event SE-189144, 2026-09-27 14:12:00: \"Delivered; package left in the building mailroom.\"",
+                "[upfront] shipment events SE-189138 to SE-189143: tracking trail showing normal progression from label creation to out‑for‑delivery."
             ],
             "investigation_success": true,
             "confidence": 0.78
@@ -375,14 +382,18 @@
         "customer_id": "CUST-189014",
         "investigation_prompt": "A customer says they never received order ORD-189023. Review the shipment and delivery records and report what they do and do not establish.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment records show that the parcel for order ORD-189023 was delivered on 2026-10-02 at 13:15 and the carrier recorded the delivery confirmation as \"left_at_mailroom\" at the destination address (3079 Vine St, San Diego, CA 92109). Not found: The records do not contain any information about who retrieved the package from the mailroom, nor do they provide any evidence confirming that the customer personally received or accessed the parcel.",
+            "investigation_report": "Finding: The carrier's tracking records show the parcel was delivered on 2026-10-02 at 13:15 and was left in the building mailroom, and the order status is marked delivered. However, there is no record confirming that the customer actually retrieved the package.\nNot found: No evidence of a signature, photo, receipt acknowledgment, or any subsequent event indicating the customer received the parcel. No evidence of a delivery exception, misdelivery, theft, or any other issue beyond the carrier's \"left_at_mailroom\" confirmation.",
             "evidences": [
-                "[upfront] shipment event SE-189151, 2026-10-02T13:15:00: Delivered; package left in the building mailroom.",
-                "[upfront] shipment status, delivered: matches delivery confirmation \"left_at_mailroom\".",
-                "[upfront] order delivery address matches customer's current address."
+                "[upfront] shipment event SE-189145, 2026-09-29T02:47:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189146, 2026-09-29T22:43:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189147, 2026-09-30T21:28:00: Arrived at carrier regional sorting facility in Fresno, CA.",
+                "[upfront] shipment event SE-189148, 2026-10-01T04:44:00: Departed carrier regional sorting facility in Fresno, CA.",
+                "[upfront] shipment event SE-189149, 2026-10-01T16:34:00: Arrived at local delivery station in San Diego, CA.",
+                "[upfront] shipment event SE-189150, 2026-10-02T09:23:00: Out for delivery from San Diego, CA.",
+                "[upfront] shipment event SE-189151, 2026-10-02T13:15:00: Delivered; package left in the building mailroom."
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.7
         }
     },
     {
@@ -390,20 +401,20 @@
         "customer_id": "CUST-189028",
         "investigation_prompt": "Order ORD-189024 is marked delivered but the customer says the item did not arrive. Report what the records show.",
         "agent_result": {
-            "investigation_report": "Finding: The carrier's tracking records show a \"delivered\" event for shipment SHIP-189024 at 2026-10-06 17:35:00 in Stockton, CA, and the order status is marked delivered. Not found: The records contain no detail on how the parcel was left (e.g., signature, safe‑place note), no evidence of a delivery attempt failure, nor any follow‑up investigation indicating loss or misdelivery; thus the reason the customer reports not receiving the item cannot be established from the available data.",
+            "investigation_report": "Finding: The carrier's tracking records show that the parcel was marked as delivered on 2026-10-06 at 17:35 at the correct destination address (1315 Market St, Stockton, CA 95210). No subsequent tracking events indicate a return, failed delivery attempt, or other issue after the delivery record. Not found: There is no proof of receipt (e.g., signature, photo, or other delivery confirmation) and no carrier-provided reason for a potential misdelivery or loss; therefore the reason the customer reports not receiving the item cannot be established from the available records.",
             "evidences": [
-                "[upfront] shipment event SE-189158, 2026-10-06T17:35:00: \"Shipment delivered\" recorded in Stockton, CA",
-                "[upfront] shipment event SE-189157, 2026-10-06T09:02:00: \"Out for delivery\" recorded in Stockton, CA",
-                "[upfront] shipment event SE-189156, 2026-10-05T00:01:00: \"Arrived at local delivery station\" in Stockton, CA",
-                "[upfront] shipment event SE-189155, 2026-10-04T06:41:00: \"Departed carrier regional sorting facility\" from Los Angeles, CA",
-                "[upfront] shipment event SE-189154, 2026-10-03T22:21:00: \"Arrived at carrier regional sorting facility\" in Los Angeles, CA",
-                "[upfront] shipment event SE-189153, 2026-10-03T01:14:00: \"Package picked up by carrier\" in Oakland, CA",
-                "[upfront] shipment event SE-189152, 2026-10-02T05:07:00: \"Shipping label created; awaiting carrier pickup\" in Oakland, CA",
-                "[upfront] order details, delivery address matches customer's current address (1315 Market St, Stockton, CA 95210)",
-                "[upfront] shipment status: delivered; delivered at timestamp matches delivered event"
+                "[upfront] order delivery address, 1315 Market St, Stockton, CA 95210: matches customer's current address.",
+                "[upfront] shipment status, delivered: shipment marked delivered on 2026-10-06 17:35:00.",
+                "[upfront] shipment event SE-189152, 2026-10-02 05:07:00: label_created, Oakland, CA.",
+                "[upfront] shipment event SE-189153, 2026-10-03 01:14:00: picked_up, Oakland, CA.",
+                "[upfront] shipment event SE-189154, 2026-10-03 22:21:00: arrived_at_facility, Los Angeles, CA.",
+                "[upfront] shipment event SE-189155, 2026-10-04 06:41:00: departed_facility, Los Angeles, CA.",
+                "[upfront] shipment event SE-189156, 2026-10-05 00:01:00: arrived_at_facility, Stockton, CA.",
+                "[upfront] shipment event SE-189157, 2026-10-06 09:02:00: out_for_delivery, Stockton, CA.",
+                "[upfront] shipment event SE-189158, 2026-10-06 17:35:00: delivered, Stockton, CA."
             ],
             "investigation_success": true,
-            "confidence": 0.7
+            "confidence": 0.72
         }
     },
     {
@@ -411,11 +422,11 @@
         "customer_id": "CUST-189019",
         "investigation_prompt": "Investigate order ORD-189025. The tracking record has not progressed recently. Establish the last known status and whether the records explain the gap.",
         "agent_result": {
-            "investigation_report": "Finding: The last recorded shipment event is SE-189161 on 2026-10-02 02:12:00, indicating the parcel arrived at the carrier regional sorting facility in Barstow, CA; no subsequent tracking events are present, so the records do not explain the later tracking gap. Not found: No evidence of further movement, delay reason, or delivery attempt after the Barstow facility arrival.",
+            "investigation_report": "Finding: The last known tracking event for order ORD-189025 is an \"arrived_at_facility\" event at Barstow, CA on 2026-10-02 02:12, after which no subsequent shipment events are recorded, leaving the tracking gap unexplained by the available records. Not found: any shipment events after 2026-10-02 indicating further movement (e.g., departure from facility, out‑for‑delivery, delivery attempt, or a delay reason), and there is no carrier note that accounts for the lack of progress.\n",
             "evidences": [
-                "[upfront] shipment event SE-189159, 2026-09-30 23:58:00: Shipping label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189160, 2026-10-01 08:30:00: Package picked up by carrier.",
-                "[upfront] shipment event SE-189161, 2026-10-02 02:12:00: Arrived at carrier regional sorting facility in Barstow, CA."
+                "[upfront] shipment event SE-189159, 2026-09-30 23:58:00: label_created; Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189160, 2026-10-01 08:30:00: picked_up; Package picked up by carrier.",
+                "[upfront] shipment event SE-189161, 2026-10-02 02:12:00: arrived_at_facility; Arrived at carrier regional sorting facility in Barstow, CA."
             ],
             "investigation_success": true,
             "confidence": 0.7
@@ -426,15 +437,15 @@
         "customer_id": "CUST-189003",
         "investigation_prompt": "Order ORD-189026 has shown no tracking updates for some time. Report the last recorded status and what the records establish.",
         "agent_result": {
-            "investigation_report": "Finding: The last recorded tracking event for shipment SHIP-189026 is event SE-189165 on 2026-09-30T02:25:00, indicating the package departed the Fresno, CA regional sorting facility. No further tracking updates are present, so the records establish that the parcel was in transit as of that timestamp and its subsequent location or delivery status is undocumented.\nNot found: Any events after 2026-09-30T02:25:00, such as arrival at a destination facility, out‑for‑delivery, delivery attempt, or delivery confirmation. The cause of the tracking silence cannot be determined from the available data.",
+            "investigation_report": "Finding: The last recorded shipment event is SE-189165 on 2026-09-30T02:25:00, indicating the parcel departed the Fresno, CA sorting facility and was in transit thereafter. The records establish that the package was picked up, arrived at a regional facility, and left that facility, but no further tracking updates, delivery confirmation, or status changes are present.\nNot found: No shipment events after the departure from Fresno, no delivery attempt or delivery confirmation, and no recorded reason for any delay or loss.",
             "evidences": [
-                "[upfront] shipment event SE-189162, 2026-09-28T04:03:00: label_created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189163, 2026-09-28T14:18:00: picked_up by carrier at Ontario, CA.",
-                "[upfront] shipment event SE-189164, 2026-09-29T19:16:00: arrived_at_facility in Fresno, CA.",
-                "[upfront] shipment event SE-189165, 2026-09-30T02:25:00: departed_facility from Fresno, CA."
+                "[upfront] shipment event SE-189162, 2026-09-28T04:03:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189163, 2026-09-28T14:18:00: Package picked up by carrier in Ontario, CA.",
+                "[upfront] shipment event SE-189164, 2026-09-29T19:16:00: Arrived at carrier regional sorting facility in Fresno, CA.",
+                "[upfront] shipment event SE-189165, 2026-09-30T02:25:00: Departed carrier regional sorting facility in Fresno, CA."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.73
         }
     },
     {
@@ -442,13 +453,13 @@
         "customer_id": "CUST-189009",
         "investigation_prompt": "Tracking for order ORD-189027 appears stuck. Determine what the records show about the last known progress and whether a reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The latest recorded shipment event is a carrier pickup on 2026-09-26 at 16:46 in Ontario, CA; no subsequent tracking events are present, and no reason for the lack of further progress is documented. Not found: The records do not show any events after pickup, such as in‑transit updates, delivery attempts, or a stated delay reason.",
+            "investigation_report": "Finding: The last recorded tracking event is a \"picked_up\" entry on 2026-09-26T16:46:00, indicating the package was collected by SierraPost Logistics in Ontario, CA. No subsequent tracking events are present, and no reason for the lack of further progress is documented.\nNot found: Any shipment events after the pickup (e.g., in‑transit updates, arrival at destination facility, delivery attempt, or delivery confirmation). No recorded explanation for the apparent stall.",
             "evidences": [
-                "[upfront] shipment event SE-189166, 2026-09-25T22:25:00: label_created, location Ontario, CA; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189167, 2026-09-26T16:46:00: picked_up, location Ontario, CA; package picked up by carrier."
+                "[upfront] shipment event SE-189166, 2026-09-25T22:25:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189167, 2026-09-26T16:46:00: Package picked up by carrier."
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.85
         }
     },
     {
@@ -456,16 +467,16 @@
         "customer_id": "CUST-189010",
         "investigation_prompt": "A customer is asking where order ORD-189028 is, as tracking has not changed in a while. Report what the records establish.",
         "agent_result": {
-            "investigation_report": "Finding: The latest tracking event for order ORD-189028 is an \"arrived_at_facility\" at the Sacramento delivery station on 2026-09-23 04:48:00; no subsequent events are recorded, so the parcel's location after that time cannot be established. Not found: There is no shipment event indicating departure from the Sacramento station, out‑for‑delivery status, delivery attempt, or delivery confirmation, so the current whereabouts of the parcel are unrecorded.",
+            "investigation_report": "Finding: The last recorded shipment event for order ORD-189028 is an arrival at the local delivery station in Sacramento on 2026-09-23T04:48:00, and no subsequent events (e.g., out‑for‑delivery, delivery attempt, or delivery confirmation) are present in the tracking record. Not found: The records do not show any out‑for‑delivery, delivery attempt, delivery confirmation, or status change after the 2026-09-23 arrival, so the current whereabouts of the parcel cannot be established from the available data.",
             "evidences": [
-                "[upfront] shipment event SE-189168, 2026-09-20 12:59:00: label_created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189169, 2026-09-21 09:08:00: picked_up at Oakland, CA.",
-                "[upfront] shipment event SE-189170, 2026-09-22 01:10:00: arrived_at_facility at Ontario, CA.",
-                "[upfront] shipment event SE-189171, 2026-09-22 07:34:00: departed_facility from Ontario, CA.",
-                "[upfront] shipment event SE-189172, 2026-09-23 04:48:00: arrived_at_facility at Sacramento, CA."
+                "[upfront] shipment event SE-189168, 2026-09-20T12:59:00: label_created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189169, 2026-09-21T09:08:00: picked_up by carrier in Oakland, CA.",
+                "[upfront] shipment event SE-189170, 2026-09-22T01:10:00: arrived_at_facility at Ontario, CA.",
+                "[upfront] shipment event SE-189171, 2026-09-22T07:34:00: departed_facility from Ontario, CA.",
+                "[upfront] shipment event SE-189172, 2026-09-23T04:48:00: arrived_at_facility at Sacramento, CA."
             ],
             "investigation_success": true,
-            "confidence": 0.75
+            "confidence": 0.7
         }
     },
     {
@@ -473,14 +484,15 @@
         "customer_id": "CUST-189010",
         "investigation_prompt": "Investigate order ORD-189029. The tracking record has not progressed recently. Establish the last known status and whether the records explain the gap.",
         "agent_result": {
-            "investigation_report": "Finding: The last recorded shipment event for order ORD-189029 is an 'arrived_at_facility' event at Stockton, CA on 2026-09-18 16:46:00, after which no further tracking updates are present. Not found: The records do not contain any subsequent events (e.g., departure, in‑transit updates, delivery attempt, or delivery confirmation) that would explain the tracking gap after 2026-09-18.",
+            "investigation_report": "Finding: The most recent shipment event for order ORD-189029 is event SE-189175 on 2026-09-18 16:46, which records the package arrived at the carrier's regional sorting facility in Stockton, CA. The carrier's tracking status remains \"in_transit\" and no further events are recorded, so the tracking record shows a gap after that date with no documented explanation. Not found: any shipment events or carrier updates after 2026-09-18, a reason for the lack of further tracking activity, or delivery confirmation.",
             "evidences": [
-                "[upfront] shipment event SE-189173, 2026-09-17 01:28:00: label_created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189174, 2026-09-17 18:28:00: picked_up by carrier in Fresno, CA.",
-                "[upfront] shipment event SE-189175, 2026-09-18 16:46:00: arrived_at_facility at Stockton, CA."
+                "[upfront] shipment event SE-189173, 2026-09-17 01:28:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189174, 2026-09-17 18:28:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189175, 2026-09-18 16:46:00: Arrived at carrier regional sorting facility in Stockton, CA.",
+                "[upfront] shipment SHIP-189029, status in_transit: No delivery confirmation recorded."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.7
         }
     },
     {
@@ -488,15 +500,15 @@
         "customer_id": "CUST-189009",
         "investigation_prompt": "Order ORD-189030 has shown no tracking updates for some time. Report the last recorded status and what the records establish.",
         "agent_result": {
-            "investigation_report": "Finding: The last recorded shipment event for Order ORD-189030 is Event SE-189179 on 2026-09-14T17:18:00, indicating the package departed the Sacramento regional sorting facility. No tracking updates have been recorded since that time, so the shipment’s current location and status beyond the last event cannot be established from the available records.\nNot found: The records do not show any events after 2026-09-14T17:18:00, such as arrival at a downstream facility, out‑for‑delivery, delivery attempt, or delivery confirmation. Consequently, the exact whereabouts or cause of the tracking gap cannot be determined.",
+            "investigation_report": "Finding: The most recent tracking event for order ORD-189030 is event SE-189179, recorded on 2026-09-14T17:18:00, indicating the package departed the carrier's Sacramento, CA regional sorting facility. The records show a label created, carrier pickup, arrival at a facility, and departure from that facility, but no subsequent tracking updates; thus the system has no further information on the parcel's location, delivery attempt, or status beyond that point.\nNot found: No tracking events after 2026-09-14T17:18:00, such as further facility arrivals, out‑for‑delivery scans, delivery confirmation, or exception notices. No evidence explains any delay, loss, or delivery outcome.",
             "evidences": [
-                "[upfront] shipment event SE-189176, 2026-09-13T10:31:00: label_created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189177, 2026-09-13T16:58:00: picked_up; package picked up by carrier.",
-                "[upfront] shipment event SE-189178, 2026-09-14T14:02:00: arrived_at_facility; arrived at carrier regional sorting facility in Sacramento, CA.",
-                "[upfront] shipment event SE-189179, 2026-09-14T17:18:00: departed_facility; departed carrier regional sorting facility in Sacramento, CA."
+                "[upfront] shipment event SE-189176, 2026-09-13T10:31:00: label_created – Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189177, 2026-09-13T16:58:00: picked_up – Package picked up by carrier.",
+                "[upfront] shipment event SE-189178, 2026-09-14T14:02:00: arrived_at_facility – Arrived at carrier regional sorting facility in Sacramento, CA.",
+                "[upfront] shipment event SE-189179, 2026-09-14T17:18:00: departed_facility – Departed carrier regional sorting facility in Sacramento, CA."
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.92
         }
     },
     {
@@ -504,16 +516,16 @@
         "customer_id": "CUST-189031",
         "investigation_prompt": "Tracking for order ORD-189031 appears stuck. Determine what the records show about the last known progress and whether a reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The latest shipment event for order ORD-189031 is an \"in_transit\" scan at 2026-09-09 10:57:00 in Oakland, CA; no subsequent events or recorded reason for a delay are present. Not found: The records do not contain any event after 2026-09-09 10:57:00, nor any annotation or status indicating why tracking has not progressed further.",
+            "investigation_report": "Finding: The last recorded shipment event is SE-189184 on 2026-09-09 at 10:57:00, indicating the package was scanned in transit from Oakland, CA, and no subsequent events are present. Not found: No tracking event after 2026-09-09 provides a reason for the apparent stall; the carrier has not recorded a delivery attempt, arrival at destination, or any explanatory status change.",
             "evidences": [
-                "[upfront] shipment event SE-189184, 2026-09-09T10:57:00: 'Package scanned in transit to the next facility' (location Oakland, CA)",
-                "[upfront] shipment event SE-189183, 2026-09-09T05:21:00: 'Departed carrier regional sorting facility' (location Oakland, CA)",
-                "[upfront] shipment event SE-189182, 2026-09-08T22:23:00: 'Arrived at carrier regional sorting facility' (location Oakland, CA)",
-                "[upfront] shipment event SE-189181, 2026-09-07T17:47:00: 'Package picked up by carrier' (location Ontario, CA)",
-                "[upfront] shipment event SE-189180, 2026-09-07T11:36:00: 'Shipping label created; awaiting carrier pickup' (location Ontario, CA)"
+                "[upfront] shipment event SE-189184, 2026-09-09T10:57:00: 'Package scanned in transit to the next facility.'",
+                "[upfront] shipment event SE-189183, 2026-09-09T05:21:00: 'Departed carrier regional sorting facility.'",
+                "[upfront] shipment event SE-189182, 2026-09-08T22:23:00: 'Arrived at carrier regional sorting facility.'",
+                "[upfront] shipment event SE-189181, 2026-09-07T17:47:00: 'Package picked up by carrier.'",
+                "[upfront] shipment event SE-189180, 2026-09-07T11:36:00: 'Shipping label created; awaiting carrier pickup.'"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.65
         }
     },
     {
@@ -521,13 +533,13 @@
         "customer_id": "CUST-189001",
         "investigation_prompt": "A customer is asking where order ORD-189032 is, as tracking has not changed in a while. Report what the records establish.",
         "agent_result": {
-            "investigation_report": "Finding: The latest recorded shipment event for order ORD-189032 is a carrier pickup on 2026-09-01 13:08:00 in Fresno, CA; there are no subsequent tracking updates, so the current whereabouts of the parcel cannot be established from the available records. Not found: any events after the pickup such as transit updates, delivery attempts, or confirmation of delivery, and any information explaining the lack of further tracking activity.",
+            "investigation_report": "Finding: The latest tracking record shows the package was picked up by SierraPost Logistics in Fresno, CA at 2026-09-01 13:08:00; after that, no further shipment events are recorded, and the shipment remains listed as in_transit with no delivery confirmation. Not found: any shipment events after the pickup (e.g., transit updates, arrival at destination facility, delivery attempt, or delivery confirmation) that would indicate the parcel's current location or status.",
             "evidences": [
                 "[upfront] shipment event SE-189185, 2026-08-31T22:52:00: Shipping label created; awaiting carrier pickup.",
                 "[upfront] shipment event SE-189186, 2026-09-01T13:08:00: Package picked up by carrier."
             ],
             "investigation_success": true,
-            "confidence": 0.45
+            "confidence": 0.4
         }
     },
     {
@@ -535,19 +547,19 @@
         "customer_id": "CUST-189036",
         "investigation_prompt": "Investigate the tracking history for order ORD-189033. Determine whether the sequence of events contains a meaningful conflict.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking events for order ORD-189033 form a consistent chronological sequence with no contradictory records; the parcel was labeled, picked up, processed through facilities, attempted delivery once (failed), and subsequently delivered the same day. Not found: No evidence of any conflicting event types (e.g., delivered before out‑for‑delivery) or contradictory timestamps; no missing records that would indicate an unexplained gap.",
+            "investigation_report": "Finding: The sequence of shipment events for order ORD-189033 is chronologically consistent and does not contain a meaningful conflict; a delivery attempt was recorded as failed due to the business being closed at 13:20, followed by a successful delivery later that day at 17:45. Not found: No records indicating contradictory timestamps, simultaneous delivery statuses, or any other inconsistency in the tracking trail.",
             "evidences": [
-                "[upfront] shipment event SE-189187, 2026-08-08T18:29:00: label_created at Fresno, CA",
-                "[upfront] shipment event SE-189188, 2026-08-09T12:27:00: picked_up at Fresno, CA",
-                "[upfront] shipment event SE-189189, 2026-08-10T09:19:00: arrived_at_facility at San Jose, CA",
-                "[upfront] shipment event SE-189190, 2026-08-10T13:35:00: departed_facility at San Jose, CA",
-                "[upfront] shipment event SE-189191, 2026-08-11T21:10:00: arrived_at_facility at Los Angeles, CA",
-                "[upfront] shipment event SE-189192, 2026-08-12T08:40:00: out_for_delivery at Los Angeles, CA",
-                "[upfront] shipment event SE-189193, 2026-08-12T13:20:00: delivery_attempt_failed at Los Angeles, CA – business closed",
-                "[upfront] shipment event SE-189194, 2026-08-12T17:45:00: delivered at Los Angeles, CA – successful delivery"
+                "[upfront] shipment event SE-189187, 2026-08-08 18:29:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189188, 2026-08-09 12:27:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189189, 2026-08-10 09:19:00: Arrived at carrier regional sorting facility.",
+                "[upfront] shipment event SE-189190, 2026-08-10 13:35:00: Departed carrier regional sorting facility.",
+                "[upfront] shipment event SE-189191, 2026-08-11 21:10:00: Arrived at local delivery station.",
+                "[upfront] shipment event SE-189192, 2026-08-12 08:40:00: Out for delivery.",
+                "[upfront] shipment event SE-189193, 2026-08-12 13:20:00: Delivery attempt unsuccessful because the business was closed.",
+                "[upfront] shipment event SE-189194, 2026-08-12 17:45:00: Shipment delivered successfully following a later delivery attempt."
             ],
             "investigation_success": true,
-            "confidence": 0.95
+            "confidence": 0.93
         }
     },
     {
@@ -555,20 +567,14 @@
         "customer_id": "CUST-189004",
         "investigation_prompt": "The tracking history for order ORD-189034 looks inconsistent to the support team. Review the events and report what the records establish about the delivery outcome.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking records for order ORD-189034 show that the package was picked up, processed through facilities, had an initial delivery attempt that failed because the recipient was unavailable, and was successfully delivered later the same day at 16:30 with a \"left_at_door\" confirmation. Not found: The records do not provide any confirmation that the customer actually received the parcel, nor do they explain the reason for the recipient's unavailability beyond the carrier’s description.",
+            "investigation_report": "Finding: The tracking events show the parcel was initially attempted for delivery on 2026-08-19 at 10:40 but the recipient was unavailable, after which a second delivery attempt succeeded at 16:30 on the same day, with the carrier recording that the package was left at the front door. The order and shipment statuses both list the order as delivered, consistent with the final tracking event. Not found: No evidence confirming that the customer actually received or retrieved the parcel, nor any record of subsequent issues or disputes.\n",
             "evidences": [
-                "[upfront] shipment event SE-189195, 2026-08-16T12:08:00: label created; awaiting carrier pickup.",
-                "[upfront] shipment event SE-189196, 2026-08-16T20:13:00: package picked up by carrier.",
-                "[upfront] shipment event SE-189197, 2026-08-17T11:46:00: arrived at facility in Fresno, CA.",
-                "[upfront] shipment event SE-189198, 2026-08-17T20:01:00: departed facility in Fresno, CA.",
-                "[upfront] shipment event SE-189199, 2026-08-19T06:30:00: arrived at local delivery station in Long Beach, CA.",
-                "[upfront] shipment event SE-189200, 2026-08-19T08:15:00: out for delivery (first attempt).",
-                "[upfront] shipment event SE-189201, 2026-08-19T10:40:00: delivery attempt failed – recipient unavailable.",
-                "[upfront] shipment event SE-189202, 2026-08-19T14:05:00: out for delivery (second attempt).",
-                "[upfront] shipment event SE-189203, 2026-08-19T16:30:00: delivered; package left at front door."
+                "[upfront] shipment event SE-189201, 2026-08-19T10:40:00: Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.",
+                "[upfront] shipment event SE-189202, 2026-08-19T14:05:00: Out for delivery (second attempt).",
+                "[upfront] shipment event SE-189203, 2026-08-19T16:30:00: Delivered; package left at the front door."
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.93
         }
     },
     {
@@ -576,15 +582,20 @@
         "customer_id": "CUST-189005",
         "investigation_prompt": "Order ORD-189035 shows both a failed attempt and a delivery. Investigate and report what the sequence of events actually establishes.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking trail shows that after the package was out for delivery on 2026-08-28, a failed delivery attempt was recorded at 11:20 due to inability to access the location, after which a second out‑for‑delivery event occurred on 2026-08-29 and the package was recorded as delivered at 09:50, handed to a resident. Not found: The records do not specify why the carrier could not access the location on the first attempt, nor do they provide any further detail about the resident who received the parcel.",
+            "investigation_report": "Finding: The shipment events chronologically show that after arriving at the Fresno local delivery station on 2026-08-27, the carrier attempted delivery on 2026-08-28 11:20 but recorded a failed attempt because the carrier could not access the delivery location. The carrier made a second out‑for‑delivery on 2026-08-29 07:55 and successfully delivered the parcel at 2026-08-29 09:50, with delivery confirmation recorded as \"handed_to_resident\". Not found: No records explain the specific reason the location was inaccessible, nor is there any evidence identifying the actual recipient beyond the carrier’s delivery confirmation.",
             "evidences": [
-                "[upfront] shipment event SE-189209, 2026-08-28T08:05:00: Out for delivery.",
-                "[upfront] shipment event SE-189210, 2026-08-28T11:20:00: Delivery attempt unsuccessful because the carrier could not access the delivery location.",
-                "[upfront] shipment event SE-189211, 2026-08-29T07:55:00: Out for delivery (second attempt).",
-                "[upfront] shipment event SE-189212, 2026-08-29T09:50:00: Delivered; package handed to a resident."
+                "[upfront] shipment event SE-189204, 2026-08-25 00:19:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189205, 2026-08-25 07:16:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189206, 2026-08-25 18:08:00: Arrived at carrier regional sorting facility in Sacramento, CA.",
+                "[upfront] shipment event SE-189207, 2026-08-26 03:40:00: Departed carrier regional sorting facility.",
+                "[upfront] shipment event SE-189208, 2026-08-27 20:30:00: Arrived at local delivery station in Fresno, CA.",
+                "[upfront] shipment event SE-189209, 2026-08-28 08:05:00: Out for delivery (first attempt).",
+                "[upfront] shipment event SE-189210, 2026-08-28 11:20:00: Delivery attempt unsuccessful because the carrier could not access the delivery location.",
+                "[upfront] shipment event SE-189211, 2026-08-29 07:55:00: Out for delivery (second attempt).",
+                "[upfront] shipment event SE-189212, 2026-08-29 09:50:00: Delivered; package handed to a resident."
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.95
         }
     },
     {
@@ -592,15 +603,15 @@
         "customer_id": "CUST-189005",
         "investigation_prompt": "Review the tracking events for order ORD-189036 and determine whether the records contradict each other.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment event records for order ORD-189036 form a consistent chronological sequence with no contradictory timestamps or status entries. Not found: No evidence of conflicting event types or dates that would indicate a tracking contradiction.",
+            "investigation_report": "Finding: The shipment events for order ORD-189036 form a consistent chronological sequence with no contradictory records. The package progressed from label creation, carrier pickup, facility arrivals/departures, out‑for‑delivery, and final delivery, all in logical order. Not found: No records indicating any status conflict (e.g., delivered before out‑for‑delivery) or mismatched timestamps; no missing event types that would suggest a gap in the tracking history.",
             "evidences": [
-                "[upfront] shipment event SE-189213, 2026-09-01T20:17:00: label_created",
-                "[upfront] shipment event SE-189214, 2026-09-02T11:09:00: picked_up",
-                "[upfront] shipment event SE-189215, 2026-09-03T09:07:00: arrived_at_facility",
-                "[upfront] shipment event SE-189216, 2026-09-03T16:35:00: departed_facility",
-                "[upfront] shipment event SE-189219, 2026-09-05T06:45:00: arrived_at_facility",
-                "[upfront] shipment event SE-189217, 2026-09-05T08:30:00: out_for_delivery",
-                "[upfront] shipment event SE-189218, 2026-09-05T14:10:00: delivered"
+                "[upfront] shipment event SE-189213, 2026-09-01 20:17:00: label_created at Ontario, CA.",
+                "[upfront] shipment event SE-189214, 2026-09-02 11:09:00: picked_up at Ontario, CA.",
+                "[upfront] shipment event SE-189215, 2026-09-03 09:07:00: arrived_at_facility at San Jose, CA.",
+                "[upfront] shipment event SE-189216, 2026-09-03 16:35:00: departed_facility from San Jose, CA.",
+                "[upfront] shipment event SE-189219, 2026-09-05 06:45:00: arrived_at_facility at Fresno, CA.",
+                "[upfront] shipment event SE-189217, 2026-09-05 08:30:00: out_for_delivery in Fresno, CA.",
+                "[upfront] shipment event SE-189218, 2026-09-05 14:10:00: delivered; left in building mailroom."
             ],
             "investigation_success": true,
             "confidence": 0.95
@@ -611,14 +622,19 @@
         "customer_id": "CUST-189003",
         "investigation_prompt": "Investigate the tracking history for order ORD-189037. Determine whether the sequence of events contains a meaningful conflict.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking history shows a logical sequence – the parcel was out for delivery, an initial delivery attempt failed at 09:55 because the recipient was unavailable, and a subsequent successful delivery occurred at 11:30 where the package was handed to a resident. No contradictory events are present.\nNot found: No evidence of a conflicting delivery status (e.g., simultaneous \"delivered\" and \"out for delivery\" records) or any other irregularity in the timeline.",
+            "investigation_report": "Finding: The shipment event sequence for order ORD-189037 shows a chronological progression without a substantive conflict; a delivery attempt was recorded as failed at 09:55 on 2026-09-14, followed by a successful delivery at 11:30 the same day. Not found: No evidence indicating that the \"delivery_attempt_failed\" event occurred after the \"delivered\" event or any contradictory timestamps.\n",
             "evidences": [
-                "[upfront] shipment event SE-189225, 2026-09-14T07:40:00: out_for_delivery recorded.",
-                "[upfront] shipment event SE-189227, 2026-09-14T09:55:00: delivery_attempt_failed – recipient unavailable.",
-                "[upfront] shipment event SE-189226, 2026-09-14T11:30:00: delivered – handed to resident."
+                "[upfront] shipment event SE-189220, 2026-09-10 20:50:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189221, 2026-09-11 09:26:00: Package picked up by carrier.",
+                "[upfront] shipment event SE-189222, 2026-09-12 05:06:00: Arrived at carrier regional sorting facility in Fresno, CA.",
+                "[upfront] shipment event SE-189223, 2026-09-12 09:08:00: Departed carrier regional sorting facility in Fresno, CA.",
+                "[upfront] shipment event SE-189224, 2026-09-13 19:45:00: Arrived at local delivery station in Los Angeles, CA.",
+                "[upfront] shipment event SE-189225, 2026-09-14 07:40:00: Out for delivery from Los Angeles, CA.",
+                "[upfront] shipment event SE-189227, 2026-09-14 09:55:00: Delivery attempt unsuccessful because the recipient was unavailable at the delivery address.",
+                "[upfront] shipment event SE-189226, 2026-09-14 11:30:00: Delivered; package handed to a resident."
             ],
             "investigation_success": true,
-            "confidence": 0.95
+            "confidence": 0.94
         }
     },
     {
@@ -626,15 +642,14 @@
         "customer_id": "CUST-189008",
         "investigation_prompt": "The tracking history for order ORD-189038 looks inconsistent to the support team. Review the events and report what the records establish about the delivery outcome.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment events document that the parcel was first attempted for delivery on 2026-09-21 at 12:30 but the entrance was inaccessible, returned to the local station, and a second attempt later that day resulted in delivery at 18:20 with the carrier marking the package as left at the front door. Not found: The records do not contain any confirmation from the customer that the package was actually received, nor any evidence indicating a misdelivery, loss, or theft.",
+            "investigation_report": "Finding: The tracking records show that after an initial failed delivery attempt on 2026-09-21 at 12:30 (delivery entrance inaccessible), the carrier re‑attempted delivery later the same day and successfully completed delivery at 2026-09-21 18:20, leaving the package at the front door. Not found: The records do not contain any verification of who actually received the parcel, nor any detail explaining why the second attempt succeeded after the earlier entrance‑inaccessibility note. No evidence is present regarding any customer complaint or discrepancy beyond the tracking events.",
             "evidences": [
                 "[upfront] shipment event SE-189234, 2026-09-21T12:30:00: Delivery attempt unsuccessful because the delivery entrance was inaccessible.",
-                "[upfront] shipment event SE-189235, 2026-09-21T15:10:00: Returned to local delivery station after unsuccessful attempt.",
                 "[upfront] shipment event SE-189236, 2026-09-21T16:40:00: Out for delivery (second attempt).",
                 "[upfront] shipment event SE-189237, 2026-09-21T18:20:00: Delivered; package left at the front door."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.95
         }
     },
     {
@@ -642,14 +657,15 @@
         "customer_id": "CUST-189027",
         "investigation_prompt": "Order ORD-189039 shows both a failed attempt and a delivery. Investigate and report what the sequence of events actually establishes.",
         "agent_result": {
-            "investigation_report": "Finding: The tracking timeline for shipment SHIP-189039 shows that after being out for delivery on 2026-09-30, a delivery attempt was recorded as failed at 08:55 because the business was closed, and later the same day at 12:10 the parcel was recorded as delivered, left in the building mailroom. Not found: The records do not explain what changed between the failed attempt and the successful delivery (e.g., who received the parcel, why the business was later accessible), nor is there any confirmation from the recipient.\n",
+            "investigation_report": "Finding: The tracking chronology shows that after being out for delivery on 2026-09-30 07:30, the carrier recorded a failed delivery attempt at 08:55 because the business was closed, and later the same day at 12:10 the package was delivered and left in the building mailroom. Not found: The records do not indicate the reason the second attempt succeeded, nor do they identify the individual who received the parcel or any subsequent customer complaint.",
             "evidences": [
-                "[upfront] shipment event SE-189243, 2026-09-30T07:30:00: Out for delivery in Los Angeles, CA.",
-                "[upfront] shipment event SE-189244, 2026-09-30T08:55:00: Delivery attempt unsuccessful because the business was closed.",
-                "[upfront] shipment event SE-189245, 2026-09-30T12:10:00: Delivered; package left in the building mailroom."
+                "[upfront] shipment event SE-189243, 2026-09-30T07:30:00: out_for_delivery, Los Angeles, CA",
+                "[upfront] shipment event SE-189244, 2026-09-30T08:55:00: delivery_attempt_failed, Los Angeles, CA, \"Delivery attempt unsuccessful because the business was closed\"",
+                "[upfront] shipment event SE-189245, 2026-09-30T12:10:00: delivered, Los Angeles, CA, \"Delivered; package left in the building mailroom\"",
+                "[upfront] shipment record SHIP-189039: Shipment Status delivered, Delivered At 2026-09-30 12:10:00, Delivery Confirmation left_at_mailroom"
             ],
             "investigation_success": true,
-            "confidence": 0.92
+            "confidence": 0.95
         }
     },
     {
@@ -657,19 +673,19 @@
         "customer_id": "CUST-189023",
         "investigation_prompt": "Review the tracking events for order ORD-189040 and determine whether the records contradict each other.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment events for order ORD-189040 form a consistent chronological sequence with no contradictory records; a failed delivery attempt was recorded at 15:40 and a subsequent successful delivery at 19:05 on the same day. Not found: No evidence of conflicting timestamps, status mismatches, or duplicate contradictory events.",
+            "investigation_report": "Finding: The tracking events for order ORD-189040 are internally consistent; after being out for delivery, a failed delivery attempt at 15:40 is followed by a successful delivery at 19:05 on the same day, which aligns with the shipment status of delivered. No records directly conflict with each other.\nNot found: The records do not include any additional delivery attempts, reason for the second attempt, or confirmation of which resident received the parcel; such details are absent.",
             "evidences": [
-                "[upfront] shipment event SE-189246, 2026-10-04T08:34:00: label_created",
-                "[upfront] shipment event SE-189247, 2026-10-04T15:19:00: picked_up",
-                "[upfront] shipment event SE-189248, 2026-10-05T04:32:00: arrived_at_facility",
-                "[upfront] shipment event SE-189249, 2026-10-05T07:48:00: departed_facility",
-                "[upfront] shipment event SE-189250, 2026-10-07T10:20:00: arrived_at_facility",
-                "[upfront] shipment event SE-189251, 2026-10-07T11:00:00: out_for_delivery",
-                "[upfront] shipment event SE-189252, 2026-10-07T15:40:00: delivery_attempt_failed",
-                "[upfront] shipment event SE-189253, 2026-10-07T19:05:00: delivered"
+                "[upfront] shipment event SE-189246, 2026-10-04T08:34:00: label_created; awaiting carrier pickup.",
+                "[upfront] shipment event SE-189247, 2026-10-04T15:19:00: picked_up by carrier.",
+                "[upfront] shipment event SE-189248, 2026-10-05T04:32:00: arrived_at_facility at Fresno, CA.",
+                "[upfront] shipment event SE-189249, 2026-10-05T07:48:00: departed_facility from Fresno, CA.",
+                "[upfront] shipment event SE-189250, 2026-10-07T10:20:00: arrived_at_facility at Bakersfield, CA.",
+                "[upfront] shipment event SE-189251, 2026-10-07T11:00:00: out_for_delivery from Bakersfield, CA.",
+                "[upfront] shipment event SE-189252, 2026-10-07T15:40:00: delivery_attempt_failed; recipient unavailable.",
+                "[upfront] shipment event SE-189253, 2026-10-07T19:05:00: delivered; handed_to_resident."
             ],
             "investigation_success": true,
-            "confidence": 0.95
+            "confidence": 0.92
         }
     },
     {
@@ -677,14 +693,14 @@
         "customer_id": "CUST-189041",
         "investigation_prompt": "Investigate order ORD-189041. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address on order ORD-189041 (4138 Pacific Hwy, Oakland, CA 94618) matches a historically valid address for customer CUST-189041, which was effective through 2026-10-13 and thus covered the order date of 2026-10-11. Consequently, the apparent discrepancy with the customer's current address (9871 Oak St, San Diego, CA 92115) is explained by an address change that occurred after the order was placed; the records do not indicate any delivery error or misdelivery. \nNot found: No documentation of an address change request tied to the order, no carrier misdelivery or delivery‑attempt records, and no customer communication regarding the address difference.",
+            "investigation_report": "Finding: The delivery address on the order (4138 Pacific Hwy, Oakland, CA 94618) matches a recorded customer address that was effective from 2023-12-20 to 2026-10-13, which includes the order date of 2026-10-11. Therefore, the address discrepancy is historically valid—the order used the customer's address that was current at the time of purchase. \nNot found: No evidence indicating that the order was placed with an unintended or incorrect address, nor any record of a request to change the delivery address after the order was shipped.",
             "evidences": [
                 "[upfront] order ORD-189041, 2026-10-11: delivery address 4138 Pacific Hwy, Oakland, CA 94618",
-                "[tool:customer_address_history_tool] address record ADDR-189041, effective 2023-12-20 to 2026-10-13: matches order delivery address",
-                "[tool:customer_address_history_tool] address record ADDR-189042, effective from 2026-10-14 onward: current address 9871 Oak St, San Diego, CA 92115, differs from order address"
+                "[tool:customer_address_history_tool] address record ADDR-189041, effective 2023-12-20 to 2026-10-13: street 4138 Pacific Hwy, city Oakland, state CA, zip 94618",
+                "[tool:customer_address_history_tool] address record ADDR-189042, effective from 2026-10-14 onward: street 9871 Oak St, city San Diego, state CA, zip 92115"
             ],
             "investigation_success": true,
-            "confidence": 0.93
+            "confidence": 0.9
         }
     },
     {
@@ -692,16 +708,15 @@
         "customer_id": "CUST-189042",
         "investigation_prompt": "The delivery address recorded on order ORD-189042 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address recorded on order ORD-189042 (4323 Cedar Ln, San Jose, CA 95116) matches neither the customer's current address (7650 Sunset Blvd, Riverside, CA 92507) nor any of the customer's documented past addresses (597 Cherry Ave, Stockton, CA 95210 and 7650 Sunset Blvd, Riverside, CA 92507). Consequently, the address discrepancy cannot be explained by the available records and remains unresolved. Not found: No record of an address change request, no order note indicating a different intended delivery location, and no evidence linking the San Jose address to the customer; thus the reason for using that address is unknown.",
+            "investigation_report": "Finding: The order ORD-189042 was shipped to 4323 Cedar Ln, San Jose, CA 95116, which differs from the customer's current address of 7650 Sunset Blvd, Riverside, CA 92507, and this delivery address does not appear in the customer's recorded address history (both prior and current). No records explain why this alternative address was used. \nNot found: No evidence of an address change request, order edit log, customer confirmation of the San Jose address, or any other documentation that could clarify the reason for the discrepancy.",
             "evidences": [
-                "[upfront] order ORD-189042, 2026-09-21 17:04:00: delivery address 4323 Cedar Ln, San Jose, CA 95116",
+                "[upfront] order ORD-189042, 2026-09-21: delivery address 4323 Cedar Ln, San Jose, CA 95116",
                 "[upfront] customer CUST-189042 current address: 7650 Sunset Blvd, Riverside, CA 92507",
-                "[tool:customer_address_history_tool] address record ADDR-189043, effective 2023-09-05 to 2026-05-31: 597 Cherry Ave, Stockton, CA 95210",
-                "[tool:customer_address_history_tool] address record ADDR-189044, effective 2026-06-01 to present: 7650 Sunset Blvd, Riverside, CA 92507",
-                "[upfront] shipment SHIP-189042 delivered event SE-189264, 2026-09-25 15:16:00: location San Jose, CA (matches order city)"
+                "[tool:customer_address_history_tool] address_history_id ADDR-189043, effective 2023-09-05 to 2026-05-31: 597 Cherry Ave, Stockton, CA 95210",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189044, effective 2026-06-01 to null: 7650 Sunset Blvd, Riverside, CA 92507"
             ],
             "investigation_success": true,
-            "confidence": 0.75
+            "confidence": 0.73
         }
     },
     {
@@ -709,12 +724,12 @@
         "customer_id": "CUST-189043",
         "investigation_prompt": "Support flagged order ORD-189043 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address on order ORD-189043 (7674 Maple Ave, Fresno, CA 93721) matches a customer's historical address that was effective at the order date, therefore the mismatch with the customer's current address is explained by the address having changed after the order was placed. Not found: No records indicating an error in address entry at order time or any alternative address used for the order.",
+            "investigation_report": "Finding: The delivery address on the order (7674 Maple Ave, Fresno, CA 93721) matches a historic address on file for the customer that was active at the order date (2026-09-30). Therefore the mismatch between the order’s delivery address and the customer’s current address is explained by a change of address after the order was placed. Not found: No evidence indicating an error in address selection, misdelivery, or any other issue beyond the documented address change.",
             "evidences": [
-                "[upfront] order ORD-189043, 2026-09-30: delivery address 7674 Maple Ave, Fresno, CA 93721",
-                "[upfront] customer CUST-189043 current address: 438 Hillcrest Rd, Los Angeles, CA 90015",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189045, effective_from 2024-11-15 to 2026-10-13: matches order delivery address",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189046, effective_from 2026-10-14: current address, not effective at order date"
+                "[upfront] order ORD-189043, delivery address: 7674 Maple Ave, Fresno, CA 93721",
+                "[upfront] customer current address: 438 Hillcrest Rd, Los Angeles, CA 90015",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189045, effective_from 2024-11-15 to 2026-10-13: 7674 Maple Ave, Fresno, CA 93721",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189046, effective_from 2026-10-14 to null: 438 Hillcrest Rd, Los Angeles, CA 90015"
             ],
             "investigation_success": true,
             "confidence": 0.9
@@ -725,18 +740,16 @@
         "customer_id": "CUST-189044",
         "investigation_prompt": "Order ORD-189044 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish.",
         "agent_result": {
-            "investigation_report": "Finding: The order's delivery address (5457 Market St, San Francisco, CA 94117) differs from the customer's current address (988 Sutter St, Irvine, CA 92620). The delivery address matches a historical address the customer held from 2023-05-23 to 2023-11-13, which ended before the order date, so the mismatch is documented but the records do not explain why the historical address was used. The shipment is currently out for delivery with no delivery confirmation recorded.\nNot found: The records do not contain any explanation for the selection of the historical address, nor any evidence of delivery outcome (e.g., delivery confirmation, exception event, or customer receipt).",
+            "investigation_report": "Finding: The order's delivery address (5457 Market St, San Francisco, CA 94117) does not match the customer's current address (988 Sutter St, Irvine, CA 92620) and does not correspond to any address that was in effect for the customer on the order date (2026-10-10). The address appears in the customer's past address history, but the effective period for that address ended on 2023-11-13, well before the order was placed, making it historically valid but not valid at the time of order. Not found: The records do not provide an explanation for why the outdated address was used for this order, such as a manual address entry error, a saved address selection, or a system override. No evidence indicates carrier mishandling or delivery status beyond the out‑for‑delivery event.",
             "evidences": [
-                "[upfront] order ORD-189044, 2026-10-10: delivery address 5457 Market St, San Francisco, CA 94117",
-                "[upfront] customer CUST-189044 current address: 988 Sutter St, Irvine, CA 92620",
-                "[upfront] shipment SHIP-189044, status out_for_delivery as of 2026-10-14 09:32",
-                "[upfront] shipment event SE-189277, 2026-10-14 09:32: out_for_delivery at San Francisco, CA",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189047, effective 2023-05-23 to 2023-11-13: 5457 Market St, San Francisco, CA 94117 (matches order delivery address, period ended before order date)",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189049, effective from 2026-09-30 onward: 988 Sutter St, Irvine, CA 92620 (matches current customer address)",
-                "[tool:customer_address_history_tool] classification: order delivery address is historical (period ended before order date), not a current or unrecognized address"
+                "[upfront] order ORD-189044, 2026-10-10 07:06:00: delivery address 5457 Market St, San Francisco, CA 94117",
+                "[upfront] customer CUST-189044, current address 988 Sutter St, Irvine, CA 92620",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189047, effective 2023-05-23 to 2023-11-13: 5457 Market St, San Francisco, CA 94117",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189048, effective 2023-11-14 to 2026-09-29: 8782 Grand Ave, San Jose, CA 95112",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189049, effective 2026-09-30 to present: 988 Sutter St, Irvine, CA 92620"
             ],
             "investigation_success": true,
-            "confidence": 0.74
+            "confidence": 0.78
         }
     },
     {
@@ -744,16 +757,15 @@
         "customer_id": "CUST-189045",
         "investigation_prompt": "Investigate order ORD-189045. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The order's delivery address (6355 Sutter St, Los Angeles, CA 90042) does not match the customer's current address (1231 Oak St, Los Angeles, CA 90042) and corresponds to a prior address that was effective only until 2026-05-27, ending before the order date of 2026-10-10. Not found: No records indicating a customer‑initiated address change request, validation of the delivery address at order time, or any carrier‑level correction of the address. The discrepancy remains unexplained by the available data.",
+            "investigation_report": "Finding: The order's delivery address (6355 Sutter St, Los Angeles, CA 90042) matches a historic address that was effective from 2024-03-10 until 2026-05-27, but the order was placed on 2026-10-10, after that address had ceased to be active. The customer's current address as of the order date is 1231 Oak St, Los Angeles, CA 90042, which does not match the delivery address. Therefore, the delivery destination differs from the customer's current address and also differs from any address that was valid at the time of the order, indicating a possible address selection error.\nNot found: No record explains why the historic (now inactive) address was used for this order, such as a customer update failure, manual override, or data entry mistake. No evidence of a customer request to ship to the old address is present.",
             "evidences": [
                 "[upfront] order ORD-189045, 2026-10-10 09:29:00: delivery address 6355 Sutter St, Los Angeles, CA 90042",
-                "[upfront] customer CUST-189045, current address: 1231 Oak St, Los Angeles, CA 90042",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189050, effective_to 2026-05-27: street 6355 Sutter St, city Los Angeles, state CA, zip 90042 (historical address ended before order date)",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189051, effective_from 2026-05-28: street 1231 Oak St, city Los Angeles, state CA, zip 90042 (current address)",
-                "[upfront] shipment events SE-189278‑SE-189283: show normal carrier processing with no address‑related notes"
+                "[upfront] customer CUST-189045 current address: 1231 Oak St, Los Angeles, CA 90042",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189050, effective 2024-03-10 to 2026-05-27: 6355 Sutter St, Los Angeles, CA 90042",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189051, effective 2026-05-28 to null: 1231 Oak St, Los Angeles, CA 90042"
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.75
         }
     },
     {
@@ -761,14 +773,12 @@
         "customer_id": "CUST-189046",
         "investigation_prompt": "The delivery address recorded on order ORD-189046 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The order ORD-189046 was shipped to the address 2509 Ocean Ave, Bakersfield, CA 93312, which corresponds to a prior customer address that was active from 2023-09-25 until 2026-07-30. The order was placed on 2026-09-24, after the customer's address had been updated to 9620 Valley View Dr, Irvine, CA 92612 (effective from 2026-07-31). Therefore, the delivery address on the order does not match the customer's current address and was not valid at the time of the order. No record in the provided data explains why the outdated address was used.\nNot found: Any internal record or log indicating a reason for retaining the historic address on the order (e.g., address change request timing, manual override, system error). No evidence of customer communication about the address discrepancy.\n",
+            "investigation_report": "Finding: The order was shipped to 2509 Ocean Ave, Bakersfield, CA 93312, which matches a previously recorded address for the customer that was effective only until 2026-07-30, i.e., before the order date of 2026-09-24. The customer's current address is 9620 Valley View Dr, Irvine, CA 92612, which became effective on 2026-07-31. No record in the provided data explains why the older, no‑longer‑valid address was used for the order. \nNot found: No evidence indicating who selected the delivery address, whether the order system auto‑filled an outdated address, or any customer communication regarding the address change. No internal logs or correction records are available.",
             "evidences": [
                 "[upfront] order ORD-189046, 2026-09-24: delivery address 2509 Ocean Ave, Bakersfield, CA 93312",
-                "[upfront] customer CUST-189046, current address: 9620 Valley View Dr, Irvine, CA 92612",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189052, effective 2023-09-25 to 2026-07-30: 2509 Ocean Ave, Bakersfield, CA 93312",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189053, effective 2026-07-31 to present: 9620 Valley View Dr, Irvine, CA 92612",
-                "[upfront] shipment event SE-189290, 2026-09-27 16:58:00: Delivered; package left in the building mailroom at Bakersfield, CA",
-                "[upfront] shipment event SE-189289, 2026-09-27 09:29:00: Out for delivery, location Bakersfield, CA"
+                "[upfront] shipment SHIP-189046, delivered at 2026-09-27: delivery confirmation left_at_mailroom at Bakersfield location",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189052, effective_to 2026-07-30: 2509 Ocean Ave, Bakersfield, CA 93312",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189053, effective_from 2026-07-31: 9620 Valley View Dr, Irvine, CA 92612"
             ],
             "investigation_success": true,
             "confidence": 0.75
@@ -779,16 +789,15 @@
         "customer_id": "CUST-189047",
         "investigation_prompt": "Support flagged order ORD-189047 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address on the order (1085 Market St, Oakland, CA 94618) matches a customer address that was on file from 2025-01-15 through 2026-10-13, and the order was placed on 2026-09-29 within that period. Therefore, the mismatch with the customer's current address (7621 Hillcrest Rd, Riverside, CA 92507) is explained by the customer having updated their address after the order was created. \nNot found: The records do not show any evidence of an error in address entry at order time, nor any communication from the customer about the change. No evidence is available about the customer's awareness of the address used for this order.",
+            "investigation_report": "Finding: The delivery address on the order (1085 Market St, Oakland, CA 94618) matches a historically valid address for the customer, recorded as active from 2025-01-15 through 2026-10-13, which includes the order date of 2026-09-29. Therefore, the address mismatch with the customer's current address is attributable to a later update of the customer's address to 7621 Hillcrest Rd, Riverside, CA 92507 effective 2026-10-14, after the order was placed and shipped.\nNot found: No evidence indicating that the order was intended for the current Riverside address, nor any record of a address change request associated with this order. No records of misdelivery, customer complaint, or carrier error related to the address are present.",
             "evidences": [
-                "[upfront] order ORD-189047, 2026-09-29: delivery street 1085 Market St, city Oakland, state CA, zip 94618",
-                "[upfront] customer CUST-189047, current address: 7621 Hillcrest Rd, Riverside, CA 92507",
+                "[upfront] order ORD-189047, 2026-09-29: delivery address 1085 Market St, Oakland, CA 94618",
+                "[upfront] customer current address CUST-189047: 7621 Hillcrest Rd, Riverside, CA 92507",
                 "[tool:customer_address_history_tool] address_history_id ADDR-189055, effective_from 2025-01-15 to 2026-10-13: street 1085 Market St, city Oakland, state CA, zip 94618",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189056, effective_from 2026-10-14 to null: street 7621 Hillcrest Rd, city Riverside, state CA, zip 92507",
-                "[upfront] shipment event SE-189291, 2026-09-30 08:05:00: label_created awaiting carrier pickup"
+                "[tool:customer_address_history_tool] address_history_id ADDR-189056, effective_from 2026-10-14: street 7621 Hillcrest Rd, city Riverside, state CA, zip 92507"
             ],
             "investigation_success": true,
-            "confidence": 0.9
+            "confidence": 0.92
         }
     },
     {
@@ -796,15 +805,22 @@
         "customer_id": "CUST-189048",
         "investigation_prompt": "Order ORD-189048 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address used for Order ORD-189048 (1640 Grand Ave, San Francisco, CA 94122) matches a recorded customer address that was effective from 2023-06-24 until 2026-09-27, which includes the order date of 2026-09-10. Therefore, the address difference between the order’s delivery address and the customer’s current address is explained by a later address change and is not indicative of an error. Not found: The records do not show any evidence of a misdelivery, customer objection, or any other address‑related issue beyond the documented address change. No evidence is available regarding the identity of the resident who received the package.",
+            "investigation_report": "Finding: The delivery address used for Order ORD-189048 (1640 Grand Ave, San Francisco, CA 94122) matched a historically valid address for the customer. The address was effective from 2023-06-24 through 2026-09-27, which includes the order date of 2026-09-10; the current address (9542 Elm St, San Jose, CA 95112) became effective after the order was placed. The shipment tracking shows a complete delivery process ending with a \"handed_to_resident\" confirmation on 2026-09-13, and there is no record indicating a delivery problem or misdelivery. \nNot found: No records indicating that the parcel was not received by the intended recipient, no evidence of delivery disputes, theft, or any subsequent address correction after delivery. No evidence of a complaint from the customer about the address mismatch.",
             "evidences": [
-                "[upfront] order ORD-189048, delivery address: 1640 Grand Ave, San Francisco, CA 94122",
+                "[upfront] order ORD-189048, 2026-09-10 14:05:00: delivery address 1640 Grand Ave, San Francisco, CA 94122",
                 "[upfront] customer CUST-189048 current address: 9542 Elm St, San Jose, CA 95112",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189057, effective_from 2023-06-24 to 2026-09-27: 1640 Grand Ave, San Francisco, CA 94122",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189058, effective_from 2026-09-28 onward: 9542 Elm St, San Jose, CA 95112"
+                "[tool:customer_address_history_tool] address_history_id ADDR-189057, effective_from 2023-06-24 to 2026-09-27: street 1640 Grand Ave, city San Francisco, state CA, zip 94122",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189058, effective_from 2026-09-28 to null: street 9542 Elm St, city San Jose, state CA, zip 95112",
+                "[upfront] shipment event SE-189298, 2026-09-11 02:03:00: label_created",
+                "[upfront] shipment event SE-189299, 2026-09-11 08:07:00: picked_up",
+                "[upfront] shipment event SE-189300, 2026-09-11 20:32:00: arrived_at_facility (Oakland)",
+                "[upfront] shipment event SE-189301, 2026-09-12 00:41:00: departed_facility (Oakland)",
+                "[upfront] shipment event SE-189302, 2026-09-12 15:26:00: arrived_at_facility (San Francisco)",
+                "[upfront] shipment event SE-189303, 2026-09-13 07:00:00: out_for_delivery",
+                "[upfront] shipment event SE-189304, 2026-09-13 14:35:00: delivered; description \"handed_to_resident\""
             ],
             "investigation_success": true,
-            "confidence": 0.95
+            "confidence": 0.93
         }
     },
     {
@@ -812,15 +828,15 @@
         "customer_id": "CUST-189049",
         "investigation_prompt": "Investigate order ORD-189049. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The order ORD-189049 was shipped to 5749 Market St, Los Angeles (ZIP 90015). Address history shows this address was valid for the customer from 2025-04-12 until 2026-08-17, but the order was placed on 2026-09-01, after the address had ceased to be active; the customer's current address on record is 3785 Vine St, Irvine (ZIP 92620). Thus the shipment was directed to an outdated address. No record in the provided data explains why the outdated address was used, so the specific reason for the discrepancy is not established.\nNot found: No internal address‑change request, no order‑time address verification log, and no communication record indicating a deliberate choice of the former address. These missing pieces prevent determining the cause of the address mismatch.",
+            "investigation_report": "Finding: The order's delivery address (5749 Market St, Los Angeles, CA 90015) does not match the customer's current address (3785 Vine St, Irvine, CA 92620) and also does not correspond to any address that was on record for the customer at the time of the order (the most recent historical address covering that location ended on 2026-08-17, before the order date of 2026-09-01). Therefore the records establish a discrepancy between the saved delivery address and any known valid address for the customer at the order time. Not found: The records do not provide a reason why the differing delivery address was selected, nor any evidence of a customer update request, carrier misdelivery, or address correction after the order was placed.",
             "evidences": [
-                "[upfront] order ORD-189049, 2026-09-01T21:41:00: delivery address set to 5749 Market St, Los Angeles, CA 90015",
-                "[tool:customer_address_history_tool] address history ADDR-189060, effective 2025-04-12 to 2026-08-17: street 5749 Market St, city Los Angeles, state CA, zip 90015",
-                "[tool:customer_address_history_tool] address history ADDR-189061, effective 2026-08-18 to null: street 3785 Vine St, city Irvine, state CA, zip 92620 (current address)",
-                "[tool:customer_address_history_tool] address history ADDR-189059, effective 2024-04-15 to 2025-04-11: street 3999 Center St, city Bakersfield, state CA, zip 93309"
+                "[upfront] order ORD-189049, 2026-09-01 21:41:00: delivery address 5749 Market St, Los Angeles, CA 90015",
+                "[upfront] customer CUST-189049 current address: 3785 Vine St, Irvine, CA 92620",
+                "[tool:customer_address_history_tool] address history ADDR-189060, effective_to 2026-08-17: 5749 Market St, Los Angeles, CA 90015",
+                "[tool:customer_address_history_tool] address history ADDR-189061, effective_from 2026-08-18: 3785 Vine St, Irvine, CA 92620"
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.75
         }
     },
     {
@@ -828,16 +844,14 @@
         "customer_id": "CUST-189050",
         "investigation_prompt": "The delivery address recorded on order ORD-189050 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address recorded on order ORD-189050 (9227 Market St, San Diego, CA 92115) matches a past address of the customer that was in effect on the order date (2026-09-11), as shown by the address history; the customer's current address (9158 Harbor Dr, San Francisco, CA 94122) reflects a later change after the order was shipped. The carrier’s tracking records confirm the parcel was delivered to the address on the order. \nNot found: There are no records indicating that the address used for delivery was erroneous at the time of shipment, nor any evidence of a misdelivery, receipt confirmation by the customer, or communication about the address change.",
+            "investigation_report": "Finding: The delivery address on order ORD-189050 (9227 Market St, San Diego, CA 92115) matches an address that was on file for the customer during the order date (2026-09-11), as shown by the address history record effective from 2024-08-31 to 2026-10-09. Not found: No evidence indicates an error in address selection, nor any record of a change request after the order. The current address (9158 Harbor Dr, San Francisco, CA 94122) became effective after the order, so the discrepancy is explained by a later address update.",
             "evidences": [
-                "[upfront] order ORD-189050, 2026-09-11 10:56:00: delivery address 9227 Market St, San Diego, CA 92115",
-                "[upfront] customer CUST-189050 current address: 9158 Harbor Dr, San Francisco, CA 94122",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189062, effective 2024-08-31 to 2026-10-09: 9227 Market St, San Diego, CA 92115",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189063, effective from 2026-10-10 onward: 9158 Harbor Dr, San Francisco, CA 94122",
-                "[upfront] shipment event SE-189318, 2026-09-15 16:02:00: Delivered; package left at the front door (San Diego, CA)"
+                "[tool:customer_address_history_tool] address_history_id ADDR-189062, effective_from 2024-08-31, effective_to 2026-10-09: street 9227 Market St, city San Diego, state CA, zip 92115",
+                "[upfront] order ORD-189050, order date 2026-09-11: delivery street 9227 Market St, city San Diego, state CA, zip 92115",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189063, effective_from 2026-10-10, effective_to null: street 9158 Harbor Dr, city San Francisco, state CA, zip 94122"
             ],
             "investigation_success": true,
-            "confidence": 0.93
+            "confidence": 0.9
         }
     },
     {
@@ -845,14 +859,14 @@
         "customer_id": "CUST-189051",
         "investigation_prompt": "Support flagged order ORD-189051 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address recorded for order ORD-189051 (7299 Cedar Ln, Los Angeles, CA 90042) does not match any address in the customer's address history, which only includes 7299 Cedar Ln, Los Angeles, CA 90025. Not found: No evidence explains why the order was assigned the 90042 zip code; the records do not show a change of address, an address correction, or any communication regarding the mismatch.",
+            "investigation_report": "Finding: The order’s delivery address (7299 Cedar Ln, Los Angeles, CA 90042) differs from the customer’s current address on file (7299 Cedar Ln, Los Angeles, CA 90025). The address history for the customer shows only the 90025 ZIP as historically valid and current, with no record of a 90042 ZIP for this street, making the delivery ZIP unrecognized for this customer. Not found: No evidence indicating why the different ZIP was selected, whether the customer previously used the 90042 ZIP, or any correction request from the customer. The shipment records themselves do not reference the address mismatch.",
             "evidences": [
-                "[upfront] order ORD-189051, delivery address: 7299 Cedar Ln, Los Angeles, CA 90042",
-                "[upfront] customer CUST-189051 current address: 7299 Cedar Ln, Los Angeles, CA 90025",
-                "[tool:customer_address_history_tool] address history record ADDR-189064, effective_from 2024-12-07, zip 90025: matches current address but not the order's zip"
+                "[upfront] order delivery address, ZIP 90042: 7299 Cedar Ln, Los Angeles, CA 90042",
+                "[upfront] customer current address, ZIP 90025: 7299 Cedar Ln, Los Angeles, CA 90025",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189064, effective_from 2024-12-07, effective_to null: street 7299 Cedar Ln, city Los Angeles, state CA, ZIP 90025"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.75
         }
     },
     {
@@ -860,12 +874,13 @@
         "customer_id": "CUST-189052",
         "investigation_prompt": "Order ORD-189052 is going to an address that is different from the one on the customer's account today. Investigate and report what the records can and cannot establish.",
         "agent_result": {
-            "investigation_report": "Finding: The order's delivery address (9540 Vine St, Los Angeles, CA 90025) does not match the customer's current address (3543 Center St, Sacramento, CA 95826) nor any address in the customer's recorded address history, which includes a prior Los Angeles address at 9503 Vine St ending 2026-07-25. Not found: The records do not contain any evidence explaining why the delivery address differs from the customer's known addresses, such as an order‑time address update, a customer‑provided alternate shipping location, or a carrier correction.\n",
+            "investigation_report": "Finding: The delivery address on the order (9540 Vine St, Los Angeles, CA 90025) does not match the customer's current address (3543 Center St, Sacramento, CA 95826) and is not listed in the customer's address history as of the order date, making it an unrecognized address for this customer. Not found: No evidence explains why the order was placed with this different address, such as a customer‑provided update, a system change, or a clerical error; no shipment or order notes reference an address change, and no delivery confirmation exists.",
             "evidences": [
                 "[upfront] order ORD-189052, delivery address: 9540 Vine St, Los Angeles, CA 90025",
                 "[upfront] customer CUST-189052, current address: 3543 Center St, Sacramento, CA 95826",
                 "[tool:customer_address_history_tool] address_history_id ADDR-189065, effective_to 2026-07-25: 9503 Vine St, Los Angeles, CA 90025",
-                "[tool:customer_address_history_tool] address_history_id ADDR-189066, effective_from 2026-07-26: 3543 Center St, Sacramento, CA 95826"
+                "[tool:customer_address_history_tool] address_history_id ADDR-189066, effective_from 2026-07-26: 3543 Center St, Sacramento, CA 95826",
+                "[upfront] shipment events SE-189326‑SE-189331 show normal carrier processing up to \"out_for_delivery\" on 2026-10-11, with no address‑related notes"
             ],
             "investigation_success": true,
             "confidence": 0.7
@@ -876,15 +891,15 @@
         "customer_id": "CUST-189053",
         "investigation_prompt": "Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The order's delivery address (2568 Harbor Dr, Oakland, CA 94609) matches a customer address that was on file from 2024-12-28 until 2026-07-09, but the order was placed on 2026-09-03, after that address had ceased to be effective. Therefore the delivery address was outdated relative to the customer's current address (3364 Pine St, Los Angeles, CA 90025). Not found: The records do not indicate why the outdated address was used for this order, nor any customer‑initiated change or confirmation of the delivery address at order time.",
+            "investigation_report": "Finding: The order ORD-189053 was shipped to 2568 Harbor Dr, Oakland (Delivery Street/City/State/Zip), which matches a customer address that was effective from 2024-12-28 until 2026-07-09, i.e., it was not the customer's active address at the order date of 2026-09-03; the customer's active address at that time was 3364 Pine St, Los Angeles. Therefore, the delivery destination differs from the customer's current address and corresponds to a historically valid but outdated address. No records explain why the outdated address was used for this order.\nNot found: Any order‑level address verification or change request, any communication from the customer about the address discrepancy, and any internal note indicating an intentional use of the historic address.",
             "evidences": [
-                "[upfront] order ORD-189053, 2026-09-03: delivery address set to 2568 Harbor Dr, Oakland, CA 94609",
-                "[upfront] shipment SHIP-189053, delivered at 2026-09-07: delivery confirmation 'left_at_door' at Oakland, CA",
-                "[tool:customer_address_history_tool] address history record ADDR-189067, effective 2024-12-28 to 2026-07-09: 2568 Harbor Dr, Oakland, CA 94609",
-                "[tool:customer_address_history_tool] address history record ADDR-189068, effective from 2026-07-10 onward: 3364 Pine St, Los Angeles, CA 90025"
+                "[upfront] order ORD-189053: delivery address 2568 Harbor Dr, Oakland, CA 94609",
+                "[upfront] customer current address: 3364 Pine St, Los Angeles, CA 90025",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189067: 2568 Harbor Dr, Oakland, CA 94609, effective 2024-12-28 to 2026-07-09",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189068: 3364 Pine St, Los Angeles, CA 90025, effective 2026-07-10 onward"
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.7
         }
     },
     {
@@ -892,14 +907,14 @@
         "customer_id": "CUST-189054",
         "investigation_prompt": "The delivery address recorded on order ORD-189054 differs from the customer's current address. Investigate the available records and determine what can be established about the discrepancy.",
         "agent_result": {
-            "investigation_report": "Finding: The delivery address on order ORD-189054 (6101 Ocean Ave, Stockton, CA 95207) does not match any address recorded in the customer's address history; the only known address for CUST-189054 is the current address 672 Sunset Blvd, Irvine, CA 92620. Not found: No historical address matching the order's delivery address was found, and there are no records indicating a change of address after the order date.\n",
+            "investigation_report": "Finding: The delivery address on the order (6101 Ocean Ave, Stockton, CA 95207) does not match the customer's current address (672 Sunset Blvd, Irvine, CA 92620) and there is no record of that Stockton address in the customer's address history, which only shows the Irvine address effective from 2024-03-21 through the order date. \nNot found: The records do not contain any prior address for the customer that matches the order's delivery address, nor any documentation indicating why a different address was used for this order.",
             "evidences": [
                 "[upfront] order ORD-189054, delivery address: 6101 Ocean Ave, Stockton, CA 95207",
                 "[upfront] customer CUST-189054, current address: 672 Sunset Blvd, Irvine, CA 92620",
                 "[tool:customer_address_history_tool] address history record ADDR-189069, effective_from 2024-03-21, effective_to null: 672 Sunset Blvd, Irvine, CA 92620"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.7
         }
     },
     {
@@ -907,15 +922,15 @@
         "customer_id": "CUST-189055",
         "investigation_prompt": "Support flagged order ORD-189055 because the shipping destination does not match the address currently on the customer's account. Report what the records establish about the mismatch.",
         "agent_result": {
-            "investigation_report": "Finding: The order's delivery address (1888 Sutter St, Oakland, CA 94612) does not match any address on file for the customer; the customer's recorded current address is 1867 Center St, Oakland, CA 94618, effective from 2026-06-22. Not found: No address history record covers the delivery address, so the records do not indicate why this different address was used for the shipment.",
+            "investigation_report": "Finding: The order's delivery address (1888 Sutter St, Oakland, CA 94612) does not match any address recorded in the customer's address history, which includes a prior address in Long Beach (until 2026-06-21) and the current address 1867 Center St, Oakland, CA 94618 (effective from 2026-06-22). Not found: No evidence explains why the order was shipped to the unmatched address; the shipment records show normal delivery progression but contain no address change justification.",
             "evidences": [
-                "[upfront] customer current address, 1867 Center St, Oakland, CA 94618: matches address history record ADDR-189071 effective from 2026-06-22",
-                "[tool:customer_address_history_tool] address history record ADDR-189070, 2023-01-05 to 2026-06-21: 3611 Hillcrest Rd, Long Beach, CA 90807",
-                "[tool:customer_address_history_tool] address history record ADDR-189071, 2026-06-22 to null: 1867 Center St, Oakland, CA 94618",
-                "[upfront] order delivery address, 1888 Sutter St, Oakland, CA 94612: does not match any address history record"
+                "[upfront] order ORD-189055, delivery address: 1888 Sutter St, Oakland, CA 94612",
+                "[upfront] customer current address: 1867 Center St, Oakland, CA 94618",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189070, 2023-01-05 to 2026-06-21: 3611 Hillcrest Rd, Long Beach, CA 90807",
+                "[tool:customer_address_history_tool] address_history_id ADDR-189071, 2026-06-22 to present: 1867 Center St, Oakland, CA 94618"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.8
         }
     },
     {
@@ -923,11 +938,11 @@
         "customer_id": "CUST-189015",
         "investigation_prompt": "Investigate why order ORD-189056 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189056 has not progressed to carrier pickup; the fulfillment evidence shows a quality_hold event (IE-189112) for this order at the fulfilling warehouse WH-6 after the reservation, which is consistent with the lack of a pickup. Not found: No carrier pickup event or explicit carrier‑level reason is recorded; the shipment events contain only the label_created record, and there is no later status update confirming pickup or cancellation.",
+            "investigation_report": "Finding: The shipment for order ORD-189056 has not progressed to carrier pickup because the inventory record shows a quality_hold event (IE-189112) for the SKU at the fulfilling warehouse WH-6 at 2026-08-18T10:30:00, which is consistent with the parcel being retained pending resolution. Not found: No carrier pickup record, no explicit carrier communication, and no further inventory events (e.g., release from hold) that would indicate the hold was cleared; therefore the reason for the continued label_created status cannot be further confirmed.",
             "evidences": [
                 "[upfront] shipment event SE-189352, 2026-08-18T11:00:00: label_created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189111, 2026-08-18T10:05:00: reserved quantity 1 for ORD-189056 at WH-6.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189112, 2026-08-18T10:30:00: quality_hold placed on the reserved item for ORD-189056 at WH-6."
+                "[tool:fulfillment_evidence_tool] inventory event IE-189111, 2026-08-18T10:05:00: reserved quantity 1 for order ORD-189056 at warehouse WH-6.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189112, 2026-08-18T10:30:00: quality_hold placed for order ORD-189056 at warehouse WH-6."
             ],
             "investigation_success": true,
             "confidence": 0.75
@@ -938,17 +953,14 @@
         "customer_id": "CUST-189013",
         "investigation_prompt": "Order ORD-189057 is still processing and the carrier has not collected it. Establish what the records show about why.",
         "agent_result": {
-            "investigation_report": "Finding: The records show an allocation failure (event IE-189114) and a backorder flag (event IE-189115) for order ORD-189057; these events are consistent with the parcel remaining unpicked by SierraPost Logistics and the order staying in a processing state. Not found: No shipment event indicating carrier pickup, no subsequent reservation or allocation events that would resolve the backorder, and no explicit carrier communication explaining the delay.",
+            "investigation_report": "Finding: The fulfillment records show an allocation failure (event IE-189114) and a backorder flag (event IE-189115) for Order ORD-189057 at Warehouse WH-8, indicating the items could not be allocated to this order. Consequently, no inventory reservation exists for the order, which is consistent with the carrier not having collected the shipment. Not found: No evidence of any later reservation, release, or carrier pickup attempt for this order; no other fulfillment actions (e.g., quality hold, reallocation) are recorded for ORD-189057.",
             "evidences": [
-                "[upfront] order ORD-189057, 2026-08-15 15:41:00: order placed for 4 units of SKU-HOME-2002",
-                "[upfront] shipment SHIP-189057, 2026-08-15 20:12:00: status label_created, carrier SierraPost Logistics, shipment event SE-189353 recorded label creation",
-                "[upfront] shipment event SE-189353, 2026-08-15 20:12:00: \"Shipping label created; awaiting carrier pickup\"",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189114, 2026-08-15 16:00:00: allocation_failed for order ORD-189057 (warehouse WH-8)",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189115, 2026-08-15 16:08:00: backorder_flagged for order ORD-189057 (warehouse WH-8)",
-                "[tool:fulfillment_evidence_tool] absence of any inventory reservation event for order ORD-189057 after 2026-08-15"
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189114, 2026-08-15T16:00:00: allocation_failed for order ORD-189057",
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189115, 2026-08-15T16:08:00: backorder_flagged for order ORD-189057",
+                "[upfront] shipment event SE-189353, 2026-08-15T20:12:00: label_created; awaiting carrier pickup"
             ],
             "investigation_success": true,
-            "confidence": 0.75
+            "confidence": 0.78
         }
     },
     {
@@ -956,11 +968,11 @@
         "customer_id": "CUST-189001",
         "investigation_prompt": "Investigate the lack of progress on order ORD-189058 after its shipping label was created. Report what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189058 shows only a label_created event with no subsequent carrier pickup or shipment events. Inventory records indicate the item was reserved for the order at 2026-08-25T10:14:00, followed by a count_discrepancy event reducing stock by one at 2026-08-25T11:14:00, and no shipped_out event was recorded. This sequence is consistent with the lack of carrier pickup being due to an inventory discrepancy that may have prevented the parcel from being released for pickup. Not found: The records do not contain any carrier pickup, handoff, or status update beyond label creation, nor do they provide a specific reason from the carrier for the stall. No evidence is available to confirm whether the discrepancy was resolved, whether the parcel was later prepared, or if any other operational issue (e.g., hold, quality check) occurred.",
+            "investigation_report": "Finding: The shipment for order ORD-189058 shows only a label_created event and no carrier pickup or subsequent tracking events. Inventory evidence reveals a reservation for the order at WH-8 at 2026-08-25T10:14:00, immediately followed by a count_discrepancy event reducing the quantity by 1 at 2026-08-25T11:14:00 (related to the same order). This discrepancy is consistent with a possible issue that prevented the parcel from being prepared for carrier pickup, explaining the lack of progress after label creation. \nNot found: No carrier pickup event or any later shipment events confirming handoff to SierraPost Logistics. No explicit record stating the reason for the discrepancy (e.g., quality hold, damage) is present. No additional fulfillment actions (e.g., re‑reservation, re‑allocation) are recorded.",
             "evidences": [
-                "[upfront] shipment event SE-189354, 2026-08-25T14:15:00: label_created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189116, 2026-08-25T10:14:00: reserved quantity 1 for order ORD-189058 at warehouse WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189117, 2026-08-25T11:14:00: count_discrepancy -1 for order ORD-189058 at warehouse WH-8."
+                "[upfront] shipment event SE-189354, 2026-08-25T14:15:00: label_created; awaiting carrier pickup",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189116, 2026-08-25T10:14:00: reserved 1 unit for order ORD-189058 at WH-8",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189117, 2026-08-25T11:14:00: count_discrepancy -1 unit for order ORD-189058 at WH-8"
             ],
             "investigation_success": true,
             "confidence": 0.68
@@ -971,14 +983,15 @@
         "customer_id": "CUST-189005",
         "investigation_prompt": "Order ORD-189059 has a shipping label but has not been picked up. Determine whether the records document the reason.",
         "agent_result": {
-            "investigation_report": "Finding: The records show an inventory allocation shortfall of 2 units for order ORD-189059, indicating insufficient stock to fulfill the ordered quantity of 3, which explains why the shipment label was created but the carrier did not pick up the parcel. Not found: No explicit carrier communication or internal pick‑up scheduling record confirming the pickup attempt; no later inventory events that resolve the shortfall.",
+            "investigation_report": "Finding: The inventory evidence shows a reservation of only 1 unit (IE-189118) and an allocation shortfall of 2 units (IE-189119) for order ORD-189059, which is consistent with the shipment remaining at status label_created and not being picked up. Not found: No carrier event documenting a pickup attempt or explicit reason for the stall; no other fulfillment events (e.g., quality hold) explaining the delay.",
             "evidences": [
-                "[upfront] shipment event SE-189355, 2026-09-28T13:11:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189118, 2026-09-28T11:02:00: reserved quantity 1 for order ORD-189059.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189119, 2026-09-28T12:56:00: allocation_shortfall quantity -2 for order ORD-189059."
+                "[upfront] shipment event SE-189355, 2026-09-28T13:11:00: 'Shipping label created; awaiting carrier pickup.'",
+                "[upfront] order ORD-189059, quantity 3: 'Order placed for 3 units of SKU-ELEC-1002.'",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189118, 2026-09-28T11:02:00: 'Reserved 1 unit for order ORD-189059 at warehouse WH-7.'",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189119, 2026-09-28T12:56:00: 'Allocation shortfall of 2 units for order ORD-189059 at warehouse WH-7.'"
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.7
         }
     },
     {
@@ -986,14 +999,14 @@
         "customer_id": "CUST-189027",
         "investigation_prompt": "Investigate why order ORD-189060 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189060 has a label_created event (2026-09-08 18:09) but no subsequent carrier pickup event; the inventory history for SKU-FITN-4001 shows a reservation for the order followed by a count_discrepancy (-3) at the same warehouse (WH-8) on 2026-09-08, which is consistent with a potential inventory issue that could have prevented the carrier from picking up the parcel. Not found: No explicit record stating the carrier declined pickup, no internal fulfillment note explaining the hold, and no later shipment events confirming pickup or cancellation.",
+            "investigation_report": "Finding: The order has a reservation of the required 3 units (IE-189120) followed shortly by a count discrepancy removing those 3 units (IE-189121), and no subsequent shipped_out or carrier pickup event is recorded; the shipment event remains at label_created (SE-189356), indicating the parcel was not handed to the carrier. This inventory discrepancy is consistent with the lack of carrier pickup, but the records do not explicitly document a reason for the stall.\nNot found: No explicit carrier pickup attempt or reason for non‑pickup, no fulfillment event marking hand‑off to the carrier, and no additional carrier communication explaining the delay.",
             "evidences": [
-                "[upfront] shipment event SE-189356, 2026-09-08T18:09:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189120, 2026-09-08T15:39:00: Reserved 3 units for order ORD-189060 at WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189121, 2026-09-08T15:58:00: Count discrepancy -3 units for order ORD-189060 at WH-8."
+                "[upfront] shipment event SE-189356, 2026-09-08 18:09:00: label_created; awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189120, 2026-09-08T15:39:00: reserved 3 units for order ORD-189060 at WH-8.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189121, 2026-09-08T15:58:00: count_discrepancy -3 units for order ORD-189060 at WH-8."
             ],
             "investigation_success": true,
-            "confidence": 0.72
+            "confidence": 0.7
         }
     },
     {
@@ -1001,14 +1014,14 @@
         "customer_id": "CUST-189024",
         "investigation_prompt": "Order ORD-189061 is still processing and the carrier has not collected it. Establish what the records show about why.",
         "agent_result": {
-            "investigation_report": "Finding: The order was reserved in warehouse WH-8 at 2026-08-25T14:16 and placed on a quality hold at 2026-08-25T15:58, which is consistent with the shipment not being ready for carrier pickup; no carrier pickup event is recorded. Not found: There is no record stating the carrier declined pickup, nor any later internal action releasing the hold, so the exact reason the carrier has not collected the parcel cannot be definitively established.",
+            "investigation_report": "Finding: The shipment for order ORD-189061 has not been collected because a quality hold was placed on the items after they were reserved at warehouse WH-8 (quality_hold event at 2026-08-25T15:58:00), which is consistent with the lack of any carrier pickup event. Not found: There is no record of the quality hold being released, no carrier pickup or attempted pickup event, and no additional fulfillment actions (e.g., reallocation) after the hold.",
             "evidences": [
-                "[upfront] shipment event SE-189357, 2026-08-25T18:22:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189122, 2026-08-25T14:16:00: Reserved quantity 3 for order ORD-189061 in warehouse WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189123, 2026-08-25T15:58:00: Placed order ORD-189061 on quality hold in warehouse WH-8."
+                "[upfront] shipment event SE-189357, 2026-08-25T18:22:00: 'label_created; awaiting carrier pickup'",
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189122, 2026-08-25T14:16:00: 'reserved 3 units for ORD-189061 at WH-8'",
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189123, 2026-08-25T15:58:00: 'quality_hold placed on ORD-189061 items at WH-8'"
             ],
             "investigation_success": true,
-            "confidence": 0.73
+            "confidence": 0.75
         }
     },
     {
@@ -1016,14 +1029,14 @@
         "customer_id": "CUST-189021",
         "investigation_prompt": "Investigate the lack of progress on order ORD-189062 after its shipping label was created. Report what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The order ORD-189062 shows a label_created event but no subsequent carrier pickup or shipment progression. Inventory evidence includes an 'allocation_failed' event (IE-189124) and a 'backorder_flagged' event (IE-189125) for the order's SKU at the fulfilling warehouse WH-6, which are consistent with the parcel not being ready for carrier pickup. Not found: No shipment event indicating carrier pickup or handover, no carrier communication explaining the delay, and no later inventory events that would resolve the allocation failure or backorder status. The specific reason for the lack of carrier pickup cannot be definitively established from the available records.",
+            "investigation_report": "Finding: The shipment stalled after label creation because the fulfillment system recorded an allocation failure and a backorder flag for the order's SKU at the designated warehouse (WH-6) prior to carrier pickup. Not found: No carrier pickup or subsequent shipment events are present; no evidence indicates a carrier‑related issue or a later resolution of the allocation problem.",
             "evidences": [
-                "[upfront] shipment event SE-189358, 2026-08-31T11:14:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189124, 2026-08-31T09:31:00: allocation_failed for SKU-ELEC-1001, warehouse WH-6, related_order_id ORD-189062.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189125, 2026-08-31T09:44:00: backorder_flagged for SKU-ELEC-1001, warehouse WH-6, related_order_id ORD-189062."
+                "[upfront] shipment event SE-189358, 2026-08-31T11:14:00: label_created; awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189124, 2026-08-31T09:31:00: allocation_failed for SKU-ELEC-1001 at WH-6, related to ORD-189062.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189125, 2026-08-31T09:44:00: backorder_flagged for SKU-ELEC-1001 at WH-6, related to ORD-189062."
             ],
             "investigation_success": true,
-            "confidence": 0.7
+            "confidence": 0.75
         }
     },
     {
@@ -1031,14 +1044,13 @@
         "customer_id": "CUST-189039",
         "investigation_prompt": "Order ORD-189063 has a shipping label but has not been picked up. Determine whether the records document the reason.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment record shows only a label_created event at 2026-08-30 16:41 with no subsequent carrier pickup or delivery events, and the inventory evidence includes a count_discrepancy event for the order's SKU immediately after reservation, which is consistent with an internal inventory issue that could have prevented the parcel from being released to the carrier. No explicit documentation states the reason for the lack of pickup.\nNot found: No carrier pickup event, no carrier‑provided delay reason, and no detailed internal hold note beyond the count discrepancy event; thus the exact cause of the stall is not documented.",
+            "investigation_report": "Finding: The fulfillment records show a reservation for the order (IE-189126) followed by a count discrepancy event (IE-189127) that reduced stock by one, with no subsequent shipped_out event, indicating the parcel was not ready for carrier pickup due to an inventory count issue. Not found: No carrier pickup attempt or other internal hold events are recorded; the specific carrier actions or external reasons for the stall are not documented.",
             "evidences": [
-                "[upfront] shipment event SE-189359, 2026-08-30T16:41:00: 'Shipping label created; awaiting carrier pickup.'",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189126, 2026-08-30T14:10:00: reservation of 1 unit for order ORD-189063 at warehouse WH-5.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189127, 2026-08-30T15:05:00: count_discrepancy of -1 unit for order ORD-189063 at warehouse WH-5."
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189126, 2026-08-30T14:10:00: reserved 1 unit for order ORD-189063 at warehouse WH-5",
+                "[tool:fulfillment_evidence_tool] inventory_event IE-189127, 2026-08-30T15:05:00: count_discrepancy -1 unit for order ORD-189063 at warehouse WH-5"
             ],
             "investigation_success": true,
-            "confidence": 0.72
+            "confidence": 0.78
         }
     },
     {
@@ -1046,14 +1058,14 @@
         "customer_id": "CUST-189033",
         "investigation_prompt": "Investigate why order ORD-189064 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189064 has a label created event but no carrier pickup event; the inventory records show a reservation for the SKU at warehouse WH-7 at 2026-10-04T18:07:00 that was released at 2026-10-04T22:08:00, indicating the item was de‑reserved before a carrier could collect it. No further shipment events or documented reasons for the lack of pickup are present.\nNot found: The records do not contain any carrier pickup confirmation, delay reason, hold note, or other explanation for why the parcel was not collected after the label was created.",
+            "investigation_report": "Finding: The order's inventory reservation was released at 2026-10-04 22:08, shortly after the shipping label was created, and no carrier pickup event is recorded; this is consistent with the parcel not being prepared for carrier pickup. Not found: No explicit record explaining why the reservation was released, no carrier communication or cancellation record, and no pickup event.\n",
             "evidences": [
-                "[upfront] shipment event SE-189360, 2026-10-04T19:08:00: 'Shipping label created; awaiting carrier pickup.'",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189128, 2026-10-04T18:07:00: reservation of 1 unit for ORD-189064 at WH-7.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189129, 2026-10-04T22:08:00: reservation released for ORD-189064 at WH-7."
+                "[upfront] shipment event SE-189360, 2026-10-04T19:08:00: Shipping label created; awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189128, 2026-10-04T18:07:00: reservation of 1 unit for order ORD-189064 at warehouse WH-7.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189129, 2026-10-04T22:08:00: reservation_released of 1 unit for order ORD-189064 at warehouse WH-7."
             ],
             "investigation_success": true,
-            "confidence": 0.65
+            "confidence": 0.85
         }
     },
     {
@@ -1061,14 +1073,15 @@
         "customer_id": "CUST-189019",
         "investigation_prompt": "Order ORD-189065 is still processing and the carrier has not collected it. Establish what the records show about why.",
         "agent_result": {
-            "investigation_report": "Finding: The fulfillment records show that the order items were reserved (2026-08-23T11:24:00) and then placed on a quality hold (2026-08-23T12:59:00) at the fulfilling warehouse WH-6, which is consistent with the carrier not having collected the shipment. Not found: No explicit carrier communication or internal release record explaining why the quality hold was applied or when it might be released; the reason for the quality hold is not recorded.",
+            "investigation_report": "Finding: The shipment remains at the label_created stage with no carrier pickup event recorded. Inventory records show a quality_hold event for the order's items at 2026-08-23 12:59, which is consistent with a delay in carrier collection. Not found: No carrier communication or explicit reason for the hold, no subsequent pickup or status updates, and no resolution details.",
             "evidences": [
-                "[upfront] shipment event SE-189361, 2026-08-23T13:42:00: label_created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189131, 2026-08-23T11:24:00: reserved quantity 3 for order ORD-189065 at WH-6.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189132, 2026-08-23T12:59:00: quality_hold applied to order ORD-189065 at WH-6."
+                "[upfront] shipment event SE-189361, 2026-08-23T13:42:00: Shipping label created; awaiting carrier pickup.",
+                "[upfront] shipment details, status: label_created (no pickup recorded).",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189131, 2026-08-23T11:24:00: Reserved 3 units for order ORD-189065 at warehouse WH-6.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189132, 2026-08-23T12:59:00: Quality hold applied to order ORD-189065 (quantity change 0)."
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.75
         }
     },
     {
@@ -1076,14 +1089,14 @@
         "customer_id": "CUST-189009",
         "investigation_prompt": "Investigate the lack of progress on order ORD-189066 after its shipping label was created. Report what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189066 has no progress beyond the label_created event recorded at 2026-08-18 12:35, and the inventory record shows that the reservation for this order was released at 2026-08-18 15:48, which is consistent with the lack of carrier pickup. Not found: No shipment events indicating carrier pickup or delivery, and no explicit record explaining why the reservation was released or why pickup did not occur.",
+            "investigation_report": "Finding: The shipping label was created (12:35) but the reservation for the ordered speaker was released later the same day (15:48), and no carrier pickup or further shipment events are recorded, which is consistent with the lack of progress after label creation. Not found: No explicit carrier pickup attempt, no recorded reason for the reservation release, and no carrier‐provided delay or failure information.\nNot found: The records do not contain a carrier pickup event, a delay reason, or an internal note explaining why the reservation was released.",
             "evidences": [
                 "[upfront] shipment event SE-189362, 2026-08-18T12:35:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189133, 2026-08-18T10:17:00: reservation of 1 unit for order ORD-189066 at warehouse WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189134, 2026-08-18T15:48:00: reservation released for order ORD-189066 at warehouse WH-8."
+                "[tool:fulfillment_evidence_tool] inventory event IE-189133, 2026-08-18T10:17:00: reserved 1 unit for order ORD-189066 at WH-8.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189134, 2026-08-18T15:48:00: reservation_released of 1 unit for order ORD-189066 at WH-8."
             ],
             "investigation_success": true,
-            "confidence": 0.73
+            "confidence": 0.7
         }
     },
     {
@@ -1091,14 +1104,14 @@
         "customer_id": "CUST-189032",
         "investigation_prompt": "Order ORD-189067 has a shipping label but has not been picked up. Determine whether the records document the reason.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189067 has a label created but no carrier pickup record; the fulfillment evidence shows a quality_hold event (IE-189137) for this order at 2026-10-04T15:24:00, which is consistent with the parcel not being released for carrier pickup. Not found: No explicit carrier pickup or cancellation event, and no additional comment from the carrier explaining a different cause.",
+            "investigation_report": "Finding: The inventory records show a quality hold event for this order's items (SKU-ELEC-1001) at 2026-10-04 15:24:00, which is consistent with the shipment label being created later but no carrier pickup occurring. The hold provides a plausible documented reason for the lack of pickup. Not found: No carrier pickup record, no explicit carrier communication, and no resolution event for the quality hold; thus the exact operational decision to defer pickup cannot be definitively confirmed.",
             "evidences": [
-                "[upfront] shipment event SE-189363, 2026-10-04T18:26:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189136, 2026-10-04T15:03:00: reserved quantity 2 for order ORD-189067 at warehouse WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189137, 2026-10-04T15:24:00: quality_hold placed on order ORD-189067 at warehouse WH-8."
+                "[upfront] shipment event SE-189363, 2026-10-04 18:26:00: Shipping label created; awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189136, 2026-10-04 15:03:00: Reserved 2 units for Order ORD-189067 at Warehouse WH-8.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189137, 2026-10-04 15:24:00: Quality hold placed on Order ORD-189067 items at Warehouse WH-8."
             ],
             "investigation_success": true,
-            "confidence": 0.75
+            "confidence": 0.73
         }
     },
     {
@@ -1106,15 +1119,14 @@
         "customer_id": "CUST-189032",
         "investigation_prompt": "Investigate why order ORD-189068 has not progressed to carrier pickup. Use the available records to determine whether the reason is documented.",
         "agent_result": {
-            "investigation_report": "Finding: The order has no carrier pickup event; the reservation for the ordered quantity was created (IE-189138) and then released (IE-189139) on the same day, which is consistent with the parcel not being ready for carrier pickup. Not found: No explicit record stating why the reservation was released or why the carrier did not pick up the label-created shipment.",
+            "investigation_report": "Finding: The order ORD-189068 has not progressed to carrier pickup; the only shipment event recorded is label_created and no pickup event exists. Inventory evidence shows the reservation for the two units was released at 2026-09-14 15:48, which is consistent with the parcel not being prepared for carrier handoff. Not found: No documented reason for the reservation release, no carrier pickup attempt, and no further fulfillment actions are recorded.",
             "evidences": [
-                "[upfront] order ORD-189068, 2026-09-14 11:19:00: order placed, status processing, fulfilled from WH-5",
-                "[upfront] shipment event SE-189364, 2026-09-14 13:48:00: label_created in Ontario, CA; awaiting carrier pickup",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189138, 2026-09-14T11:25:00: reserved 2 units of SKU-HOME-2003 at WH-5 for ORD-189068",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189139, 2026-09-14T15:48:00: reservation_released 2 units of SKU-HOME-2003 at WH-5 for ORD-189068"
+                "[upfront] shipment event SE-189364, 2026-09-14 13:48:00: label_created, awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189138, 2026-09-14 11:25:00: reserved 2 units for order ORD-189068 at WH-5.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189139, 2026-09-14 15:48:00: reservation_released 2 units for order ORD-189068 at WH-5."
             ],
             "investigation_success": true,
-            "confidence": 0.7
+            "confidence": 0.78
         }
     },
     {
@@ -1122,14 +1134,14 @@
         "customer_id": "CUST-189037",
         "investigation_prompt": "Order ORD-189069 is still processing and the carrier has not collected it. Establish what the records show about why.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189069 has not been collected because the fulfillment records show an allocation shortfall for the required quantity, indicating insufficient inventory to fulfill the order at the time of processing. Not found: No carrier pickup request or internal pick‑list record; no evidence of a hold for quality inspection or other operational issue beyond the documented shortfall.",
+            "investigation_report": "Finding: The shipment has not been collected because the order experienced an allocation shortfall, as indicated by an inventory event marking a shortfall shortly after the reservation (event IE-189141). This shortfall is consistent with the lack of any carrier pickup event after the label was created. Not found: No carrier pickup or other fulfillment actions are recorded; no additional internal notes explain why the shortfall was not resolved before the carrier could collect.",
             "evidences": [
-                "[upfront] shipment event SE-189365, 2026-08-31T19:41:00: label_created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189140, 2026-08-31T17:16:00: reserved 1 unit for ORD-189069 at WH-8.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189141, 2026-08-31T18:44:00: allocation_shortfall -1 unit for ORD-189069 at WH-8."
+                "[upfront] shipment event SE-189365, 2026-08-31T19:41:00: Shipping label created; awaiting carrier pickup.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189140, 2026-08-31T17:16:00: Reserved quantity 1 for order ORD-189069 at warehouse WH-8.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189141, 2026-08-31T18:44:00: Allocation shortfall of quantity 1 for order ORD-189069."
             ],
             "investigation_success": true,
-            "confidence": 0.85
+            "confidence": 0.78
         }
     },
     {
@@ -1137,15 +1149,14 @@
         "customer_id": "CUST-189035",
         "investigation_prompt": "Investigate the lack of progress on order ORD-189070 after its shipping label was created. Report what the records establish about the cause.",
         "agent_result": {
-            "investigation_report": "Finding: The shipment for order ORD-189070 did not progress beyond label creation. Inventory records show an allocation shortfall event (IE-189144) at 2026-08-15 19:58, indicating insufficient reserved inventory to fulfill the order, which is consistent with the lack of carrier pickup. Not found: No carrier pickup event or later shipment status updates; no explicit carrier communication explaining the stall; no alternative fulfillment actions recorded.",
+            "investigation_report": "Finding: The shipment for ORD-189070 shows no progress after the label_created event; the inventory evidence includes a reservation of 1 unit at 2026-08-15T18:08:00 and an allocation_shortfall of -1 unit at 2026-08-15T19:58:00 for the same order, which is consistent with an inventory shortfall that likely prevented carrier pickup. Not found: No carrier pickup or subsequent shipment events are recorded, and no other explanatory records (e.g., carrier notifications or address issues) are present.",
             "evidences": [
                 "[upfront] shipment event SE-189366, 2026-08-15T18:57:00: Shipping label created; awaiting carrier pickup.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189143, 2026-08-15T18:08:00: Reserved 1 unit for ORD-189070.",
-                "[tool:fulfillment_evidence_tool] inventory event IE-189144, 2026-08-15T19:58:00: Allocation shortfall -1 unit for ORD-189070, indicating insufficient inventory to allocate.",
-                "[tool:fulfillment_evidence_tool] inventory snapshot INV-189048, current stock 263, reserved 1 at WH-8 (shows overall stock but not historic level)."
+                "[tool:fulfillment_evidence_tool] inventory event IE-189143, 2026-08-15T18:08:00: Reserved 1 unit for order ORD-189070 at warehouse WH-8.",
+                "[tool:fulfillment_evidence_tool] inventory event IE-189144, 2026-08-15T19:58:00: Allocation shortfall of -1 unit recorded for order ORD-189070 at warehouse WH-8."
             ],
             "investigation_success": true,
-            "confidence": 0.78
+            "confidence": 0.8
         }
     }
 ]
