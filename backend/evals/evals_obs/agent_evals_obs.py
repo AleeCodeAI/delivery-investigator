@@ -50,7 +50,6 @@ class AgentEvaluatorObservability:
 
         criteria = {
             "cause-correct": result.cause_correct,
-            "evidence-identification-correct": result.evidence_identification_correct,
             "evidence-consistency-correct": result.evidence_consistency_correct,
         }
         for name, value in criteria.items():

@@ -29,8 +29,8 @@ class AgentEvaluator(Logger):
         self.obs = AgentEvaluatorObservability()
 
         self.client = OpenAI(
-            api_key=self.settings.groq.api_key,
-            base_url=self.settings.groq.base_url,
+            api_key=self.settings.openrouter.api_key,
+            base_url=self.settings.openrouter.base_url,
         )
 
         data_dir = Path(__file__).parents[3] / "data" / "evals_data"
@@ -125,7 +125,6 @@ class AgentEvaluator(Logger):
             return {
                 "case_id": case_id,
                 "cause_correct": result.cause_correct,
-                "evidence_identification_correct": result.evidence_identification_correct,
                 "evidence_consistency_correct": result.evidence_consistency_correct,
                 "overall_score": result.overall_score,
                 "overall_passed": result.overall_passed,
@@ -139,7 +138,6 @@ class AgentEvaluator(Logger):
             return {
                 "case_id": case_id,
                 "cause_correct": None,
-                "evidence_identification_correct": None,
                 "evidence_consistency_correct": None,
                 "overall_score": 0,
                 "overall_passed": False,

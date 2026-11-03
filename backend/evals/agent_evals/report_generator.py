@@ -6,7 +6,6 @@ from schemas import AgentEvalsResult
 
 CRITERIA: tuple[str, ...] = (
     "cause_correct",
-    "evidence_identification_correct",
     "evidence_consistency_correct",
 )
 
