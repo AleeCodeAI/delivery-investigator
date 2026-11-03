@@ -1,0 +1,562 @@
+[
+    {
+        "case_id": "ORD-189001",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies severe weather as the delivery exception causing the delay, matching the ground truth. Evidence consistency: All key claims (pickup, arrival at Sacramento, severe weather exception, delayed status) are directly supported by the listed upfront shipment events."
+    },
+    {
+        "case_id": "ORD-189002",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies a temporary carrier facility disruption at Barstow, CA as the cause, matching the ground truth. Evidence: All key claims about the delay and subsequent transit are directly supported by the listed upfront shipment events."
+    },
+    {
+        "case_id": "ORD-189003",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies a carrier delay caused by a road closure, matching the ground truth scenario. Evidence consistency: The report's key claims (pickup on 2026-10-10, delay due to road closure, and lack of further events) are directly supported by the listed upfront shipment events, and the absence of later events justifies the statement about no further movement."
+    },
+    {
+        "case_id": "ORD-189004",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the carrier vehicle breakdown as the cause, matching the ground truth. Evidence consistency: All key claims (in_transit status, delay event on 2026-10-07 due to vehicle breakdown, and later in-transit scan on 2026-10-09) are directly supported by the listed upfront evidences."
+    },
+    {
+        "case_id": "ORD-189005",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the delivery issue is due to a regional sorting facility backlog, matching the ground truth. Evidence consistency: All key claims about pickup, arrival, and the backlog delay are directly supported by the listed upfront shipment events and status record."
+    },
+    {
+        "case_id": "ORD-189006",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the heavy rain and flooding delay as the reason for the shipment issue, matching the ground truth. Evidence consistency: The report's statements about the delay (event SE-189027), the subsequent scan (event SE-189028), and the lack of further events or delivery confirmation are all directly supported by the listed evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189007",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies a carrier scanning and dispatch system outage as the cause, matching the ground truth. Evidence: All claims about the delay and lack of further events are directly supported by the listed shipment event evidences."
+    },
+    {
+        "case_id": "ORD-189008",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the shipment is in transit and the delay was caused by a bridge closure, matching the ground truth. Evidence: All key claims (in‑transit status, bridge‑closure delay, timeline of events) are directly supported by the listed upfront evidences."
+    },
+    {
+        "case_id": "ORD-189009",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the delivery attempt failed because the recipient was unavailable, matching the ground‑truth scenario. Evidence consistency: The report's key claims (failed delivery attempt, recipient unavailable, current status delivery_attempted, and lack of a successful delivery) are directly supported by the cited upfront evidences (shipment status and events SE-189047 and SE-189046), with no contradictions."
+    },
+    {
+        "case_id": "ORD-189010",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the carrier's delivery attempt failed because they could not access the delivery location, matching the ground truth scenario. Evidence consistency: All key statements in the report (pickup, processing through facilities, out‑for‑delivery time, and the unsuccessful delivery attempt with the stated reason) are directly supported by the listed shipment events, and no contradictory claims are made."
+    },
+    {
+        "case_id": "ORD-189011",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery attempt failed because the business was closed, matching the ground truth scenario. Evidence consistency: The report's key claims (delivery attempt, failure due to business closed, and lack of further events) are directly supported by the listed shipment event evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189012",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery failed due to an inaccessible delivery entrance, matching the ground truth. Evidence consistency: The report's claims are directly supported by the two provided evidence items, which detail the failed attempt and the current delivery_attempted status."
+    },
+    {
+        "case_id": "ORD-189013",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the delivery failed because the recipient was unavailable, matching the ground‑truth scenario. Evidence consistency: All key statements in the report (failed attempt due to recipient unavailability, second out‑for‑delivery attempt, and current out‑for‑delivery status) are directly supported by the listed upfront evidences, and no unsupported claims are made."
+    },
+    {
+        "case_id": "ORD-189014",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the delivery failure due to a required signature and no adult available, matching the ground‑truth scenario. Evidence consistency: All key claims (the failed attempt on 2026‑10‑11, the second out‑for‑delivery on 2026‑10‑12, and the current out‑for‑delivery status) are directly supported by the listed upfront shipment events and status record, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189015",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states the delivery failed because the carrier could not access the delivery location, matching the ground truth that the carrier attempted delivery and recorded a failure due to no access. Evidence consistency: All key claims about pickup, facility moves, out‑for‑delivery attempts and the failed attempts with the cited reasons are directly supported by the listed upfront evidence items."
+    },
+    {
+        "case_id": "ORD-189016",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the shipment was not completed because both delivery attempts failed for the reasons given in the ground truth. Evidence consistency: All key claims about the two failed attempts, their dates, reasons, and the delivery_attempted status are directly supported by the listed upfront evidence items."
+    },
+    {
+        "case_id": "ORD-189017",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the carrier records show delivery left at the door while no confirmation of receipt exists, matching the ground-truth scenario of genuine non-receipt. Evidence consistency: All factual statements about the timeline, delivery status, and lack of any failed‑delivery or receipt confirmation are directly supported by the listed shipment events, and no contradictory evidence is presented."
+    },
+    {
+        "case_id": "ORD-189018",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the carrier records show delivery left at the front door while the customer did not receive the item, matching the ground‑truth genuine non‑receipt scenario. Evidence consistency: All factual statements in the report (delivery time, status, left‑at‑door location, address match) are directly supported by the provided upfront evidences, and the claim of no receipt confirmation is consistent with the absence of such evidence."
+    },
+    {
+        "case_id": "ORD-189019",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the carrier recorded delivery left at the door at the correct address and that there is no confirmation the customer received it, matching the ground‑truth scenario. Evidence consistency: All factual claims (delivery events, address match, lack of receipt confirmation, and absence of misdelivery or theft) are directly supported by the listed upfront shipment and order evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189020",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the carrier records show delivery to a resident at the correct address, matching the genuine non-receipt scenario where the customer claims non-receipt despite delivery records. Evidence: All key claims about delivery time, address, and confirmation are directly supported by the listed upfront evidences."
+    },
+    {
+        "case_id": "ORD-189021",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the parcel was recorded as handed to a resident and that receipt by the intended recipient cannot be confirmed, matching the ground‑truth scenario. Evidence consistency: The key factual statements (delivery time, handed‑to‑resident status, and lack of further detail) are directly supported by the listed shipment event evidences, and the claim about no identifying information is consistent with the absence of such evidence."
+    },
+    {
+        "case_id": "ORD-189022",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly describes that the carrier recorded delivery to the building mailroom and notes the lack of any confirmation the customer retrieved the package, matching the ground‑truth scenario of genuine non‑receipt. Evidence consistency: All factual statements about delivery status, time, and location are directly supported by the provided upfront evidences, and the claim of missing retrieval evidence aligns with the absence of such data in the evidences."
+    },
+    {
+        "case_id": "ORD-189023",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the carrier records show delivery left in the mailroom while the customer did not retrieve the package, matching the ground‑truth scenario of genuine non‑receipt. Evidence consistency: The report's claims about the delivery time, location (left in mailroom) are directly supported by the listed shipment event SE-189151, and the absence of any signature, photo, receipt, or other receipt confirmation is consistent with the lack of such evidence in the provided list."
+    },
+    {
+        "case_id": "ORD-189024",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the carrier records show delivery at the correct address with no proof of receipt, matching the ground‑truth scenario of genuine non‑receipt. Evidence consistency: All key claims (delivery time and location, lack of further events, and absence of delivery confirmation) are directly supported by the listed upfront shipment status and events, and no claim contradicts the evidence."
+    },
+    {
+        "case_id": "ORD-189025",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event was arrival at the facility and that no further events or reason are recorded, matching the ground truth of no recorded progress after that point. Evidence consistency: The report's claims about the three known shipment events and the absence of any later events or carrier notes are directly supported by the listed upfront evidences, and the lack of additional evidence aligns with the report's statements."
+    },
+    {
+        "case_id": "ORD-189026",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event was the departure from the Fresno facility and that no further tracking or reason is recorded, matching the ground truth. Evidence consistency: All factual claims (last event details, prior pickup and arrival events, and the absence of later updates or reasons) are directly supported by the listed shipment event evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189027",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event was a pickup and no further tracking exists, matching the ground truth that the shipment stalled after pickup with no recorded reason. Evidence consistency: The report's claims about the pickup event and lack of subsequent events are directly supported by the two upfront shipment event evidences provided."
+    },
+    {
+        "case_id": "ORD-189028",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event is the arrival at the Sacramento facility and that no further tracking information is available, matching the ground truth that the shipment has no recorded progress after that point. Evidence consistency: All factual claims (arrival at Sacramento on 2026-09-23, lack of any later events such as out‑for‑delivery or delivery confirmation) are directly supported by the listed shipment events, and the absence of further events aligns with the evidence. No contradictions are present."
+    },
+    {
+        "case_id": "ORD-189029",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states that the last known event is the arrival at the regional sorting facility and that no further tracking updates or reason for the gap are recorded, which matches the ground truth that no reason is recorded. Evidence consistency: All key claims (latest event SE-189175, in_transit status, lack of later events or delivery confirmation) are directly supported by the listed upfront evidences, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189030",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states that the last event is the departure from the regional sorting facility and that no further tracking or reason is recorded, which matches the ground truth that the shipment has no recorded progress after that event and no reason is known. Evidence consistency: All factual statements about the label creation, pickup, arrival, departure, and the lack of later events are directly supported by the listed upfront shipment events; no claim contradicts the evidence."
+    },
+    {
+        "case_id": "ORD-189031",
+        "cause_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the last event was the in‑transit scan on 2026‑09‑09 and that no further tracking updates or reason for the stall are recorded, matching the ground‑truth scenario. Evidence consistency: The report’s core claims (last event date, lack of subsequent events, no delivery attempt) are supported by the listed upfront shipment events, but the specific detail that the scan was \"from Oakland, CA\" is not present in any evidence, making that factual claim unsupported."
+    },
+    {
+        "case_id": "ORD-189032",
+        "cause_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the only recorded event is the carrier pickup and that no further progress is recorded, matching the ground truth that there is no recorded reason for the delay. Evidence consistency: While the report's claim about the pickup is supported by the two listed shipment events, the statement that the shipment remains in_transit with no delivery confirmation is not backed by any of the provided evidences, making that important claim unsupported."
+    },
+    {
+        "case_id": "ORD-189033",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that there was no real conflict, the first delivery attempt failed because the business was closed and a later attempt succeeded, matching the ground‑truth description of an apparent same‑day retry resolved by ordering events. Evidence consistency: All key claims (chronological consistency, failed attempt due to business closure at 13:20, successful delivery at 17:45) are directly supported by the listed shipment event evidences."
+    },
+    {
+        "case_id": "ORD-189034",
+        "cause_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly describes the failed first attempt, the successful second attempt, and the package being left at the front door, matching the ground‑truth scenario. Evidence consistency: The report’s claims about the failed attempt, second attempt, and delivery left at the door are supported by the three shipment‑event evidences. However, the statement that both the order and shipment statuses list the order as delivered is not backed by any of the provided evidences (order status is not present), making that important claim unsupported."
+    },
+    {
+        "case_id": "ORD-189035",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly describes the failed first delivery attempt due to inaccessible location followed by a successful second attempt, matching the ground truth scenario. Evidence consistency: All key claims in the report (timeline of events, failed attempt reason, successful delivery to a resident) are directly supported by the listed shipment event evidences."
+    },
+    {
+        "case_id": "ORD-189036",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the shipment events follow a consistent chronological order with no real conflict, matching the ground truth that the apparent issue was only due to event ID ordering, not a delivery problem. Evidence consistency: The report's claims of a logical sequence and lack of contradictory timestamps are directly supported by the listed shipment event evidences, which show the correct timestamp order."
+    },
+    {
+        "case_id": "ORD-189037",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the events are chronologically ordered (failed attempt at 09:55 then delivery at 11:30) and that there is no substantive conflict, matching the ground‑truth scenario. Evidence consistency: All key statements (failed attempt timestamp, successful delivery timestamp, and lack of contradictory evidence) are directly supported by the listed shipment events, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189038",
+        "cause_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report attributes the delivery issue to an entrance being inaccessible and a later successful attempt, whereas the ground truth states the issue stemmed from an apparent conflict due to misordered events (return to station then redispatch). The identified cause does not match the actual scenario. Evidence consistency: All factual statements in the report (failed attempt at 12:30, second out‑for‑delivery, successful delivery at 18:20) are directly supported by the listed shipment events, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189039",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report accurately describes the timeline—failed delivery due to a closed business followed by successful delivery later—which matches the ground truth that the apparent conflict is resolved by ordering events. Evidence consistency: All key statements about timestamps, failure reason, and final delivery are directly supported by the listed shipment event evidences, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189040",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly explains that the failed afternoon delivery attempt was followed by a successful evening delivery, matching the ground truth that the apparent conflict is resolved by ordering events and the shipment was delivered. Evidence consistency: The report's key claims about the out‑for‑delivery, failed attempt at 15:40, successful delivery at 19:05, and overall consistency are directly supported by the listed shipment events, and no contradictory evidence is presented."
+    },
+    {
+        "case_id": "ORD-189041",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address used matches the valid address record (ADDR-189041) for the order date, which aligns with the ground truth. Evidence consistency: All key claims in the report are directly supported by the upfront order data and the address history tool outputs, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189042",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the order was shipped to an address that does not match the customer's current address or any address in the recorded history, which aligns with the ground‑truth scenario of a mismatched destination. Evidence consistency: The report's key claims (order address differs from current address and is absent from the two history records) are directly supported by the provided upfront order data, current address data, and the two address‑history tool outputs. No contradictory statements are made."
+    },
+    {
+        "case_id": "ORD-189043",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the order's delivery address matches a historic address valid on the order date and that the mismatch with the current address is due to an address change after the order, which aligns with the ground truth. Evidence consistency: All key statements—order address, historic address validity, and the later address change—are directly supported by the provided upfront data and tool-generated address history evidence, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189044",
+        "cause_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report says the issue is that the delivery address is outdated, but the ground truth states the cause is that the destination matches a previously recorded address whose validity ended long before the order, which is essentially the same reason. However, the report frames it as an unexplained mismatch without identifying the specific cause that the system used an expired address record, so it does not correctly pinpoint the actual cause. Evidence: All factual statements in the report are directly supported by the listed upfront and tool evidence items."
+    },
+    {
+        "case_id": "ORD-189045",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the order used an outdated address that was no longer active at the order date, matching the ground‑truth scenario of an address selection error. Evidence consistency: All key statements in the report (historic address match, order date after address validity, current address mismatch, and inferred selection error) are directly supported by the provided upfront order data and the address‑history tool outputs, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189046",
+        "cause_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report states the cause is unknown, saying no record explains why the outdated address was used, which does not match the ground truth that the cause is the use of an outdated address that was still in the system (i.e., the system used the older address). The  "
+    },
+    {
+        "case_id": "ORD-189047",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address used for the order was valid at the time of order and the mismatch is due to a later address change, matching the ground truth. Evidence: All claims about address validity dates and mismatch are directly supported by the upfront and tool evidences provided."
+    },
+    {
+        "case_id": "ORD-189048",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the order used a historically valid address that was effective on the order date and that delivery succeeded, matching the ground truth scenario. Evidence consistency: All key statements (address validity period, current address timing, delivery events ending with 'handed_to_resident', and absence of any problem indicators) are directly supported by the provided upfront data and tool evidence, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189049",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the order used an address that had expired (ended 2026-08-17) and does not match the customer's current address, matching the ground‑truth scenario of an outdated delivery address. Evidence consistency: All key statements in the report—order address, current address, the historical address's effective_to date, and the resulting discrepancy—are directly supported by the listed upfront and tool evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189050",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the order's delivery address matches the address history record valid on the order date and that the later address change occurred after the order, which aligns with the ground truth. Evidence consistency: All key claims (matching address, lack of error evidence, and later address update) are directly supported by the provided address history and order evidences, with no contradictions."
+    },
+    {
+        "case_id": "ORD-189051",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the delivery address ZIP 90042 does not match the customer's current address or address history, which is exactly the mismatch described in the ground truth. Evidence consistency: The report's statements about the differing delivery address, the current address, and the address history showing only ZIP 90025 are directly supported by the upfront order and customer data and the tool-provided address history evidence, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189052",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the order's delivery address does not match the customer's current address or any address in the customer's history, which aligns with the ground‑truth scenario of an unrecognized destination. Evidence consistency: All key statements in the report (order address, current address, mismatch with the two recorded history entries, and lack of address‑related shipment notes) are directly supported by the listed upfront data and tool‑retrieved address history, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189053",
+        "cause_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report states the delivery address was outdated and \"no records explain why the outdated address was used,\" implying the cause is unknown. The ground truth indicates the cause is that the order used a previously recorded address whose validity had expired, i.e., the system ... (...)\n"
+    },
+    {
+        "case_id": "ORD-189054",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the order's delivery address does not match either the customer's current address or any address in the customer's history, which aligns with the ground truth scenario. Evidence consistency: All key statements in the report (order delivery address, current address, and lack of a matching address in history) are directly supported by the provided upfront data and the address history tool output."
+    },
+    {
+        "case_id": "ORD-189055",
+        "cause_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly states that the delivery address (1888 Sutter St) does not match any address in the customer's history, which aligns with the ground‑truth scenario. Evidence consistency: The report's claims about the order address, the customer's current address, and the historical Long Beach address are all backed by the provided evidences. However, the statement that \"shipment records show normal delivery progression\" is not supported by any listed evidence, making that factual claim unsupported."
+    },
+    {
+        "case_id": "ORD-189056",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the quality_hold inventory event as the underlying cause, matching the ground truth scenario. Evidence consistency: All key claims (label_created status, absence of carrier pickup, presence of quality_hold, and lack of a release event) are directly supported by the provided shipment and inventory evidences."
+    },
+    {
+        "case_id": "ORD-189057",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the allocation_failed and backorder_flagged inventory events as the reason the order could not be fulfilled, matching the ground truth scenario. Evidence consistency: All key statements in the report (allocation failure, backorder flag, lack of inventory reservation, and no carrier pickup) are directly supported by the listed inventory and shipment evidences, and the absence claims are consistent with the provided data."
+    },
+    {
+        "case_id": "ORD-189058",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report identifies the count_discrepancy inventory event as the reason the parcel was not prepared for carrier pickup, which matches the ground‑truth scenario that the only internal fulfilment issue documented is a count discrepancy. Evidence consistency: All factual statements in the report (label_created only, reservation then count_discrepancy, absence of pickup events) are directly backed by the listed upfront and tool evidences, and the inference that the discrepancy prevented pickup follows logically from those facts."
+    },
+    {
+        "case_id": "ORD-189059",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the allocation shortfall (inventory shortage) as the reason the shipment remains at label_created, matching the ground truth. Evidence consistency: The report's statements about the reservation of 1 unit, the 2‑unit shortfall, and the shipment's label_created status are directly supported by the listed inventory and shipment events, and the lack of pickup or other fulfillment events is appropriately noted as absent data."
+    },
+    {
+        "case_id": "ORD-189060",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the inventory count discrepancy (removal of the reserved units) as the underlying issue that aligns with the ground‑truth scenario of a count_discrepancy causing no carrier pickup. Evidence consistency: All key statements—reservation of 3 units, subsequent count discrepancy, and the shipment remaining at label_created with no pickup—are directly supported by the cited inventory and shipment events, and the reasoning follows logically without contradiction."
+    },
+    {
+        "case_id": "ORD-189061",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the quality_hold event as the reason the shipment was not picked up, matching the ground truth scenario. Evidence consistency: The report's key claim that a quality_hold was placed is directly supported by the inventory_event evidence, and the lack of a pickup event is consistent with the provided shipment event evidence; no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189062",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the shipment stalled due to an allocation failure and backorder flag in the fulfillment system, matching the ground truth scenario. Evidence consistency: All key claims (label creation, lack of carrier pickup, allocation failure, and backorder flag) are directly supported by the listed upfront and tool evidences."
+    },
+    {
+        "case_id": "ORD-189063",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the inventory count discrepancy as the internal fulfillment issue preventing carrier pickup, matching the ground truth. Evidence consistency: The report's key claims (reservation event, count discrepancy, lack of a shipped_out event) are directly supported by the two inventory_event evidences provided, and absence claims do not require citation."
+    },
+    {
+        "case_id": "ORD-189064",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the inventory reservation was released, matching the ground-truth cause of the delivery issue. Evidence consistency: The report's key claims (reservation release time, label creation time, and lack of a pickup event) are directly supported by the provided upfront shipment event and tool inventory events, and the reasoning follows logically without contradiction."
+    },
+    {
+        "case_id": "ORD-189065",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the shipment is stuck at label_created with no pickup and cites the quality_hold inventory event as the internal reason, matching the ground truth. Evidence consistency: The report's statements about the label_created status, lack of pickup, and the quality_hold event are directly supported by the provided upfront shipment data and tool-derived inventory events, and the inferred delay reasoning follows logically from the quality_hold evidence."
+    },
+    {
+        "case_id": "ORD-189066",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies that the label was created and the reservation was released, matching the ground‑truth scenario where the reservation release explains the lack of pickup. Evidence consistency: The report's claims about the label creation time, the reservation release time, and the absence of any pickup events are directly supported by the provided shipment and inventory events, and no contradictions are present."
+    },
+    {
+        "case_id": "ORD-189067",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies the quality hold on the order items as the underlying reason for the missing carrier pickup, matching the ground‑truth scenario. Evidence consistency: The report’s key statements—presence of a quality‑hold inventory event and a later label‑creation shipment event, and the absence of a pickup record—are all supported by the cited evidences, and the reasoning follows logically."
+    },
+    {
+        "case_id": "ORD-189068",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report states the order never progressed to carrier pickup and notes the reservation release, matching the ground truth that the order was label_created with no pickup and only a reservation_released event. Evidence: All key claims (label_created event, reservation creation and release) are directly supported by the listed evidences."
+    },
+    {
+        "case_id": "ORD-189069",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies an allocation shortfall as the reason the shipment was not collected, matching the ground truth which cites an allocation_shortfall in inventory events. Evidence consistency: The report's claim about the shortfall and missing carrier pickup is directly supported by the listed inventory event IE-189141 and the shipment event showing label creation with no pickup."
+    },
+    {
+        "case_id": "ORD-189070",
+        "cause_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "Cause: The report correctly identifies an inventory allocation shortfall as the reason the shipment never progressed beyond label creation, matching the ground‑truth scenario. Evidence consistency: The report’s key statements (no pickup after label_created, lack of other issues, and the inventory shortfall) are all backed by the cited shipment event and the two inventory events; absence claims are acceptable. No contradictions are present."
+    }
+]
