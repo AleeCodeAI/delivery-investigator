@@ -90,10 +90,10 @@
     "supporting_evidence": "shipment_events SE-189091, SE-189092, SE-189093; shipments SHIP-189015 shipment_status=delivery_attempted, delivered_at empty; preceding events SE-189085, SE-189086, SE-189087, SE-189088, SE-189089, SE-189090."
   },
   {
-    "order_id": "ORD-189016",
-    "scenario_subtype": "business closed; fail2",
-    "actual_scenario": "Carrier attempted delivery and recorded a failure (business closed); shipment unresolved (fail2).",
-    "supporting_evidence": "shipment_events SE-189100, SE-189101, SE-189102; shipments SHIP-189016 shipment_status=delivery_attempted, delivered_at empty; preceding events SE-189094, SE-189095, SE-189096, SE-189097, SE-189098, SE-189099."
+  "order_id": "ORD-189016",
+  "scenario_subtype": "business closed; fail2",
+  "actual_scenario": "Carrier attempted delivery twice and both attempts failed, each with a different recorded reason: the first (2026-10-12) because the business was closed, the second (2026-10-13) because the carrier could not access the delivery location. The shipment remains unresolved with status delivery_attempted, no delivered_at value, and no delivery confirmation.",
+  "supporting_evidence": "shipment_events SE-189100 (2026-10-12T11:05, delivery_attempt_failed: business closed); SE-189102 (2026-10-13T12:43, delivery_attempt_failed: carrier could not access the delivery location); shipments SHIP-189016 shipment_status=delivery_attempted, delivered_at=null, delivery_confirmation=none; preceding events SE-189094, SE-189095, SE-189096, SE-189097, SE-189098, SE-189099, SE-189101 (out_for_delivery, second attempt) show normal progression from label creation through two delivery dispatches."
   },
   {
     "order_id": "ORD-189017",
@@ -108,10 +108,10 @@
     "supporting_evidence": "shipments SHIP-189018: shipment_status=delivered, delivered_at=2026-09-03 14:38:00, delivery_confirmation=left_at_door; shipment_events SE-189116 (delivered) and earlier events SE-189110, SE-189111, SE-189112, SE-189113, SE-189114, SE-189115; orders ORD-189018 delivery address equals customer's current address."
   },
   {
-    "order_id": "ORD-189019",
-    "scenario_subtype": "delivery_confirmation=left_at_door",
-    "actual_scenario": "Genuine non-receipt: the customer did not receive the item, but carrier records show delivery (left at the front door).",
-    "supporting_evidence": "shipments SHIP-189019: shipment_status=delivered, delivered_at=2026-09-11 15:02:00, delivery_confirmation=left_at_door; shipment_events SE-189123 (delivered) and earlier events SE-189117, SE-189118, SE-189119, SE-189120, SE-189121, SE-189122; orders ORD-189019 delivery address equals customer's current address."
+  "order_id": "ORD-189019",
+  "scenario_subtype": "delivery_confirmation=left_at_door",
+  "actual_scenario": "Marked delivered, not received: the carrier recorded delivery with the package left at the front door at the delivery address, which equals the customer's current address. Whether the customer actually received the parcel cannot be established from the records.",
+  "supporting_evidence": "orders ORD-189019: order_status=delivered, delivery address (1943 Bay St, San Diego, CA 92101) equals customer CUST-189024's current address; shipments SHIP-189019: shipment_status=delivered, delivered_at=2026-09-11T15:02:00, delivery_confirmation=left_at_door; shipment_events in timestamp order: SE-189117 label_created 2026-09-07T14:24:00, SE-189118 picked_up 2026-09-08T06:44:00, SE-189119 arrived_at_facility 2026-09-09T04:33:00, SE-189120 departed_facility 2026-09-09T13:29:00, SE-189121 arrived_at_facility 2026-09-10T10:21:00, SE-189122 out_for_delivery 2026-09-11T08:50:00, SE-189123 delivered 2026-09-11T15:02:00 ('Delivered; package left at the front door.'). No tool needed: address matches current address and carrier pickup is documented. No record shows who received the parcel after it was left at the door."
   },
   {
     "order_id": "ORD-189020",
@@ -120,10 +120,10 @@
     "supporting_evidence": "shipments SHIP-189020: shipment_status=delivered, delivered_at=2026-09-17 15:12:00, delivery_confirmation=handed_to_resident; shipment_events SE-189130 (delivered) and earlier events SE-189124, SE-189125, SE-189126, SE-189127, SE-189128, SE-189129; orders ORD-189020 delivery address equals customer's current address."
   },
   {
-    "order_id": "ORD-189021",
-    "scenario_subtype": "delivery_confirmation=handed_to_resident",
-    "actual_scenario": "Genuine non-receipt: the customer did not receive the item, but carrier records show delivery (handed to a resident).",
-    "supporting_evidence": "shipments SHIP-189021: shipment_status=delivered, delivered_at=2026-09-22 18:07:00, delivery_confirmation=handed_to_resident; shipment_events SE-189137 (delivered) and earlier events SE-189131, SE-189132, SE-189133, SE-189134, SE-189135, SE-189136; orders ORD-189021 delivery address equals customer's current address."
+  "order_id": "ORD-189021",
+  "scenario_subtype": "delivery_confirmation=handed_to_resident",
+  "actual_scenario": "Marked delivered, not received: the carrier recorded delivery with the package handed to a resident at the delivery address, which equals the customer's current address. Whether the intended recipient actually received the parcel cannot be established from the records.",
+  "supporting_evidence": "orders ORD-189021: order_status=delivered, delivery address (8576 Willow Way, San Francisco, CA 94117) equals customer CUST-189020's current address; shipments SHIP-189021: shipment_status=delivered, delivered_at=2026-09-22T18:07:00, delivery_confirmation=handed_to_resident; shipment_events in timestamp order: SE-189131 label_created 2026-09-18T06:58:00, SE-189132 picked_up 2026-09-19T00:56:00, SE-189133 arrived_at_facility 2026-09-19T23:14:00, SE-189134 departed_facility 2026-09-20T07:12:00, SE-189135 arrived_at_facility 2026-09-21T01:39:00, SE-189136 out_for_delivery 2026-09-22T09:50:00, SE-189137 delivered 2026-09-22T18:07:00 ('Delivered; package handed to a resident.'). No tool needed: address matches current address and carrier pickup is documented. No record identifies the resident who accepted the parcel or shows whether that person was the intended recipient."
   },
   {
     "order_id": "ORD-189022",
@@ -198,28 +198,28 @@
     "supporting_evidence": "shipment_events SE-189187, SE-189188, SE-189189, SE-189190, SE-189191, SE-189192, SE-189193, SE-189194; shipments SHIP-189033 shipment_status=delivered, delivered_at=2026-08-12 17:45:00, delivery_confirmation=none."
   },
   {
-    "order_id": "ORD-189034",
-    "scenario_subtype": "same-day second dispatch",
-    "actual_scenario": "Apparent conflict (same-day second dispatch) that is resolved by ordering events by timestamp; shipment was ultimately delivered.",
-    "supporting_evidence": "shipment_events SE-189195, SE-189196, SE-189197, SE-189198, SE-189199, SE-189200, SE-189201, SE-189202, SE-189203; shipments SHIP-189034 shipment_status=delivered, delivered_at=2026-08-19 16:30:00, delivery_confirmation=left_at_door."
+  "order_id": "ORD-189034",
+  "scenario_subtype": "tracking_conflict=failed_attempt_then_delivered",
+  "actual_scenario": "Apparent tracking conflict: the trail shows a failed delivery attempt (recipient unavailable) followed by a second out-for-delivery and a delivered event. Chronology resolves the apparent inconsistency: the first attempt on 2026-08-19 failed, and the second attempt later the same day was recorded as delivered with the package left at the front door at the delivery address, which equals the customer's current address.",
+  "supporting_evidence": "orders ORD-189034: order_status=delivered, delivery address (8988 Mission Blvd, Long Beach, CA 90802) equals customer CUST-189004's current address; shipments SHIP-189034: shipment_status=delivered, delivered_at=2026-08-19T16:30:00, delivery_confirmation=left_at_door; shipment_events in timestamp order: SE-189195 label_created 2026-08-16T12:08:00, SE-189196 picked_up 2026-08-16T20:13:00, SE-189197 arrived_at_facility 2026-08-17T11:46:00, SE-189198 departed_facility 2026-08-17T20:01:00, SE-189199 arrived_at_facility 2026-08-19T06:30:00, SE-189200 out_for_delivery 2026-08-19T08:15:00, SE-189201 delivery_attempt_failed 2026-08-19T10:40:00 ('recipient was unavailable at the delivery address'), SE-189202 out_for_delivery 2026-08-19T14:05:00 ('second attempt'), SE-189203 delivered 2026-08-19T16:30:00 ('package left at the front door'). The delivered event timestamp matches shipment delivered_at. No tool needed: address matches current address and carrier pickup is documented. The records do not show who, if anyone, received the parcel after it was left at the door."
   },
   {
-    "order_id": "ORD-189035",
-    "scenario_subtype": "next-day retry",
-    "actual_scenario": "Apparent conflict (next-day retry) that is resolved by ordering events by timestamp; shipment was ultimately delivered.",
-    "supporting_evidence": "shipment_events SE-189204, SE-189205, SE-189206, SE-189207, SE-189208, SE-189209, SE-189210, SE-189211, SE-189212; shipments SHIP-189035 shipment_status=delivered, delivered_at=2026-08-29 09:50:00, delivery_confirmation=handed_to_resident."
+  "order_id": "ORD-189035",
+  "scenario_subtype": "tracking_conflict=failed_attempt_then_delivered",
+  "actual_scenario": "Apparent tracking conflict: the trail shows a failed delivery attempt (carrier could not access the delivery location) on 2026-08-28, followed by a second out-for-delivery and a delivered event on 2026-08-29 with the package handed to a resident. Chronology resolves the apparent inconsistency: the first attempt failed and the second attempt was recorded as delivered at the delivery address, which equals the customer's current address.",
+  "supporting_evidence": "orders ORD-189035: order_status=delivered, delivery address (6125 Palm Ave, Fresno, CA 93727) equals customer CUST-189005's current address; shipments SHIP-189035: shipment_status=delivered, delivered_at=2026-08-29T09:50:00, delivery_confirmation=handed_to_resident; shipment_events in timestamp order: SE-189204 label_created 2026-08-25T00:19:00, SE-189205 picked_up 2026-08-25T07:16:00, SE-189206 arrived_at_facility 2026-08-25T18:08:00, SE-189207 departed_facility 2026-08-26T03:40:00, SE-189208 arrived_at_facility 2026-08-27T20:30:00, SE-189209 out_for_delivery 2026-08-28T08:05:00, SE-189210 delivery_attempt_failed 2026-08-28T11:20:00 ('carrier could not access the delivery location'), SE-189211 out_for_delivery 2026-08-29T07:55:00 ('second attempt'), SE-189212 delivered 2026-08-29T09:50:00 ('package handed to a resident'). The delivered event timestamp matches shipment delivered_at. No tool needed: address matches current address and carrier pickup is documented. The records do not identify the resident who accepted the parcel or show whether that person was the intended recipient."
   },
   {
-    "order_id": "ORD-189036",
-    "scenario_subtype": "late-synced facility scan stored after delivery event",
-    "actual_scenario": "Apparent conflict (late-synced facility scan stored after delivery event) that is resolved by ordering events by timestamp; shipment was ultimately delivered.",
-    "supporting_evidence": "shipment_events SE-189213, SE-189214, SE-189215, SE-189216, SE-189217, SE-189218, SE-189219; shipments SHIP-189036 shipment_status=delivered, delivered_at=2026-09-05 14:10:00, delivery_confirmation=left_at_mailroom."
+  "order_id": "ORD-189036",
+  "scenario_subtype": "tracking_conflict=out_of_order_event_ids",
+  "actual_scenario": "Apparent tracking conflict: by event ID, the 'arrived at local delivery station' event (SE-189219) appears after 'delivered' (SE-189218). Ordered by timestamp, it occurred on 2026-09-05T06:45:00, before out_for_delivery (08:30) and delivered (14:10). Chronology resolves the apparent contradiction: the records do not contradict each other. The parcel was recorded as delivered to the building mailroom at the delivery address, which equals the customer's current address.",
+  "supporting_evidence": "orders ORD-189036: order_status=delivered, delivery address (6125 Palm Ave, Fresno, CA 93727) equals customer CUST-189005's current address; shipments SHIP-189036: shipment_status=delivered, delivered_at=2026-09-05T14:10:00, delivery_confirmation=left_at_mailroom; shipment_events in timestamp order: SE-189213 label_created 2026-09-01T20:17:00, SE-189214 picked_up 2026-09-02T11:09:00, SE-189215 arrived_at_facility 2026-09-03T09:07:00 (San Jose), SE-189216 departed_facility 2026-09-03T16:35:00 (San Jose), SE-189219 arrived_at_facility 2026-09-05T06:45:00 (Fresno, local delivery station), SE-189217 out_for_delivery 2026-09-05T08:30:00, SE-189218 delivered 2026-09-05T14:10:00 ('package left in the building mailroom'). SE-189219 has a higher ID than SE-189218 but an earlier timestamp. The delivered event timestamp matches shipment delivered_at. No tool needed: address matches current address and carrier pickup is documented. The records do not show who retrieved the parcel from the mailroom."
   },
   {
-    "order_id": "ORD-189037",
-    "scenario_subtype": "late-synced failed attempt stored after delivery event",
-    "actual_scenario": "Apparent conflict (late-synced failed attempt stored after delivery event) that is resolved by ordering events by timestamp; shipment was ultimately delivered.",
-    "supporting_evidence": "shipment_events SE-189220, SE-189221, SE-189222, SE-189223, SE-189224, SE-189225, SE-189226, SE-189227; shipments SHIP-189037 shipment_status=delivered, delivered_at=2026-09-14 11:30:00, delivery_confirmation=handed_to_resident."
+  "order_id": "ORD-189037",
+  "scenario_subtype": "tracking_conflict=out_of_order_event_ids",
+  "actual_scenario": "Apparent tracking conflict: by event ID, the failed delivery attempt (SE-189227) appears after the 'delivered' event (SE-189226). Ordered by timestamp, the failed attempt occurred on 2026-09-14T09:55:00, after out_for_delivery (07:40) and before delivered (11:30). Chronology resolves the apparent contradiction: the first attempt failed (recipient unavailable) and delivery was later recorded as handed to a resident at the delivery address, which equals the customer's current address. The records do not contain a meaningful conflict.",
+  "supporting_evidence": "orders ORD-189037: order_status=delivered, delivery address (7492 Maple Ave, Los Angeles, CA 90025) equals customer CUST-189003's current address; shipments SHIP-189037: shipment_status=delivered, delivered_at=2026-09-14T11:30:00, delivery_confirmation=handed_to_resident; shipment_events in timestamp order: SE-189220 label_created 2026-09-10T20:50:00, SE-189221 picked_up 2026-09-11T09:26:00, SE-189222 arrived_at_facility 2026-09-12T05:06:00 (Fresno), SE-189223 departed_facility 2026-09-12T09:08:00 (Fresno), SE-189224 arrived_at_facility 2026-09-13T19:45:00 (Los Angeles), SE-189225 out_for_delivery 2026-09-14T07:40:00, SE-189227 delivery_attempt_failed 2026-09-14T09:55:00 ('recipient was unavailable at the delivery address'), SE-189226 delivered 2026-09-14T11:30:00 ('package handed to a resident'). SE-189227 has a higher ID than SE-189226 but an earlier timestamp. The delivered event timestamp matches shipment delivered_at. No second out_for_delivery event is recorded between the failed attempt and the delivery. No tool needed: address matches current address and carrier pickup is documented. The records do not identify the resident who accepted the parcel."
   },
   {
     "order_id": "ORD-189038",
