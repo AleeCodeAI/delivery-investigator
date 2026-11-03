@@ -3,7 +3,6 @@ import time
 from pathlib import Path
 
 from evals.agent_evals.agent_evaluator import AgentEvaluator
-from schemas import AgentResult
 from utils.color import Logger
 
 
@@ -38,7 +37,7 @@ class AgentJudgeCalibration(Logger):
         self.log(f"CALIBRATING CASE: {case_id}")
 
         try:
-            agent_result = AgentResult(**item["agent_result"])
+            agent_result = item["agent_result"]
             user_input = self.evaluator._user_input(agent_result, item["ground_truth"])
             messages = self.evaluator._make_messages(user_input)
             result = self.evaluator._call_llm(messages)
@@ -47,7 +46,6 @@ class AgentJudgeCalibration(Logger):
             return {
                 "case_id": case_id,
                 "cause_correct": result.cause_correct,
-                "evidence_identification_correct": result.evidence_identification_correct,
                 "evidence_consistency_correct": result.evidence_consistency_correct,
                 "overall_score": result.overall_score,
                 "overall_passed": result.overall_passed,
@@ -59,7 +57,6 @@ class AgentJudgeCalibration(Logger):
             return {
                 "case_id": case_id,
                 "cause_correct": None,
-                "evidence_identification_correct": None,
                 "evidence_consistency_correct": None,
                 "overall_score": 0,
                 "overall_passed": False,
