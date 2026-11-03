@@ -5,7 +5,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly identifies a severe weather carrier delay as the reason for the shipment being in transit and delayed, matching the ground truth. Evidence consistency: All key statements in the report (delayed status, null delivery timestamp, severe weather exception at Sacramento on the given date, and prior normal transit events) are directly supported by the listed upfront evidences, and the absence of a revised ETA is an acceptable missing-data claim."
+        "judge_reasoning": "Cause: The report correctly states that the shipment is delayed due to severe weather, matching the ground truth. Evidence: All key claims about delay, cause, and lack of revised ETA are supported by the listed upfront evidences."
     },
     {
         "case_id": 2,
@@ -13,7 +13,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly identifies that the carrier recorded a failed delivery attempt due to the recipient being unavailable, matching the ground truth. Evidence consistency: All factual statements in the report (failed attempt, recipient unavailable, in_transit status, no delivery timestamp) are directly supported by the cited upfront shipment and shipment_event records; the claim about missing re‑attempt information is an absence claim and does not require evidence."
+        "judge_reasoning": "Cause: The report states that the delivery failed because the recipient was not available, which matches the ground truth scenario. Evidence consistency: All key claims (failed attempt, timestamp, location, reason, and prior out‑for‑delivery event) are directly supported by the listed upfront evidences."
     },
     {
         "case_id": 3,
@@ -21,7 +21,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that the carrier records show delivery left at the door and that receipt by the customer is not established, matching the ground‑truth scenario. Evidence consistency: The report’s factual claims about the delivery status and confirmation are directly supported by the two upfront evidence items, and the claim of no signature is an absence statement that does not contradict any evidence."
+        "judge_reasoning": "Cause: The report correctly states that the carrier records only show a left‑at‑door delivery and do not confirm the recipient actually received the parcel, matching the ground‑truth scenario. Evidence consistency: All factual claims (delivery status, left‑at‑door confirmation, lack of photo/signature evidence) are directly supported by the provided upfront shipment and event records, and the report does not contradict any evidence."
     },
     {
         "case_id": 4,
@@ -29,7 +29,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that no tracking event was recorded after the last scan and that the delivery status remains in_transit with no reason for the gap, matching the ground truth. Evidence consistency: All key claims (no post‑scan events, in_transit status, empty delivered_at, and lack of explanation) are directly supported by the provided upfront shipment and event records, with no contradictions."
+        "judge_reasoning": "Cause: The report correctly states that there is no recent tracking progress and no established reason for the gap, matching the ground truth description. Evidence consistency: All factual claims (last in‑transit event, shipment status, lack of later events or exceptions) are directly supported by the upfront shipment and event records provided, and no contradictions are present."
     },
     {
         "case_id": 5,
@@ -37,7 +37,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report states that the later delivered event supersedes the earlier delivery_exception, matching the ground truth scenario. Evidence consistency: All key claims (delivery_exception event, delivered event, and final status) are directly supported by the listed upfront evidences."
+        "judge_reasoning": "Cause: The report correctly states that an earlier delivery exception was followed by a later delivered event, matching the ground truth that the shipment was delivered. Evidence consistency: All key statements (exception details, timestamps, delivery confirmation, and the need to order by timestamps) are directly supported by the provided upfront evidence, and no contradictions are present."
     },
     {
         "case_id": 6,
@@ -45,7 +45,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that the order used a historical address whose effective period ended before the order date, matching the ground‑truth scenario. Evidence consistency: All key claims (mismatch with current address, historical address period ending before order date, and lack of explanation for why it was chosen) are directly supported by the provided upfront and tool evidences, with no contradictions."
+        "judge_reasoning": "Cause: The report correctly states that the order used a historical address whose effective period ended before the order date and that this differs from the customer's current address, matching the ground truth. Evidence consistency: All key claims (mismatch of addresses, historical address period ending before order date, delivery to the old address, and lack of reason for selection) are directly supported by the provided upfront and tool evidences, with no contradictions."
     },
     {
         "case_id": 7,
@@ -53,7 +53,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that the order destination matches neither the current nor any historical address and that the reason is unexplained, which aligns with the ground truth. Evidence consistency: The report's claim about the mismatch is directly supported by the upfront order address and the customer's current address and address history evidence, and there are no contradictions."
+        "judge_reasoning": "Cause: The report correctly states that the order destination does not match the customer's current address or any address in their history, which aligns with the ground truth. Evidence consistency: All factual statements in the report (order address, current address, address history entries, and the lack of a matching record) are directly supported by the provided upfront and tool evidences, and no contradictions are present."
     },
     {
         "case_id": 8,
@@ -61,7 +61,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that the destination address was valid on the order date and that the later customer move does not constitute an error, matching the ground truth. Evidence consistency: All key claims (address validity dates, mismatch with current address, and lack of error) are directly supported by the provided upfront order data, current address, and the address history tool output, with no contradictions."
+        "judge_reasoning": "Cause: The report correctly states that the order address was valid on the order date and the later mismatch is not an error, matching the ground truth. Evidence consistency: All key claims (address mismatch, validity of the order address based on address history, the customer's later move, and the delivery confirmation) are directly supported by the provided upfront data and tool evidence, with no contradictions."
     },
     {
         "case_id": 9,
@@ -69,7 +69,7 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly identifies a quality_hold inventory event as the reason for the delivery stall, matching the ground truth. Evidence consistency: All key statements (missing carrier pickup scan, presence of a shipping label, and the quality_hold event) are directly supported by the listed upfront and tool evidences, and the reasoning follows logically without contradiction."
+        "judge_reasoning": "Cause: The report states the shipment did not progress because a quality_hold inventory event occurred after label creation, matching the ground truth that the reserved item was placed on quality_hold pending inspection. Evidence: All key claims (label creation, lack of pickup, quality_hold event) are directly supported by the listed upfront and tool evidences."
     },
     {
         "case_id": 10,
@@ -77,39 +77,39 @@
         "evidence_consistency_correct": true,
         "overall_score": 100,
         "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that no inventory events explain the pre‑pickup stall and that current inventory cannot determine historical availability, matching the ground‑truth scenario. Evidence consistency: All key statements (no carrier pickup scan, absence of inventory events, and present inventory quantities) are directly supported by the listed upfront and tool evidences, and the report does not contradict any evidence."
+        "judge_reasoning": "Cause: The report states that the shipment stalled before carrier pickup and that no internal or carrier event explains the delay, which matches the ground‑truth scenario that the cause is not established. Evidence consistency: All factual claims (label_created event, lack of pickup, inventory stock_in and reservation events, and absence of any hold or shortage) are directly supported by the listed upfront and tool evidences, and the conclusion of an unknown cause follows logically from the missing data."
     },
     {
         "case_id": 11,
         "cause_correct": false,
-        "evidence_consistency_correct": false,
-        "overall_score": 0,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
         "overall_passed": false,
-        "judge_reasoning": "Cause: The report asserts theft as the cause, but the ground truth only states delivery left at the door and notes theft is merely a possibility, not established, so the cause is incorrect. Evidence consistency: The cited evidences only confirm delivery status and location; they do not provide any support for the claim that the parcel was stolen, making the report's key claim unsupported."
+        "judge_reasoning": "Cause: The report states the cause of the missing pickup is not established, whereas the ground truth identifies a quality_hold inspection as the cause, so the cause is incorrect. Evidence consistency: The report's factual statements (label creation time/location, lack of pickup event, no carrier exception) are all supported by the provided upfront evidences, and no contradictions are present."
     },
     {
         "case_id": 12,
         "cause_correct": false,
-        "evidence_consistency_correct": false,
-        "overall_score": 0,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
         "overall_passed": false,
-        "judge_reasoning": "Cause: The report claims the delivery failed because the order was sent to an old address, but the ground truth states the address was valid on the order date, so the identified cause is incorrect. Evidence consistency: While the report correctly notes the destination differs from the current address and that the address appears in the history, it asserts that this constitutes an error, a claim not supported by the provided evidences, which show the address was effective at the order date."
+        "judge_reasoning": "Cause: The report fails to identify the true cause (the saved address was a historical address whose effective period ended before the order date) and instead says the cause is not established, which does not match the ground truth. Evidence consistency: All factual statements in the report (address mismatch, lack of association evidence, delivery confirmation) are directly supported by the provided upfront and shipment evidences, with no contradictions."
     },
     {
         "case_id": 13,
-        "cause_correct": true,
-        "evidence_consistency_correct": true,
-        "overall_score": 100,
-        "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that a quality_hold inventory event caused the pre‑pickup stall, matching the ground‑truth scenario. Evidence: The report’s claims about the label without a carrier pickup scan and the quality_hold event are directly supported by the upfront shipment and order evidences and the fulfilment tool inventory context."
+        "cause_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 0,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report states the parcel was handed directly to the resident and the customer received it, but the ground truth indicates it was only left at the door, so the identified cause (customer error/false claim) does not match the actual scenario. Evidence consistency: The report claims a direct hand‑off to the resident, which contradicts the evidences that show delivery confirmation was \"left at door\"; thus key statements are unsupported by the cited evidence."
     },
     {
         "case_id": 14,
-        "cause_correct": true,
-        "evidence_consistency_correct": false,
-        "overall_score": 80,
-        "overall_passed": true,
-        "judge_reasoning": "Cause: The report correctly states that an earlier delivery_exception was superseded by a later delivered event, matching the ground truth scenario. Evidence consistency: The report claims an earlier delivery_exception, but the cited evidences only include a delivered event and shipment status; no evidence of the exception is provided, so the claim is unsupported."
+        "cause_correct": false,
+        "evidence_consistency_correct": true,
+        "overall_score": 20,
+        "overall_passed": false,
+        "judge_reasoning": "Cause: The report claims the issue is due to using an outdated saved address, but the ground truth states the destination matches neither the current address nor any address in the customer's history, so the identified cause is incorrect. Evidence consistency: The report's statements about the order's delivery address, the customer's current address, and the delivery status are all directly supported by the provided upfront evidences."
     },
     {
         "case_id": 15,
@@ -117,6 +117,6 @@
         "evidence_consistency_correct": false,
         "overall_score": 0,
         "overall_passed": false,
-        "judge_reasoning": "Cause: The report attributes the delay to a customs hold, whereas the ground truth and evidence indicate the delay is due to severe weather, so the identified cause is incorrect. Evidence consistency: The report's claim of a customs hold is not supported by any of the provided evidences, which only mention a severe weather delay; thus the report's key claim is unsupported and contradictory to the evidence."
+        "judge_reasoning": "Cause: The report states the shipment was lost with a last scan at Fresno on 2026-10-09, but the ground truth only indicates an unknown gap after an in‑transit scan at Stockton on 2026-10-06, so the identified cause does not match the actual scenario. Evidence consistency: The report's key claims (Fresno hub scan, loss conclusion) are not supported by any of the provided evidences, which only show a Stockton in‑transit event and no later data."
     }
 ]
