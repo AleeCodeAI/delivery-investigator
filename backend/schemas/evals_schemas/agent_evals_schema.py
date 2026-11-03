@@ -7,17 +7,12 @@ class AgentEvalsResult(BaseModel):
     Evaluation results for the Delivery Investigator agent.
     """
 
-    CAUSE_WEIGHT: ClassVar[int] = 60
-    EVIDENCE_IDENTIFICATION_WEIGHT: ClassVar[int] = 20
+    CAUSE_WEIGHT: ClassVar[int] = 80
     EVIDENCE_CONSISTENCY_WEIGHT: ClassVar[int] = 20
     PASS_THRESHOLD: ClassVar[int] = 80
 
     cause_correct: bool = Field(
         description="Determines whether the agent correctly identifies the cause of the delivery issue."
-    )
-
-    evidence_identification_correct: bool = Field(
-        description="Determines whether the agent identifies the essential supporting evidence."
     )
 
     evidence_consistency_correct: bool = Field(
@@ -34,7 +29,6 @@ class AgentEvalsResult(BaseModel):
         """Calculates the weighted evaluation score."""
         return (
             self.cause_correct * self.CAUSE_WEIGHT
-            + self.evidence_identification_correct * self.EVIDENCE_IDENTIFICATION_WEIGHT
             + self.evidence_consistency_correct * self.EVIDENCE_CONSISTENCY_WEIGHT
         )
 
