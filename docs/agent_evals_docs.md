@@ -1,242 +1,216 @@
-# Agent Evaluator Documentation
+# Delivery Investigator Agent — Evaluation Methodology
 
 ## 1. Overview
 
-The Agent Evaluator assesses the quality and reliability of the Delivery Investigator Agent using an LLM-as-a-Judge approach against a predefined ground-truth dataset.
+The purpose of the evaluation is to assess the quality and reliability of the Delivery Investigator Agent using an **LLM-as-a-Judge** approach.
 
-The evaluation focuses on three main areas:
+The evaluation focuses exclusively on the Investigation Agent. Its primary responsibility is to identify the underlying cause of delivery problems and produce investigation reports supported by reliable evidence.
 
-- Correctly identifying the cause of the delivery issue.
-- Identifying the essential supporting evidence.
-- Producing a report whose claims and reasoning are consistently supported by the identified evidence.
+## 2. Definition of Success
 
-Each investigation receives individual evaluation results and a weighted overall score.
+A successful evaluation requires the Investigation Agent to achieve an overall pass rate of at least **90% across the 70 investigation cases**.
 
-**Scope:** This evaluation focuses exclusively on the Investigation Agent. It does not evaluate the Recommender, the main application pipeline, or the overall Delivery Investigator system.
+Success is determined using two evaluation criteria, each assigned a weight based on its importance:
 
-## 2. Evaluation Criteria
+| Criterion | Weight |
+|---|---:|
+| Cause correctness | 80% |
+| Evidence consistency | 20% |
+| **Total** | **100%** |
 
-The evaluator assesses the agent using three binary criteria.
+Each investigation receives a score based on these weights. An individual investigation passes when its score is at least **80 points**.
 
-### 2.1 Cause Correctness (`cause_correct`)
+The overall evaluation is considered successful when at least **63 out of 70 investigations pass**, achieving the required 90% pass rate.
 
-Determines whether the agent correctly identifies the cause of the delivery issue.
+This means the agent must demonstrate that it can consistently identify the correct cause of delivery problems and produce reports supported by reliable evidence.
+
+## 3. Evaluation Process
+
+The evaluation consists of two separate stages: agent execution and agent evaluation.
+
+### 3.1 Agent Execution
+
+The agent execution stage uses `input_data.json`, which contains 70 investigation cases.
+
+Each case provides the information required to initiate an investigation, including:
+
+- Input ID
+- Customer ID
+- Order ID
+- Problem description
+
+An Agent Run File processes the cases individually, supplies the required information to the Investigation Agent, and collects its results.
+
+The results are stored in an Agent Results File, which serves as the input for the evaluation stage.
+
+### 3.2 Agent Evaluation
+
+The evaluator does not execute the Investigation Agent. It evaluates the results already collected during the execution stage.
+
+For each case, the evaluator receives:
+
+- The corresponding agent result.
+- The corresponding ground-truth record.
+
+The LLM judge assesses the agent's `investigation_report` and `evidences` against the expected scenario and supporting information in the ground truth.
+
+This separation allows agent execution and evaluation to be performed independently.
+
+## 4. Ground-Truth Dataset
+
+The evaluation uses 70 synthetic delivery investigation cases.
+
+Each ground-truth record contains four fields:
+
+| Field | Purpose |
+|---|---|
+| `order_id` | Identifies the order associated with the investigation. |
+| `scenario_subtype` | Categorizes the specific delivery problem. |
+| `actual_scenario` | Describes what actually happened and establishes the underlying cause. |
+| `supporting_evidence` | Describes the relevant database records and information supporting the actual scenario. |
+
+The `actual_scenario` and `supporting_evidence` fields are the primary reference information for the LLM judge.
+
+Ground truth is intended to represent the expected investigation outcome accurately. Its quality is important because the judge relies on it when assessing the agent's conclusions.
+
+## 5. Evaluation Criteria
+
+The evaluation uses two binary criteria.
+
+### 5.1 Cause Correctness (`cause_correct`)
+
+Determines whether the agent correctly identifies the underlying cause of the delivery problem.
 
 - **Ground truth:** `actual_scenario`
 - **Agent output:** `investigation_report`
 
-The judge compares the agent's investigation report against the actual scenario recorded in the ground truth.
+The judge compares the investigation report against the actual scenario.
 
-The evaluation focuses on whether the report correctly explains what happened and identifies the underlying cause of the delivery issue.
+The assessment focuses on whether the report correctly explains what happened and identifies the underlying cause. Different wording is acceptable as long as the explanation is semantically correct.
 
-Different wording is acceptable as long as the explanation is semantically correct.
+### 5.2 Evidence Consistency (`evidence_consistency_correct`)
 
-### 2.2 Evidence Identification Correctness (`evidence_identification_correct`)
+Determines whether the claims and reasoning in the investigation report are adequately supported by the evidence identified by the agent.
 
-Determines whether the agent identifies the essential supporting evidence expected for the investigation.
+- **Agent output:** `evidences` and `investigation_report`
 
-- **Ground truth:** `supporting_evidence`
-- **Agent output:** `evidences`
+The judge evaluates three aspects:
 
-The judge compares the evidence identified by the agent against the ground-truth supporting evidence.
+1. **Evidence support:** Important claims in the report must be supported by the identified evidence.
+2. **Logical reasoning:** The explanation and causal reasoning must follow logically from the available evidence.
+3. **No contradictions:** The report must not introduce important claims that contradict its identified evidence.
 
-The evaluation focuses on whether the agent identifies the important records that establish the actual scenario.
+The report does not need to explicitly mention every evidence item. Its important claims and conclusions must, however, be grounded in the evidence.
 
-The following principles apply:
+## 6. Evaluation Philosophy and Scoring
 
-1. **Essential evidence:** The agent is not required to identify every evidence item in the ground truth. It must identify the essential records needed to establish the actual scenario. Missing supplementary or incidental records should not automatically result in failure.
-2. **Semantic matching:** Evidence descriptions do not need to match the ground truth word for word. Different wording is acceptable when they refer to the same underlying record and information.
-3. **Relevance:** Merely identifying records related to the order or delivery issue is insufficient. The identified evidence must correspond to the important facts established by the ground truth.
+The evaluation prioritizes the agent's actual purpose rather than treating every aspect of an investigation as equally important.
 
-### 2.3 Evidence Consistency Correctness (`evidence_consistency_correct`)
+Identifying the correct cause is the primary responsibility of the Investigation Agent. Evidence consistency is also important because a correct conclusion should be supported by reliable information and logical reasoning.
 
-Determines whether the agent appropriately uses the evidence it identified to support the claims and reasoning in its investigation report.
-
-- **Agent output:** `evidences`, `investigation_report`
-
-The judge evaluates whether the important factual claims and reasoning in the investigation report are supported by the evidence identified by the agent.
-
-The following principles apply:
-
-1. **Evidence support:** Important claims in the report should be supported by the identified evidence.
-2. **Logical reasoning:** The explanation and causal reasoning should follow logically from the identified evidence.
-3. **No contradictions:** The report should not introduce important claims that contradict the identified evidence.
-
-The report does not need to explicitly quote or mention every evidence item. Its important claims and reasoning must, however, be grounded in the identified evidence.
-
-**Important distinction:** Evidence consistency does not evaluate whether the final conclusion matches the actual scenario. That responsibility belongs to `cause_correct`, which compares the investigation report against `actual_scenario`.
-
-This separation allows the evaluator to distinguish between identifying the correct evidence, reasoning appropriately from that evidence, and reaching the correct final conclusion.
-
-## 3. Ground-Truth Dataset
-
-The evaluation uses an existing dataset of 70 synthetic delivery investigation cases.
-
-Each case contains the following ground-truth fields relevant to this evaluation:
-
-| Field | Description |
-|---|---|
-| `actual_scenario` | Describes what actually happened in the delivery investigation. |
-| `supporting_evidence` | Identifies the evidence expected to support the investigation. |
-
-### Dataset Considerations
-
-- The existing 70 cases are used rather than generating another dataset.
-- Cases are designed to represent different delivery investigation scenarios.
-- Agent development relies on general instructions and reasoning principles rather than case-specific prompt optimization.
-- The dataset provides a practical benchmark for evaluating the agent against known scenarios.
-- Since the dataset is synthetic, its results alone do not establish real-world generalization.
-
-Future evaluations can expand the dataset with verified historical operational cases and additional custom test scenarios.
-
-## 4. LLM-as-a-Judge
-
-An LLM judge evaluates each investigation by comparing the relevant ground-truth information against the agent's outputs.
-
-The judge returns:
-
-- `cause_correct`
-- `evidence_identification_correct`
-- `evidence_consistency_correct`
-- `judge_reasoning`
-
-### Evaluation Principles
-
-1. **Semantic evaluation:** Judge the meaning and correctness of the outputs rather than requiring exact wording.
-2. **Evidence-based evaluation:** Base judgments on the provided ground truth and agent outputs.
-3. **Independent evaluation:** Evaluate each criterion according to its defined responsibility without duplicating other criteria.
-4. **No unsupported assumptions:** Do not assume information that is not present in the provided data.
-5. **Consistency:** Apply the same evaluation standards across all cases.
-
-The judge instructions should focus on general evaluation principles rather than case-specific rules.
-
-## 5. Judge Calibration
-
-Before evaluating the remaining cases, the judge is calibrated using 15 selected cases from the existing dataset.
-
-### Calibration Process
-
-1. Select 15 cases from the 70 available cases.
-2. Manually establish the correct evaluation results for all three criteria.
-3. Run the LLM judge on the same cases.
-4. Compare the judge's results against the manual judgments.
-5. Review disagreements and improve the judge's instructions or evaluation criteria when necessary.
-
-### Agreement Rate
-
-The agreement rate measures how often the judge's evaluations match the manual judgments.
-
-**Formula:**
-
-Agreement Rate = (Matching Judgments / Total Judgments) × 100
-
-The initial calibration target is at least 90% agreement across the evaluation criteria.
-
-Calibration validates the judge's ability to apply the evaluation standards consistently. It should not be used to make the judge agree with particular agent outputs regardless of correctness.
-
-Calibration should be repeated after significant changes to the judge's instructions or evaluation methodology.
-
-## 6. Evaluation Output and Scoring
-
-Each investigation receives a weighted score based on its three evaluation criteria.
-
-### Evaluation Weights
+### 6.1 Evaluation Weights
 
 | Criterion | Weight |
 |---|---:|
-| Cause correctness | 60% |
-| Evidence identification correctness | 20% |
-| Evidence consistency correctness | 20% |
+| Cause correctness | 80% |
+| Evidence consistency | 20% |
 | **Total** | **100%** |
 
-Cause correctness receives the highest weight because identifying the actual cause of the delivery issue is the primary responsibility of the Investigation Agent. The two evidence criteria assess whether the investigation identifies the essential supporting records and reasons reliably from them.
+Cause correctness receives the higher weight because reaching the correct conclusion is the agent's primary objective.
 
-### Scoring Method
+Evidence consistency evaluates the reliability of the explanation supporting that conclusion.
 
-Each criterion is binary:
+### 6.2 Scoring Method
+
+Both criteria are binary:
 
 - `True`: The criterion receives its full assigned weight.
 - `False`: The criterion receives zero points.
 
-**Formula:**
+**Overall score formula:**
 
-Overall Score = (Cause Correct × 60) + (Evidence Identification Correct × 20) + (Evidence Consistency Correct × 20)
+`Overall Score = (cause_correct × 80) + (evidence_consistency_correct × 20)`
 
-The score is calculated in Python rather than by the LLM judge.
+The score is calculated programmatically rather than by the LLM judge.
 
-### Individual Investigation Pass Threshold
+### 6.3 Individual Investigation Pass Threshold
 
 An investigation passes when its overall score is at least 80%.
 
-With the 60/20/20 weighting, an investigation with an incorrect cause can score at most 40%, even if both evidence criteria pass. This reflects the primary importance of reaching the correct conclusion.
+| Cause Correct | Evidence Consistency | Score | Result |
+|---|---|---:|---|
+| True | True | 100 | Pass |
+| True | False | 80 | Pass |
+| False | True | 20 | Fail |
+| False | False | 0 | Fail |
 
-The evaluation output includes:
+This ensures that an investigation cannot pass if it identifies the wrong underlying cause, regardless of its evidence consistency.
 
-- Individual criterion results.
-- `judge_reasoning`
-- `overall_score`
-- `overall_passed`
+## 7. Judge Calibration
 
-## 7. Overall Agent Evaluation
+The LLM judge must be calibrated to ensure that it applies the evaluation criteria consistently.
 
-After reserving 15 cases for judge calibration, the remaining 55 cases are used for agent evaluation.
+Calibration is performed separately from the 70-case evaluation dataset.
 
-### Overall Pass Criteria
+For the final methodology, **15 independently generated mock investigation cases** are used. These cases are not selected from the evaluation dataset.
 
-The agent passes the overall evaluation when at least 90% of the 55 evaluation cases pass individually.
+### 7.1 Calibration Process
 
-**Formula:**
+1. Generate 15 mock investigation cases.
+2. Establish the expected evaluation judgments manually.
+3. Run the LLM judge against the calibration cases.
+4. Compare the judge's results with the manual judgments.
+5. Review disagreements and adjust the judge instructions when necessary.
 
-Overall Pass Rate = (Passed Investigations / Total Evaluation Cases) × 100
+### 7.2 Calibration Results
 
-At least 50 out of 55 investigations must pass.
+The final calibration achieved **100% alignment** with the manual judgments.
 
-| Passed Investigations | Pass Rate | Overall Result |
-|---:|---:|---|
-| 49/55 | 89.09% | Fail |
-| 50/55 | 90.91% | Pass |
-| 51/55 | 92.73% | Pass |
-| 55/55 | 100% | Pass |
+This indicates that the judge correctly applied both evaluation criteria across the calibration cases.
 
-This provides one clear aggregate acceptance threshold while preserving individual results for identifying weaknesses in the agent.
+Calibration should be repeated after significant changes to the judge's instructions or evaluation methodology.
 
-## 8. Evaluation Integrity and Future Improvements
+## 8. Important Evaluation Considerations
 
-To maintain the reliability of the evaluation:
+### Ground-Truth Reliability
 
-- Ground-truth labels must represent the actual intended scenario and must not be modified to accommodate agent results.
-- Evaluation criteria and weights should remain fixed during a formal evaluation.
-- Agent improvements should focus on general reasoning principles and responsibilities rather than case-specific prompt instructions.
-- Judge calibration should be repeated after significant changes to its instructions or methodology.
-- Evaluation results should be retained to compare different versions of the agent.
+The ground truth is the reference against which the agent is evaluated. Incomplete or inaccurate ground-truth records can lead to incorrect judgments.
 
-### Future Improvements
+Therefore, ground-truth records must accurately represent the expected scenario and include the relevant supporting information.
 
-Potential improvements include:
+### Semantic Evaluation
 
-- Expanding the dataset with verified real-world investigation cases.
-- Adding more edge cases and previously unseen scenarios.
-- Reviewing disagreements between manual judgments and the LLM judge.
-- Improving evaluation criteria and methodology as new limitations are identified.
+The judge should assess the meaning and correctness of the investigation rather than requiring exact wording.
 
-## 9. Final Evaluation Standards
+An agent may explain the same underlying cause differently from the ground truth and should still receive credit when its reasoning is correct.
 
-| Component | Standard |
-|---|---|
-| Evaluation scope | Investigation Agent only |
-| Evaluation method | LLM-as-a-Judge |
-| Ground-truth dataset | 70 synthetic cases |
-| Judge calibration | 15 cases |
-| Agent evaluation | 55 cases |
-| Evaluation criteria | Cause correctness, evidence identification, evidence consistency |
-| Cause weight | 60% |
-| Evidence identification weight | 20% |
-| Evidence consistency weight | 20% |
-| Individual investigation pass threshold | 80% |
-| Judge calibration target | 90% agreement |
-| Overall agent pass threshold | 90% |
-| Minimum passed investigations | 50 out of 55 |
+### Evidence Retrieved Through Tools
 
-### Final Objective
+The Investigation Agent can retrieve additional information through tools during an investigation.
 
-Establish a consistent and measurable evaluation process that determines whether the Investigation Agent can correctly identify delivery issues, identify essential supporting evidence, and produce a reliable investigation report whose conclusions and reasoning are grounded in that evidence.
+The judge should assess the actual evidence and information used by the agent, rather than penalizing it simply because the information was retrieved through a tool call.
+
+The evaluation should distinguish between the method used to obtain information and whether that information supports the investigation.
+
+### Independent Criterion Assessment
+
+Each criterion should be assessed according to its own definition.
+
+Cause correctness concerns whether the agent reached the correct conclusion. Evidence consistency concerns whether the report's claims and reasoning are supported by the evidence identified by the agent.
+
+This keeps the evaluation focused on the two distinct responsibilities being assessed.
+
+## 9. Conclusion
+
+The evaluation methodology is designed to provide a focused assessment of the Delivery Investigator Agent's quality and reliability.
+
+It separates agent execution from evaluation, uses ground-truth records as the reference for judging investigation outcomes, and applies two weighted criteria to assess correctness and evidence-based reasoning.
+
+The LLM judge is calibrated against independently generated cases and manually established judgments to improve consistency.
+
+Ultimately, the evaluation aims to answer two questions:
+
+1. Did the agent correctly identify the underlying cause of the delivery problem?
+2. Is its investigation report supported by the evidence it presents?
+
+These questions reflect the core responsibilities of the Investigation Agent and provide the basis for assessing its reliability.
