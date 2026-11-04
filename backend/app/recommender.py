@@ -201,7 +201,7 @@ class Recommender(Logger):
 
 if __name__ == "__main__":
     from uuid import uuid4
-    from database.repos import insert_starting_execution, insert_upfront_data
+    from database.repos import insert_starting_execution
 
     session_id = str(uuid4())
     customer_id = "CUST-189053"
