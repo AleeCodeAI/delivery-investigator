@@ -23,7 +23,7 @@ def save_data(data, path):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False, default=str)
 
-async def run_agent_evals():
+async def run_agent():
     agent = InvestigationAgent()
     input_data = load_data(inputdata_path)
     agent_results = []
@@ -81,4 +81,4 @@ async def run_agent_evals():
 if __name__ == "__main__":
     import asyncio
 
-    asyncio.run(run_agent_evals())
+    asyncio.run(run_agent())
