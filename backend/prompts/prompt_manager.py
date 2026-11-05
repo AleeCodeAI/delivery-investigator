@@ -59,6 +59,15 @@ class PromptManager:
             label=label
         )
 
+    def get_recommender_evals_system_prompt(self, label: str = "latest"):
+        """
+        Retrieve the recommender evals system prompt from langfuse
+        """
+        return self._langfuse.get_prompt(
+            name="RECOMMENDER_EVALS_SYSTEM_PROMPT",
+            label=label
+        )
+
 
 if __name__ == "__main__":
     prompt_manager = PromptManager()
