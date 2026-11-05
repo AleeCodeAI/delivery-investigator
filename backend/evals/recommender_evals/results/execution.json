@@ -1,0 +1,554 @@
+[
+    {
+        "case_id": "ORD-189001",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it advises waiting and re‑checking after 2 business days for a delayed shipment, does not offer a refund or replacement, does not give a delivery date absent carrier data, and only relays the carrier’s recorded exception. All four cited evidences are verbatim statements from the company policy and accurately justify the advised action, so the evidence both exists and supports the recommendation."
+    },
+    {
+        "case_id": "ORD-189002",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation to open a carrier trace request and defer any refund or replacement follows the company policy that mandates a trace request after 5+ business days without tracking updates and prohibits compensation until 10 days. No policy is violated, so the recommendation is correct. Both cited evidences exist verbatim in the policy, but only the first directly supports the action. The second evidence about waiting 2 business days pertains to a different scenario and does not justify a carrier trace request, making the set of citations not fully consistent with the recommendation. Hence evidence consistency is false."
+    },
+    {
+        "case_id": "ORD-189003",
+        "recommendation_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 0,
+        "overall_passed": false,
+        "judge_reasoning": "The policy states that a carrier trace request should be made when tracking is unchanged for 5+ business days, which the recommendation follows. However, escalation to a senior operator is only required when specific conditions apply, such as the shipment being more than 7 days past its ship date (or other listed triggers). The case provides no evidence that the shipment exceeds 7 days since shipping, so escalating is not justified and violates the policy. The cited evidence does exist in the policy, but the escalation rule is misapplied because its condition is not met, so the evidence does not support the recommended escalation. Hence both the recommendation and the evidence usage are incorrect."
+    },
+    {
+        "case_id": "ORD-189004",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it informs the customer the parcel is still in transit, cites the recorded delay, and commits to re‑checking tracking after two business days without offering a refund, replacement, or delivery date, exactly as required by the relevant policy bullets. All three cited evidences are verbatim statements from the company policy and directly justify the advised waiting period, low‑effort approach, and prohibition on providing a delivery date. Hence both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189005",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy directs that when tracking shows no update for 5+ business days a carrier trace request should be opened and compensation should be deferred, and that while a shipment is still in transit the agent should wait and re‑check after 2 business days without offering refund or replacement. The recommendation to open a carrier trace request and not offer compensation follows these rules, so it is correct. Both cited policy excerpts appear verbatim in the company policy and directly justify the suggested action, so the evidence is consistent with the recommendation."
+    },
+    {
+        "case_id": "ORD-189006",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy by advising the customer to wait and recheck tracking in about 2 business days, not offering a refund or replacement, and stating no delivery date can be given without carrier confirmation. This aligns with the policy bullets that prioritize the lowest‑effort step and specifically instruct waiting while the shipment is still moving. The cited evidences are exact excerpts from the company policy and directly justify the advised action, so they both exist and correctly support the recommendation."
+    },
+    {
+        "case_id": "ORD-189007",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy by informing the customer of the delay, avoiding any estimated delivery date, and committing to monitor the shipment and recheck tracking after 2 business days, which is the lowest‑effort step and does not suggest refund or replacement. Both cited policy statements are present verbatim in the company policy and directly support the advised waiting approach, so the evidence is accurate and relevant."
+    },
+    {
+        "case_id": "ORD-189008",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it advises the customer to wait and re‑check tracking in two business days while the parcel is still in transit, and it does not suggest a refund, replacement, or carrier inquiry, matching the policy bullets that require the lowest‑effort step and a wait‑and‑recheck approach for moving shipments with delays. Both cited evidences are verbatim statements from the company policy and directly support the advised action, confirming that the evidence exists and is correctly applied."
+    },
+    {
+        "case_id": "ORD-189009",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed delivery reason, confirms the address, offers redelivery or pickup, advises the shipment is still in transit, and suggests re‑checking tracking after two business days without proposing refund, replacement, or reshipment. All cited policy statements are present verbatim in the company policy and directly support each part of the recommendation. Hence both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189010",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed delivery attempt reason, asks the customer to confirm the address, offers redelivery/hold options, initiates a carrier trace after >5 days without update, and avoids refund or replacement. All cited policy bullets exist verbatim in the company policy and directly justify each action taken. Therefore both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189011",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it shares the failed delivery attempt reason, offers redelivery/hold options, confirms the address, and advises waiting and rechecking tracking in two business days without suggesting refund or replacement, matching the \"failed delivery attempt\" and \"while shipment is moving\" rules and the lowest‑effort approach. All three cited evidences are verbatim excerpts from the company policy and directly justify the recommended actions, so the evidence is both existent and supportive."
+    },
+    {
+        "case_id": "ORD-189012",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed delivery reason, asks the customer to confirm the address and preferred next step, and promises to re‑check tracking in two business days, which aligns with the \"failed delivery attempt\" rule, the lowest‑effort preference, and the 2‑day waiting rule. All three cited policy statements are verbatim excerpts from the company policy and accurately describe the rules they reference, directly supporting the recommended actions. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189013",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it reports the failed delivery attempt, shares the carrier's reason, asks the customer to confirm the address and choose redelivery/pick‑up, and advises waiting and rechecking tracking after two business days without suggesting refund or replacement. Both cited policy statements are present verbatim in the company policy and directly justify the recommended actions. Hence both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189014",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it shares the failed delivery reason, offers redelivery/pick‑up options, asks the customer to confirm the address, and advises waiting and re‑checking tracking in two business days, with no refund or replacement suggested. All three cited evidences are verbatim statements from the company policy and directly justify each part of the recommendation. Therefore both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189015",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly states that cases with two or more failed delivery attempts must be escalated to a senior operator, and that when a failed attempt is recorded the carrier’s reason and redelivery/pickup options should be shared while confirming the address before any reshipment. The recommendation follows both rules: it escalates because of two failed attempts, shares the carrier’s reasons, asks the customer to confirm the address and choose the next step, and does not promise refund or replacement. The two cited evidence excerpts match the wording in the policy and directly support the actions taken, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189016",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it escalates because there are two failed delivery attempts, which the policy explicitly lists as an escalation trigger, and it advises sharing carrier reasons, confirming the address, and discussing redelivery/pickup before any reshipment, matching the failed‑attempt handling rule. Both cited policy excerpts are present in the company policy and directly support the recommended actions. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189017",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it asks the customer to verify the drop location, shares the carrier‑recorded delivery date, then opens a carrier inquiry and waits 48 hours before considering compensation. All required steps and wording (no implied delivery date beyond the record, no accusation of dishonesty) match the policy. Both cited evidences are verbatim policy statements and directly justify each step of the recommendation, so the evidence is accurate and relevant."
+    },
+    {
+        "case_id": "ORD-189018",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it first asks the customer to verify the delivery location, then opens a carrier inquiry, and only considers compensation after 48 hours of no resolution, matching the policy's lowest‑effort approach. All three cited evidences are verbatim statements from the company policy and directly support each step of the recommendation, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189019",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it asks the customer to check the delivery location and then opens a carrier inquiry, matching the rule for parcels marked delivered but not received and adhering to the lowest‑effort approach with no refund or replacement. All cited policy statements exist in the company policy. However, the evidence about \"If tracking has not updated for 5 business days or more, recommend a carrier trace request\" does not pertain to the current case (the parcel is marked delivered, not stalled), so it does not directly support the recommended action. Including this irrelevant rule makes the evidence consistency inaccurate."
+    },
+    {
+        "case_id": "ORD-189020",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it informs the customer of the carrier‑recorded delivery, asks them to check typical delivery spots and neighbors, then opens a carrier inquiry, and defers any compensation until 48 hours after the inquiry if the parcel remains missing. This aligns with the policy rule for delivered‑but‑not‑received parcels and the guidance to avoid refunds or replacements until the issue is resolved. All three cited evidences are verbatim statements from the company policy and directly support the steps taken in the recommendation. Hence both the recommendation and its supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189021",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: for a parcel marked delivered but not received, the policy directs the agent to have the customer check the delivery location and then open a carrier inquiry, without offering compensation. The suggested action matches this rule, so it is correct. All three cited evidences exist in the policy and are quoted accurately. However, the second evidence about a 5‑day tracking silence pertains to a different condition (no tracking update for 5+ days) and does not directly justify the immediate request to check the location and open an inquiry. Because not all cited evidence genuinely supports the specific recommendation, the evidence consistency is not met."
+    },
+    {
+        "case_id": "ORD-189022",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it asks the customer to check the mailroom, neighbors, etc., then opens a carrier inquiry and defers compensation until 48 hours after confirmed checks. This aligns with the policy’s lowest‑effort approach and compensation timing. All four cited evidences are verbatim statements from the company policy and directly support each step of the recommendation, so the evidence is both existent and correctly applied."
+    },
+    {
+        "case_id": "ORD-189023",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it asks the customer to check the mailroom, building management, neighbors, then opens a carrier inquiry, and does not suggest compensation. This matches the policy bullet that prescribes exactly those steps. All three cited evidences are verbatim excerpts from the company policy and directly support the recommended actions, so the evidence is both existent and correctly applied. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189024",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it asks the customer to verify the delivery location, then opens a carrier inquiry, and only considers compensation after 48 hours of continued missing status. This aligns with the policy’s lowest‑effort approach and compensation timing. All three cited evidence statements are verbatim excerpts from the company policy and directly support each step of the recommendation, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189025",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly instructs to open a carrier trace request when tracking is unchanged for 5+ business days and to avoid refunds or replacements at this stage. The recommendation follows this rule exactly, so it is correct. Both cited evidences are verbatim excerpts from the policy and accurately describe the required action and the preference for low‑effort steps, which directly support the recommendation. Hence the evidence is consistent."
+    },
+    {
+        "case_id": "ORD-189026",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly instructs to open a carrier trace request when tracking is unchanged for five business days and to avoid labeling the parcel lost or offering compensation. The recommender’s action matches this rule, so the recommendation is correct. The cited evidence is verbatim from the policy and directly supports the advised action, confirming evidence consistency."
+    },
+    {
+        "case_id": "ORD-189027",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it uses the lowest‑effort step (wait and re‑check), does not promise a delivery date, and only shares the recorded pickup status, matching the rule to wait 2 business days while the shipment is still moving. All three cited evidence statements are verbatim excerpts from the company policy and directly justify the advised action, so the evidence is both existent and correctly applied."
+    },
+    {
+        "case_id": "ORD-189028",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly instructs to request a carrier trace when tracking shows no update for five or more business days and to avoid compensation until ten days without a new event. The recommendation follows this rule by opening a carrier trace inquiry, providing no delivery date, and not offering compensation, thus complying with the policy. Both cited evidences are verbatim statements from the policy and directly justify the recommended action, so the evidence is accurate and relevant."
+    },
+    {
+        "case_id": "ORD-189029",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it reports only the recorded event, states no known cause, and advises the customer to wait and re‑check tracking in 2 business days, which is the lowest‑effort step and avoids refunds or replacements. All three cited policy excerpts are verbatim in the company policy and directly justify the advised wait, low‑effort approach, and transparent communication, so the evidence is both present and relevant."
+    },
+    {
+        "case_id": "ORD-189030",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation to open a carrier trace request and refrain from refund or replacement follows the policy rule that when tracking has not updated for 5 business days or more, a trace request is required and compensation is not considered. The policy also forbids offering refunds while the shipment is still moving, which the recommendation respects. Both cited evidences are verbatim statements from the company policy and accurately reflect the rules; the first directly justifies the trace request, and the second supports the decision not to offer a refund or replacement. Hence the recommendation complies with policy and the evidence is correctly cited and relevant."
+    },
+    {
+        "case_id": "ORD-189031",
+        "recommendation_correct": false,
+        "evidence_consistency_correct": false,
+        "overall_score": 0,
+        "overall_passed": false,
+        "judge_reasoning": "The policy permits a carrier trace request only after 5 business days without a tracking update and escalation to a senior operator only when specific triggers (e.g., shipment >7 days past ship date) apply. The recommendation escalates and requests a trace without showing that either condition is satisfied, so it does not clearly comply with the policy. Both cited policy statements exist verbatim in the company policy, but they are conditional; the recommendation presents the actions as unconditional, so the evidence does not adequately justify the suggested steps. Hence both criteria are evaluated as incorrect."
+    },
+    {
+        "case_id": "ORD-189032",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy by advising the customer to wait and re‑check tracking after two business days, not offering a refund or replacement, and stating that a carrier trace will be opened after five days of no updates. This matches the policy rules about low‑effort steps, no delivery date without carrier data, and the 5‑day trace trigger. The cited evidences are verbatim excerpts from the policy and directly support each part of the recommendation, so they both exist and are accurately applied."
+    },
+    {
+        "case_id": "ORD-189033",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed‑attempt reason, asks the customer to check the delivery location as required when a parcel is marked delivered but not received, and opens a carrier inquiry only if the item remains missing, without suggesting refund or replacement. All four cited policy statements are present verbatim in the company policy and accurately reflect the actions taken, so the evidence correctly supports the recommendation."
+    },
+    {
+        "case_id": "ORD-189034",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed delivery attempts, asks the customer to verify the delivery location and address, and proposes opening a carrier inquiry if the parcel remains missing, without offering refund or replacement. This aligns with the rules for failed attempts and for parcels marked delivered but not received. All three cited evidences are verbatim statements from the company policy and directly support the actions taken in the recommendation. Hence both the recommendation and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189035",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: for a parcel marked delivered but not received it tells the customer to check the delivery location, household, neighbours or building management and then open a carrier inquiry, without offering refund or replacement. This matches the policy rule that this is the correct low‑effort step before any compensation. All three cited evidences are verbatim statements from the policy and each accurately reflects the rule they quote. The first evidence directly backs the recommended steps, while the second and third reinforce the need to confirm address and use the lowest‑effort action. Hence the recommendation is policy‑compliant and the evidence is correct and relevant."
+    },
+    {
+        "case_id": "ORD-189036",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a parcel marked delivered but not received: it asks the customer to check the delivery location and then open a carrier inquiry, and only mentions compensation after 48 hours of continued loss, matching the relevant policy bullet. All three cited evidences are verbatim statements from the company policy and directly support the recommended steps, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189037",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed‑delivery reason, asks the customer to verify the delivery location, and escalates to a carrier inquiry without offering refund or replacement, matching the rules for failed attempts and delivered‑but‑not‑received parcels. All cited policy statements are present in the company policy and accurately reflect the guidance, directly supporting the recommended actions. Hence both the recommendation and the evidence are correct."
+    },
+    {
+        "case_id": "ORD-189038",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed‑attempt reason, notes the carrier’s delivery record, asks the customer to check the delivery location and neighbors, and then opens a carrier inquiry without offering refund or replacement, matching the relevant policy bullets. All four cited evidences are verbatim statements from the company policy and directly justify each step of the recommendation, so the evidence is both existent and supportive. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189039",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed‑delivery reason, asks the customer to check the mailroom as the lowest‑effort step, and only escalates to a carrier inquiry without offering refund or replacement. All four cited policy statements are present in the company policy and are accurately quoted, directly supporting the advised actions. Hence both the recommendation and the evidence are consistent with the policy."
+    },
+    {
+        "case_id": "ORD-189040",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it shares the failed‑delivery reason, asks the customer to verify the delivered parcel’s location, and only opens a carrier inquiry without offering refund, replacement, or reshipment. This matches the rules for failed attempts and for parcels marked delivered but not received. Both cited policy statements appear verbatim in the company policy and directly support the actions taken in the recommendation. Hence both the recommendation and the evidence are correct."
+    },
+    {
+        "case_id": "ORD-189041",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it treats the address as correct because it was valid on the order date, asks the customer to confirm the intended destination, and offers carrier hold/correct/redirect options for an undelivered parcel, matching the relevant policy rules. The cited evidences are verbatim excerpts from the policy and accurately support the recommendation. No policy violations are present."
+    },
+    {
+        "case_id": "ORD-189043",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it treats the historically valid address as correct, asks the customer to confirm receipt, contacts the carrier for status or a trace, and avoids any compensation or reshipment, matching the low‑effort steps required. The cited evidences are verbatim policy statements—one confirming that a valid‑on‑order address is correct, the other that an address mismatch requires customer confirmation—both of which exist in the policy and directly support the recommended actions. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189044",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it asks the customer to confirm the address (address‑mismatch rule), treats the old address as a historical one (historical‑address rule), then waits and rechecks tracking after 2 business days (moving‑shipment rule) and avoids any refund or replacement, which aligns with the lowest‑effort preference. All four cited evidences are verbatim statements from the company policy and directly justify each step of the recommendation. Hence both the action and the supporting evidence are correct."
+    },
+    {
+        "case_id": "ORD-189045",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: the address is unrecognized, so the case must be escalated for human review, the customer should be asked to confirm the intended address, and, if the parcel is still in transit, the carrier should be asked to hold, correct, or redirect it. All three cited policy statements are verbatim in the company policy and accurately describe the required actions, directly supporting the recommendation. No policy is violated or omitted."
+    },
+    {
+        "case_id": "ORD-189046",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it asks the customer to confirm the intended address (address‑mismatch rule), instructs them to check the delivery location and then open a carrier inquiry (delivered‑but‑not‑received rule), and does not suggest refund or replacement (no compensation until conclusive). All cited policy statements are present verbatim in the company policy and are accurately quoted, and each directly supports the steps taken in the recommendation. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189047",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it treats the address as valid on the order date, asks the customer to confirm the intended destination (address‑mismatch rule), and uses the lowest‑effort step before any compensation. No refund or replacement is suggested, matching the policy’s guidance for inconclusive cases. All three cited evidences are verbatim statements from the company policy and directly justify the actions taken, so the evidence is both present and relevant."
+    },
+    {
+        "case_id": "ORD-189048",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy: it acknowledges the carrier‑recorded delivery date, asks the customer to check the delivery location as required for a delivered‑but‑not‑received case, and defers compensation until after a 48‑hour period, matching the lowest‑effort approach. All four cited policy statements are verbatim excerpts from the company policy and directly justify the steps taken, so the evidence both exists and supports the recommendation."
+    },
+    {
+        "case_id": "ORD-189049",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it treats the address mismatch as a non‑error, asks the customer to confirm the intended address, and proposes carrier hold/correct/redirect actions before any compensation, matching the \"lowest‑effort\" guidance. All four cited evidences are verbatim statements from the company policy and directly justify each step of the recommendation, so the evidence both exists and supports the advised actions."
+    },
+    {
+        "case_id": "ORD-189050",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy by using the lowest‑effort action—checking with the carrier and the customer—before any compensation, and it correctly treats the address as valid on the order date, as stipulated. Both cited policy statements are present verbatim in the company policy and directly justify the suggested actions. Hence the recommendation is compliant and the evidence accurately supports it."
+    },
+    {
+        "case_id": "ORD-189051",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation to escalate to a human reviewer and request address confirmation follows the policy rules that require human review for unrecognized destinations, treat address mismatches as non‑errors pending customer confirmation, and confirm historical or unrecognized addresses before any further action. No compensation or assumption of error is made, complying with the policy. All three cited evidences are verbatim statements from the company policy and directly justify the recommended steps, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189052",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: unrecognized destination triggers human review, confirms address with customer, and suggests carrier hold/correct/redirect if not delivered, while avoiding compensation. All three cited evidences are verbatim statements from the company policy and directly support each step of the recommendation. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189053",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it confirms the historically valid address with the customer, checks carrier tracking, and requests a hold or address correction, while avoiding refund or replacement. This aligns with the rules on address mismatches, historical addresses, low‑effort steps, and carrier holds. All four cited evidences are verbatim statements from the company policy and directly justify each part of the recommendation, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189054",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it treats the address mismatch as non‑error, asks the customer to confirm the intended address, escalates to human review (required for unrecognized destinations), and avoids any refund/replacement while the finding is inconclusive. All cited policy excerpts are present verbatim in the company policy and directly justify the recommended actions, so the evidence both exists and supports the recommendation."
+    },
+    {
+        "case_id": "ORD-189055",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: the destination is unrecognized, so the policy mandates sending the case for human review and asking the customer to confirm the address, while avoiding any refund, replacement, or reshipment until the address is verified. All four cited policy statements are present verbatim in the company policy and directly support the recommended actions, confirming both the correctness of the recommendation and the appropriateness of the evidence used."
+    },
+    {
+        "case_id": "ORD-189056",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly directs that when a pre‑pickup stall has a recorded internal reason such as `quality_hold`, the agent should contact the warehouse for status and tell the customer the order is delayed without promising a delivery date, and avoid any compensation. The recommendation follows this rule, uses the lowest‑effort step before compensation, and only shares what the records indicate. All three cited evidences are verbatim rules from the policy and correctly justify the suggested warehouse contact and the communication approach. Hence both the recommendation and the supporting evidence are consistent with the policy."
+    },
+    {
+        "case_id": "ORD-189057",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation to contact the warehouse for an update, inform the customer of a processing delay, and refrain from providing a delivery date aligns with the policy rule that when a pre‑pickup stall has an internal explanation, the warehouse should be contacted and the customer told of the delay without promising a date. It also follows the policy to use the lowest‑effort step before any compensation and to never give a delivery date without carrier confirmation. All three cited evidences are verbatim statements from the company policy and directly justify the recommended actions, so the evidence is both present and correctly applied."
+    },
+    {
+        "case_id": "ORD-189058",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it contacts the warehouse because there is no carrier pickup explanation (policy rule for stalls before pickup), uses a low‑effort step before any compensation, and avoids giving a delivery date or offering compensation, matching the relevant guidelines. Both cited evidences are verbatim rules from the policy and directly justify the suggested action, so the evidence is accurate and supportive."
+    },
+    {
+        "case_id": "ORD-189059",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it acknowledges the stall at label‑created, notes no internal explanation, and contacts the fulfilling warehouse, which is exactly what the rule for a pre‑pickup stall without an explanation requires. It also avoids giving a delivery date and does not suggest compensation, complying with the low‑effort step rule. Both cited evidences are verbatim excerpts from the policy and directly justify the actions taken, so the evidence is accurate and supportive."
+    },
+    {
+        "case_id": "ORD-189060",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it acknowledges the label_created status, notes the lack of a recorded reason, contacts the warehouse as required for stalls with no explanation, avoids giving a delivery date, and does not suggest refund or replacement. The cited evidences exactly match two policy rules—one about stalls with no explanation and one about preferring the lowest‑effort step—so they exist and are correctly applied. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189061",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly states that when a pre‑pickup stall has a recorded internal explanation such as `quality_hold`, the agent should contact the warehouse, explain the delay without promising a delivery date, and provide updates when available. The recommendation follows this rule exactly. It also follows the “lowest‑effort step” guideline by contacting the warehouse before any compensation is considered. Both cited evidences are present verbatim in the policy and accurately support the recommended action."
+    },
+    {
+        "case_id": "ORD-189062",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy states that when a pre‑pickup stall has an internal explanation (e.g., quality_hold), the agent should contact the warehouse for status and expected release and inform the customer of a processing delay without promising a delivery date. The recommendation does exactly that—contacting the fulfillment warehouse about the allocation failure/backorder, requesting a release date, and telling the customer the order is delayed due to an internal inventory issue with no promised date—so it complies with the policy. The only evidence cited is the verbatim policy rule that covers this situation, which both exists in the policy and directly supports the recommended action. Hence both criteria are satisfied."
+    },
+    {
+        "case_id": "ORD-189063",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it acknowledges a pre‑pickup stall with an internal explanation (inventory count discrepancy), contacts the warehouse for an update, avoids promising a delivery date, and does not suggest compensation, matching the relevant policy rules. However, the cited evidence includes a rule for stalls with *no* recorded explanation, which does not apply to this case, making the evidence citation inaccurate. The second cited rule about preferring the lowest‑effort step is relevant, but the inclusion of the unrelated rule means the evidence set does not consistently support the recommendation."
+    },
+    {
+        "case_id": "ORD-189064",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly instructs to ask the fulfilling warehouse directly when there is no recorded explanation for a pre‑pickup stall, and to prefer the lowest‑effort step (checking with carrier or warehouse) before any compensation. The recommendation follows these rules by contacting the warehouse, informing the customer of the lack of carrier pickup record, and withholding compensation or a delivery date. Both cited policy statements are present verbatim in the company policy and directly justify the recommended action, so the evidence is accurate and supportive."
+    },
+    {
+        "case_id": "ORD-189065",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy rule that when a pre‑pickup stall has a recorded internal explanation such as `quality_hold`, the agent must contact the warehouse, inform the customer of a processing delay, and avoid promising a delivery date. It also respects the lowest‑effort principle by choosing a warehouse check rather than compensation. Both cited evidences are verbatim policy statements and directly justify the chosen action, so the evidence is accurate and supportive."
+    },
+    {
+        "case_id": "ORD-189066",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a pre‑pickup stall with no recorded explanation: it tells the customer there is no carrier pickup information and contacts the fulfilling warehouse directly, which is the prescribed low‑effort step before any compensation. Both cited policy statements are present verbatim in the company policy and directly justify the actions taken. Hence the recommendation complies with policy and the evidence is accurate and relevant."
+    },
+    {
+        "case_id": "ORD-189067",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy rule for a pre‑pickup stall with a recorded internal explanation (quality_hold): it contacts the warehouse, informs the customer of a delay, and does not promise a delivery date. It also respects the lowest‑effort step guideline and does not suggest compensation. Both cited evidences are verbatim statements from the company policy and directly support the recommended action, so the evidence is accurate and relevant."
+    },
+    {
+        "case_id": "ORD-189068",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": true,
+        "overall_score": 100,
+        "overall_passed": true,
+        "judge_reasoning": "The policy explicitly instructs to ask the fulfilling warehouse when there is a pre‑pickup stall with no recorded explanation, and to prefer the lowest‑effort step before any compensation. The recommendation follows these rules: it contacts the warehouse, informs the customer of the label_created status, avoids promising a delivery date, and does not suggest compensation. Both cited policy statements are present in the company policy and accurately support the action taken. Hence the recommendation complies with policy and the evidence is correctly referenced."
+    },
+    {
+        "case_id": "ORD-189069",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows policy: it acknowledges the inventory allocation shortfall (a pre‑pickup stall with an internal explanation), contacts the warehouse for an update, avoids giving a delivery date, and does not suggest compensation, matching the relevant policy clauses. However, the cited evidence includes the rule for stalls with *no* recorded explanation, which does not apply to this case; the correct rule is the one for stalls with a recorded internal explanation. The second cited rule about preferring low‑effort steps does support the action, but the first citation is inaccurate, so the evidence is not fully consistent with the recommendation."
+    },
+    {
+        "case_id": "ORD-189070",
+        "recommendation_correct": true,
+        "evidence_consistency_correct": false,
+        "overall_score": 80,
+        "overall_passed": true,
+        "judge_reasoning": "The recommendation follows the policy for a stall before carrier pickup with a recorded internal explanation: it contacts the warehouse, provides no delivery date, and avoids compensation, which is correct. However, the cited evidence includes a rule for stalls with *no* recorded explanation, which does not apply here, and the recommendation does not follow that rule. The second cited rule about preferring the lowest‑effort step is accurate, but because one cited rule is misapplied, the evidence consistency is incorrect."
+    }
+]
