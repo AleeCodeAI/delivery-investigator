@@ -19,3 +19,4 @@ from .input_schema import InputDataSchema
 
 "================================ EVALS SCHEMAS ================================"
 from .evals_schemas.agent_evals_schema import AgentEvalsResult
+from .evals_schemas.recommender_evals_schema import RecommenderEvalsResult
