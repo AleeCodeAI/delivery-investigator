@@ -1,0 +1,673 @@
+[
+    {
+        "order_id": "ORD-189001",
+        "recommendation": "Inform the customer that the latest carrier update shows a delivery exception due to severe weather and the shipment is currently marked as delayed. Since the parcel is still in transit, advise them to wait and that we will re‑check the tracking status in 2 business days. Let them know we cannot provide a new delivery date until the carrier updates the record.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Never give or imply a delivery date unless the carrier record contains one.",
+            "Tell the customer only what the records show."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189002",
+        "recommendation": "Open a carrier trace request for the shipment and let the customer know we are contacting the carrier for an update and will follow up once we have more information. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189003",
+        "recommendation": "Escalate this case to a senior operator. The shipment was delayed due to a road closure on 2026-10-10 and there have been no tracking updates for well over 5 business days, so a carrier trace request should be initiated by senior support. Inform the customer that the issue is being escalated and that we will contact the carrier for a trace and update them as soon as possible.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "Escalate to a senior operator when any of these apply: the shipment is more than 7 days past its ship date."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189004",
+        "recommendation": "Tell the customer that the shipment is still in transit. Explain that a carrier vehicle breakdown on 2026‑10‑07 caused a delay, but the latest scan on 2026‑10‑09 shows it is still moving. Advise that we will re‑check the tracking in two business days and update them then. Do not provide a delivery date or offer a refund/replacement at this time.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Never give or imply a delivery date unless the carrier record contains one."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189005",
+        "recommendation": "Open a carrier trace request to get an updated status on the delayed parcel and let the customer know we are contacting the carrier for more information; ask them to wait for the carrier’s response. Do not offer a refund, replacement, or other compensation at this stage.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189006",
+        "recommendation": "Inform the customer that the last carrier scan was on 2026-10-10 after a weather‑related delay and the parcel is still in transit. Advise them to check the tracking again in about 2 business days; we will continue to monitor the shipment. Explain that we cannot provide a delivery date until the carrier updates the tracking, and no compensation or replacement is being offered at this time.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.92
+    },
+    {
+        "order_id": "ORD-189007",
+        "recommendation": "Inform the customer that the latest tracking update shows a delay caused by a carrier scanning and dispatch system outage at the San Diego delivery station. Since the shipment is still in transit, advise that we will monitor the tracking and follow up in 2 business days with any new information. Do not provide an estimated delivery date or offer a refund/replacement at this time.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189008",
+        "recommendation": "Tell the customer that the last tracking event (2026‑10‑07 19:48) shows the parcel still in transit in Los Angeles and was delayed by a bridge closure. Ask them to wait and re‑check the carrier’s tracking in two business days while we continue to monitor the shipment. No refund, replacement, or carrier inquiry is needed at this time.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189009",
+        "recommendation": "Inform the customer that the carrier attempted delivery on 2026-10-09 but the recipient was unavailable. Share the carrier’s reason, confirm the delivery address, and ask whether they would like a redelivery attempt or to pick up the parcel at the carrier’s facility. Advise them that the shipment is still in transit and to re‑check the tracking status in two business days. No refund, replacement, or reshipment is recommended at this time.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189010",
+        "recommendation": "Inform the customer that the carrier recorded an unsuccessful delivery attempt because they could not access the delivery location. Ask the customer to confirm the delivery address and let them know the carrier can arrange a redelivery or hold the package for pickup. Initiate a carrier trace/inquiry to get an updated status since there has been no tracking update for more than 5 business days. Follow up with the customer once we have the carrier’s response. No refund or replacement is recommended at this time.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189011",
+        "recommendation": "Inform the customer that WestLine Express attempted delivery on 2026-10-13 at 13:14 but the business was closed, so the parcel was not delivered. Ask the customer to confirm the delivery address and let us know if they would like the carrier to attempt redelivery, hold the package for pickup, or arrange another convenient time. Advise them that the shipment is still in transit and to check the tracking again in two business days for any update. No refund or replacement is recommended at this stage.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189012",
+        "recommendation": "Contact the customer and tell them the carrier attempted delivery on 2026-10-14 at 12:46 and reported the delivery entrance was inaccessible. Ask the customer to confirm the address and their preferred next step (e.g., schedule a redelivery, arrange pickup, or provide alternate access instructions). Let them know we will re‑check the tracking in two business days and will follow up accordingly.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189013",
+        "recommendation": "Inform the customer that the carrier attempted delivery on 2026-10-09 but the recipient was unavailable, and a second attempt is currently out for delivery (2026-10-10). Ask them to confirm the delivery address and let us know if they would like to arrange a redelivery or pick‑up option. Advise them to wait and re‑check the tracking after two business days, and we will follow up if there is still no update. No refund or replacement is recommended at this stage.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189014",
+        "recommendation": "Inform the customer that the carrier attempted delivery on 2026-10-11 but could not complete it because a signature was required and no adult was available. Let them know the package was placed out for delivery again on 2026-10-12 and is still in transit. Ask the customer to confirm the delivery address and to arrange for an adult to be present or to select a redelivery/pick‑up option with the carrier. Advise them to wait and re‑check the tracking status in two business days before taking any further action.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189015",
+        "recommendation": "Escalate this case to a senior operator because there have been two failed delivery attempts. Inform the customer that the carrier tried to deliver on 2026-10-08 and 2026-10-09 but could not access the location, share the carrier’s reasons, and ask the customer to confirm the delivery address and their preferred next step (e.g., schedule a new delivery, hold at the carrier facility, or arrange pickup). Do not promise a refund or replacement at this stage.",
+        "evidences": [
+            "Escalate to a senior operator when any of these apply: ... two or more delivery attempts have failed;",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189016",
+        "recommendation": "Escalate this case to a senior operator because there have been two failed delivery attempts. The senior operator should review the carrier’s reasons (business closed and unable to access location), confirm the delivery address with the customer, and discuss redelivery or pickup options before any reshipment is considered. No refund or replacement should be offered at this stage.",
+        "evidences": [
+            "Escalate to a senior operator when any of these apply: ... two or more delivery attempts have failed.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189017",
+        "recommendation": "Ask the customer to verify the delivery location – check the front door, porch, building management, or neighbors – and tell them the carrier records show the package was left at the door on 2026-08-26. After they’ve checked, open a carrier inquiry/trace with the carrier. Wait 48 hours; if the item is still missing then consider compensation.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189018",
+        "recommendation": "Ask the customer to double‑check the delivery location – look at the front door, any porch, building lobby, with household members, neighbors or building management – and let us know if the package is found. If it is still missing, open a carrier trace inquiry to investigate the \"left at front door\" delivery. Do not offer a refund or replacement at this stage; only consider compensation if the item remains unlocated 48 hours after the inquiry is opened.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189019",
+        "recommendation": "Ask the customer to double‑check the delivery location – look around the front door, porch, mailbox, building lobby, and ask any household members, neighbors or building management if they received the package. Once they confirm they still haven’t found it, open a carrier trace/inquiry to verify the delivery details. Let the customer know we’re initiating the carrier inquiry and will update them, but no refund or replacement will be offered at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189020",
+        "recommendation": "Tell the customer that the carrier’s records show the package was delivered and handed to a resident at the correct address on 2026‑09‑17 15:12. Ask them to check the usual delivery spots (porch, mailbox, building lobby), ask household members, neighbors or building management if anyone received it. After they’ve checked, open a carrier inquiry/trace to confirm who signed for or received the parcel. Do not offer a refund or replacement at this stage; only consider compensation if the item is still missing 48 hours after the inquiry is opened.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189021",
+        "recommendation": "Ask the customer to double‑check the delivery location – look around the porch, building lobby, with neighbors or building management – and let us know if the package is still missing. Then open a carrier trace/inquiry for the delivery since the tracking shows it was handed to a resident on 2026‑09‑22 but there’s no confirmation the intended recipient received it. We will keep you updated on the carrier’s response. No compensation is being considered at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "Prefer the lowest‑effort step that could resolve the issue before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189022",
+        "recommendation": "Contact the customer and ask them to verify whether the package was retrieved from the building mailroom. Suggest they check the mailroom, building management, household members, or neighbors as the carrier’s delivery note indicates it was left there. Once they have checked, open a carrier inquiry to trace the parcel. Do not offer a refund or replacement at this stage; compensation would only be considered if the item is still missing after 48 hours of confirmed checks.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Tell the customer only what the records show. If the cause is not established, say so plainly."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189023",
+        "recommendation": "Ask the customer to check the building mailroom, building management, neighbors or other household members for the package, then open a carrier inquiry with the carrier to confirm its whereabouts. Tell the customer we only have the carrier’s “left in mailroom” record and that we’ll follow up once we have more information.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189024",
+        "recommendation": "Ask the customer to verify the delivery location – check the doorstep, porch, mailbox, with household members, neighbors, building management or any safe‑place where the carrier might have left the package. After they’ve checked, open a carrier inquiry/trace request to investigate the delivered event. Tell the customer we’ll follow up and that compensation will only be considered if the item is still missing after 48 hours.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189025",
+        "recommendation": "Since the tracking has not been updated for more than 5 business days, open a carrier trace request to investigate the missing movement. Tell the customer that we are contacting the carrier for an update and will follow up as soon as we have more information. No refund or replacement should be offered at this stage.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189026",
+        "recommendation": "Contact the carrier to open a trace request for the shipment, explaining to the customer that the last tracking update was on 2026-09-30 and that we have not seen any further activity for over five business days. Tell the customer we are investigating with the carrier and will update them as soon as we have more information. Do not offer a refund, replacement, or declare the parcel lost at this time.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189027",
+        "recommendation": "Inform the customer that the last recorded status is that the package was picked up by SierraPost Logistics on 2026-09-26 and that there have been no further updates yet. Advise that we will re‑check the carrier’s tracking in two business days and update them then. Do not provide a delivery date or promise a resolution now.",
+        "evidences": [
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Tell the customer only what the records show. If the cause is not established, say so plainly."
+        ],
+        "confidence": 0.92
+    },
+    {
+        "order_id": "ORD-189028",
+        "recommendation": "Open a carrier trace inquiry with the carrier to locate the parcel and tell the customer that we are contacting the carrier for an update. Explain that the tracking has not changed for over 5 business days, so we need the carrier’s assistance, and that we will follow up once we have more information. Do not provide a delivery date or offer compensation at this stage.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189029",
+        "recommendation": "Inform the customer that the last recorded event is the package arriving at the carrier’s regional sorting facility in Stockton, CA on 2026‑09‑18 and that no further updates are currently available. Advise them to wait and re‑check the tracking in 2 business days; we will continue to monitor the shipment and follow up if there is still no movement. Make clear that we have no identified cause for the delay at this time.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Tell the customer only what the records show. If the cause is not established, say so plainly."
+        ],
+        "confidence": 0.9
+    },
+    {
+        "order_id": "ORD-189030",
+        "recommendation": "Open a carrier trace request with the carrier to locate the parcel and let the customer know that the last tracking update was on 2026-09-14 17:18 UTC. Explain that we are investigating the missing updates and will update them as soon as we have more information. Do not offer a refund, replacement, or declare the parcel lost at this stage.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189031",
+        "recommendation": "Escalate this case to a senior operator and have them open a carrier trace request with the carrier. Tell the customer that the last tracking update was on 2026-09-09 and we are now investigating the delay; we will update them as soon as we have new information.",
+        "evidences": [
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request.",
+            "Escalate to a senior operator when ... the shipment is more than 7 days past its ship date."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189032",
+        "recommendation": "Inform the customer that the last tracking event shows the carrier picked up the package on 2026-09-01 and there have been no further updates. Since the shipment is still in transit, advise them to wait and re‑check the tracking in two business days. Explain that we cannot provide a delivery date and that if there is still no update after five business days we will open a carrier trace request. No refund or replacement is recommended at this stage.",
+        "evidences": [
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "If tracking has not updated for 5 business days or more, recommend a carrier trace request. Do not call the parcel lost, and do not consider compensation until 10 business days without a new event."
+        ],
+        "confidence": 0.9
+    },
+    {
+        "order_id": "ORD-189033",
+        "recommendation": "Tell the customer that the carrier records show a delivery attempt at 13:20 was unsuccessful because the business was closed, and that a second attempt later the same day at 17:45 was marked as delivered. Ask them to check the delivery location (reception, front desk, mailroom, neighbors, etc.) and confirm whether they have received the package. If after checking they still cannot locate it, open a carrier inquiry on their behalf. No refund or replacement is recommended at this stage.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel.",
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189034",
+        "recommendation": "Contact the customer and tell them the carrier recorded a first failed delivery attempt (recipient unavailable) and a second attempt where the package was left at the front door. Ask the customer to check the front door, any porch, building lobby, neighbors or household members, and confirm the delivery address is correct. If after checking the parcel is still missing, open a carrier inquiry on their behalf. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189035",
+        "recommendation": "Ask the customer to check the delivery location (doorstep, porch, mailbox, building lobby, etc.), ask household members, neighbors, or building management if they received the package, and confirm the shipping address is correct. If after checking the parcel is still missing, open a carrier inquiry/tracing request. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189036",
+        "recommendation": "Ask the customer to verify the delivery location – the carrier record shows the package was delivered and left in the building mailroom. Have them check the mailroom, household members, neighbors or building management. After they’ve checked, open a carrier inquiry with the carrier. Explain that we’ll follow up and that compensation will only be considered if the parcel is still missing after 48 hours.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "Tell the customer only what the records show. If the cause is not established, say so plainly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.97
+    },
+    {
+        "order_id": "ORD-189037",
+        "recommendation": "Inform the customer that the carrier recorded a failed delivery attempt at 09:55 on 2026-09-14 because the recipient was unavailable, followed by a successful delivery at 11:30 the same day. Ask the customer to check the delivery location, ask household members, neighbors, or building management if anyone received the package. If after checking the parcel is still missing, open a carrier inquiry to investigate further. No refund or replacement should be offered at this stage.",
+        "evidences": [
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189038",
+        "recommendation": "Inform the customer that the carrier recorded a failed first attempt (entrance inaccessible) and a successful delivery later that day, left at the front door. Ask them to check the front door area, with household members, neighbors, or building management for the package. If they still cannot locate it, open a carrier inquiry on their behalf. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189039",
+        "recommendation": "Inform the customer that the carrier records show a failed delivery attempt because the business was closed, and that the package was later delivered and left in the building mailroom. Ask them to check the mailroom, building management/reception, or any other common drop‑off area and confirm whether they can locate the parcel. If after checking they still cannot find it, open a carrier inquiry/trace request. No refund or replacement is recommended at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189040",
+        "recommendation": "Inform the customer that the carrier recorded a failed delivery attempt at 15:40 (recipient unavailable) followed by a successful delivery at 19:05 to a resident at the address. Ask the customer to check the delivery location, ask household members, neighbors, or building management if anyone received the parcel. If after checking the package is still missing, open a carrier inquiry on their behalf. Do not offer a refund, replacement, or reshipment at this stage.",
+        "evidences": [
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "If a failed delivery attempt is recorded, share the carrier's reason and any redelivery or pickup option with the customer. Confirm the address and the customer's wishes before any reshipment."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189041",
+        "recommendation": "Contact the customer and explain that the delivery address used (4138 Pacific Hwy, Oakland, CA 94618) matches the address we have on file for them that was active on the order date, so it is considered correct for that order. Ask the customer to confirm that this was the intended destination, and if they now need the parcel sent to a different (new) address, let them know we can request the carrier to hold, correct, or redirect the shipment if it has not yet been delivered.",
+        "evidences": [
+            "If the destination was valid on the order date, treat it as correct for that order.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189043",
+        "recommendation": "Inform the customer that the order was shipped to the address that was on file at the time of purchase (7674 Maple Ave, Fresno, CA 93721), which was valid on 2026‑09‑30. Ask the customer to confirm whether the parcel was received at that historic address. Meanwhile, contact the carrier to obtain the current delivery status (or request a trace if there has been no recent tracking update) and let the customer know you are checking on it. No compensation or reshipment is suggested at this stage.",
+        "evidences": [
+            "If the destination was valid on the order date, treat it as correct for that order.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake."
+        ],
+        "confidence": 0.9
+    },
+    {
+        "order_id": "ORD-189044",
+        "recommendation": "Contact the customer and ask them to confirm the intended delivery address for order ORD-189044. Explain that the address on the order (5457 Market St, San Francisco) is an old address that was no longer active on the order date, and we need to verify whether it should be corrected or if the parcel should be redirected. After confirming, wait and re‑check the tracking status in 2 business days before taking any further action. No refund, replacement, or compensation should be offered at this stage.",
+        "evidences": [
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.",
+            "While a shipment is still moving, even with a recorded delay, recommend waiting and rechecking tracking after 2 business days. Do not recommend a refund or replacement.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.9
+    },
+    {
+        "order_id": "ORD-189045",
+        "recommendation": "Escalate this case for human review. The delivery address used (6355 Sutter St) was inactive at the order date and does not match the customer’s current address, so the destination is unrecognized. The operator should contact the customer to confirm the intended shipping address and, if the parcel is still in transit, request the carrier to hold, correct, or redirect the shipment as appropriate.",
+        "evidences": [
+            "If a destination is unrecognized, always send the case for human review before any other step.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189046",
+        "recommendation": "Contact the customer and explain that the order was shipped to their previous address (2509 Ocean Ave, Bakersfield), which was no longer their active address on the order date. Ask them to confirm the address they intended for delivery and whether they can retrieve the parcel from the Bakersfield mailroom or would like us to request the carrier to locate/redirect it. Instruct them to check the delivery location (mailroom, household members, neighbors) as the carrier recorded a delivery there, then open a carrier inquiry to trace the parcel. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen."
+        ],
+        "confidence": 0.92
+    },
+    {
+        "order_id": "ORD-189047",
+        "recommendation": "Contact the customer and explain that the delivery address on the order (1085 Market St, Oakland, CA 94618) was valid on the order date and matches their address history at that time. Ask the customer to confirm whether that was the intended destination for this order and whether they have received the package at that address. Based on their response, you can then check the tracking status or open a carrier inquiry if needed, but do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "If the destination was valid on the order date, treat it as correct for that order.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189048",
+        "recommendation": "Contact the customer and let them know that the carrier records show the order was delivered on 2026-09-13 to the address that was valid on the order date (1640 Grand Ave, San Francisco, CA 94122). Ask them to check the delivery location, household members, neighbors or building management to confirm receipt. If they still cannot locate the parcel after 48 hours, open a carrier inquiry. No compensation or reshipment is needed at this stage.",
+        "evidences": [
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Treat carrier delivery confirmation as evidence of what the carrier recorded, not proof the intended recipient received the parcel. Never suggest the customer is dishonest or that the item was stolen.",
+            "When a parcel is marked delivered but not received, have the customer check the delivery location, household, neighbors or building management as the confirmation type suggests, then open a carrier inquiry. Consider compensation only if it is still missing 48 hours later.",
+            "If the destination was valid on the order date, treat it as correct for that order."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189049",
+        "recommendation": "Contact the customer to confirm the intended delivery address, explaining that the address on the order (5749 Market St, Los Angeles) does not match their current address on file (3785 Vine St, Irvine) and was not a valid address for them at the order time. Ask which address they want the parcel sent to and, once confirmed, request the carrier to hold, correct, or redirect the shipment as needed. Do not offer compensation or a refund at this stage.",
+        "evidences": [
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "If a parcel with an address problem has not yet been delivered, ask the carrier to hold, correct or redirect it where possible."
+        ],
+        "confidence": 0.9
+    },
+    {
+        "order_id": "ORD-189050",
+        "recommendation": "Contact the carrier to obtain the current tracking status for order ORD-189050 and share that information with the customer. Explain that the delivery address (9227 Market St, San Diego, CA 92115) was correct on the order date, and the later address change does not affect this shipment. Ask the customer to confirm whether they have received the parcel at that address. No compensation or reshipment is needed at this stage.",
+        "evidences": [
+            "If the destination was valid on the order date, treat it as correct for that order.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189051",
+        "recommendation": "Escalate this case to a human reviewer (or senior operator) for further investigation. Request that the customer confirm the intended delivery address (including the correct ZIP code) before taking any carrier, warehouse, or reshipment actions. Do not assume an error or provide compensation until the address is verified.",
+        "evidences": [
+            "If a destination is unrecognized, always send the case for human review before any other step.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189052",
+        "recommendation": "Escalate this case for human review. The operator should contact the customer to confirm the intended delivery address, since the order address is unrecognized for this customer. Once the correct address is verified, the operator can request the carrier to hold, correct, or redirect the shipment if it has not yet been delivered. No compensation or reshipment should be offered at this stage.",
+        "evidences": [
+            "If a destination is unrecognized, always send the case for human review before any other step.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If a parcel with an address problem has not yet been delivered, ask the carrier to hold, correct or redirect it where possible."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189053",
+        "recommendation": "Contact the customer and explain that the order was shipped to a historically valid address (2568 Harbor Dr, Oakland) that was not their active address on the order date. Ask them to confirm whether that was the intended destination or if they would like the parcel redirected to their current address (3364 Pine St, Los Angeles). While awaiting their response, check the carrier’s tracking to see if the shipment is still in transit and, if possible, request a hold or address correction. Do not offer a refund or replacement at this stage.",
+        "evidences": [
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "If a parcel with an address problem has not yet been delivered, ask the carrier to hold, correct or redirect it where possible."
+        ],
+        "confidence": 0.92
+    },
+    {
+        "order_id": "ORD-189054",
+        "recommendation": "Escalate this case to a human reviewer. Tell the customer that the delivery address on the order (6101 Ocean Ave, Stockton, CA) does not match the address we have on file and that we need them to confirm which address should have been used. Ask the customer to verify the intended delivery address so we can correct or redirect the shipment if possible. No compensation or reshipment should be offered at this stage.",
+        "evidences": [
+            "\"An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.\"",
+            "\"If a destination is unrecognized, always send the case for human review before any other step.\"",
+            "\"Do not recommend a refund, replacement or reshipment when the finding is inconclusive. Recommend human review and name the one piece of information that would help most.\"",
+            "\"Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.\"",
+            "\"Tell the customer only what the records show. If the cause is not established, say so plainly.\""
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189055",
+        "recommendation": "Escalate this case for human review. Ask the customer to confirm the intended delivery address for order ORD-189055, because the address on the order (1888 Sutter St, Oakland, CA 94612) does not match any address in the customer's history. Do not proceed with any reshipment, refund, or other action until the correct address is verified.",
+        "evidences": [
+            "If a destination is unrecognized, always send the case for human review before any other step.",
+            "An address mismatch is not an error by itself. Ask the customer to confirm the intended address before assuming anyone made a mistake.",
+            "If the destination was valid on the order date, treat it as correct for that order. If it is a historical address or unrecognized, confirm the order with the customer.",
+            "Do not recommend a refund, replacement or reshipment when the finding is inconclusive. Recommend human review and name the one piece of information that would help most."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189056",
+        "recommendation": "Contact the fulfilling warehouse (WH-6) to request an update on the quality_hold for order ORD-189056 and the expected release date. Inform the customer that the shipment is currently delayed at the warehouse due to this internal hold and that we cannot provide a delivery date until it is cleared. Promise to update the customer once we have more information. No refund, replacement, or reshipment is recommended at this stage.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Tell the customer only what the records show. If the cause is not established, say so plainly."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189057",
+        "recommendation": "Contact the fulfilling warehouse (WH‑8) to get an update on the allocation failure and backorder status and ask for an expected release date. Tell the customer that the order is currently delayed in processing due to an internal inventory issue, that no carrier pickup has occurred yet, and that you cannot provide a delivery date at this time. Promise to follow up as soon as you have more information from the warehouse.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation.",
+            "Never give or imply a delivery date unless the carrier record contains one."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189058",
+        "recommendation": "Contact the fulfilling warehouse (WH‑8) to ask why the inventory count discrepancy occurred and why the parcel has not been handed to SierraPost for pickup. Tell the customer that we have only a label_created event, no carrier pickup record, and that the order is delayed while we get clarification from the warehouse. Do not provide a delivery date or offer compensation at this stage.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.92
+    },
+    {
+        "order_id": "ORD-189059",
+        "recommendation": "Inform the customer that the shipment is still at the \"label created\" stage and we have not seen a pickup attempt. Explain that there is currently no internal reason recorded for the delay and that we are contacting the fulfilling warehouse to understand the inventory shortfall and expected pickup. Tell the customer we will update them as soon as we have more information and do not provide a delivery date at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189060",
+        "recommendation": "Inform the customer that the parcel has only a label_created status and has not been handed to the carrier. Explain that there is no recorded reason for the delay, and that we will contact the fulfilling warehouse to determine why the inventory was reduced and the shipment was not picked up. Tell the customer we will update them as soon as we have a response. Do not provide a delivery date or offer a refund/replacement at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189061",
+        "recommendation": "Contact the warehouse (WH‑8) to ask about the status of the quality hold and the expected release date, then inform the customer that the order is delayed in processing due to an internal quality hold and that we have no carrier pickup scheduled yet. Explain that we cannot provide a delivery date until the hold is cleared, and that we will update them as soon as we have more information.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189062",
+        "recommendation": "Contact the fulfillment warehouse (WH‑6) to ask about the allocation failure and backorder status and request an expected release date. Tell the customer that the order is delayed in processing due to an internal inventory issue, and that you’ll update them when you have more information. Do not provide a delivery date or promise a shipment at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189063",
+        "recommendation": "Inform the customer that the order is currently stalled before carrier pickup due to an inventory count discrepancy, and we have no further details yet. Ask the fulfilling warehouse directly for an update on the status and expected release, and let the customer know we will follow up as soon as we have more information. Do not provide a delivery date or offer compensation at this stage.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189064",
+        "recommendation": "Contact the fulfilling warehouse (WH‑7) to ask why the inventory reservation was released and whether the parcel was handed to the carrier. Tell the customer that we have no record of a carrier pickup, so we are checking with the warehouse and will update them as soon as we have more information. No compensation or delivery date should be offered at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest‑effort step that could resolve the issue (check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.96
+    },
+    {
+        "order_id": "ORD-189065",
+        "recommendation": "Contact the fulfillment warehouse (WH-6) to ask about the quality‑hold on order ORD-189065 and when the items will be released for carrier pickup. Inform the customer that the shipment is delayed due to an internal quality hold, that you are checking with the warehouse, and that you will update them as soon as you have more information; do not promise a delivery date.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.94
+    },
+    {
+        "order_id": "ORD-189066",
+        "recommendation": "Inform the customer that the shipping label was created but the inventory reservation was released later and no carrier pickup was recorded. Explain that we have no further information on the shipment status. Contact the fulfilling warehouse directly to find out why the reservation was released and whether the package was ever handed to a carrier. Update the customer once we have a response.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189067",
+        "recommendation": "Reach out to the fulfillment warehouse (WH‑8) to get an update on the quality‑hold status and the expected release date for the items. Inform the customer that the order is delayed due to an internal quality hold, that we are working with the warehouse to resolve it, and that we cannot provide a firm delivery date at this time. Ask the customer to await further information and let them know we will follow up once we have an update.",
+        "evidences": [
+            "If a stall before carrier pickup has a recorded internal explanation (for example `quality_hold`), contact the warehouse about status and expected release, and tell the customer the order is delayed in processing without promising a date.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189068",
+        "recommendation": "Contact the fulfilling warehouse (WH‑5) to ask why the reservation was released and what the current status of the shipment is, since there is no carrier pickup event and no internal explanation. Tell the customer that the only record is a label_created event and that the reservation was released, meaning the order has not yet been handed to a carrier, and that you are checking with the warehouse for an update. Do not promise a delivery date or offer compensation at this stage.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.93
+    },
+    {
+        "order_id": "ORD-189069",
+        "recommendation": "Tell the customer that the order has not been handed to the carrier because an inventory allocation shortfall was recorded, and we are contacting the fulfilling warehouse to resolve the shortfall and obtain an updated shipping timeline. Ask the warehouse for the status and expected pickup date, and let the customer know we will update them as soon as we have more information. Do not provide a delivery date or offer compensation at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest‑effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    },
+    {
+        "order_id": "ORD-189070",
+        "recommendation": "Inform the customer that the shipment has not been picked up because we have an internal inventory shortfall and there is no carrier pickup record yet. Tell them we are contacting the fulfilling warehouse to resolve the inventory issue and will update them as soon as we have more information. Do not provide a delivery date or offer a refund/reship at this time.",
+        "evidences": [
+            "If a stall before carrier pickup has no recorded explanation, say so and ask the fulfilling warehouse directly.",
+            "Prefer the lowest-effort step that could resolve the issue (wait and recheck, check with the customer, check with the carrier or warehouse) before suggesting compensation."
+        ],
+        "confidence": 0.95
+    }
+]
