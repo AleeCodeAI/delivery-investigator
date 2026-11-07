@@ -7,13 +7,24 @@ from database.models import (
     Inventory,
     InventoryEvent,
     Warehouse,
-    Execution
+    Execution,
+    Profile
 )
+
+from database.models.users import auth_users
 from database.base import Base
 from database.engine import engine
 
+
 def create_tables():
-    Base.metadata.create_all(bind=engine)
+    tables = [
+        table
+        for table in Base.metadata.sorted_tables
+        if table.schema != "auth"
+    ]
+
+    Base.metadata.create_all(bind=engine, tables=tables)
+
 
 if __name__ == "__main__":
     create_tables()
