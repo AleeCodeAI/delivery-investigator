@@ -1,11 +1,12 @@
 from database.models import Execution 
 from sqlalchemy.orm import Session
 from database.engine import engine 
-from sqlalchemy import update
+from sqlalchemy import update, UUID
 
 
 def insert_starting_execution(
-                    execution_id: str, 
+                    execution_id: str,
+                    user_id: UUID, 
                     customer_id: str, 
                     order_id: str, 
                     investigation_prompt: str
@@ -26,6 +27,7 @@ def insert_starting_execution(
         try:
             new_execution = Execution(
                 execution_id=execution_id,
+                user_id=user_id,
                 customer_id=customer_id,
                 order_id=order_id,
                 investigation_prompt=investigation_prompt
