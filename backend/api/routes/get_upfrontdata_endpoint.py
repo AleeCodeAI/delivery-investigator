@@ -18,12 +18,12 @@ limiter = Limiter(key_func=get_remote_address)
         dependencies=[Depends(get_current_profile)]
         )
 @limiter.limit("50/minute")
-async def endpoint_get_history(
+async def endpoint_get_upfrontdata(
     request: Request, 
     input_data: InputDataSchema
     ):
     """
-    Retrieves all search history.
+    Retrieves the upfront data for a given customer and order.
     """
     try:
         data: UpfrontDataSchema = get_upfront_data(
@@ -38,9 +38,9 @@ async def endpoint_get_history(
             "result": data,
         }
 
-    except Exception as e:
-        logger.exception("Failed to get histories")
+    except Exception:
+        logger.exception("Failed to get upfront data")
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to get histories: {str(e)}",
+            detail="Failed to retrieve upfront data. Please try again later.",
         )
