@@ -56,6 +56,7 @@ class DatabaseSettings(BaseModel):
     """Database connection settings."""
 
     postgresql_url: str = Field(default_factory=lambda: os.getenv("POSTGRESQL_URL"))
+    supabase_url: str = Field(default_factory=lambda: os.getenv("SUPABASE_URL"))
 
 class AgentSettings(BaseModel):
     """Settings for Retrieval Agent"""
