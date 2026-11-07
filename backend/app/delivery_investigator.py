@@ -1,5 +1,5 @@
 import logging
-from uuid import uuid4
+from uuid import UUID, uuid4
 from typing import Optional
 
 from utils.color import Logger
@@ -61,7 +61,7 @@ class Investigator(Logger):
             self.log(f"Failed to initialize the Investigator: {str(e)}")
             raise
 
-    async def run(self, input_data: InputDataSchema) -> FinalResult:
+    async def run(self, input_data: InputDataSchema, user_id: UUID) -> FinalResult:
         """
         Executes the end-to-end investigation for a customer order.
 
@@ -73,6 +73,7 @@ class Investigator(Logger):
         Args:
             input_data (InputDataSchema): The customer ID, order ID and
                 investigation prompt describing what to investigate.
+            user_id (UUID): The unique identifier of the user initiating the investigation.
 
         Returns:
             FinalResult: A structured object containing the agent result and
@@ -89,6 +90,7 @@ class Investigator(Logger):
 
         insert_starting_execution(
             execution_id=session_id,
+            user_id=user_id,
             customer_id=input_data.customer_id,
             order_id=input_data.order_id,
             investigation_prompt=input_data.investigation_prompt
@@ -98,6 +100,7 @@ class Investigator(Logger):
             self.log(
                 f"Starting investigation \n"
                 f"[Session: {session_id}] \n"
+                f"[From User: {user_id}] \n"
                 f"[Customer: {input_data.customer_id}] \n"
                 f"[Order: {input_data.order_id}]"
             )
@@ -184,7 +187,10 @@ if __name__ == "__main__":
 
     try:
         result = asyncio.run(
-            investigator.run(input_data=input_data)
+            investigator.run(
+                input_data=input_data, 
+                user_id=UUID("2f4ba39a-abc7-482c-9481-df8a02c36c5d")
+                )
         )
         print(result.agent_result)
         print("---------------------")
