@@ -58,6 +58,7 @@ class DatabaseSettings(BaseModel):
     postgresql_url: str = Field(default_factory=lambda: os.getenv("POSTGRESQL_URL"))
     supabase_url: str = Field(default_factory=lambda: os.getenv("SUPABASE_URL"))
     supabase_publishable_key: str = Field(default_factory=lambda: os.getenv("SUPABASE_PUBLISHABLE_KEY"))
+    supabase_project_url: str = Field(default_factory=lambda: os.getenv("SUPABASE_PROJECT_URL"))
 
 class AgentSettings(BaseModel):
     """Settings for Retrieval Agent"""
