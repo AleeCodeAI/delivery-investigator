@@ -1,5 +1,4 @@
 import logging
-import os
 from functools import lru_cache
 from uuid import UUID
 
@@ -21,7 +20,7 @@ settings = get_settings()
 @lru_cache
 def get_supabase_client() -> Client:
     return create_client(
-        settings.database.supabase_url, 
+        settings.database.supabase_project_url, 
         settings.database.supabase_publishable_key
         )
 
