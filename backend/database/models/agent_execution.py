@@ -1,12 +1,15 @@
 from datetime import datetime
 from database.base import Base
 from sqlalchemy.orm import mapped_column, Mapped
-from sqlalchemy import ForeignKey, String, JSON, func, DateTime
+from sqlalchemy import ForeignKey, String, JSON, func, DateTime, UUID
 
 class Execution(Base):
     __tablename__ = "executions"
 
     execution_id: Mapped[str] = mapped_column(primary_key=True)
+    user_id: Mapped[UUID] = mapped_column(
+            ForeignKey("profiles.user_id")
+        )
     customer_id: Mapped[str] = mapped_column(
         String(20), ForeignKey("customers.customer_id")
     )
