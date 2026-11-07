@@ -23,7 +23,8 @@ class Profile(Base):
 
     role: Mapped[Literal["admin", "operator"]] = mapped_column(
         String(20),
-        default="operator"
+        default="operator",
+        server_default="operator"
     )
 
     created_at: Mapped[datetime] = mapped_column(
