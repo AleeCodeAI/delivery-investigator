@@ -1,11 +1,13 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 import logging
 
 from app.delivery_investigator import Investigator
-from schemas import InputDataSchema, FinalResult
+from schemas import InputDataSchema, FinalResult, ProfileSchema
+
+from api.dependencies import get_current_profile
 
 router = APIRouter(prefix="/master-pipeline", tags=["Master"])
 logger = logging.getLogger(__name__)
@@ -14,7 +16,11 @@ limiter = Limiter(key_func=get_remote_address)
 
 @router.post("/delivery-investigator-run")
 @limiter.limit("50/minute")
-async def endpoint_run_copilot(request: Request, input_data: InputDataSchema):
+async def endpoint_run_copilot(
+    request: Request, 
+    input_data: InputDataSchema,
+    profile: ProfileSchema = Depends(get_current_profile)
+    ):
     """
     Triggers the master pipeline executor.
     Runs the retrieval and synthesis pipeline and returns the structured output.
@@ -23,7 +29,8 @@ async def endpoint_run_copilot(request: Request, input_data: InputDataSchema):
         investigator = Investigator()
 
         result: FinalResult = await investigator.run(
-            input_data=input_data
+            input_data=input_data,
+            user_id=profile.user_id
         )
 
         # Pipeline successfully generated a result

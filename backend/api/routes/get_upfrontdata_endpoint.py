@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Request
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 import logging
@@ -6,14 +6,22 @@ import logging
 from app.get_upfront_data import get_upfront_data
 from schemas import UpfrontDataSchema, InputDataSchema
 
+from api.dependencies import get_current_profile
+
 router = APIRouter(prefix="/upfront_data", tags=["Upfront Data"])
 logger = logging.getLogger(__name__)
 limiter = Limiter(key_func=get_remote_address)
 
 
-@router.post("/get-upfront-data")
+@router.post(
+        "/get-upfront-data",
+        dependencies=[Depends(get_current_profile)]
+        )
 @limiter.limit("50/minute")
-async def endpoint_get_history(request: Request, input_data: InputDataSchema):
+async def endpoint_get_history(
+    request: Request, 
+    input_data: InputDataSchema
+    ):
     """
     Retrieves all search history.
     """
