@@ -16,14 +16,14 @@ limiter = Limiter(key_func=get_remote_address)
 
 @router.post("/delivery-investigator-run")
 @limiter.limit("50/minute")
-async def endpoint_run_copilot(
+async def endpoint_run_investigator(
     request: Request, 
     input_data: InputDataSchema,
     profile: ProfileSchema = Depends(get_current_profile)
     ):
     """
-    Triggers the master pipeline executor.
-    Runs the retrieval and synthesis pipeline and returns the structured output.
+    Triggers the master pipeline delivery investigator.
+    Runs the agent and recommender pipeline and returns the structured output.
     """
     try:
         investigator = Investigator()
@@ -57,10 +57,10 @@ async def endpoint_run_copilot(
             },
         )
 
-    except Exception as e:
-        logger.error(f"Failed to run executor: {e}")
+    except Exception:
+        logger.exception("Failed to run delivery investigator")
 
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to run executor: {str(e)}",
+            detail="The investigation could not be completed. Please try again later.",
         )
