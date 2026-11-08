@@ -10,6 +10,7 @@ from .retrieval_repos.get_inventory_events import get_inventory_events
 from .retrieval_repos.get_warehouse import get_warehouse
 
 from .retrieval_repos.get_profile import get_profile
+from .retrieval_repos.get_invitations import get_invitations
 
 "================================ INSERT REPOS ================================"
 from .insert_repos.insert_execution import (
