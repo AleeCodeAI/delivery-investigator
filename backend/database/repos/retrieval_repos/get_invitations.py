@@ -16,11 +16,9 @@ def get_invitations():
         statement = select(Invitation)
         invitation_rows = session.scalars(statement).all()
 
-        if not invitation_rows:
-            raise LookupError(
-                f"No invitations found"
-            )
-
+        if invitation_rows is None:
+            return []
+        
         invitations = [
             InvitationSchema(
                 access_key=row.access_key,
