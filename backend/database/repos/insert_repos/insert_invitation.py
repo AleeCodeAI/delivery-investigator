@@ -20,6 +20,7 @@ def insert_invitation(
             )
             session.add(invitation)
             session.commit()
+            return invitation.access_key
     except Exception as e:
         session.rollback()
         raise e
