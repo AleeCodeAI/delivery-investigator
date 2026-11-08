@@ -10,6 +10,7 @@ from .retrieval_repos_schemas.inventory_events_schema import InventoryEventSchem
 from .retrieval_repos_schemas.warehouse_schema import WarehouseSchema
 
 from .retrieval_repos_schemas.profile_schema import ProfileSchema
+from .retrieval_repos_schemas.invitation_schema import InvitationSchema
 
 "================================ OTHER SCHEMAS ================================"
 from .upfront_data_schema import UpfrontDataSchema
