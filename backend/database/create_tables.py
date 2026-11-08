@@ -8,7 +8,8 @@ from database.models import (
     InventoryEvent,
     Warehouse,
     Execution,
-    Profile
+    Profile,
+    Invitation
 )
 
 from database.models.users import auth_users

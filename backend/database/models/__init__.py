@@ -9,3 +9,4 @@ from .operational_records.warehouse import Warehouse
 
 from .agent_execution import Execution
 from .profile import Profile
+from .invitation import Invitation
