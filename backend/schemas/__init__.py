@@ -9,6 +9,7 @@ from .retrieval_repos_schemas.inventory_schema import InventorySchema
 from .retrieval_repos_schemas.inventory_events_schema import InventoryEventSchema
 from .retrieval_repos_schemas.warehouse_schema import WarehouseSchema
 
+from .retrieval_repos_schemas.execution_schema import ExecutionSchema
 from .retrieval_repos_schemas.profile_schema import ProfileSchema
 from .retrieval_repos_schemas.invitation_schema import InvitationSchema
 
