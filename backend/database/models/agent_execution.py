@@ -7,9 +7,10 @@ class Execution(Base):
     __tablename__ = "executions"
 
     execution_id: Mapped[str] = mapped_column(primary_key=True)
-    user_id: Mapped[UUID] = mapped_column(
-            ForeignKey("profiles.user_id")
-        )
+    user_id: Mapped[UUID | None] = mapped_column(
+        ForeignKey("profiles.user_id", ondelete="SET NULL"),
+        nullable=True
+    )
     customer_id: Mapped[str] = mapped_column(
         String(20), ForeignKey("customers.customer_id")
     )
