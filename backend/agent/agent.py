@@ -23,12 +23,11 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 class InvestigationAgent(Logger):
     """
-    Agent that investigates a shipment using upfront customer, order,
+    Agent that investigates an order using upfront customer, order,
     shipment and shipment event data.
     It runs a pydantic-ai agent backed by an OpenRouter model, equipped with
     the customer address history and fulfillment evidence tools, and returns
-    a structured AgentResult. Failures never propagate: a fallback result with
-    investigation_success=False is returned instead.
+    a structured AgentResult. Failures propagate for higher layer of the application to handle.
     """
 
     name: str = "Agent"
@@ -168,7 +167,7 @@ class InvestigationAgent(Logger):
             investigation_prompt: The prompt for the investigation.
             session_id: A unique identifier for the investigation session.
         Returns:
-            The agent's structured result, or a fallback result on failure.
+            The agent's structured result, or None on failure.
         """
         try:
             self.log(
@@ -204,7 +203,6 @@ class InvestigationAgent(Logger):
 
         except Exception as e:
             self.log(f"Agent failed or hit usage limits: {e}")
-            self.log("Returning fallback response.")
 
             self.obs.process_result(error=e)
             
