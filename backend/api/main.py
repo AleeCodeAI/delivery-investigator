@@ -12,6 +12,8 @@ from slowapi.errors import RateLimitExceeded
 
 from api.routes.delivery_investigator_endpoint import router as investigator_router
 from api.routes.get_upfrontdata_endpoint import router as get_upfront_data
+from api.routes.get_history_endpoint import router as get_history_router
+from api.routes.get_analytics_endpoint import router as get_execution_analytics
 
 logging.basicConfig(
     level=logging.INFO,
@@ -62,7 +64,8 @@ app.add_middleware(
 
 app.include_router(investigator_router)
 app.include_router(get_upfront_data)
-
+app.include_router(get_history_router)
+app.include_router(get_execution_analytics)
 # ---------------------------------------------------------------------------
 # Exception Handlers
 # ---------------------------------------------------------------------------
