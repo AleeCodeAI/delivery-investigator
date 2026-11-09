@@ -22,3 +22,4 @@ from .insert_repos.insert_execution import (
     mark_execution_success,
     mark_execution_failure
 )
+from .insert_repos.insert_invitation import insert_invitation
