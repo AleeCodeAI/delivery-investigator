@@ -65,3 +65,14 @@ def get_current_profile(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="No profile found for this user.",
         )
+
+
+async def require_admin(
+    profile: ProfileSchema = Depends(get_current_profile),
+) -> ProfileSchema:
+    if profile.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access required.",
+        )
+    return profile
