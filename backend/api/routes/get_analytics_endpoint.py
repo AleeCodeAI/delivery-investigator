@@ -8,7 +8,7 @@ from schemas import ProfileSchema
 
 from api.dependencies import require_admin
 
-router = APIRouter(prefix="/analytics", tags=["Analytics"])
+router = APIRouter(prefix="/admin", tags=["Analytics"])
 logger = logging.getLogger(__name__)
 limiter = Limiter(key_func=get_remote_address)
 
