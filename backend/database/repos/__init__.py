@@ -9,6 +9,7 @@ from .retrieval_repos.get_inventory import get_inventory
 from .retrieval_repos.get_inventory_events import get_inventory_events
 from .retrieval_repos.get_warehouse import get_warehouse
 
+from .retrieval_repos.get_executions import get_executions_by_user_id, get_all_executions
 from .retrieval_repos.get_profile import get_profile
 from .retrieval_repos.get_invitations import get_invitations
 
