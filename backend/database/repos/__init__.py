@@ -23,3 +23,9 @@ from .insert_repos.insert_execution import (
     mark_execution_failure
 )
 from .insert_repos.insert_invitation import insert_invitation
+
+"================================ DELETE REPOS ================================"
+from .delete_invitation import delete_invitation
+
+"================================ UPDATE REPOS ================================"
+from .update_role import update_role_to_admin
