@@ -20,6 +20,7 @@ from .investigation_agent_schema import AgentResult
 from .recommender_schema import RecommenderResult
 from .final_result import FinalResult
 from .input_schema import InputDataSchema
+from .delete_and_update_api_schema import DeleteData, UpdateData
 
 "================================ EVALS SCHEMAS ================================"
 from .evals_schemas.agent_evals_schema import AgentEvalsResult
