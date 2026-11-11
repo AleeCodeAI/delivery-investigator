@@ -36,6 +36,27 @@ def get_profile(user_id: UUID) -> ProfileSchema:
             created_at=profile_row.created_at,
         )
 
+def get_all_profiles() -> list[ProfileSchema]:
+    """
+    Retrieve every user's profile details.
+
+    Returns:
+        A list of ProfileSchema object containing the user's profile details.
+    """
+    with Session(engine) as session:
+        statement = select(Profile)
+        profile_rows = session.scalars(statement).all()
+
+        return [
+            ProfileSchema(
+                user_id=profile_row.user_id,
+                name=profile_row.name,
+                email=profile_row.email,
+                role=profile_row.role,
+                created_at=profile_row.created_at
+                )
+            for profile_row in profile_rows
+        ]
 
 if __name__ == "__main__":
     result = get_profile(user_id=UUID("2f4ba39a-abc7-482c-9481-df8a02c36c5d"))
