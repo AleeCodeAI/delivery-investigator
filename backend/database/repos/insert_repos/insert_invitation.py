@@ -12,8 +12,9 @@ def insert_invitation(
     The access key and creation timestamp are generated automatically.
     Raises an exception if the insertion fails.
     """
-    try:
-        with Session(engine) as session:
+    
+    with Session(engine) as session:
+        try:
             invitation = Invitation(
                 name=name,
                 email=email
@@ -21,6 +22,7 @@ def insert_invitation(
             session.add(invitation)
             session.commit()
             return invitation.access_key
-    except Exception as e:
-        session.rollback()
-        raise e
+        
+        except Exception as e:
+            session.rollback()
+            raise e
