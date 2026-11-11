@@ -20,9 +20,6 @@ def get_executions_by_user_id(user_id: UUID):
         stmt = select(Execution).where(Execution.user_id == user_id)
         execution_rows = session.execute(stmt).scalars().all()
 
-        if execution_rows is None:
-            return []
-        
         return [
             ExecutionSchema(
                 execution_id=execution.execution_id,
@@ -51,9 +48,6 @@ def get_all_executions():
     with Session(engine) as session:
         stmt = select(Execution)
         execution_rows = session.scalars(stmt).all()
-
-        if execution_rows is None:
-            return []
         
         return [
             ExecutionSchema(

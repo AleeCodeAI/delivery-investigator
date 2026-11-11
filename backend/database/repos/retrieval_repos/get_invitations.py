@@ -15,9 +15,6 @@ def get_invitations():
     with Session(engine) as session:
         statement = select(Invitation)
         invitation_rows = session.scalars(statement).all()
-
-        if invitation_rows is None:
-            return []
         
         invitations = [
             InvitationSchema(
