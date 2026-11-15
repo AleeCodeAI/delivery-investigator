@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from langfuse.decorators import observe
+from langfuse import observe
 from openai import OpenAI
 
 from configs.settings import get_settings
@@ -153,7 +153,7 @@ class Recommender(Logger):
         self.log("All LLM providers failed")
         raise last_error
 
-    @observe(name="Recommender_Execution")
+    @observe(name="Recommender_Execution", capture_input=False, capture_output=False)
     def recommend(self, session_id: str, agent_result: AgentResult) -> RecommenderResult:
         """
         Generate, store, and return a recommendation for an investigation result.
@@ -163,32 +163,30 @@ class Recommender(Logger):
             agent_result: Result of the delivery investigation.
 
         Returns:
-            The recommendation, or a zero-confidence fallback result if
-            anything fails.
+            The recommendation, or None if anything fails.
         """
         try:
-            self.obs.init_trace(
+            with self.obs.init_trace(
                 session_id=session_id,
                 investigation_report=agent_result.investigation_report,
-            )
+            ):
+                policies = self._load_company_policies()
 
-            policies = self._load_company_policies()
+                user_prompt = self._user_prompt(
+                    agent_result=agent_result,
+                    company_policy=policies,
+                )
 
-            user_prompt = self._user_prompt(
-                agent_result=agent_result,
-                company_policy=policies,
-            )
+                messages = self._make_messages(user_prompt=user_prompt)
 
-            messages = self._make_messages(user_prompt=user_prompt)
+                result: RecommenderResult = self._call_llm(messages=messages)
 
-            result: RecommenderResult = self._call_llm(messages=messages)
+                insert_recommender_result(
+                    execution_id=session_id,
+                    recommender_result=result.model_dump(mode="json"),
+                )
 
-            insert_recommender_result(
-                execution_id=session_id,
-                recommender_result=result.model_dump(mode="json"),
-            )
-
-            self.obs.process_result(result=result)
+                self.obs.process_result(result=result)
 
             return result
 
@@ -200,16 +198,18 @@ class Recommender(Logger):
 
 
 if __name__ == "__main__":
-    from uuid import uuid4
+    from uuid import uuid4, UUID
     from database.repos import insert_starting_execution
 
     session_id = str(uuid4())
+    user_id = UUID("user_id=user_id,")
     customer_id = "CUST-189053"
     order_id = "ORD-189053"
     investigation_prompt = "Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
 
     insert_starting_execution(
         execution_id=session_id,
+        user_id=user_id,
         customer_id=customer_id,
         order_id=order_id,
         investigation_prompt=investigation_prompt
@@ -220,15 +220,16 @@ if __name__ == "__main__":
             "Finding: The order's delivery address (2568 Harbor Dr, Oakland, CA 94609) differs from the customer's current address (3364 Pine St, Los Angeles, CA 90025). The delivery address matches a historical address that was in effect for the customer from 2024-12-28 until 2026-07-09, i.e., before the order date (2026-09-03). No records indicate why the older address was used for this order. \nNot found: No evidence explaining the reason for selecting the historical address (e.g., a customer change request, system fallback, or error). No evidence of carrier misdelivery or address correction after shipment."
         ),
         evidences=[
-            "[upfront] order ORD-189053, delivery address: 2568 Harbor Dr, Oakland, CA 94609", 
-            "[upfront] customer CUST-189053, current address: 3364 Pine St, Los Angeles, CA 90025", "[tool:customer_address_history_tool] address history ADDR-189067, effective 2024-12-28 to 2026-07-09: 2568 Harbor Dr, Oakland, CA 94609", 
+            "[upfront] order ORD-189053, delivery address: 2568 Harbor Dr, Oakland, CA 94609",
+            "[upfront] customer CUST-189053, current address: 3364 Pine St, Los Angeles, CA 90025", "[tool:customer_address_history_tool] address history ADDR-189067, effective 2024-12-28 to 2026-07-09: 2568 Harbor Dr, Oakland, CA 94609",
             "[tool:customer_address_history_tool] address history ADDR-189068, effective from 2026-07-10 onward: 3364 Pine St, Los Angeles, CA 90025"
         ],
         investigation_success=True,
         confidence=0.85,
     )
 
-    result = Recommender().recommend(
+    recommender = Recommender()
+    result = recommender.recommend(
         session_id=f"test-{session_id}",
         agent_result=case,
     )
@@ -236,3 +237,5 @@ if __name__ == "__main__":
     print(f"Recommendation: {result.recommendation}")
     print(f"Evidences: {result.evidences}")
     print(f"Confidence: {result.confidence}")
+
+    recommender.obs.flush()
