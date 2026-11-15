@@ -69,9 +69,9 @@ class AgentSettings(BaseModel):
 class LangfuseSettings(BaseModel):
     """Settings for Langfuse observability."""
 
-    secret_key: str = Field(default_factory=lambda: os.getenv("LANGFUSE_SECRET_KEY"))
-    public_key: str = Field(default_factory=lambda: os.getenv("LANGFUSE_PUBLIC_KEY"))
-    host: str = Field(default_factory=lambda: os.getenv("LANGFUSE_HOST"))
+    secret_key: str = Field(default_factory=lambda: os.getenv("LANGFUSE_SECRET_KEY_CLOUD"))
+    public_key: str = Field(default_factory=lambda: os.getenv("LANGFUSE_PUBLIC_KEY_CLOUD"))
+    host: str = Field(default_factory=lambda: os.getenv("LANGFUSE_HOST_CLOUD"))
 
 class Settings(BaseModel):
     """Main settings class combining all sub-settings."""

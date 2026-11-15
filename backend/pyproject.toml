@@ -7,7 +7,7 @@ requires-python = ">=3.14"
 dependencies = [
     "colorlog>=6.10.1",
     "fastapi>=0.139.0",
-    "langfuse>=2.0.0,<3.0.0",
+    "langfuse>=4,<5",
     "openai>=2.45.0",
     "pandas>=3.0.3",
     "psycopg[binary]>=3.3.6",
