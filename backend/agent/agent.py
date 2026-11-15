@@ -5,7 +5,7 @@ from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
 from pydantic import BaseModel
 
-from langfuse.decorators import langfuse_context, observe
+from langfuse import observe, get_client
 
 from configs.settings import get_settings
 from utils.color import Logger
@@ -109,7 +109,7 @@ class InvestigationAgent(Logger):
             f"{shipment_events}"
         )
 
-    @observe(as_type="generation", name="agent_generation")
+    @observe(as_type="generation", name="agent_generation", capture_output=False)
     async def _agent(self, user_input: str):
         """
         Run the underlying pydantic-ai agent with the formatted input.
@@ -134,7 +134,6 @@ class InvestigationAgent(Logger):
                 usage=usage,
                 output=result.output,
                 prompt=self.prompt
-
             )
 
             self.log(
@@ -147,21 +146,20 @@ class InvestigationAgent(Logger):
             return result
 
         except Exception as e:
-            langfuse_context.update_current_observation(level="ERROR", status_message=str(e))
+            get_client().update_current_generation(level="ERROR", status_message=str(e))
             self.log(f"Agent execution failed: {e}")
             raise
 
-    @observe()
+    @observe(name="InvestigationAgent_Execution", capture_input=False, capture_output=False)
     async def run(
-                self, 
-                upfront_data: UpfrontDataSchema, 
+                self,
+                upfront_data: UpfrontDataSchema,
                 investigation_prompt: str,
                 session_id: str
             ) -> AgentResult:
         """
         Run the investigation for the provided upfront data.
-        Never raises: on any failure or usage limit hit, a fallback
-        AgentResult with investigation_success=False is returned.
+        Never raises: on any failure or usage limit hit, None is returned.
         Args:
             upfront_data: Customer, order, shipment, and shipment event data.
             investigation_prompt: The prompt for the investigation.
@@ -174,20 +172,19 @@ class InvestigationAgent(Logger):
                 f"Starting agent execution for "
                 f"the customer: {upfront_data.customer.name}; Order ID: {upfront_data.order.order_id}"
             )
-            self.obs.init_agent_trace(
+
+            with self.obs.init_agent_trace(
                 session_id=session_id,
                 customer_id=upfront_data.customer.customer_id,
                 order_id=upfront_data.order.order_id,
                 investigation_prompt=investigation_prompt,
                 max_iterations=self.settings.agent.max_iterations
-                
-            )
+            ):
+                user_input = self._user_input(upfront_data, investigation_prompt)
+                result = await self._agent(user_input)
+                output: AgentResult = result.output
 
-            user_input = self._user_input(upfront_data, investigation_prompt)
-            result = await self._agent(user_input)
-            output: AgentResult = result.output
-
-            self.obs.process_result(result=output)
+                self.obs.process_result(result=output)
 
             insert_agent_result(
                 execution_id=session_id,
@@ -204,23 +201,26 @@ class InvestigationAgent(Logger):
         except Exception as e:
             self.log(f"Agent failed or hit usage limits: {e}")
 
-            self.obs.process_result(error=e)
-            
+            self.obs.process_failure(e)
+
             return None
+
 
 if __name__ == "__main__":
     from app.get_upfront_data import get_upfront_data
     import asyncio
-    from uuid import uuid4
+    from uuid import uuid4, UUID
     from database.repos import insert_starting_execution, insert_upfront_data
 
     session_id = str(uuid4())
+    user_id = UUID("973f8de7-6c70-48c3-add4-75640c3ce828")
     customer_id = "CUST-189053"
     order_id = "ORD-189053"
     investigation_prompt = "Investigate order ORD-189053. The delivery destination differs from the customer's current address. Determine what the records establish about the discrepancy."
 
     insert_starting_execution(
         execution_id=session_id,
+        user_id=user_id,
         customer_id=customer_id,
         order_id=order_id,
         investigation_prompt=investigation_prompt
@@ -233,7 +233,7 @@ if __name__ == "__main__":
         execution_id=session_id,
         upfront_data=upfrontdata.model_dump(mode="json")
     )
-    
+
     agent = InvestigationAgent()
     result = asyncio.run(
             agent.run(
@@ -243,3 +243,5 @@ if __name__ == "__main__":
             )
         )
     print(result)
+
+    agent.obs.flush()

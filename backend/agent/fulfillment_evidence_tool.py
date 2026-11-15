@@ -1,5 +1,5 @@
 import logging
-from langfuse.decorators import observe
+from langfuse import observe
 
 from database.repos import get_inventory_events, get_inventory
 from schemas import InventoryEventSchema, InventorySchema, FulfillmentEvidenceToolSchema

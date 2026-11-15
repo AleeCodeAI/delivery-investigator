@@ -1,5 +1,5 @@
 import logging
-from langfuse.decorators import observe
+from langfuse import observe
 
 from database.repos import get_customer_address_history
 from schemas import CustomerAddressHistorySchema
