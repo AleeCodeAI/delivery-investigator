@@ -5,9 +5,7 @@ from slowapi.util import get_remote_address
 import logging
 
 from database.repos import check_invitation
-from schemas import CheckData, ProfileSchema
-
-from api.dependencies import require_admin
+from schemas import CheckData
 
 router = APIRouter(prefix="/check", tags=["Invitation"])
 logger = logging.getLogger(__name__)
@@ -18,8 +16,7 @@ limiter = Limiter(key_func=get_remote_address)
 @limiter.limit("100/minute")
 async def endpoint_check_invitation(
     request: Request, 
-    data: CheckData,
-    profile: ProfileSchema = Depends(require_admin)
+    data: CheckData
     ):
     """
     Endpoint that checks an invitation of a user
