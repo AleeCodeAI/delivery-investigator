@@ -21,6 +21,7 @@ def get_invitations():
                 access_key=row.access_key,
                 name=row.name,
                 email=row.email,
+                status=row.status,
                 created_at=row.created_at
             )
             for row in invitation_rows

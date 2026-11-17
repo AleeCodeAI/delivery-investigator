@@ -13,6 +13,9 @@ class InvitationSchema(BaseModel):
     email: str = Field(
         description="The email address of the person being invited."
     )
+    status: bool = Field(
+        description="The status of access token whether used to make an account"
+    )
     created_at: datetime = Field(
         description="The timestamp when the invitation was created."
     )
