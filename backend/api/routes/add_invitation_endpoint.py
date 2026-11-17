@@ -5,7 +5,7 @@ from slowapi.util import get_remote_address
 import logging
 
 from database.repos import insert_invitation
-from schemas import ProfileSchema
+from schemas import ProfileSchema, InsertInvitationData
 
 from api.dependencies import require_admin
 
@@ -18,8 +18,7 @@ limiter = Limiter(key_func=get_remote_address)
 @limiter.limit("50/minute")
 async def endpoint_insert_invitation(
     request: Request, 
-    name: str,
-    email: str,
+    insert_data: InsertInvitationData,
     profile: ProfileSchema = Depends(require_admin)
     ):
     """
@@ -28,8 +27,8 @@ async def endpoint_insert_invitation(
     """
     try:
         access_key = insert_invitation(
-            name=name,
-            email=email
+            name=insert_data.name,
+            email=insert_data.email
         )
 
         logger.info("Invitation Insertion completed")
