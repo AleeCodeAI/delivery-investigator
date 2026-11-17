@@ -10,3 +10,7 @@ class DeleteData(BaseModel):
 class UpdateData(BaseModel):
     user_id: UUID
     email: str
+
+class CheckData(BaseModel):
+    access_key: UUID
+    email: str
