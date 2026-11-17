@@ -1,11 +1,13 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 import logging
 
 from database.repos import update_role_to_admin
-from schemas import UpdateData
+from schemas import UpdateData, ProfileSchema
+
+from api.dependencies import require_admin
 
 router = APIRouter(prefix="/admin", tags=["Profile Role"])
 logger = logging.getLogger(__name__)
@@ -14,7 +16,11 @@ limiter = Limiter(key_func=get_remote_address)
 
 @router.post("/update-role/")
 @limiter.limit("100/minute")
-async def endpoint_update_role(request: Request, data: UpdateData):
+async def endpoint_update_role(
+    request: Request, 
+    data: UpdateData,
+    profile: ProfileSchema = Depends(require_admin)
+    ):
     """
     Endpint that updates a user's role to admin
     """
