@@ -29,3 +29,6 @@ from .delete_invitation import delete_invitation
 
 "================================ UPDATE REPOS ================================"
 from .update_role import update_role_to_admin
+
+"================================ UPDATE REPOS ================================"
+from .check_invitation import check_invitation
