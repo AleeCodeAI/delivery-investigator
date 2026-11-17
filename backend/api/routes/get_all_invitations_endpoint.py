@@ -29,7 +29,7 @@ async def endpoint_get_invitations(
 
         return {
             "status": "success",
-            "number_of_histories": len(invitations),
+            "number_of_invitations": len(invitations),
             "result": invitations,
         }
 
