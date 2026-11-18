@@ -20,6 +20,7 @@ from api.routes.update_role_endpoint import router as update_role
 from api.routes.get_all_invitations_endpoint import router as get_invitations
 from api.routes.check_invitation_endpoint import router as check_invitation
 from api.routes.get_all_profiles_endpoint import router as get_profiles
+from api.routes.get_profile_endpoint import router as get_profile
 
 logging.basicConfig(
     level=logging.INFO,
@@ -78,6 +79,7 @@ app.include_router(update_role)
 app.include_router(get_invitations)
 app.include_router(check_invitation)
 app.include_router(get_profiles)
+app.include_router(get_profile)
 # ---------------------------------------------------------------------------
 # Exception Handlers
 # ---------------------------------------------------------------------------
