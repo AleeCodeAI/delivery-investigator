@@ -59,6 +59,7 @@ class DatabaseSettings(BaseModel):
     supabase_url: str = Field(default_factory=lambda: os.getenv("SUPABASE_URL"))
     supabase_publishable_key: str = Field(default_factory=lambda: os.getenv("SUPABASE_PUBLISHABLE_KEY"))
     supabase_project_url: str = Field(default_factory=lambda: os.getenv("SUPABASE_PROJECT_URL"))
+    supabase_secret_key: str = Field(default_factory=lambda: os.getenv("SUPABASE_SECRET_KEY"))
 
 class AgentSettings(BaseModel):
     """Settings for Retrieval Agent"""
