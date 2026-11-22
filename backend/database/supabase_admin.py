@@ -9,4 +9,4 @@ def get_supabase_admin() -> Client:
     db = get_settings().database
     if not db.supabase_url or not db.supabase_secret_key:
         raise RuntimeError("SUPABASE_URL and SUPABASE_SECRET_KEY must be set.")
-    return create_client(db.supabase_url, db.supabase_secret_key)
+    return create_client(db.supabase_project_url, db.supabase_secret_key)
