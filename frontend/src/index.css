@@ -1,0 +1,54 @@
+/*
+ * Global styles: fonts, Tailwind v4, base rules and the few shared component
+ * classes (.field-input, .btn-outline, .btn-primary, .tag, .card) reused across screens.
+ * Inter is the UI font (font-sans); JetBrains Mono is for IDs, tokens,
+ * timestamps and numbers (font-mono).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-zinc-900 antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #18181b;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .field-input {
+    @apply h-11 w-full rounded-lg border border-zinc-400 bg-white px-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-[3px] focus:ring-zinc-900/[.12];
+  }
+
+  .btn-outline {
+    @apply inline-flex h-9 min-w-9 items-center justify-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-2.5 text-[13px] font-medium text-zinc-900 hover:border-zinc-900 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-zinc-900 px-5 text-sm font-medium text-white hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .card {
+    @apply rounded-[14px] border border-zinc-300 bg-white shadow-sm;
+  }
+
+  .tag {
+    @apply inline-flex items-center whitespace-nowrap rounded-full border border-zinc-200 bg-zinc-100 px-2 py-0.5 text-[11px] text-zinc-700;
+  }
+}
