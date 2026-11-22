@@ -22,6 +22,7 @@ from .final_result import FinalResult
 from .input_schema import InputDataSchema
 from .delete_check_and_update_api_schema import DeleteData, UpdateData, CheckData
 from .insert_invitation_schema import InsertInvitationData
+from .signup_data_schema import SignUpData
 
 "================================ EVALS SCHEMAS ================================"
 from .evals_schemas.agent_evals_schema import AgentEvalsResult
