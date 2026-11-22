@@ -18,7 +18,7 @@ from api.routes.add_invitation_endpoint import router as insert_invitation
 from api.routes.delete_invitation_endpoint import router as delete_invitation
 from api.routes.update_role_endpoint import router as update_role
 from api.routes.get_all_invitations_endpoint import router as get_invitations
-from backend.api.routes.signup_endpoint import router as signup
+from api.routes.signup_endpoint import router as signup
 from api.routes.get_all_profiles_endpoint import router as get_profiles
 from api.routes.get_profile_endpoint import router as get_profile
 
