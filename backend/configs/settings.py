@@ -30,7 +30,7 @@ class OpenRouterSettings(LLMSettings):
 
     api_key: str = Field(default_factory=lambda: os.getenv("OPENROUTER_API_KEY"))
     base_url: str = Field(default_factory=lambda: os.getenv("OPENROUTER_URL"))
-    default_model: str = Field(default="openai/gpt-4.1-nano")
+    default_model: str = Field(default="openai/gpt-oss-120b")
     embedding_model: str = Field(default="text-embedding-3-small")
 
     GPT_OSS_INPUT_PRICE: float = 0.030
