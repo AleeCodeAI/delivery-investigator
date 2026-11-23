@@ -1,12 +1,13 @@
 /*
  * Auth state for the whole app: Supabase session plus the backend profile
  * (GET /me). Role is always read from the profile, never from the JWT.
- * Exposes signIn, signUp (invitation only), signOut and a one-line notice
- * for problems found while restoring a session.
+ * Exposes signIn, signUp (invitation only, does NOT sign in: the user must
+ * confirm their email first), resendConfirmation, signOut and a one-line
+ * notice for problems found while restoring a session.
  */
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Session } from '@supabase/supabase-js'
-import { ApiError, getMe, signUp as apiSignUp, type SignUpInput } from '../lib/api'
+import { ApiError, getMe, resendConfirmation as apiResend, signUp as apiSignUp, type SignUpInput, type SignUpStatus } from '../lib/api'
 import { supabase } from '../lib/supabase'
 import type { Profile } from '../lib/types'
 
@@ -15,13 +16,23 @@ interface AuthContextValue {
   loading: boolean
   notice: string | null
   signIn: (email: string, password: string) => Promise<void>
-  signUp: (input: SignUpInput) => Promise<void>
+  signUp: (input: SignUpInput) => Promise<SignUpStatus>
+  resendConfirmation: (email: string) => Promise<void>
   signOut: () => Promise<void>
   changePassword: (current: string, next: string) => Promise<void>
   clearNotice: () => void
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null)
+
+// Thrown by signIn when the password was right but the email is not confirmed yet.
+// eslint-disable-next-line react-refresh/only-export-components
+export class EmailNotConfirmedError extends Error {
+  constructor() {
+    super('Your email address is not confirmed yet. Open the link in the confirmation email, or send it again below.')
+    this.name = 'EmailNotConfirmedError'
+  }
+}
 
 function profileErrorMessage(err: unknown): string {
   if (err instanceof ApiError && err.status === 403) return 'Your account is not set up. Contact an administrator.'
@@ -88,6 +99,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       manualSignIn.current = true
       try {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+        if (error?.code === 'email_not_confirmed' || /not confirmed/i.test(error?.message ?? '')) throw new EmailNotConfirmedError()
         if (error || !data.session) throw new Error('Incorrect email or password.')
         await syncProfile(data.session)
       } finally {
@@ -97,21 +109,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [syncProfile],
   )
 
-  const signUp = useCallback(
-    async (input: SignUpInput) => {
-      try {
-        await apiSignUp(input)
-      } catch (err) {
-        throw new Error(signUpErrorMessage(err))
+  // Creates the account only. No sign-in here: Supabase refuses until the email is confirmed.
+  const signUp = useCallback(async (input: SignUpInput): Promise<SignUpStatus> => {
+    try {
+      return await apiSignUp(input)
+    } catch (err) {
+      throw new Error(signUpErrorMessage(err))
+    }
+  }, [])
+
+  const resendConfirmation = useCallback(async (email: string) => {
+    try {
+      await apiResend(email)
+    } catch (err) {
+      if (err instanceof ApiError) {
+        if (err.status === 429) throw new Error('Too many attempts. Wait a minute and try again.')
+        if (err.status === 422) throw new Error('Enter a valid email address.')
+        if (err.status === 0 || err.status === 408) throw new Error(err.message)
       }
-      try {
-        await signIn(input.email, input.password)
-      } catch {
-        throw new Error('Your account was created, but signing in failed. Try signing in.')
-      }
-    },
-    [signIn],
-  )
+      throw new Error('Could not send the email. Try again.')
+    }
+  }, [])
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut()
@@ -144,7 +162,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const clearNotice = useCallback(() => setNotice(null), [])
 
   return (
-    <AuthContext.Provider value={{ profile, loading, notice, signIn, signUp, signOut, changePassword, clearNotice }}>
+    <AuthContext.Provider value={{ profile, loading, notice, signIn, signUp, resendConfirmation, signOut, changePassword, clearNotice }}>
       {children}
     </AuthContext.Provider>
   )

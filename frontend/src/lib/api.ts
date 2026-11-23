@@ -95,8 +95,18 @@ export interface SignUpInput {
   access_key: string
 }
 
-export async function signUp(input: SignUpInput): Promise<void> {
-  await request<unknown>('/auth/sign-up/', { method: 'POST', body: input, auth: false })
+// check_email: account created, confirmation email sent.
+// created_email_failed: account created, but the email could not be sent (use resend).
+export type SignUpStatus = 'check_email' | 'created_email_failed'
+
+export async function signUp(input: SignUpInput): Promise<SignUpStatus> {
+  const res = await request<{ status?: string }>('/auth/sign-up/', { method: 'POST', body: input, auth: false })
+  return res.status === 'created_email_failed' ? 'created_email_failed' : 'check_email'
+}
+
+// Always succeeds with the same response, so it cannot reveal which emails have accounts.
+export async function resendConfirmation(email: string): Promise<void> {
+  await request<unknown>('/auth/resend-confirmation/', { method: 'POST', body: { email }, auth: false })
 }
 
 export async function getMe(): Promise<Profile> {
