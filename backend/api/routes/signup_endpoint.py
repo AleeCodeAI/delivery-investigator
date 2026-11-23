@@ -7,7 +7,7 @@ from slowapi.util import get_remote_address
 import logging
 
 from database.repos import check_invitation
-from backend.admin.supabase_admin import get_supabase_admin, get_supabase_public
+from admin.supabase_admin import get_supabase_admin, get_supabase_public
 from schemas import SignUpData
 from configs.settings import get_settings
 
