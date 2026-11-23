@@ -1,6 +1,7 @@
 /*
- * Invitations modal (admin). Create an invitation and share its token, copy
- * any existing token, and delete an invitation. Deleting also removes the
+ * Invitations modal (admin). Create an invitation and share its token, then
+ * delete invitations when needed. A token is single-use, so it is shown only
+ * once, right after it is created, and never in the list afterwards. Deleting also removes the
  * person's account and profile on the backend, so it needs confirmation.
  * An admin cannot delete their own invitation.
  */
@@ -75,9 +76,9 @@ function InvitationsContent({ onCountChange }: { onCountChange: (count: number) 
   }
 
   // Closing the confirmation returns keyboard focus to the Delete button.
-  function cancelDelete(key: string) {
+  function cancelDelete(email: string) {
     setConfirmingKey(null)
-    document.getElementById(`delete-${key}`)?.focus()
+    document.getElementById(`delete-${email}`)?.focus()
   }
 
   async function handleCreate(e: FormEvent) {
@@ -190,7 +191,7 @@ function InvitationsContent({ onCountChange }: { onCountChange: (count: number) 
                       <button
                         type="button"
                         disabled={isSelf}
-                        id={`delete-${inv.access_key}`}
+                        id={`delete-${inv.email}`}
                         onClick={() => {
                           setDeleteError(null)
                           setConfirmingKey(inv.access_key)
@@ -204,17 +205,12 @@ function InvitationsContent({ onCountChange }: { onCountChange: (count: number) 
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <code className="min-w-0 flex-1 break-all rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 font-mono text-xs">{inv.access_key}</code>
-                    <CopyButton text={inv.access_key} ariaLabel={`Copy token for ${inv.name}`} />
-                  </div>
-
                   {confirming && (
                     <div className="flex flex-col gap-3 rounded-lg border border-zinc-300 bg-zinc-50 p-3">
                       <p className="text-sm leading-normal">Deleting this invitation will also permanently delete {inv.name}’s account and profile.</p>
                       {deleteError && <InlineError message={deleteError} />}
                       <div className="flex gap-2">
-                        <button type="button" autoFocus disabled={deleting} onClick={() => cancelDelete(inv.access_key)} className="btn-outline">
+                        <button type="button" autoFocus disabled={deleting} onClick={() => cancelDelete(inv.email)} className="btn-outline">
                           Cancel
                         </button>
                         <button type="button" disabled={deleting} onClick={() => void handleDelete(inv)} className="btn-primary h-9 px-4 text-[13px]">

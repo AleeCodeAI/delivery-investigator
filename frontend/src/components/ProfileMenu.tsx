@@ -147,7 +147,7 @@ export function ProfileMenu() {
         <div id="profile-popover" className="absolute right-0 top-[calc(100%+8px)] z-40 w-72 overflow-hidden rounded-xl border border-zinc-300 bg-white shadow-[0_8px_24px_rgba(0,0,0,.12)]">
           <div className="flex flex-col gap-1 border-b border-zinc-200 px-4 py-3.5">
             <span className="truncate text-sm font-semibold">{profile.name ?? profile.email}</span>
-            <span className="break-all text-[13px] text-zinc-600">{profile.email}</span>
+            {profile.name && <span className="break-all text-[13px] text-zinc-600">{profile.email}</span>}
             <span className="tag mt-1 self-start capitalize">{profile.role}</span>
           </div>
           <button

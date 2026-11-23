@@ -67,7 +67,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     if (inflight.current?.userId === session.user.id) return inflight.current.promise
 
-    const promise = getMe().then(setProfile, async (err: unknown) => {
+    // If the backend profile has no name, fall back to the name given at sign-up (Supabase metadata).
+    const metaName = session.user.user_metadata?.full_name
+    const fallbackName = typeof metaName === 'string' && metaName.trim() ? metaName.trim() : null
+
+    const promise = getMe().then((p) => setProfile({ ...p, name: p.name?.trim() ? p.name : fallbackName }), async (err: unknown) => {
       inflight.current = null
       await supabase.auth.signOut()
       throw new Error(profileErrorMessage(err))

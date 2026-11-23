@@ -4,7 +4,7 @@
  * agent run and the upfront-records request start in parallel, and closing a
  * tab only hides it (the run still finishes and is saved by the backend).
  */
-import { useEffect, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { AlertCircle, CheckCircle2, FileSearch, HelpCircle, Loader2, Plus, Search, X } from 'lucide-react'
 import { ApiError, getUpfrontData, runInvestigation, type InvestigationInput } from '../lib/api'
 import { formatDateTime } from '../lib/format'
@@ -164,6 +164,7 @@ export function Workbench({ historyOpen, onCloseHistory }: WorkbenchProps) {
   const [customerId, setCustomerId] = useState('')
   const [prompt, setPrompt] = useState('')
   const [formError, setFormError] = useState<string | null>(null)
+  const lastSubmit = useRef(0)
 
   const active = sessions.find((s) => s.id === activeId)
 
@@ -196,14 +197,16 @@ export function Workbench({ historyOpen, onCloseHistory }: WorkbenchProps) {
       return
     }
 
+    // The form keeps its values, so ignore a second submit within moments (double click or Enter twice).
+    const now = Date.now()
+    if (now - lastSubmit.current < 1500) return
+    lastSubmit.current = now
+
     const id = newId()
     const input: InvestigationInput = { customer_id: customer, order_id: order, investigation_prompt: text }
 
     setSessions((prev) => [...prev, { id, orderId: order, customerId: customer, prompt: text, status: 'running', startedAt: Date.now() }])
     setActiveId(id)
-    setOrderId('')
-    setCustomerId('')
-    setPrompt('')
     setFormError(null)
 
     // Two independent requests: records may appear before the agent finishes.
@@ -258,7 +261,7 @@ export function Workbench({ historyOpen, onCloseHistory }: WorkbenchProps) {
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-xs text-zinc-600">Runs in its own tab. You can start another while this one runs.</p>
+            <p className="text-xs text-zinc-600">Runs in its own tab. Your inputs stay in place so you can adjust them and run again.</p>
             <button type="submit" className="btn-primary h-11">
               <Search className="size-4" aria-hidden="true" />
               Investigate
