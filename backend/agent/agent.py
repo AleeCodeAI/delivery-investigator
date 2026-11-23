@@ -3,6 +3,7 @@ import logging
 from pydantic_ai import Agent as PydanticAgent, UsageLimits
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
+from pydantic_ai.settings import ModelSettings
 from pydantic import BaseModel
 
 from langfuse import observe, get_client
@@ -49,8 +50,12 @@ class InvestigationAgent(Logger):
             provider=self.provider,
             model_name=self.settings.openrouter.default_model
         )
+        self.model_settings = ModelSettings(
+            extra_body={"provider": {"only": ["azure", "venice", "nearai"]}}
+        )
         self.agent = PydanticAgent(
             model=self.model,
+            model_settings=self.model_settings,
             tools=[customer_address_history_tool, fulfillment_evidence_tool],
             output_type=AgentResult,
             system_prompt=self.prompt.prompt,
