@@ -74,6 +74,8 @@ class LangfuseSettings(BaseModel):
     public_key: str = Field(default_factory=lambda: os.getenv("LANGFUSE_PUBLIC_KEY_CLOUD"))
     host: str = Field(default_factory=lambda: os.getenv("LANGFUSE_HOST_CLOUD"))
 
+class FrontendSetting(BaseModel):
+    frontend_url: str = Field(default_factory=lambda: os.getenv("FRONTEND_URL"))
 class Settings(BaseModel):
     """Main settings class combining all sub-settings."""
 
@@ -83,6 +85,7 @@ class Settings(BaseModel):
     database: DatabaseSettings = Field(default_factory=DatabaseSettings)
     agent: AgentSettings = Field(default_factory=AgentSettings)
     langfuse: LangfuseSettings = Field(default_factory=LangfuseSettings)
+    frontend: FrontendSetting = Field(default_factory=FrontendSetting)
 
 
 @lru_cache()
