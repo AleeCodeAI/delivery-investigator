@@ -2,8 +2,11 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from database.engine import engine
 from database.models import Execution
-from schemas import ExecutionSchema
+from schemas import ExecutionSchema, FinalResult, UpfrontDataSchema
+from datetime import datetime, timedelta, timezone
 from uuid import UUID
+
+CACHE_TTL = timedelta(hours=1) 
 
 
 def get_executions_by_user_id(user_id: UUID):
@@ -65,13 +68,43 @@ def get_all_executions():
             )
             for execution in execution_rows
         ]
+    
+
+def get_specific_execution(order_id: str, customer_id: str):
+    """
+    Return (FinalResult, UpfrontDataSchema) for the most recent successful
+    execution within the cache TTL, or None on a cache miss.
+    """
+    cutoff = datetime.now(timezone.utc) - CACHE_TTL
+
+    with Session(engine) as session:
+        stmt = (
+            select(Execution)
+            .where(
+                Execution.order_id == order_id,
+                Execution.customer_id == customer_id,
+                Execution.execution_success.is_(True),
+                Execution.execution_date >= cutoff,
+            )
+            .order_by(Execution.execution_date.desc())
+            .limit(1)
+        )
+        execution = session.scalars(stmt).first()
+
+        if execution is None:
+            return None
+
+        final_result = FinalResult(
+            agent_result=execution.agent_result,
+            recommender_result=execution.recommender_result,
+        )
+
+        return final_result
 
 
 if __name__ == "__main__":
-    test_user_id = UUID("8fb012f3-bc02-4306-86e2-0369de5f6982")  
     try:
-        executions = get_executions_by_user_id(user_id=test_user_id)
-        for execution in executions:
-            print(execution)
+        result = get_specific_execution(order_id="ORD-189053", customer_id="CUST-189053")
+        print(result)
     except LookupError as e:
         print(e)
