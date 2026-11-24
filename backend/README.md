@@ -59,7 +59,7 @@ The backend follows a modular architecture in which FastAPI handles API communic
 
 The Investigation Agent and Recommender are sequential components of the same pipeline. The Recommender depends on the investigation report produced by the Investigation Agent.
 
-The backend also handles supporting responsibilities such as database operations, authentication, authorization, and administrative functionality.
+The backend also handles supporting responsibilities such as database operations, authentication, authorization, result caching, and administrative functionality.
 
 ---
 
@@ -199,13 +199,18 @@ The human operator remains responsible for reviewing the recommendation and deci
 
 # Complete Investigation Pipeline Flow
 
-The following diagram represents the complete AI processing flow:
+The following diagram represents the complete processing flow, including the cache lookup that happens before the pipeline runs:
 
 ```text
                     Operator Request
                            |
                            v
                   FastAPI Endpoint
+                           |
+                           v
+                     Cache Lookup ---- Hit ----> JSON Response
+                           |
+                          Miss
                            |
                            v
                 Retrieve Upfront Data
@@ -255,14 +260,69 @@ This separation prevents the recommendation stage from replacing the investigati
 
 ---
 
+# Result Caching
+
+Running the Investigation Pipeline involves multiple LLM calls, so repeating it for an investigation that has already been completed is slow and costly. The backend avoids this by reusing previous successful executions.
+
+The existing `execution` table acts as the cache. No separate caching service or additional infrastructure is required.
+
+## How it works
+
+Before running the pipeline, the endpoint looks for a previous execution that matches all of the following:
+
+- The same `order_id` and `customer_id`
+- `execution_success` is true (failed executions are never reused)
+- The execution is newer than the cache TTL (`CACHE_TTL`)
+
+```text
+              Operator Request
+                     |
+                     v
+            Cache Lookup (execution table)
+                     |
+          +----------+----------+
+          |                     |
+        Hit                   Miss
+          |                     |
+          v                     v
+   Return stored result   Run Investigation Pipeline
+                                |
+                                v
+                        Save execution row
+                                |
+                                v
+                         Return result
+```
+
+On a cache hit, the stored agent and recommender results are returned immediately and the pipeline does not run. On a miss, the pipeline runs as normal and saves its own execution row, which makes it available as a cache entry for later requests.
+
+## Design notes
+
+- **Cache key:** `order_id` + `customer_id`. The operator's free-text investigation prompt is not part of the key.
+- **Freshness:** Only executions within `CACHE_TTL` are reused, so older results are ignored but remain in the table as history.
+- **Shared across users:** A cached result can be served to any authenticated user, since the underlying order is the same.
+- **Cache hits do not create new execution rows.** Only real pipeline runs are recorded.
+- **Failures are never cached.** A failed execution is retried on the next request.
+- **No extra infrastructure:** The cache is a single query against PostgreSQL, so it survives restarts and needs no additional service.
+
+## Limitations
+
+- Because the investigation prompt is not part of the key, a different prompt for the same order and customer returns the stored result of the earlier one.
+- The investigation uses live operational data, so a cached result can be out of date until the TTL expires.
+- Pipeline changes (prompts, models, policies) do not invalidate existing cache entries automatically; they expire with the TTL.
+
+---
+
 # API Response
 
-Once the Investigation Pipeline completes execution, the backend returns the structured result through the appropriate FastAPI endpoint.
+Once the Investigation Pipeline completes execution (or a cached result is found), the backend returns the structured result through the appropriate FastAPI endpoint.
 
 The response contains the investigation findings and recommendation, which the frontend can display to the operator.
 
+The response also includes a `cached` field. It is `true` when the result was served from a previous execution and `false` when the pipeline was run for this request.
+
 ```text
-Investigation Pipeline
+Investigation Pipeline (or Cache)
          |
          v
    Structured Result
@@ -293,7 +353,8 @@ The backend can be viewed as having the following major responsibilities:
 | **Investigation Pipeline** | Coordinates the Investigation Agent and Recommender |
 | **Investigation Agent** | Investigates delivery issues using operational evidence |
 | **Recommender** | Recommends appropriate actions based on investigation findings and company policies |
-| **PostgreSQL** | Stores application and operational data |
+| **Result Caching** | Reuses recent successful executions for the same order and customer to avoid repeating the pipeline |
+| **PostgreSQL** | Stores application and operational data, including execution history |
 | **Authentication and Authorization** | Manages access to the application and its protected functionality |
 | **Administrative Functionality** | Supports administrative operations such as invitation management and analytics |
 
@@ -405,6 +466,7 @@ The backend is responsible for:
 - Retrieving additional evidence when required.
 - Producing evidence-backed investigation findings.
 - Recommending appropriate actions according to company policies.
+- Reusing recent successful investigation results to avoid redundant pipeline runs.
 - Returning structured results to the frontend.
 
 The backend does not:
@@ -435,6 +497,7 @@ This makes the system:
 - **Policy-aware** — recommendations are based on company policies.
 - **Human-controlled** — the system recommends actions but does not execute them autonomously.
 - **Evaluable** — each AI component has its own evaluation methodology.
+- **Efficient** — repeated requests for the same order reuse previous successful results instead of re-running the pipeline.
 - **Maintainable** — individual components can be improved without redesigning the entire backend.
 
 The result is a backend that combines evidence-based investigation with policy-based recommendations while keeping important business decisions under human control.
